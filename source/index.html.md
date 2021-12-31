@@ -3,13 +3,9 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://circlepay.ai/#howtouse'>Sign Up for CirclePay</a>
 
 includes:
   - errors
@@ -25,221 +21,86 @@ meta:
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+CirclePay is a platform that enables merchants to develop their projects by connecting many electronic payment gateways located in Egypt in one place with the freedom to choose the appropriate payment method.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Gateway
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+A payment gateway is a technical backend service processing payments in online transactions. it acts as an interface between the <span style="color: red">payment processor</span>, the merchant and the acquiring bank, besides informing the customer about their purchase's status.
 
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+<aside class="notice"><span style="color: red">Payment processor</span>: is the entity that will facilitate the entire process, it responsible for the money collection and for depositing that money into the seller's account.
 </aside>
 
-# Kittens
+<img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" >
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## List Payment Gateways
 
 ```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/LIST_PAYMENTGATEWAY'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 [
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+   {
+			"id": 1,
+			"name": "ahmed",
+			"payment_methods": []
+	},
+   {
+			"id": 1,
+			"name": "ahmed",
+			"payment_methods": []
+	}
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all payment gateway to the merchant.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/LIST_PAYMENTGATEWAY`
 
-### Query Parameters
+### No Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get a Specific Payment Gateway
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/GET_PAYMENTGATEWAY'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+	"id": 1,
+	"name": "ahmed",
+	"payment_methods": []
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific payment gateway.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`POST http://example.com/GET_PAYMENTGATEWAY`
 
-### URL Parameters
+### Request Body Model
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+ <code>{<br>
+   &nbsp;gateway_id (string, optional),<br>
+   &nbsp;user_id (integer, optional)<br>
+ }</code>
 
-## Delete a Specific Kitten
+ <h3>Request Body Example</h3>
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+ <code>{<br>
+   &nbsp;gateway_id: "1",<br>
+   &nbsp;user_id: 2<br>
+ }</code>
