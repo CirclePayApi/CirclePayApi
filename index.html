@@ -26,7 +26,8 @@
 .highlight .gp {
   color: #555555;
 }
-
+.highlight .gs {
+}
 .highlight .gu {
   color: #aaaaaa;
 }
@@ -326,6 +327,17 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-methods" class="toc-h1 toc-link" data-title="Payment Methods">Payment Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List Payment Methods">List Payment Methods</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-payment-method" class="toc-h2 toc-link" data-title="Get a Specific Payment Method">Get a Specific Payment Method</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -339,9 +351,14 @@
         <h1 id='introduction'>Introduction</h1>
 <p>CirclePay is a platform that enables merchants to develop their projects by connecting many electronic payment gateways located in Egypt in one place with the freedom to choose the appropriate payment method.</p>
 <h1 id='gateway'>Gateway</h1>
-<p>A payment gateway is a technical backend service processing payments in online transactions. it acts as an interface between the <span style="color: red">payment processor</span>, the merchant and the acquiring bank, besides informing the customer about their purchase&#39;s status.</p>
+<p>To process online transactions, you will need both a payment gateway and a payment processor. </p>
 
-<aside class="notice"><span style="color: red">Payment processor</span>: is the entity that will facilitate the entire process, it responsible for the money collection and for depositing that money into the seller's account.
+<p><span style="color: red">Payment Gateway</span>: is the beginning and end of the transaction, where the customer will enter their credit card information and receive an approval or denial of the transaction. </p>
+
+<p><span style="color: red">Payment Processor</span>: moves the information between the customer’s bank and the merchant acquirer, or acquiring bank. </p>
+
+<aside class="notice">
+Every transaction processed online needs <span style="color: red">both</span> payment gateway and payment processor.
 </aside>
 
 <p><img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" ></p>
@@ -372,6 +389,7 @@
 <h3 id='no-parameters'>No Parameters</h3><h2 id='get-a-specific-payment-gateway'>Get a Specific Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s1">'{"1",2}'</span>
      <span class="s1">'http://www.example.com/GET_PAYMENTGATEWAY'</span>
 </code></pre></div>
 <blockquote>
@@ -387,6 +405,105 @@
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST http://example.com/GET_PAYMENTGATEWAY</code></p>
 <h3 id='request-body-model'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;gateway_id (string, optional),<br>
+   &nbsp;user_id (integer, optional)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;gateway_id: &quot;1&quot;,<br>
+   &nbsp;user_id: 2<br>
+ }</code></p>
+<h1 id='payment-methods'>Payment Methods</h1>
+<p><span style="color: red">Payment Method</span>: is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.</p>
+
+<aside class="notice">
+CirclePay supports these payment methods:
+
+<ul>
+  <li>paymob</li>
+  <li>fawry</li>
+  <li>myFatoorah</li>
+  <li>meeza</li>
+  <li>valu</li>
+  <li>VodavoneCash</li>
+  <li>etisalatCash</li>
+  <li>orangeCash</li>
+  <li>PREMIUM CARD</li>
+  <li>Visa</li>
+  <li>MasterCard</li>
+  <li>SADAD</li>
+  <li>mada</li>
+  <li>ApplePay</li>
+  <li>Knet</li>
+  <li>American express</li>
+</ul>
+</aside>
+<h2 id='list-payment-methods'>List Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/LIST_PAYMENTMETHOD/1'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paymob"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paymob"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all payment methods of the merchant.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://example.com/LIST_PAYMENTMETHOD/&lt;merchantId&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchantId</td>
+<td>The ID of the merchant to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-payment-method'>Get a Specific Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s1">'{"1",2}'</span>
+     <span class="s1">'http://www.example.com/GET_PAYMENTMETHOD'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paymob"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific payment method.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST http://example.com/GET_PAYMENTGATEWAY</code></p>
+<h3 id='request-body-model-2'>Request Body Model</h3>
 <p><code>{<br>
    &nbsp;gateway_id (string, optional),<br>
    &nbsp;user_id (integer, optional)<br>
