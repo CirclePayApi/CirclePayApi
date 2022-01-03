@@ -351,3 +351,100 @@ This endpoint retrieves a specific merchant.
  <code>{<br>
    &nbsp;"user_id": 2<br>
  }</code>
+
+## Update a merchant
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/UPDATE'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"firstName": "ahmed",
+	"lastName": "khaled",
+	"email": "hi@bye.com",
+	"phone_number": "22222",
+	"picture": null,
+	"id_card": null,
+	"payment_method": null,
+	"circles": [],
+	"billing_info": null,
+	"documents": null,
+	"alert": null,
+	"settlement": null,
+	"business_individual": null,
+	"type_of_business": null
+}
+```
+
+This endpoint helps you to update the merchant after onboarding.
+
+### HTTP Request
+
+`PUT http://example.com/UPDATE`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;first_name (string),<br>
+   &nbsp;last_name (string),<br>
+   &nbsp;email (string),<br>
+   &nbsp;phone_number (string),<br>
+   &nbsp;picture (string, optional),<br>
+   &nbsp;id_card (string, optional),<br>
+   &nbsp;billing_info (string, optional),<br>
+   &nbsp;documents (string, optional),<br>
+   &nbsp;business_individual (string, optional),<br>
+   &nbsp;type_of_business (string, optional)<br>
+   &nbsp;payment_methods (array)<br>
+   &nbsp;circles (array)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 1,<br>
+   &nbsp;"first_name": "Ahmed",<br>
+   &nbsp;"last_name": "Khaled",<br>
+   &nbsp;"username": "ahmed_khaled",<br>
+   &nbsp;"password": "12345",<br>
+   &nbsp;"email": "ahmedkahled@gmail.com",<br>
+   &nbsp;"phone_number": "923847",<br>
+   &nbsp;"picture": null,<br>
+   &nbsp;"id_card": null,<br>
+   &nbsp;"billing_info": null,<br>
+   &nbsp;"documents": null,<br>
+   &nbsp;"business_individual": null,<br>
+   &nbsp;"type_of_business": null,<br>
+   &nbsp;"payment_methods": 
+   [
+   &nbsp;{<br>
+   &nbsp;"gateway": "string",<br>
+   &nbsp;"id": "string",<br>
+   &nbsp;"name": "string",<br>
+   &nbsp;"rate": 0,<br>
+   &nbsp;"type": "string"<br>
+    }
+   ],<br>
+  "circles":
+  [
+    &nbsp;{<br>
+      "customer_id": [
+        0
+    &nbsp;],<br>
+    &nbsp;"id": "string",<br>
+    &nbsp;"merchant": "string",<br>
+    &nbsp;"name": "string",<br>
+    &nbsp;"payment_link_id": [
+        0
+      ]
+    }
+  ]<br>
+ }</code>
