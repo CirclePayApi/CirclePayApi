@@ -352,6 +352,9 @@
                   <li>
                     <a href="#list-all-merchants" class="toc-h2 toc-link" data-title="List all merchants">List all merchants</a>
                   </li>
+                  <li>
+                    <a href="#list-all-documents" class="toc-h2 toc-link" data-title="List all documents">List all documents</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -771,6 +774,42 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <p><code>GET http://example.com/LIST</code></p>
 <h3 id='parameters-2'>Parameters</h3>
 <p>No parameters.</p>
+<h2 id='list-all-documents'>List all documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/LIST_DOCUMENTS'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"national id"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">7969</span><span class="w">
+  </span><span class="nl">"upload_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="nl">"last_update"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-3-2022</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12434234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passport"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">7969</span><span class="w">
+  </span><span class="nl">"upload_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+  </span><span class="nl">"last_update"</span><span class="p">:</span><span class="w"> </span><span class="mi">21-1-2022</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all merchants&#39; documents.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST http://example.com/LIST_DOCUMENTS</code></p>
+<h3 id='request-body-model-6'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2<br>
+ }</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
