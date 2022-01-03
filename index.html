@@ -346,6 +346,9 @@
                   <li>
                     <a href="#retrieve-a-merchant" class="toc-h2 toc-link" data-title="Retrieve a merchant">Retrieve a merchant</a>
                   </li>
+                  <li>
+                    <a href="#update-a-merchant" class="toc-h2 toc-link" data-title="Update a merchant">Update a merchant</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -627,6 +630,93 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 
 <p><code>{<br>
    &nbsp;&quot;user_id&quot;: 2<br>
+ }</code></p>
+<h2 id='update-a-merchant'>Update a merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/UPDATE'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hi@bye.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22222"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"picture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"circles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"billing_info"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alert"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"business_individual"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type_of_business"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to update the merchant after onboarding.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>PUT http://example.com/UPDATE</code></p>
+<h3 id='request-body-model-5'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;first_name (string),<br>
+   &nbsp;last_name (string),<br>
+   &nbsp;email (string),<br>
+   &nbsp;phone_number (string),<br>
+   &nbsp;picture (string, optional),<br>
+   &nbsp;id_card (string, optional),<br>
+   &nbsp;billing_info (string, optional),<br>
+   &nbsp;documents (string, optional),<br>
+   &nbsp;business_individual (string, optional),<br>
+   &nbsp;type_of_business (string, optional)<br>
+   &nbsp;payment_methods (array)<br>
+   &nbsp;circles (array)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 1,<br>
+   &nbsp;&quot;first_name&quot;: &quot;Ahmed&quot;,<br>
+   &nbsp;&quot;last_name&quot;: &quot;Khaled&quot;,<br>
+   &nbsp;&quot;username&quot;: &quot;ahmed_khaled&quot;,<br>
+   &nbsp;&quot;password&quot;: &quot;12345&quot;,<br>
+   &nbsp;&quot;email&quot;: &quot;ahmedkahled@gmail.com&quot;,<br>
+   &nbsp;&quot;phone_number&quot;: &quot;923847&quot;,<br>
+   &nbsp;&quot;picture&quot;: null,<br>
+   &nbsp;&quot;id_card&quot;: null,<br>
+   &nbsp;&quot;billing_info&quot;: null,<br>
+   &nbsp;&quot;documents&quot;: null,<br>
+   &nbsp;&quot;business_individual&quot;: null,<br>
+   &nbsp;&quot;type_of_business&quot;: null,<br>
+   &nbsp;&quot;payment_methods&quot;: 
+   [
+   &nbsp;{<br>
+   &nbsp;&quot;gateway&quot;: &quot;string&quot;,<br>
+   &nbsp;&quot;id&quot;: &quot;string&quot;,<br>
+   &nbsp;&quot;name&quot;: &quot;string&quot;,<br>
+   &nbsp;&quot;rate&quot;: 0,<br>
+   &nbsp;&quot;type&quot;: &quot;string&quot;<br>
+    }
+   ],<br>
+  &quot;circles&quot;:
+  [
+    &nbsp;{<br>
+      &quot;customer_id&quot;: [
+        0
+    &nbsp;],<br>
+    &nbsp;&quot;id&quot;: &quot;string&quot;,<br>
+    &nbsp;&quot;merchant&quot;: &quot;string&quot;,<br>
+    &nbsp;&quot;name&quot;: &quot;string&quot;,<br>
+    &nbsp;&quot;payment_link_id&quot;: [
+        0
+      ]
+    }
+  ]<br>
  }</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
