@@ -25,14 +25,14 @@ CirclePay is a platform that enables merchants to develop their projects by conn
 
 # Gateway
 
-To process online transactions, you will need both a payment gateway and a payment processor. 
+To process online transactions, you will need both a payment gateway and a payment method. 
 
-<span style="color: red">Payment Gateway</span>: is the beginning and end of the transaction, where the customer will enter their credit card information and receive an approval or denial of the transaction. 
+<span style="color: red">A payment gateway</span> is the technology that captures and transfers payment data from the customer to the acquirer. 
 
-<span style="color: red">Payment Processor</span>: moves the information between the customer’s bank and the merchant acquirer, or acquiring bank. 
+<span style="color: red">A payment method</span> is a way that customers pay for a product or service. 
 
 <aside class="notice">
-Every transaction processed online needs <span style="color: red">both</span> payment gateway and payment processor.
+Each transaction requires a definition for a payment gateway and a payment method.
 </aside>
 
 <img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" >
@@ -113,15 +113,12 @@ This endpoint retrieves a specific payment gateway.
 
 # Payment Methods
 
-<span style="color: red">Payment Method</span>: is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.
+<span style="color: red">A payment method</span> is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.
 
-<aside class="notice">
-CirclePay supports these payment methods:
+
+<h3>CirclePay supports these payment methods:</h3>
 
 <ul>
-  <li>paymob</li>
-  <li>fawry</li>
-  <li>myFatoorah</li>
   <li>meeza</li>
   <li>valu</li>
   <li>VodavoneCash</li>
@@ -136,6 +133,11 @@ CirclePay supports these payment methods:
   <li>Knet</li>
   <li>American express</li>
 </ul>
+
+
+<aside class="notice">Paymob, Fawry, MyFatoorah are payment gateways. 
+
+Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
 </aside>
 
 ## List Payment Methods
