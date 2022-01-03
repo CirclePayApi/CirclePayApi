@@ -343,6 +343,9 @@
                   <li>
                     <a href="#create-a-merchant" class="toc-h2 toc-link" data-title="Create a merchant">Create a merchant</a>
                   </li>
+                  <li>
+                    <a href="#retrieve-a-merchant" class="toc-h2 toc-link" data-title="Retrieve a merchant">Retrieve a merchant</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -399,7 +402,6 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <h2 id='get-a-specific-payment-gateway'>Get a Specific Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="nt">-d</span> <span class="s1">'{"1",2}'</span>
      <span class="s1">'http://www.example.com/GET_PAYMENTGATEWAY'</span>
 </code></pre></div>
 <blockquote>
@@ -496,7 +498,6 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <h2 id='get-a-specific-payment-method'>Get a Specific Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="nt">-d</span> <span class="s1">'{"1",2}'</span>
      <span class="s1">'http://www.example.com/GET_PAYMENTMETHOD'</span>
 </code></pre></div>
 <blockquote>
@@ -587,6 +588,45 @@ Each of these payment gateways are supporting a number of payment methods. So, a
    &nbsp;&quot;documents&quot;: null,<br>
    &nbsp;&quot;business_individual&quot;: null,<br>
    &nbsp;&quot;type_of_business&quot;: null<br>
+ }</code></p>
+<h2 id='retrieve-a-merchant'>Retrieve a merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/GET'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hi@bye.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22222"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"picture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"circles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"billing_info"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"alert"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"business_individual"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type_of_business"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific merchant.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://example.com/GET</code></p>
+<h3 id='request-body-model-4'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2<br>
  }</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
