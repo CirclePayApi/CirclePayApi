@@ -79,7 +79,6 @@ No parameters.
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     -d '{"1",2}'
      'http://www.example.com/GET_PAYMENTGATEWAY'
 ```
 
@@ -192,7 +191,6 @@ merchantId | The ID of the merchant to retrieve
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     -d '{"1",2}'
      'http://www.example.com/GET_PAYMENTMETHOD'
 ```
 
@@ -303,4 +301,53 @@ This endpoint helps you to create new merchant.
    &nbsp;"documents": null,<br>
    &nbsp;"business_individual": null,<br>
    &nbsp;"type_of_business": null<br>
+ }</code>
+
+## Retrieve a merchant
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/GET'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"firstName": "ahmed",
+	"lastName": "khaled",
+	"email": "hi@bye.com",
+	"phone_number": "22222",
+	"picture": null,
+	"id_card": null,
+	"payment_method": null,
+	"circles": [],
+	"billing_info": null,
+	"documents": null,
+	"alert": null,
+	"settlement": null,
+	"business_individual": null,
+	"type_of_business": null
+}
+```
+
+This endpoint retrieves a specific merchant.
+
+### HTTP Request
+
+`POST http://example.com/GET`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2<br>
  }</code>
