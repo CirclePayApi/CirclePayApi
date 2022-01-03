@@ -526,17 +526,17 @@ curl -X POST --header 'Content-Type: application/json'
 {
 	"id": "124234",
 	"name": "national id",
-  "size": 7969
-  "upload_state": "success"
+  "size": 7969,
+  "upload_state": "success",
   "last_update": 23-3-2022
 },
 {
 	"id": "12434234",
 	"name": "passport",
-  "size": 7969
-  "upload_state": "success"
+  "size": 7969,
+  "upload_state": "success",
   "last_update": 21-1-2022
-},
+}
 ```
 
 This endpoint retrieves all merchants' documents.
@@ -557,5 +557,50 @@ This endpoint retrieves all merchants' documents.
    &nbsp;"user_id": 2<br>
  }</code>
 
+
+## Upload documents
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/UPLOAD_DOCUMENTS'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "title":"success",
+  "message":"Documents Uploaded successfully",
+  "status":"200"
+}
+```
+
+This endpoint retrieves upload merchants' documents.
+
+### HTTP Request
+
+`POST http://example.com/UPLOAD_DOCUMENTS`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer)<br>
+   &nbsp;document_list (object)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2<br>
+   &nbsp;"document_list": {<br>
+   &nbsp;"id": "124234",<br>
+	 &nbsp;"name": "national id",<br>
+   &nbsp;"size": 7969,<br>
+   &nbsp;"upload_state": "success",<br>
+   &nbsp;"last_update": 23-3-2022<br>
+   }<br>
+ }</code>
 
 
