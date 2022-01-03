@@ -511,7 +511,51 @@ This endpoint retrieves all merchants.
 No parameters.
 
 
+## List all documents
 
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/LIST_DOCUMENTS'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": "124234",
+	"name": "national id",
+  "size": 7969
+  "upload_state": "success"
+  "last_update": 23-3-2022
+},
+{
+	"id": "12434234",
+	"name": "passport",
+  "size": 7969
+  "upload_state": "success"
+  "last_update": 21-1-2022
+},
+```
+
+This endpoint retrieves all merchants' documents.
+
+### HTTP Request
+
+`POST http://example.com/LIST_DOCUMENTS`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2<br>
+ }</code>
 
 
 
