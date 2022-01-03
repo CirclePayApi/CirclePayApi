@@ -330,6 +330,9 @@
             <a href="#payment-methods" class="toc-h1 toc-link" data-title="Payment Methods">Payment Methods</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#" class="toc-h2 toc-link" data-title="CirclePay supports these payment methods:">CirclePay supports these payment methods:</a>
+                  </li>
+                  <li>
                     <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List Payment Methods">List Payment Methods</a>
                   </li>
                   <li>
@@ -351,14 +354,14 @@
         <h1 id='introduction'>Introduction</h1>
 <p>CirclePay is a platform that enables merchants to develop their projects by connecting many electronic payment gateways located in Egypt in one place with the freedom to choose the appropriate payment method.</p>
 <h1 id='gateway'>Gateway</h1>
-<p>To process online transactions, you will need both a payment gateway and a payment processor. </p>
+<p>To process online transactions, you will need both a payment gateway and a payment method. </p>
 
-<p><span style="color: red">Payment Gateway</span>: is the beginning and end of the transaction, where the customer will enter their credit card information and receive an approval or denial of the transaction. </p>
+<p><span style="color: red">A payment gateway</span> is the technology that captures and transfers payment data from the customer to the acquirer. </p>
 
-<p><span style="color: red">Payment Processor</span>: moves the information between the customer’s bank and the merchant acquirer, or acquiring bank. </p>
+<p><span style="color: red">A payment method</span> is a way that customers pay for a product or service. </p>
 
 <aside class="notice">
-Every transaction processed online needs <span style="color: red">both</span> payment gateway and payment processor.
+Each transaction requires a definition for a payment gateway and a payment method.
 </aside>
 
 <p><img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" ></p>
@@ -417,15 +420,11 @@ Every transaction processed online needs <span style="color: red">both</span> pa
    &nbsp;user_id: 2<br>
  }</code></p>
 <h1 id='payment-methods'>Payment Methods</h1>
-<p><span style="color: red">Payment Method</span>: is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.</p>
+<p><span style="color: red">A payment method</span> is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.</p>
 
-<aside class="notice">
-CirclePay supports these payment methods:
+<h3>CirclePay supports these payment methods:</h3>
 
 <ul>
-  <li>paymob</li>
-  <li>fawry</li>
-  <li>myFatoorah</li>
   <li>meeza</li>
   <li>valu</li>
   <li>VodavoneCash</li>
@@ -440,6 +439,10 @@ CirclePay supports these payment methods:
   <li>Knet</li>
   <li>American express</li>
 </ul>
+
+<aside class="notice">Paymob, Fawry, MyFatoorah are payment gateways. 
+
+Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
 </aside>
 <h2 id='list-payment-methods'>List Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
