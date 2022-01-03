@@ -448,3 +448,70 @@ This endpoint helps you to update the merchant after onboarding.
     }
   ]<br>
  }</code>
+
+
+## List all merchants
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/LIST'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+ {
+	"id": 1,
+	"firstName": "ahmed",
+	"lastName": "khaled",
+	"email": "hi@bye.com",
+	"phone_number": "22222",
+	"picture": null,
+	"id_card": null,
+	"payment_method": null,
+	"circles": [],
+	"billing_info": null,
+	"documents": null,
+	"alert": null,
+	"settlement": null,
+	"business_individual": null,
+	"type_of_business": null
+ },
+ {
+	"id": 1,
+	"firstName": "ahmed",
+	"lastName": "khaled",
+	"email": "hi@bye.com",
+	"phone_number": "22222",
+	"picture": null,
+	"id_card": null,
+	"payment_method": null,
+	"circles": [],
+	"billing_info": null,
+	"documents": null,
+	"alert": null,
+	"settlement": null,
+	"business_individual": null,
+	"type_of_business": null
+ }
+]
+```
+
+This endpoint retrieves all merchants.
+
+### HTTP Request
+
+`GET http://example.com/LIST`
+
+### Parameters
+
+No parameters.
+
+
+
+
+
+
