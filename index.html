@@ -364,6 +364,9 @@
                   <li>
                     <a href="#disable-gateway" class="toc-h2 toc-link" data-title="Disable Gateway">Disable Gateway</a>
                   </li>
+                  <li>
+                    <a href="#enable-payment-method" class="toc-h2 toc-link" data-title="Enable payment method">Enable payment method</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -924,21 +927,66 @@ Each of these payment gateways are supporting a number of payment methods. So, a
    &nbsp;&quot;user_id&quot;: 2,<br>
    &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
  }</code></p>
+<h2 id='enable-payment-method'>Enable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/ENABLE_PAYMENT_METHOD'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"The following payment method has been enabled"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"200"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint enable specific payment method.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>PUT http://example.com/ENABLE_PAYMENT_METHOD</code></p>
+<h3 id='request-body-model-10'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code></p>
 
-<ul>
-<li>PAYMENT_GATEWAY
+<p><h3>Request Body Example</h3></p>
 
-<ul>
-<li>NAME</li>
-<li>ID</li>
-</ul></li>
-<li>PAYMENT_CHANNELS list
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2,<br>
+   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
+ }</code></p>
 
-<ul>
-<li>NAME</li>
-<li>ID&quot;</li>
-</ul></li>
-</ul>
+<p>## Disable payment method</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/DISABLE_PAYMENT_METHOD'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"The following payment method has been disabled"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"200"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint disable specific payment method.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>PUT http://example.com/DISABLE_PAYMENT_METHOD</code></p>
+<h3 id='request-body-model-11'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2,<br>
+   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
+ }</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
