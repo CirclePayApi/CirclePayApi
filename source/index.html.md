@@ -695,9 +695,83 @@ This endpoint disable specific gateway and it's related payment methods.
    &nbsp;"gateway_id": "4"<br>
  }</code>
 
-- PAYMENT_GATEWAY
-     - NAME
-     - ID
-- PAYMENT_CHANNELS list
-     - NAME
-     - ID"
+## Enable payment method
+
+```shell
+curl -X PUT --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/ENABLE_PAYMENT_METHOD'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "title":"success",
+  "message":"The following payment method has been enabled",
+  "status":"200"
+}
+```
+
+This endpoint enable specific payment method.
+
+### HTTP Request
+
+`PUT http://example.com/ENABLE_PAYMENT_METHOD`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2,<br>
+   &nbsp;"gateway_id": "4"<br>
+ }</code>
+
+ ## Disable payment method
+
+```shell
+curl -X PUT --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/DISABLE_PAYMENT_METHOD'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "title":"success",
+  "message":"The following payment method has been disabled",
+  "status":"200"
+}
+```
+
+This endpoint disable specific payment method.
+
+### HTTP Request
+
+`PUT http://example.com/DISABLE_PAYMENT_METHOD`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2,<br>
+   &nbsp;"gateway_id": "4"<br>
+ }</code>
+
+
+ 
