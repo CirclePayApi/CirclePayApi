@@ -734,7 +734,7 @@ This endpoint enable specific payment method.
    &nbsp;"gateway_id": "4"<br>
  }</code>
 
- ## Disable payment method
+## Disable payment method
 
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
@@ -774,4 +774,84 @@ This endpoint disable specific payment method.
  }</code>
 
 
- 
+## List Payment Methods
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/LIST_PAYMENT_METHODS'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "payment_channels":[ 
+  {
+    "name": "payment channel-1",
+    "id": 2
+  },
+  {
+    "name": "payment channel-2",
+    "id": 3
+  }
+]
+}
+```
+
+This endpoint list payment methods.
+
+### HTTP Request
+
+`POST http://example.com/LIST_PAYMENT_METHODS`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2<br>
+ }</code>
+
+
+## SET ALERT
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/SET_ALERT'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "message":"The user has been flagged. CirclePay admins shall investigate this customer"
+}
+```
+
+This endpoint flag the user.
+
+### HTTP Request
+
+`POST http://example.com/SET_ALERT`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;note (string)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2,<br>
+   &nbsp;"note": "Policy violation"<br>
+ }</code>
