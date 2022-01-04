@@ -367,6 +367,15 @@
                   <li>
                     <a href="#enable-payment-method" class="toc-h2 toc-link" data-title="Enable payment method">Enable payment method</a>
                   </li>
+                  <li>
+                    <a href="#disable-payment-method" class="toc-h2 toc-link" data-title="Disable payment method">Disable payment method</a>
+                  </li>
+                  <li>
+                    <a href="#list-payment-methods-2" class="toc-h2 toc-link" data-title="List Payment Methods">List Payment Methods</a>
+                  </li>
+                  <li>
+                    <a href="#set-alert" class="toc-h2 toc-link" data-title="SET ALERT">SET ALERT</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -956,9 +965,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
    &nbsp;&quot;user_id&quot;: 2,<br>
    &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
  }</code></p>
-
-<p>## Disable payment method</p>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<h2 id='disable-payment-method'>Disable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
      <span class="s1">'http://www.example.com/DISABLE_PAYMENT_METHOD'</span>
@@ -986,6 +993,67 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <p><code>{<br>
    &nbsp;&quot;user_id&quot;: 2,<br>
    &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
+ }</code></p>
+<h2 id='list-payment-methods-2'>List Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/LIST_PAYMENT_METHODS'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"payment_channels"</span><span class="p">:[</span><span class="w"> 
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment channel-1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment channel-2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint list payment methods.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>POST http://example.com/LIST_PAYMENT_METHODS</code></p>
+<h3 id='request-body-model-12'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2<br>
+ }</code></p>
+<h2 id='set-alert'>SET ALERT</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/SET_ALERT'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"The user has been flagged. CirclePay admins shall investigate this customer"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint flag the user.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST http://example.com/SET_ALERT</code></p>
+<h3 id='request-body-model-13'>Request Body Model</h3>
+<p><code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;note (string)<br>
+ }</code></p>
+
+<p><h3>Request Body Example</h3></p>
+
+<p><code>{<br>
+   &nbsp;&quot;user_id&quot;: 2,<br>
+   &nbsp;&quot;note&quot;: &quot;Policy violation&quot;<br>
  }</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
