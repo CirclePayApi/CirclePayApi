@@ -402,8 +402,8 @@ This endpoint helps you to update the merchant after onboarding.
    &nbsp;billing_info (string, optional),<br>
    &nbsp;documents (string, optional),<br>
    &nbsp;business_individual (string, optional),<br>
-   &nbsp;type_of_business (string, optional)<br>
-   &nbsp;payment_methods (array)<br>
+   &nbsp;type_of_business (string, optional),<br>
+   &nbsp;payment_methods (array),<br>
    &nbsp;circles (array)<br>
  }</code>
 
@@ -586,14 +586,14 @@ This endpoint retrieves upload merchants' documents.
 ### Request Body Model
 
  <code>{<br>
-   &nbsp;user_id (integer)<br>
+   &nbsp;user_id (integer),<br>
    &nbsp;document_list (object)<br>
  }</code>
 
  <h3>Request Body Example</h3>
 
  <code>{<br>
-   &nbsp;"user_id": 2<br>
+   &nbsp;"user_id": 2,<br>
    &nbsp;"document_list": {<br>
    &nbsp;"id": "124234",<br>
 	 &nbsp;"name": "national id",<br>
@@ -604,3 +604,100 @@ This endpoint retrieves upload merchants' documents.
  }</code>
 
 
+## Enable Gateway
+
+```shell
+curl -X PUT --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/ENABLE_GATEWAY'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "title":"success",
+  "message":"Gateway enabled successfully",
+  "status":"200"
+}
+```
+
+This endpoint enable specific gateway.
+
+### HTTP Request
+
+`PUT http://example.com/ENABLE_GATEWAY`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2,<br>
+   &nbsp;"gateway_id": "4"<br>
+ }</code>
+
+
+## Disable Gateway
+
+```shell
+curl -X PUT --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/DISABLE_GATEWAY'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "success":"The following payment gateways and payment methods got disabled",
+  "payment_gateway": {
+    "name": "paymob",
+    "id": 1
+  }
+  "payment_channels":[ 
+  {
+    "name": "payment channel-1",
+    "id": 2
+  },
+  {
+    "name": "payment channel-2",
+    "id": 3
+  }
+  ]
+}
+```
+
+This endpoint disable specific gateway and it's related payment methods.
+
+### HTTP Request
+
+`PUT http://example.com/DISABLE_GATEWAY`
+
+### Request Body Model
+
+ <code>{<br>
+   &nbsp;user_id (integer),<br>
+   &nbsp;gateway_id (string)<br>
+ }</code>
+
+ <h3>Request Body Example</h3>
+
+ <code>{<br>
+   &nbsp;"user_id": 2,<br>
+   &nbsp;"gateway_id": "4"<br>
+ }</code>
+
+- PAYMENT_GATEWAY
+     - NAME
+     - ID
+- PAYMENT_CHANNELS list
+     - NAME
+     - ID"
