@@ -322,7 +322,7 @@
                     <a href="#list-payment-gateways" class="toc-h2 toc-link" data-title="List Payment Gateways">List Payment Gateways</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-payment-gateway" class="toc-h2 toc-link" data-title="Get a Specific Payment Gateway">Get a Specific Payment Gateway</a>
+                    <a href="#retrieve-a-payment-gateway" class="toc-h2 toc-link" data-title="Retrieve a Payment Gateway">Retrieve a Payment Gateway</a>
                   </li>
               </ul>
           </li>
@@ -330,10 +330,10 @@
             <a href="#payment-methods" class="toc-h1 toc-link" data-title="Payment Methods">Payment Methods</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List Payment Methods">List Payment Methods</a>
+                    <a href="#list-a-payment-methods" class="toc-h2 toc-link" data-title="List a Payment Methods">List a Payment Methods</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-payment-method" class="toc-h2 toc-link" data-title="Get a Specific Payment Method">Get a Specific Payment Method</a>
+                    <a href="#retrieve-a-payment-method" class="toc-h2 toc-link" data-title="Retrieve a Payment Method">Retrieve a Payment Method</a>
                   </li>
               </ul>
           </li>
@@ -341,13 +341,13 @@
             <a href="#merchants" class="toc-h1 toc-link" data-title="Merchants">Merchants</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create-a-merchant" class="toc-h2 toc-link" data-title="Create a merchant">Create a merchant</a>
+                    <a href="#create-a-merchant" class="toc-h2 toc-link" data-title="Create a Merchant">Create a Merchant</a>
                   </li>
                   <li>
-                    <a href="#retrieve-a-merchant" class="toc-h2 toc-link" data-title="Retrieve a merchant">Retrieve a merchant</a>
+                    <a href="#retrieve-a-merchant" class="toc-h2 toc-link" data-title="Retrieve a Merchant">Retrieve a Merchant</a>
                   </li>
                   <li>
-                    <a href="#update-a-merchant" class="toc-h2 toc-link" data-title="Update a merchant">Update a merchant</a>
+                    <a href="#update-a-merchant" class="toc-h2 toc-link" data-title="Update a Merchant">Update a Merchant</a>
                   </li>
                   <li>
                     <a href="#list-all-merchants" class="toc-h2 toc-link" data-title="List all merchants">List all merchants</a>
@@ -359,10 +359,10 @@
                     <a href="#upload-documents" class="toc-h2 toc-link" data-title="Upload documents">Upload documents</a>
                   </li>
                   <li>
-                    <a href="#enable-gateway" class="toc-h2 toc-link" data-title="Enable Gateway">Enable Gateway</a>
+                    <a href="#enable-gateway" class="toc-h2 toc-link" data-title="Enable gateway">Enable gateway</a>
                   </li>
                   <li>
-                    <a href="#disable-gateway" class="toc-h2 toc-link" data-title="Disable Gateway">Disable Gateway</a>
+                    <a href="#disable-gateway" class="toc-h2 toc-link" data-title="Disable gateway">Disable gateway</a>
                   </li>
                   <li>
                     <a href="#enable-payment-method" class="toc-h2 toc-link" data-title="Enable payment method">Enable payment method</a>
@@ -371,10 +371,10 @@
                     <a href="#disable-payment-method" class="toc-h2 toc-link" data-title="Disable payment method">Disable payment method</a>
                   </li>
                   <li>
-                    <a href="#list-payment-methods-2" class="toc-h2 toc-link" data-title="List Payment Methods">List Payment Methods</a>
+                    <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List payment methods">List payment methods</a>
                   </li>
                   <li>
-                    <a href="#set-alert" class="toc-h2 toc-link" data-title="SET ALERT">SET ALERT</a>
+                    <a href="#set-alert" class="toc-h2 toc-link" data-title="Set Alert">Set Alert</a>
                   </li>
               </ul>
           </li>
@@ -406,7 +406,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <h2 id='list-payment-gateways'>List Payment Gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/LIST_PAYMENTGATEWAY'</span>
+     <span class="s1">'http://www.example.com/gateway/list_paymentgateway'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -424,15 +424,17 @@ Each transaction requires a definition for a payment gateway and a payment metho
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all payment gateway to the merchant.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/LIST_PAYMENTGATEWAY</code></p>
+<p>Retrieves all payment gateways to the merchant.</p>
 <h3 id='parameters'>Parameters</h3>
 <p>No parameters.</p>
-<h2 id='get-a-specific-payment-gateway'>Get a Specific Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<h3 id='returns'>Returns</h3>
+<p>Returns payment gateway list.</p>
+<h2 id='retrieve-a-payment-gateway'>Retrieve a Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/GET_PAYMENTGATEWAY'</span>
+     <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"2"</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
+     <span class="s1">'http://www.example.com/gateway/get_paymentgateway'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -443,21 +445,25 @@ Each transaction requires a definition for a payment gateway and a payment metho
     </span><span class="nl">"payment_methods"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific payment gateway.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST http://example.com/GET_PAYMENTGATEWAY</code></p>
-<h3 id='request-body-model'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;gateway_id (string, optional),<br>
-   &nbsp;user_id (integer, optional)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;1&quot;,<br>
-   &nbsp;&quot;user_id&quot;: 2<br>
- }</code></p>
+<p>Retrieves a specific payment gateway.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gateway_id <sub style="color: lightblue;">optional</sub></td>
+<td>The id of payment gateway.</td>
+</tr>
+<tr>
+<td>user_id <sub style="color: lightblue;">optional</sub></td>
+<td>The id of the merchant.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-2'>Returns</h3>
+<p>Return a payment gateway object.</p>
 <h1 id='payment-methods'>Payment Methods</h1>
 <p><span style="color: red">A payment method</span> is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.</p>
 
@@ -483,10 +489,10 @@ Each transaction requires a definition for a payment gateway and a payment metho
 
 Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
 </aside>
-<h2 id='list-payment-methods'>List Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h2 id='list-a-payment-methods'>List a Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/LIST_PAYMENTMETHOD/1'</span>
+     <span class="s1">'http://www.example.com/payment_methods/list_paymentmethod/1'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -510,25 +516,17 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all payment methods of the merchant.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://example.com/LIST_PAYMENTMETHOD/&lt;merchantId&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>merchantId</td>
-<td>The ID of the merchant to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-specific-payment-method'>Get a Specific Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<p>Retrieves all payment methods of the merchant.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns a payment channel list.</p>
+<h2 id='retrieve-a-payment-method'>Retrieve a Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/GET_PAYMENTMETHOD'</span>
+     <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"2"</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
+     <span class="s1">'http://www.example.com/payment_methods/get_paymentmethod'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -541,27 +539,35 @@ Each of these payment gateways are supporting a number of payment methods. So, a
     </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific payment method.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST http://example.com/GET_PAYMENTGATEWAY</code></p>
-<h3 id='request-body-model-2'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;gateway_id (string, optional),<br>
-   &nbsp;user_id (integer, optional)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;1&quot;,<br>
-   &nbsp;&quot;user_id&quot;: 2<br>
- }</code></p>
+<p>Retrieves a specific payment method.</p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>gateway_id <sub style="color: lightblue;">optional</sub></td>
+<td>The id of payment gateway.</td>
+</tr>
+<tr>
+<td>user_id <sub style="color: lightblue;">optional</sub></td>
+<td>The id of the merchant.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-4'>Returns</h3>
+<p>Returns a payment channel object.</p>
 <h1 id='merchants'>Merchants</h1>
 <p><span style="color: red">Merchant</span> is the person or company engaged in the business of selling products or services. For example, wholesaler or retail store owner.</p>
-<h2 id='create-a-merchant'>Create a merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h2 id='create-a-merchant'>Create a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/CREATE'</span>
+     <span class="nt">-d</span> <span class="s2">"first_name"</span>: <span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="s2">"last_name"</span>: <span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="s2">"email"</span>: <span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="s2">"phone_number"</span>: <span class="s2">"923847"</span>
+     <span class="s1">'http://www.example.com/merchants/create'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -585,44 +591,61 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create new merchant.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST http://example.com/CREATE</code></p>
-<h3 id='request-body-model-3'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;first_name (string),<br>
-   &nbsp;last_name (string),<br>
-   &nbsp;username (string),<br>
-   &nbsp;password (string),<br>
-   &nbsp;email (string),<br>
-   &nbsp;phone_number (string),<br>
-   &nbsp;picture (string, optional),<br>
-   &nbsp;id_card (string, optional),<br>
-   &nbsp;billing_info (string, optional),<br>
-   &nbsp;documents (string, optional),<br>
-   &nbsp;business_individual (string, optional),<br>
-   &nbsp;type_of_business (string, optional)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;first_name&quot;: &quot;Ahmed&quot;,<br>
-   &nbsp;&quot;last_name&quot;: &quot;Khaled&quot;,<br>
-   &nbsp;&quot;username&quot;: &quot;ahmed_khaled&quot;,<br>
-   &nbsp;&quot;password&quot;: &quot;12345&quot;,<br>
-   &nbsp;&quot;email&quot;: &quot;ahmedkahled@gmail.com&quot;,<br>
-   &nbsp;&quot;phone_number&quot;: &quot;923847&quot;,<br>
-   &nbsp;&quot;picture&quot;: null,<br>
-   &nbsp;&quot;id_card&quot;: null,<br>
-   &nbsp;&quot;billing_info&quot;: null,<br>
-   &nbsp;&quot;documents&quot;: null,<br>
-   &nbsp;&quot;business_individual&quot;: null,<br>
-   &nbsp;&quot;type_of_business&quot;: null<br>
- }</code></p>
-<h2 id='retrieve-a-merchant'>Retrieve a merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>email <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>phone_number <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>picture <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>id_card <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>billing_info <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>documents <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>business_individual <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>type_of_business <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-5'>Returns</h3>
+<p>Returns the user object if the update succeeded. Returns an error if create parameters are invalid.</p>
+<h2 id='retrieve-a-merchant'>Retrieve a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/GET'</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
+     <span class="s1">'http://www.example.com/merchants/get'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -645,23 +668,25 @@ Each of these payment gateways are supporting a number of payment methods. So, a
     </span><span class="nl">"type_of_business"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific merchant.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST http://example.com/GET</code></p>
-<h3 id='request-body-model-4'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2<br>
- }</code></p>
-<h2 id='update-a-merchant'>Update a merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<p>Retrieves a specific merchant.</p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-6'>Returns</h3>
+<p>Returns the user object for a valid identifier.</p>
+<h2 id='update-a-merchant'>Update a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/UPDATE'</span>
+     <span class="s1">'http://www.example.com/merchants/update'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -684,71 +709,73 @@ Each of these payment gateways are supporting a number of payment methods. So, a
     </span><span class="nl">"type_of_business"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint helps you to update the merchant after onboarding.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>PUT http://example.com/UPDATE</code></p>
-<h3 id='request-body-model-5'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;first_name (string),<br>
-   &nbsp;last_name (string),<br>
-   &nbsp;email (string),<br>
-   &nbsp;phone_number (string),<br>
-   &nbsp;picture (string, optional),<br>
-   &nbsp;id_card (string, optional),<br>
-   &nbsp;billing_info (string, optional),<br>
-   &nbsp;documents (string, optional),<br>
-   &nbsp;business_individual (string, optional),<br>
-   &nbsp;type_of_business (string, optional),<br>
-   &nbsp;payment_methods (array),<br>
-   &nbsp;circles (array)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 1,<br>
-   &nbsp;&quot;first_name&quot;: &quot;Ahmed&quot;,<br>
-   &nbsp;&quot;last_name&quot;: &quot;Khaled&quot;,<br>
-   &nbsp;&quot;username&quot;: &quot;ahmed_khaled&quot;,<br>
-   &nbsp;&quot;password&quot;: &quot;12345&quot;,<br>
-   &nbsp;&quot;email&quot;: &quot;ahmedkahled@gmail.com&quot;,<br>
-   &nbsp;&quot;phone_number&quot;: &quot;923847&quot;,<br>
-   &nbsp;&quot;picture&quot;: null,<br>
-   &nbsp;&quot;id_card&quot;: null,<br>
-   &nbsp;&quot;billing_info&quot;: null,<br>
-   &nbsp;&quot;documents&quot;: null,<br>
-   &nbsp;&quot;business_individual&quot;: null,<br>
-   &nbsp;&quot;type_of_business&quot;: null,<br>
-   &nbsp;&quot;payment_methods&quot;: 
-   [
-   &nbsp;{<br>
-   &nbsp;&quot;gateway&quot;: &quot;string&quot;,<br>
-   &nbsp;&quot;id&quot;: &quot;string&quot;,<br>
-   &nbsp;&quot;name&quot;: &quot;string&quot;,<br>
-   &nbsp;&quot;rate&quot;: 0,<br>
-   &nbsp;&quot;type&quot;: &quot;string&quot;<br>
-    }
-   ],<br>
-  &quot;circles&quot;:
-  [
-    &nbsp;{<br>
-      &quot;customer_id&quot;: [
-        0
-    &nbsp;],<br>
-    &nbsp;&quot;id&quot;: &quot;string&quot;,<br>
-    &nbsp;&quot;merchant&quot;: &quot;string&quot;,<br>
-    &nbsp;&quot;name&quot;: &quot;string&quot;,<br>
-    &nbsp;&quot;payment_link_id&quot;: [
-        0
-      ]
-    }
-  ]<br>
- }</code></p>
+<p>Updates the specified merchant by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>first_name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>email <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>phone_number <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>picture <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>id_card <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>billing_info <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>documents <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>business_individual <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>type_of_business <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_methods <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>circles <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-7'>Returns</h3>
+<p>Returns the user object if the update succeeded. Returns an error if update parameters are invalid</p>
 <h2 id='list-all-merchants'>List all merchants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/LIST'</span>
+     <span class="s1">'http://www.example.com/merchants/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -790,15 +817,16 @@ Each of these payment gateways are supporting a number of payment methods. So, a
  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all merchants.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://example.com/LIST</code></p>
-<h3 id='parameters-2'>Parameters</h3>
+<p>Retrieves all merchants.</p>
+<h3 id='parameters-8'>Parameters</h3>
 <p>No parameters.</p>
+<h3 id='returns-8'>Returns</h3>
+<p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
 <h2 id='list-all-documents'>List all documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/LIST_DOCUMENTS'</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
+     <span class="s1">'http://www.example.com/merchants/list_documents'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -818,23 +846,28 @@ Each of these payment gateways are supporting a number of payment methods. So, a
   </span><span class="nl">"last_update"</span><span class="p">:</span><span class="w"> </span><span class="mi">21-1-2022</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all merchants&#39; documents.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>POST http://example.com/LIST_DOCUMENTS</code></p>
-<h3 id='request-body-model-6'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2<br>
- }</code></p>
+<p>Retrieves all merchants&#39; documents.</p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-9'>Returns</h3>
+<p>Returns a document list.</p>
 <h2 id='upload-documents'>Upload documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/UPLOAD_DOCUMENTS'</span>
+     <span class="nt">-d</span> <span class="s2">"document_list[id]"</span><span class="o">=</span><span class="s2">"124234"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"document_list[name]"</span><span class="o">=</span><span class="s2">"national id"</span> <span class="se">\</span>
+     <span class="nt">-d</span> <span class="s2">"document_list[size]"</span><span class="o">=</span>7969 <span class="se">\</span>
+     <span class="s1">'http://www.example.com/merchants/upload_documents?user_id=2'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -845,31 +878,51 @@ Each of these payment gateways are supporting a number of payment methods. So, a
   </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"200"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves upload merchants&#39; documents.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>POST http://example.com/UPLOAD_DOCUMENTS</code></p>
-<h3 id='request-body-model-7'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;document_list (object)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;document_list&quot;: {<br>
-   &nbsp;&quot;id&quot;: &quot;124234&quot;,<br>
-     &nbsp;&quot;name&quot;: &quot;national id&quot;,<br>
-   &nbsp;&quot;size&quot;: 7969,<br>
-   &nbsp;&quot;upload_state&quot;: &quot;success&quot;,<br>
-   &nbsp;&quot;last_update&quot;: 23-3-2022<br>
-   }<br>
- }</code></p>
-<h2 id='enable-gateway'>Enable Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<p>To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.</p>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list.id</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list.name</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list.size</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list.upload_state</td>
+<td></td>
+</tr>
+<tr>
+<td>document_list.last_update</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-10'>Returns</h3>
+<p>Returns success message if document uploaded.</p>
+<h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/ENABLE_GATEWAY'</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
+     <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
+     <span class="s1">'http://www.example.com/merchants/enable_gateway'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -881,24 +934,28 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific gateway.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<p><code>PUT http://example.com/ENABLE_GATEWAY</code></p>
-<h3 id='request-body-model-8'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
- }</code></p>
-<h2 id='disable-gateway'>Disable Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<h3 id='parameters-11'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+<tr>
+<td>gateway_id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-11'>Returns</h3>
+<p>Returns success message if gateway enabled.</p>
+<h2 id='disable-gateway'>Disable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/DISABLE_GATEWAY'</span>
+     <span class="s1">'http://www.example.com/merchants/disable_gateway'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -922,24 +979,16 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific gateway and it&#39;s related payment methods.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
-<p><code>PUT http://example.com/DISABLE_GATEWAY</code></p>
-<h3 id='request-body-model-9'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
- }</code></p>
+<h3 id='parameters-12'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-12'>Returns</h3>
+<p>Returns success message if gateway disabled.</p>
 <h2 id='enable-payment-method'>Enable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/ENABLE_PAYMENT_METHOD'</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
+     <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
+     <span class="s1">'http://www.example.com/merchants/enable_payment_method'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -951,24 +1000,28 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific payment method.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
-<p><code>PUT http://example.com/ENABLE_PAYMENT_METHOD</code></p>
-<h3 id='request-body-model-10'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
- }</code></p>
+<h3 id='parameters-13'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+<tr>
+<td>gateway_id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-13'>Returns</h3>
+<p>Returns success message if payment method enabled.</p>
 <h2 id='disable-payment-method'>Disable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/DISABLE_PAYMENT_METHOD'</span>
+     <span class="s1">'http://www.example.com/merchants/disable_payment_method'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -980,24 +1033,28 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific payment method.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
-<p><code>PUT http://example.com/DISABLE_PAYMENT_METHOD</code></p>
-<h3 id='request-body-model-11'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;gateway_id&quot;: &quot;4&quot;<br>
- }</code></p>
-<h2 id='list-payment-methods-2'>List Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<h3 id='parameters-14'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+<tr>
+<td>gateway_id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-14'>Returns</h3>
+<p>Returns success message if payment method disabled.</p>
+<h2 id='list-payment-methods'>List payment methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/LIST_PAYMENT_METHODS'</span>
+     <span class="s1">'http://www.example.com/merchants/list_payment_methods'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1015,23 +1072,27 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint list payment methods.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
-<p><code>POST http://example.com/LIST_PAYMENT_METHODS</code></p>
-<h3 id='request-body-model-12'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2<br>
- }</code></p>
-<h2 id='set-alert'>SET ALERT</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+<p>This endpoint list payment methods of the merchant.</p>
+<h3 id='parameters-15'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-15'>Returns</h3>
+<p>Returns a payment channel list.</p>
+<h2 id='set-alert'>Set Alert</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/SET_ALERT'</span>
+     <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
+     <span class="nt">-d</span> <span class="nv">note</span><span class="o">=</span><span class="s2">""</span>
+     <span class="s1">'http://www.example.com/merchants/set_alert'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1041,20 +1102,24 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint flag the user.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
-<p><code>POST http://example.com/SET_ALERT</code></p>
-<h3 id='request-body-model-13'>Request Body Model</h3>
-<p><code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;note (string)<br>
- }</code></p>
-
-<p><h3>Request Body Example</h3></p>
-
-<p><code>{<br>
-   &nbsp;&quot;user_id&quot;: 2,<br>
-   &nbsp;&quot;note&quot;: &quot;Policy violation&quot;<br>
- }</code></p>
+<h3 id='parameters-16'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td></td>
+</tr>
+<tr>
+<td>note</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-16'>Returns</h3>
+<p>Returns a message to inform you if the user flagged or not.</p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
