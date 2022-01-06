@@ -1041,4 +1041,106 @@ Returns payment link list which is array contains payment link objects. If no pa
 
 ####################################################################################
 
+# Payment
+
+## Get a payment 
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/payment/get/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "date_time": "2022-10-12",
+  "merchant_id": 1,
+  "customer_id": 1,
+  "status": true,
+  "payment_link_id": 1,
+  "coupon_id": 1,
+  "amount_paid": 1,
+  "currency": "EGP",
+  "payment_method": null,
+  "source": "external"
+}
+```
+
+Retrieves the details of an existing payment.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns a payment object if a valid identifier was provided, and returns an error otherwise.
+
+######################################################################################
+
+## List all payments
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d "payment_id": 4
+     'http://www.example.com/payment/list'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+	{
+		"id": 1,
+		"date_time": "2022-10-12",
+		"merchant_id": 1,
+		"customer_id": 1,
+		"status": "true",
+		"payment_link_id": 1,
+		"coupon_id": 1,
+		"amount_paid": 1,
+		"currency": "EGP",
+		"payment_method": null,
+		"source": "external"
+	},
+	{
+		"id": 1,
+		"date_time": "2022-10-12",
+		"merchant_id": 1,
+		"customer_id": 1,
+		"status": true,
+		"payment_link_id": 1,
+		"coupon_id": 1,
+		"amount_paid": 1,
+		"currency": "EGP",
+		"payment_method": null,
+		"source": "external"
+	}
+]
+```
+
+Retrieves all payments.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_id |         |
+
+### Returns
+
+Returns a payment list which has the details of the payment like: status, amount paid and payment method.
+
+######################################################################################
+
+
+
+
+
 
