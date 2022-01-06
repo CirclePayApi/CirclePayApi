@@ -757,9 +757,87 @@ Returns a message to inform you if the user flagged or not.
 
 ####################################################################################
 
+# Customers
 
+## Retrieve a customer
 
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/customers/get/1'
+```
 
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "id": 3,
+  "first_name": "Ahmed",
+  "last_name": "khaled",
+  "email":"ahmedkhaled@gmail.com",
+  "phone_number": "0238432",
+  "transaction_id": {},
+  "refund_id": {},
+  "circle_id": {}
+}
+```
+
+Retrieves a specific customer.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns the Customer object for a valid identifier.
+
+####################################################################################
+
+## List all customers
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d user_id=2
+     'http://www.example.com/customers/list'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "id": 3,
+  "first_name": "Ahmed",
+  "last_name": "khaled",
+  "email":"ahmedkhaled@gmail.com",
+  "phone_number": "0238432",
+  "transaction_id": {},
+  "refund_id": {},
+  "circle_id": {}
+}
+```
+
+Retrieves a list of your customers.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+user_id  |            |
+circle_id <sub style="color: lightblue;">optional</sub> |            |
+
+<aside class="notice">
+Select the fields you want to retrieve.
+</aside>
+
+### Returns
+
+Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.
+
+################################################################################
 
 
 
