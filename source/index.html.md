@@ -1139,8 +1139,227 @@ Returns a payment list which has the details of the payment like: status, amount
 
 ######################################################################################
 
+# Refund
 
+Allows you to refund a charge that has previously been created but not yet refunded.
 
+## Request a refund
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d value=54
+     -d currency="EGP"
+     'http://www.example.com/refund/request_refund'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "request_date": "2022-10-12",
+  "refund_date": "2022-10-12",
+  "value": 1,
+  "payment_id": 1,
+  "fees_list": [],
+  "payment_method": [],
+  "status": "pending",
+  "customer": null
+}
+```
+This endpoint helps you to request refund.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+refund_id <sub style="color: red;">required</sub> |            |
+value <sub style="color: red;">required</sub> |             |
+currency <sub style="color: red;">required</sub> |              |
+payment_id <sub style="color: red;">required</sub> |              |
+fees_list <sub style="color: red;">required</sub> |         |
+payment_method <sub style="color: red;">required</sub> |            |
+payment_gateway <sub style="color: red;">required</sub> |         |
+customer_id <sub style="color: red;">required</sub> |            |
+invoice_id <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns the refund object. Status in refund object will be in pending state.
+
+######################################################################################
+
+## Reject a refund
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d refund_id=4
+     'http://www.example.com/refund/reject_refund'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "request_date": "2022-10-12",
+  "refund_date": "2022-10-12",
+  "value": 1,
+  "payment_id": 1,
+  "fees_list": [],
+  "payment_method": [],
+  "status": "rejected",
+  "customer": null
+}
+```
+Returns refund object with rejected status.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+refund_id <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns the rejected refund object if a valid ID was provided. Returns an error otherwise. 
+
+######################################################################################
+
+## Approve a refund
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d refund_id=4
+     'http://www.example.com/refund/approve_refund'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 1,
+  "request_date": "2022-10-12",
+  "refund_date": "2022-10-12",
+  "value": 1,
+  "payment_id": 1,
+  "fees_list": [],
+  "payment_method": [],
+  "status": "approved",
+  "customer": null
+}
+```
+Returns refund object with approved status.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+refund_id <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns the aprroved refund object if a valid ID was provided. Returns an error otherwise. 
+
+<aside class="notice">
+Requires a % value of the full value.
+</aside>
+
+######################################################################################
+
+## List all refunds
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d payment_link_id=4
+     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
+     'http://www.example.com/refund/list'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "request_date": "2022-10-12",
+    "refund_date": "2022-10-12",
+    "value": 1,
+    "payment_id": 1,
+    "fees_list": [],
+    "payment_method": [],
+    "status": [],
+    "customer": null
+  },
+  {
+    "id": 2,
+    "request_date": "2022-10-12",
+    "refund_date": "2022-10-12",
+    "value": 2,
+    "payment_id": 2,
+    "fees_list": [],
+    "payment_method": [],
+    "status": [],
+    "customer": null
+  }
+]
+```
+List refund objects.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+circle_id <sub style="color: lightblue;">required</sub> |            |
+customer_id <sub style="color: lightblue;">required</sub> |            |
+payment_link_id <sub style="color: lightblue;">required</sub> |            |
+payment_link_url <sub style="color: lightblue;">required</sub> |            |
+
+### Returns
+
+Returns refund list. If no more refunds are available, the resulting array will be empty.
+
+<aside class="notice">
+At least one input is required.
+</aside>
+
+#######################################################################################
+
+## Get refund status
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/refund/get_status/2'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "status":"pending"
+}
+```
+Retrieves the status of refund object.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns the status of refund object, for example: "approved", "pending" or "rejected".
+
+##############################################################################
 
 
 
