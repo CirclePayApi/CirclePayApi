@@ -839,9 +839,206 @@ Returns customer list, If no more customers are available, the resulting array w
 
 ################################################################################
 
+# Payment Link
+
+## Create a payment link
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d "value": 0
+     -d "currency": "EGP"
+     -d "description": "payment link"
+     -d "expire_date": "1-22-2022"
+     'http://www.example.com/payment_link/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 0,
+	"url": "ahmed",
+	"form_id": 0,
+	"coupon_id": [],
+	"description": "desc",
+	"value": 0,
+	"currency": "EGP",
+	"expire_date": "2022-10-12",
+	"payment_method": [],
+	"payment": [],
+	"status": true,
+	"paying_customer": [],
+	"fees_list": []
+}
+```
+
+This endpoint helps you to create payment link.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+value <sub style="color: red;">required</sub> |            |
+currency <sub style="color: red;">required</sub> |             |
+description <sub style="color: red;">required</sub>  |                |
+expire_date <sub style="color: red;">required</sub> |          |
+payment_method_id <sub style="color: lightblue;">optional</sub> |              |
+status <sub style="color: lightblue;">optional</sub> |              |
+circle_id <sub style="color: lightblue;">optional</sub> |         |
+fees_list <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns the payment link object.
+
+####################################################################################
+
+## Retrieves a payment link
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d "payment_link_id": 4
+     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd" 
+     'http://www.example.com/payment_link/get'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 0,
+	"url": "ahmed",
+	"form_id": 0,
+	"coupon_id": [],
+	"description": "desc",
+	"value": 0,
+	"currency": "EGP",
+	"expire_date": "2022-10-12",
+	"payment_method": [],
+	"payment": [],
+	"status": true,
+	"paying_customer": [],
+	"fees_list": []
+}
+```
+
+Retrieves a specific payment link.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: lightblue;">optional</sub> |         |
+payment_link_url <sub style="color: lightblue;">optional</sub> |         |
+
+### Returns
+
+Returns the payment link object.
+
+####################################################################################
+
+## Update a payment link
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d "payment_link_id": 3
+     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
+     'http://www.example.com/payment_link/update'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 0,
+	"url": "ahmed",
+	"form_id": 0,
+	"coupon_id": [],
+	"description": "desc",
+	"value": 0,
+	"currency": "EGP",
+	"expire_date": "2022-10-12",
+	"payment_method": [],
+	"payment": [],
+	"status": true,
+	"paying_customer": [],
+	"fees_list": []
+}
+```
+This endpoint helps you to udpate payment link.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: red;">required</sub> |            |
+payment_link_url <sub style="color: red;">required</sub> |             |
+value <sub style="color: lightblue;">optional</sub> |              |
+description <sub style="color: lightblue;">optional</sub> |              |
+expire_date <sub style="color: lightblue;">optional</sub> |         |
+payment_method_id <sub style="color: lightblue;">optional</sub> |            |
+status <sub style="color: lightblue;">optional</sub> |         |
+fees_list <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns the payment link object.
+
+#################################################################################
+
+## List all payment links
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d "circle_id": 4
+     'http://www.example.com/payment_link/list'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 0,
+	"url": "https://buy.circlepay.ai/sldkfhsd",
+	"form_id": 0,
+	"coupon_id": [],
+	"description": "desc",
+	"value": 0,
+	"currency": "EGP",
+	"expire_date": "2022-10-12",
+	"payment_method": [],
+	"payment": [],
+	"status": true,
+	"paying_customer": [],
+	"fees_list": []
+}
+```
+
+Retrieves all payment links.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+circle_id |         |
+
+<aside class="notice">
+Select the fields you want to retrieve.
+</aside>
+
+### Returns
+
+Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.
 
 
-
-
+####################################################################################
 
 
