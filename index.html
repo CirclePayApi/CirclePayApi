@@ -390,6 +390,23 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-link" class="toc-h1 toc-link" data-title="Payment Link">Payment Link</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-payment-link" class="toc-h2 toc-link" data-title="Create a payment link">Create a payment link</a>
+                  </li>
+                  <li>
+                    <a href="#retrieves-a-payment-link" class="toc-h2 toc-link" data-title="Retrieves a payment link">Retrieves a payment link</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-payment-link" class="toc-h2 toc-link" data-title="Update a payment link">Update a payment link</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-payment-links" class="toc-h2 toc-link" data-title="List all payment links">List all payment links</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1198,6 +1215,235 @@ Select the fields you want to retrieve.
 </aside>
 <h3 id='returns-18'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
+<h1 id='payment-link'>Payment Link</h1><h2 id='create-a-payment-link'>Create a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s2">"value"</span>: 0
+     <span class="nt">-d</span> <span class="s2">"currency"</span>: <span class="s2">"EGP"</span>
+     <span class="nt">-d</span> <span class="s2">"description"</span>: <span class="s2">"payment link"</span>
+     <span class="nt">-d</span> <span class="s2">"expire_date"</span>: <span class="s2">"1-22-2022"</span>
+     <span class="s1">'http://www.example.com/payment_link/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paying_customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"fees_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to create payment link.</p>
+<h3 id='parameters-19'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>currency <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>description <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>expire_date <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_method_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>circle_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>fees_list <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-19'>Returns</h3>
+<p>Returns the payment link object.</p>
+<h2 id='retrieves-a-payment-link'>Retrieves a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 4
+     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span> 
+     <span class="s1">'http://www.example.com/payment_link/get'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paying_customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"fees_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific payment link.</p>
+<h3 id='parameters-20'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-20'>Returns</h3>
+<p>Returns the payment link object.</p>
+<h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 3
+     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span>
+     <span class="s1">'http://www.example.com/payment_link/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paying_customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"fees_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to udpate payment link.</p>
+<h3 id='parameters-21'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_url <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>value <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>description <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>expire_date <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_method_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>fees_list <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-21'>Returns</h3>
+<p>Returns the payment link object.</p>
+<h2 id='list-all-payment-links'>List all payment links</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="s2">"circle_id"</span>: 4
+     <span class="s1">'http://www.example.com/payment_link/list'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_method"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paying_customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"fees_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves all payment links.</p>
+<h3 id='parameters-22'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>circle_id</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Select the fields you want to retrieve.
+</aside>
+<h3 id='returns-22'>Returns</h3>
+<p>Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.</p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
