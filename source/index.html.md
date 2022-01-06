@@ -1318,10 +1318,10 @@ List refund objects.
 
           |          |
 --------- | ---------|
-circle_id <sub style="color: lightblue;">required</sub> |            |
-customer_id <sub style="color: lightblue;">required</sub> |            |
-payment_link_id <sub style="color: lightblue;">required</sub> |            |
-payment_link_url <sub style="color: lightblue;">required</sub> |            |
+circle_id <sub style="color: lightblue;">optional</sub> |            |
+customer_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_url <sub style="color: lightblue;">optional</sub> |            |
 
 ### Returns
 
@@ -1360,6 +1360,188 @@ No parameters.
 Returns the status of refund object, for example: "approved", "pending" or "rejected".
 
 ##############################################################################
+
+# Coupon
+
+## Create a coupon
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/coupon/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"payment_link_id": 1,
+	"code": 1,
+	"value": 1,
+	"name": "ahmed",
+	"number_of_uses": 1,
+	"discount_t": ""
+}
+```
+This endpoint helps you to create coupon.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: red;">required</sub> |            |
+value <sub style="color: red;">required</sub> |            |
+name <sub style="color: red;">required</sub> |            |
+expire_date <sub style="color: red;">required</sub> |            |
+number_of_users <sub style="color: red;">required</sub> |            |
+status <sub style="color: red;">required</sub> |            |
+times_per_customer <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns the coupon object. Status of coupon is "active" by default.
+
+##############################################################################
+
+## Retrieve a coupon
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/coupon/get/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"value": 1,
+	"name": "ahmed",
+	"expire_date": "2022-12-22",
+	"number_of_uses": 1,
+	"payment_link_id": 1,
+	"payments": null,
+	"status": 1,
+	"times_per_customer": 1,
+	"customer": []
+}
+```
+Retrieves a specific coupon.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.
+
+##############################################################################
+
+## Update a coupon
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/coupon/update'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"value": 1,
+	"name": "ahmed",
+	"expire_date": "2022-12-22",
+	"number_of_uses": 1,
+	"payment_link_id": 1,
+	"payments": null,
+	"status": 1,
+	"times_per_customer": 1,
+	"customer": []
+}
+```
+Updates the metadata of a coupon.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+coupon_id <sub style="color: red;">required</sub> |            |
+value <sub style="color: red;">required</sub> |            |
+name <sub style="color: red;">required</sub> |            |
+expire_date <sub style="color: red;">required</sub> |            |
+number_of_users <sub style="color: red;">required</sub> |            |
+status <sub style="color: red;">required</sub> |            |
+times_per_customer <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+The newly updated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
+
+##############################################################################
+
+## List all coupons
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/coupon/list/2'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"value": 1,
+	"name": "ahmed",
+	"expire_date": "2022-12-22",
+	"number_of_uses": 1,
+	"payment_link_id": 1,
+	"payments": null,
+	"status": 1,
+	"times_per_customer": 1,
+	"customer": []
+},
+{
+	"id": 1,
+	"value": 1,
+	"name": "ahmed",
+	"expire_date": "2022-12-22",
+	"number_of_uses": 1,
+	"payment_link_id": 1,
+	"payments": null,
+	"status": 1,
+	"times_per_customer": 1,
+	"customer": []
+}
+```
+Returns a list of your coupons.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.
+
+##############################################################################
+
+
+
+
+
+
+
+
 
 
 
