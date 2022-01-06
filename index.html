@@ -438,6 +438,23 @@
               </ul>
           </li>
           <li>
+            <a href="#coupon" class="toc-h1 toc-link" data-title="Coupon">Coupon</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-coupon" class="toc-h2 toc-link" data-title="Create a coupon">Create a coupon</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-coupon" class="toc-h2 toc-link" data-title="Retrieve a coupon">Retrieve a coupon</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-coupon" class="toc-h2 toc-link" data-title="Update a coupon">Update a coupon</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-coupons" class="toc-h2 toc-link" data-title="List all coupons">List all coupons</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1746,19 +1763,19 @@ Requires a % value of the full value.
 </tr>
 </thead><tbody>
 <tr>
-<td>circle_id <sub style="color: lightblue;">required</sub></td>
+<td>circle_id <sub style="color: lightblue;">optional</sub></td>
 <td></td>
 </tr>
 <tr>
-<td>customer_id <sub style="color: lightblue;">required</sub></td>
+<td>customer_id <sub style="color: lightblue;">optional</sub></td>
 <td></td>
 </tr>
 <tr>
-<td>payment_link_id <sub style="color: lightblue;">required</sub></td>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
 <td></td>
 </tr>
 <tr>
-<td>payment_link_url <sub style="color: lightblue;">required</sub></td>
+<td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1785,6 +1802,186 @@ At least one input is required.
 <p>No parameters.</p>
 <h3 id='returns-29'>Returns</h3>
 <p>Returns the status of refund object, for example: &quot;approved&quot;, &quot;pending&quot; or &quot;rejected&quot;.</p>
+<h1 id='coupon'>Coupon</h1><h2 id='create-a-coupon'>Create a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/coupon/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"discount_t"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to create coupon.</p>
+<h3 id='parameters-30'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>value <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>expire_date <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>number_of_users <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>times_per_customer <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-30'>Returns</h3>
+<p>Returns the coupon object. Status of coupon is &quot;active&quot; by default.</p>
+<h2 id='retrieve-a-coupon'>Retrieve a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/coupon/get/1'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"times_per_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific coupon.</p>
+<h3 id='parameters-31'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-31'>Returns</h3>
+<p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
+<h2 id='update-a-coupon'>Update a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/coupon/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"times_per_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates the metadata of a coupon.</p>
+<h3 id='parameters-32'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coupon_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>value <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>expire_date <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>number_of_users <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>times_per_customer <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-32'>Returns</h3>
+<p>The newly updated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
+<h2 id='list-all-coupons'>List all coupons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/coupon/list/2'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"times_per_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expire_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"times_per_customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns a list of your coupons.</p>
+<h3 id='parameters-33'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-33'>Returns</h3>
+<p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
