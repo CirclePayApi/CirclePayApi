@@ -43,7 +43,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/LIST_PAYMENTGATEWAY'
+     'http://www.example.com/gateway/list_paymentgateway'
 ```
 
 > The above command returns JSON structured like this:
@@ -63,23 +63,27 @@ curl -X GET --header 'Accept: application/json'
 ]
 ```
 
-This endpoint retrieves all payment gateway to the merchant.
-
-### HTTP Request
-
-`GET http://example.com/LIST_PAYMENTGATEWAY`
+Retrieves all payment gateways to the merchant.
 
 ### Parameters
 
 No parameters.
 
-## Get a Specific Payment Gateway
+### Returns
+
+Returns payment gateway list.
+
+########################################################################
+
+## Retrieve a Payment Gateway
 
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/GET_PAYMENTGATEWAY'
+     -d gateway_id="2"
+     -d user_id=1
+     'http://www.example.com/gateway/get_paymentgateway'
 ```
 
 > The above command returns JSON structured like this:
@@ -92,25 +96,19 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint retrieves a specific payment gateway.
+Retrieves a specific payment gateway.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/GET_PAYMENTGATEWAY`
+          |          |
+--------- | ---------|
+gateway_id <sub style="color: lightblue;">optional</sub> | The id of payment gateway. |
+user_id <sub style="color: lightblue;">optional</sub> |  The id of the merchant.|
 
-### Request Body Model
+### Returns
+Return a payment gateway object.
 
- <code>{<br>
-   &nbsp;gateway_id (string, optional),<br>
-   &nbsp;user_id (integer, optional)<br>
- }</code>
-
- <h3>Request Body Example</h3>
-
- <code>{<br>
-   &nbsp;"gateway_id": "1",<br>
-   &nbsp;"user_id": 2<br>
- }</code>
+##############################################################################
 
 # Payment Methods
 
@@ -141,13 +139,13 @@ CirclePay supports these payment methods:
 Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
 </aside>
 
-## List Payment Methods
+## List a Payment Methods
 
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/LIST_PAYMENTMETHOD/1'
+     'http://www.example.com/payment_methods/list_paymentmethod/1'
 ```
 
 > The above command returns JSON structured like this:
@@ -173,25 +171,27 @@ curl -X GET --header 'Accept: application/json'
 ]
 ```
 
-This endpoint retrieves all payment methods of the merchant.
+Retrieves all payment methods of the merchant.
 
-### HTTP Request
+### Parameters
 
-`GET http://example.com/LIST_PAYMENTMETHOD/<merchantId>`
+No parameters.
 
-### URL Parameters
+### Returns
 
-Parameter | Description
----------| -----------
-merchantId | The ID of the merchant to retrieve
+Returns a payment channel list.
 
-## Get a Specific Payment Method
+#################################################################################
+
+## Retrieve a Payment Method
 
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/GET_PAYMENTMETHOD'
+     -d gateway_id="2"
+     -d user_id=1
+     'http://www.example.com/payment_methods/get_paymentmethod'
 ```
 
 > The above command returns JSON structured like this:
@@ -206,25 +206,18 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint retrieves a specific payment method.
+Retrieves a specific payment method.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/GET_PAYMENTGATEWAY`
+          |          |
+--------- | ---------|
+gateway_id <sub style="color: lightblue;">optional</sub> | The id of payment gateway. |
+user_id <sub style="color: lightblue;">optional</sub> |  The id of the merchant.|
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;gateway_id (string, optional),<br>
-   &nbsp;user_id (integer, optional)<br>
- }</code>
-
- <h3>Request Body Example</h3>
-
- <code>{<br>
-   &nbsp;"gateway_id": "1",<br>
-   &nbsp;"user_id": 2<br>
- }</code>
+Returns a payment channel object.
 
 ###########################################################################################
 
@@ -232,13 +225,17 @@ This endpoint retrieves a specific payment method.
 
 <span style="color: red">Merchant</span> is the person or company engaged in the business of selling products or services. For example, wholesaler or retail store owner.
 
-## Create a merchant
+## Create a Merchant
 
 ```shell
-curl -X GET --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/CREATE'
+     -d "first_name": "Ahmed"
+     -d "last_name": "Khaled"
+     -d "email": "ahmedkahled@gmail.com"
+     -d "phone_number": "923847"
+     'http://www.example.com/merchants/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -265,51 +262,35 @@ curl -X GET --header 'Accept: application/json'
 
 This endpoint helps you to create new merchant.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/CREATE`
+          |          |
+--------- | ---------|
+first_name <sub style="color: red;">required</sub> |            |
+last_name <sub style="color: red;">required</sub> |             |
+email <sub style="color: red;">required</sub>  |                |
+phone_number <sub style="color: red;">required</sub> |          |
+picture <sub style="color: lightblue;">optional</sub> |              |
+id_card <sub style="color: lightblue;">optional</sub> |              |
+billing_info <sub style="color: lightblue;">optional</sub> |         |
+documents <sub style="color: lightblue;">optional</sub> |            |
+business_individual <sub style="color: lightblue;">optional</sub> |  |
+type_of_business <sub style="color: lightblue;">optional</sub> |     |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;first_name (string),<br>
-   &nbsp;last_name (string),<br>
-   &nbsp;username (string),<br>
-   &nbsp;password (string),<br>
-   &nbsp;email (string),<br>
-   &nbsp;phone_number (string),<br>
-   &nbsp;picture (string, optional),<br>
-   &nbsp;id_card (string, optional),<br>
-   &nbsp;billing_info (string, optional),<br>
-   &nbsp;documents (string, optional),<br>
-   &nbsp;business_individual (string, optional),<br>
-   &nbsp;type_of_business (string, optional)<br>
- }</code>
+Returns the user object if the update succeeded. Returns an error if create parameters are invalid.
 
- <h3>Request Body Example</h3>
+########################################################################################
 
- <code>{<br>
-   &nbsp;"first_name": "Ahmed",<br>
-   &nbsp;"last_name": "Khaled",<br>
-   &nbsp;"username": "ahmed_khaled",<br>
-   &nbsp;"password": "12345",<br>
-   &nbsp;"email": "ahmedkahled@gmail.com",<br>
-   &nbsp;"phone_number": "923847",<br>
-   &nbsp;"picture": null,<br>
-   &nbsp;"id_card": null,<br>
-   &nbsp;"billing_info": null,<br>
-   &nbsp;"documents": null,<br>
-   &nbsp;"business_individual": null,<br>
-   &nbsp;"type_of_business": null<br>
- }</code>
-
-## Retrieve a merchant
+## Retrieve a Merchant
 
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/GET'
+     -d user_id=2
+     'http://www.example.com/merchants/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -334,31 +315,27 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint retrieves a specific merchant.
+Retrieves a specific merchant.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/GET`
+          |          |
+--------- | ---------|
+user_id <sub style="color: lightblue;">optional</sub> |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code>
+Returns the user object for a valid identifier.
 
- <h3>Request Body Example</h3>
+#################################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2<br>
- }</code>
-
-## Update a merchant
+## Update a Merchant
 
 ```shell
-curl -X GET --header 'Accept: application/json'
+curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/UPDATE'
+     'http://www.example.com/merchants/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -383,72 +360,32 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 
-This endpoint helps you to update the merchant after onboarding.
+Updates the specified merchant by setting the values of the parameters passed. Any parameters not provided will be left unchanged.
 
-### HTTP Request
+### Parameters
 
-`PUT http://example.com/UPDATE`
+          |          |
+--------- | ---------|
+user_id <sub style="color: red;">required</sub> |            |
+first_name <sub style="color: red;">required</sub> |             |
+last_name <sub style="color: red;">required</sub>  |                |
+email <sub style="color: red;">required</sub> |          |
+phone_number <sub style="color: red;">required</sub> |              |
+picture <sub style="color: lightblue;">optional</sub> |              |
+id_card <sub style="color: lightblue;">optional</sub> |         |
+billing_info <sub style="color: lightblue;">optional</sub> |            |
+documents <sub style="color: lightblue;">optional</sub> |  |
+business_individual <sub style="color: lightblue;">optional</sub> |     |
+type_of_business <sub style="color: lightblue;">optional</sub> |     |
+payment_methods <sub style="color: lightblue;">optional</sub> |     |
+circles <sub style="color: lightblue;">optional</sub> |     |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;first_name (string),<br>
-   &nbsp;last_name (string),<br>
-   &nbsp;email (string),<br>
-   &nbsp;phone_number (string),<br>
-   &nbsp;picture (string, optional),<br>
-   &nbsp;id_card (string, optional),<br>
-   &nbsp;billing_info (string, optional),<br>
-   &nbsp;documents (string, optional),<br>
-   &nbsp;business_individual (string, optional),<br>
-   &nbsp;type_of_business (string, optional),<br>
-   &nbsp;payment_methods (array),<br>
-   &nbsp;circles (array)<br>
- }</code>
+Returns the user object if the update succeeded. Returns an error if update parameters are invalid
 
- <h3>Request Body Example</h3>
 
- <code>{<br>
-   &nbsp;"user_id": 1,<br>
-   &nbsp;"first_name": "Ahmed",<br>
-   &nbsp;"last_name": "Khaled",<br>
-   &nbsp;"username": "ahmed_khaled",<br>
-   &nbsp;"password": "12345",<br>
-   &nbsp;"email": "ahmedkahled@gmail.com",<br>
-   &nbsp;"phone_number": "923847",<br>
-   &nbsp;"picture": null,<br>
-   &nbsp;"id_card": null,<br>
-   &nbsp;"billing_info": null,<br>
-   &nbsp;"documents": null,<br>
-   &nbsp;"business_individual": null,<br>
-   &nbsp;"type_of_business": null,<br>
-   &nbsp;"payment_methods": 
-   [
-   &nbsp;{<br>
-   &nbsp;"gateway": "string",<br>
-   &nbsp;"id": "string",<br>
-   &nbsp;"name": "string",<br>
-   &nbsp;"rate": 0,<br>
-   &nbsp;"type": "string"<br>
-    }
-   ],<br>
-  "circles":
-  [
-    &nbsp;{<br>
-      "customer_id": [
-        0
-    &nbsp;],<br>
-    &nbsp;"id": "string",<br>
-    &nbsp;"merchant": "string",<br>
-    &nbsp;"name": "string",<br>
-    &nbsp;"payment_link_id": [
-        0
-      ]
-    }
-  ]<br>
- }</code>
-
+#################################################################################
 
 ## List all merchants
 
@@ -456,7 +393,7 @@ This endpoint helps you to update the merchant after onboarding.
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/LIST'
+     'http://www.example.com/merchants/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -500,16 +437,17 @@ curl -X GET --header 'Accept: application/json'
 ]
 ```
 
-This endpoint retrieves all merchants.
-
-### HTTP Request
-
-`GET http://example.com/LIST`
+Retrieves all merchants.
 
 ### Parameters
 
 No parameters.
 
+### Returns
+
+Returns an array. Each entry in the array is a separate user object.This request should never return an error.
+
+########################################################################################
 
 ## List all documents
 
@@ -517,7 +455,8 @@ No parameters.
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/LIST_DOCUMENTS'
+     -d user_id=1
+     'http://www.example.com/merchants/list_documents'
 ```
 
 > The above command returns JSON structured like this:
@@ -539,24 +478,19 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint retrieves all merchants' documents.
+Retrieves all merchants' documents.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/LIST_DOCUMENTS`
+          |          |
+--------- | ---------|
+user_id <sub style="color: lightblue;">optional</sub> |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code>
+Returns a document list.
 
- <h3>Request Body Example</h3>
-
- <code>{<br>
-   &nbsp;"user_id": 2<br>
- }</code>
-
+####################################################################################
 
 ## Upload documents
 
@@ -564,7 +498,10 @@ This endpoint retrieves all merchants' documents.
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/UPLOAD_DOCUMENTS'
+     -d "document_list[id]"="124234" \
+     -d "document_list[name]"="national id" \
+     -d "document_list[size]"=7969 \
+     'http://www.example.com/merchants/upload_documents?user_id=2'
 ```
 
 > The above command returns JSON structured like this:
@@ -577,40 +514,35 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint retrieves upload merchants' documents.
+To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/UPLOAD_DOCUMENTS`
+          |          |
+--------- | ---------|
+user_id  |            |
+document_list  |            |
+document_list.id  |            |
+document_list.name  |            |
+document_list.size  |            |
+document_list.upload_state  |            |
+document_list.last_update  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;document_list (object)<br>
- }</code>
+Returns success message if document uploaded.
 
- <h3>Request Body Example</h3>
+###########################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"document_list": {<br>
-   &nbsp;"id": "124234",<br>
-	 &nbsp;"name": "national id",<br>
-   &nbsp;"size": 7969,<br>
-   &nbsp;"upload_state": "success",<br>
-   &nbsp;"last_update": 23-3-2022<br>
-   }<br>
- }</code>
-
-
-## Enable Gateway
+## Enable gateway
 
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/ENABLE_GATEWAY'
+     -d user_id=2
+     -d gateway_id="4"
+     'http://www.example.com/merchants/enable_gateway'
 ```
 
 > The above command returns JSON structured like this:
@@ -625,32 +557,26 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint enable specific gateway.
 
-### HTTP Request
+### Parameters
 
-`PUT http://example.com/ENABLE_GATEWAY`
+          |          |
+--------- | ---------|
+user_id  |            |
+gateway_id  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code>
+Returns success message if gateway enabled.
 
- <h3>Request Body Example</h3>
+####################################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"gateway_id": "4"<br>
- }</code>
-
-
-## Disable Gateway
+## Disable gateway
 
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/DISABLE_GATEWAY'
+     'http://www.example.com/merchants/disable_gateway'
 ```
 
 > The above command returns JSON structured like this:
@@ -677,23 +603,15 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint disable specific gateway and it's related payment methods.
 
-### HTTP Request
+### Parameters
 
-`PUT http://example.com/DISABLE_GATEWAY`
+No parameters.
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code>
+Returns success message if gateway disabled.
 
- <h3>Request Body Example</h3>
-
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"gateway_id": "4"<br>
- }</code>
+####################################################################################
 
 ## Enable payment method
 
@@ -701,7 +619,9 @@ This endpoint disable specific gateway and it's related payment methods.
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/ENABLE_PAYMENT_METHOD'
+     -d user_id=2
+     -d gateway_id="4"
+     'http://www.example.com/merchants/enable_payment_method'
 ```
 
 > The above command returns JSON structured like this:
@@ -716,23 +636,18 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint enable specific payment method.
 
-### HTTP Request
+### Parameters
 
-`PUT http://example.com/ENABLE_PAYMENT_METHOD`
+          |          |
+--------- | ---------|
+user_id  |            |
+gateway_id  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code>
+Returns success message if payment method enabled.
 
- <h3>Request Body Example</h3>
-
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"gateway_id": "4"<br>
- }</code>
+#######################################################################################
 
 ## Disable payment method
 
@@ -740,7 +655,7 @@ This endpoint enable specific payment method.
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/DISABLE_PAYMENT_METHOD'
+     'http://www.example.com/merchants/disable_payment_method'
 ```
 
 > The above command returns JSON structured like this:
@@ -755,32 +670,26 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint disable specific payment method.
 
-### HTTP Request
+### Parameters
 
-`PUT http://example.com/DISABLE_PAYMENT_METHOD`
+          |          |
+--------- | ---------|
+user_id  |            |
+gateway_id  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;gateway_id (string)<br>
- }</code>
+Returns success message if payment method disabled.
 
- <h3>Request Body Example</h3>
+#######################################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"gateway_id": "4"<br>
- }</code>
-
-
-## List Payment Methods
+## List payment methods
 
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/LIST_PAYMENT_METHODS'
+     'http://www.example.com/merchants/list_payment_methods'
 ```
 
 > The above command returns JSON structured like this:
@@ -800,32 +709,29 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint list payment methods.
+This endpoint list payment methods of the merchant.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/LIST_PAYMENT_METHODS`
+          |          |
+--------- | ---------|
+user_id  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer)<br>
- }</code>
+Returns a payment channel list.
 
- <h3>Request Body Example</h3>
+########################################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2<br>
- }</code>
-
-
-## SET ALERT
+## Set Alert
 
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/SET_ALERT'
+     -d user_id=2
+     -d note=""
+     'http://www.example.com/merchants/set_alert'
 ```
 
 > The above command returns JSON structured like this:
@@ -838,20 +744,26 @@ curl -X POST --header 'Content-Type: application/json'
 
 This endpoint flag the user.
 
-### HTTP Request
+### Parameters
 
-`POST http://example.com/SET_ALERT`
+          |          |
+--------- | ---------|
+user_id  |            |
+note  |            |
 
-### Request Body Model
+### Returns
 
- <code>{<br>
-   &nbsp;user_id (integer),<br>
-   &nbsp;note (string)<br>
- }</code>
+Returns a message to inform you if the user flagged or not.
 
- <h3>Request Body Example</h3>
+####################################################################################
 
- <code>{<br>
-   &nbsp;"user_id": 2,<br>
-   &nbsp;"note": "Policy violation"<br>
- }</code>
+
+
+
+
+
+
+
+
+
+
