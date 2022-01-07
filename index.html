@@ -475,6 +475,23 @@
               </ul>
           </li>
           <li>
+            <a href="#circle" class="toc-h1 toc-link" data-title="Circle">Circle</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-circle" class="toc-h2 toc-link" data-title="Create a circle">Create a circle</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-circle" class="toc-h2 toc-link" data-title="Retrieve a circle">Retrieve a circle</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-circle" class="toc-h2 toc-link" data-title="Update a circle">Update a circle</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-circles" class="toc-h2 toc-link" data-title="List all circles">List all circles</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2363,6 +2380,126 @@ at least one attribute to be provided.
 <aside class="notice">
 at least one attribute to be provided. 
 </aside>
+<h1 id='circle'>Circle</h1>
+<p>Circle Pay can be used to send and request money domestically and abroad using either a contact’s phone number or email without incurring charges for the transfer. </p>
+<h2 id='create-a-circle'>Create a circle</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">merchant_id</span><span class="o">=</span>3
+     <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"circle"</span>
+     <span class="s1">'http://www.example.com/circle/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Creates a circle object.</p>
+<h3 id='parameters-39'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchant_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>name <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-39'>Returns</h3>
+<p>Returns cricle object that has been created if the call succeeded. Otherwise, this call returns an error.</p>
+<h2 id='retrieve-a-circle'>Retrieve a circle</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/circle/get/1'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve a specific circle.</p>
+<h3 id='parameters-40'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-40'>Returns</h3>
+<p>Returns cricle object if the id provided is valid.</p>
+<h2 id='update-a-circle'>Update a circle</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">circle_id</span><span class="o">=</span>3
+     <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"circle"</span>
+     <span class="s1">'http://www.example.com/circle/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates a circle object.</p>
+<h3 id='parameters-41'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>circle_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>name <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-41'>Returns</h3>
+<p>Returns cricle object that has been updated.</p>
+<h2 id='list-all-circles'>List all circles</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="s1">'http://www.example.com/circle/list/2'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>List all circles.</p>
+<h3 id='parameters-42'>Parameters</h3>
+<p>No parameters.</p>
+<h3 id='returns-42'>Returns</h3>
+<p>Returns circle object list. Each entry in the list is a separate circle object. If no more circles are available, the resulting list will be empty. This request should never return an error.</p>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
