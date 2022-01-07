@@ -1369,6 +1369,8 @@ Returns the status of refund object, for example: "approved", "pending" or "reje
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
+     -d value=1
+     -d name="ahmed"
      'http://www.example.com/coupon/create'
 ```
 
@@ -1447,6 +1449,9 @@ Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
+     -d value=1
+     -d name="ahmed"
+     -d status="1"
      'http://www.example.com/coupon/update'
 ```
 
@@ -1535,13 +1540,334 @@ Returns list of coupons objects. Each entry in the list is a separate coupon obj
 
 ##############################################################################
 
+# Form
+
+## Create a form
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d payment_link_id=1
+     -d title="title"
+     'http://www.example.com/form/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"payment_link_id": 1,
+	"title": "title",
+	"questions": [
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		},
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		}
+	],
+	"status": "pending"
+}
+```
+This endpoint helps you to create form.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: red;">required</sub> |            |
+title <sub style="color: red;">required</sub> |            |
+question_list <sub style="color: red;">required</sub> |            |
+status <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns form object which has the questions array. Status is "active" by default.
+
+##################################################################################
+
+## Retrieve a form
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d form_id=3
+     'http://www.example.com/form/get'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"payment_link_id": 1,
+	"title": "title",
+	"questions": [
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		},
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		}
+	],
+	"status": "active"
+}
+```
+Retrieves a form object.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+form_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns a form object if founded, else an error will be thrown.
+
+<aside class="notice">
+At least one attribute to be provided	
+</aside>
+
+##################################################################################
+
+## Update a form
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d form_id=1
+     -d title="title"
+     'http://www.example.com/form/update'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"payment_link_id": 1,
+	"title": "title",
+	"questions": [
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		},
+		{
+			"question": "question?",
+			"questionType": "type",
+			"editable": true,
+			"mandatory": true,
+			"answer": "answer",
+			"options": [
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				},
+				{
+					"name": "question?",
+					"type": "type",
+					"editable": true
+				}
+			]
+		}
+	],
+	"status": "active"
+}
+```
+Updates details in a form object.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+form_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_url <sub style="color: lightblue;">optional</sub> |            |
+title <sub style="color: lightblue;">optional</sub> |            |
+questions <sub style="color: lightblue;">optional</sub> |            |
+status <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns The newly updated form object if the call succeeded. Otherwise, this call returns an error.
+
+<aside class="notice">
+At least one attribute to be provided for the payment link. 
+</aside>
+
+<aside class="notice">
+Questions list can't be updated after receiving responses
+</aside>
+
+#################################################################################
+
+## List form responses
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d payment_link_id=3
+     'http://www.example.com/form/list_responses'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+   "id": 1,
+   "customer": null,
+   "form": null
+  },
+  {
+   "id": 1,
+   "customer": null,
+   "form": null
+  }
+]
+```
+List all form responses.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_url <sub style="color: lightblue;">optional</sub> |            |
+form_id <sub style="color: lightblue;">optional</sub> |            |
 
 
+### Returns
 
+Returns response object list if the call succeeded. Otherwise, this call returns an error.
 
+<aside class="notice">
+at least one attribute to be provided. 
+</aside>
 
+####################################################################################
 
+## Retrieve a specific response
 
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d payment_link_id=3
+     -d customer_id=1
+     'http://www.example.com/form/get_response'
+```
 
+> The above command returns JSON structured like this:
 
+```json
+  {
+   "id": 1,
+   "customer": null,
+   "form": null
+  }
+```
+Retrieves a specific form responses.
 
+### Parameters
+
+          |          |
+--------- | ---------|
+payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_url <sub style="color: lightblue;">optional</sub> |            |
+form_id <sub style="color: lightblue;">optional</sub> |            |
+customer_id <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns one response object if the call succeeded. Otherwise, this call returns an error.
+
+<aside class="notice">
+at least one attribute to be provided. 
+</aside>
+
+####################################################################################
