@@ -2018,6 +2018,8 @@ Returns circle object list. Each entry in the list is a separate circle object. 
 
 # Settlements
 
+Means that payments or transactions finally settle and clear for customer use.
+
 ## Retrieve a settlement
 
 ```shell
@@ -2133,3 +2135,152 @@ No parameters.
 Returns the status of the settlement object.
 
 ####################################################################################
+
+# Invoice
+
+An invoice is an itemized list that records the products or services you provided to your customers, the total amount due, and a method for them to pay you for those items or services. Invoices can be paid in one payment or in installments.
+
+## Create an invoice
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d merchant=1
+     -d "item[name]"="book"
+     -d "item[description]"="rich dad poor dad"
+     -d "item[price]"=55
+     'http://www.example.com/invoice/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "number": 1,
+ "merchant": 1,
+ "customer": 1,
+ "status": "pending",
+ "due_date": "2022-10-12"
+}
+```
+This endpoint creates an invoice for a given customer. The invoice created will be in "pending" status.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+merchant <sub style="color: red;">required</sub> |            |
+item <sub style="color: red;">required</sub> |            |
+item.name |            |
+item.description |            |
+item.price |            |
+customer <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.
+
+####################################################################################
+
+## Retrieve an invoice
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/invoice/get/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "number": 1,
+ "merchant": 1,
+ "customer": 1,
+ "status": "pending",
+ "due_date": "2022-10-12"
+}
+```
+Retrieves the invoice with the given id.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns an invoice object if a valid invoice ID was provided. Returns an error otherwise.
+
+####################################################################################
+
+## Deactive an invoice
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/invoice/deactive/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "number": 1,
+ "merchant": 1,
+ "customer": 1,
+ "status": "Void",
+ "due_date": "2022-10-12"
+}
+```
+Retrieves the deactivated invoice with the given id.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns the deactivated invoice object if a valid invoice ID was provided. Returns an error otherwise.
+
+####################################################################################
+
+## Settle an invoice
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/invoice/settle_invoice/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "number": 1,
+ "merchant": 1,
+ "customer": 1,
+ "status": "Paid",
+ "due_date": "2022-10-12"
+}
+```
+Retrieves the settled invoice with the given id.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.
+
+####################################################################################
+
+
+
+
+
+
