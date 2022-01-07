@@ -636,7 +636,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <h2 id='list-a-payment-methods'>List a Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/payment_methods/list_paymentmethod/1'</span>
+     <span class="s1">'http://www.example.com/payment_methods/list_paymentmethod/{merchantId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1267,7 +1267,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <h1 id='customers'>Customers</h1><h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/customers/get/1'</span>
+     <span class="s1">'http://www.example.com/customers/get/{customerId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1563,7 +1563,7 @@ Select the fields you want to retrieve.
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/payment/get/1'</span>
+     <span class="s1">'http://www.example.com/payment/get/{paymentId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1856,7 +1856,7 @@ At least one input is required.
 <h2 id='get-refund-status'>Get refund status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/refund/get_status/2'</span>
+     <span class="s1">'http://www.example.com/refund/get_status/{refundId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1931,7 +1931,7 @@ At least one input is required.
 <h2 id='retrieve-a-coupon'>Retrieve a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/coupon/get/1'</span>
+     <span class="s1">'http://www.example.com/coupon/get/{couponId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2020,7 +2020,7 @@ At least one input is required.
 <h2 id='list-all-coupons'>List all coupons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/coupon/list/2'</span>
+     <span class="s1">'http://www.example.com/coupon/list/{paymentLinkId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2452,7 +2452,7 @@ at least one attribute to be provided.
 <h2 id='retrieve-a-circle'>Retrieve a circle</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/circle/get/1'</span>
+     <span class="s1">'http://www.example.com/circle/get/{circleId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2508,7 +2508,7 @@ at least one attribute to be provided.
 <h2 id='list-all-circles'>List all circles</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/circle/list/2'</span>
+     <span class="s1">'http://www.example.com/circle/list/{merchantId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2627,7 +2627,7 @@ at least one attribute to be provided.
 <h2 id='get-settlement-status'>Get settlement Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/settlements/get_status/3'</span>
+     <span class="s1">'http://www.example.com/settlements/get_status/{settlementId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2701,7 +2701,7 @@ at least one attribute to be provided.
 <h2 id='retrieve-an-invoice'>Retrieve an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/invoice/get/1'</span>
+     <span class="s1">'http://www.example.com/invoice/get/{invoiceId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2722,7 +2722,7 @@ at least one attribute to be provided.
 <h2 id='deactive-an-invoice'>Deactive an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
-     <span class="s1">'http://www.example.com/invoice/deactive/1'</span>
+     <span class="s1">'http://www.example.com/invoice/deactive/{invoiceId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
