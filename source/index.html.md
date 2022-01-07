@@ -145,7 +145,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/payment_methods/list_paymentmethod/1'
+     'http://www.example.com/payment_methods/list_paymentmethod/{merchantId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -765,7 +765,7 @@ Returns a message to inform you if the user flagged or not.
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/customers/get/1'
+     'http://www.example.com/customers/get/{customerId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1049,7 +1049,7 @@ Returns payment link list which is array contains payment link objects. If no pa
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/payment/get/1'
+     'http://www.example.com/payment/get/{paymentId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1339,7 +1339,7 @@ At least one input is required.
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/refund/get_status/2'
+     'http://www.example.com/refund/get_status/{refundId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1412,7 +1412,7 @@ Returns the coupon object. Status of coupon is "active" by default.
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/coupon/get/1'
+     'http://www.example.com/coupon/get/{couponId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1497,7 +1497,7 @@ The newly updated coupon object if the call succeeded. Otherwise, this call retu
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/coupon/list/2'
+     'http://www.example.com/coupon/list/{paymentLinkId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1918,7 +1918,7 @@ Returns cricle object that has been created if the call succeeded. Otherwise, th
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/circle/get/1'
+     'http://www.example.com/circle/get/{circleId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1985,7 +1985,7 @@ Returns cricle object that has been updated.
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/circle/list/2'
+     'http://www.example.com/circle/list/{merchantId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2114,7 +2114,7 @@ Returns a settlement object list. The list has a separate settlement objects. If
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/settlements/get_status/3'
+     'http://www.example.com/settlements/get_status/{settlementId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2189,7 +2189,7 @@ Returns an invoice object that has been created. Returns error if the customer I
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/invoice/get/1'
+     'http://www.example.com/invoice/get/{invoiceId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2221,7 +2221,7 @@ Returns an invoice object if a valid invoice ID was provided. Returns an error o
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'access-token: Bearer'
-     'http://www.example.com/invoice/deactive/1'
+     'http://www.example.com/invoice/deactive/{invoiceId}'
 ```
 
 > The above command returns JSON structured like this:
