@@ -2016,7 +2016,120 @@ Returns circle object list. Each entry in the list is a separate circle object. 
 
 ####################################################################################
 
+# Settlements
 
+## Retrieve a settlement
 
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d merchant_id=3
+     -d settlement_id=5
+     'http://www.example.com/settlements/get'
+```
 
+> The above command returns JSON structured like this:
 
+```json
+{
+	"id": 1,
+	"date_time": "2022-10-22",
+	"value": "1",
+	"currency": "EGP",
+	"invoice_url": "url",
+	"merchant": 1,
+	"status": "pending"
+}
+```
+Retrieve the details of settlement.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+merchant_id <sub style="color: red;">required</sub> |            |
+settlement_id <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns a settlement object. 
+
+####################################################################################
+
+## List all settlements
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d merchant_id=3
+     -d status="pending"
+     'http://www.example.com/settlements/list'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"date_time": "2022-10-22",
+	"value": "1",
+	"currency": "EGP",
+	"invoice_url": "url",
+	"merchant": 1,
+	"status": "pending"
+},
+{
+	"id": 1,
+	"date_time": "2022-10-22",
+	"value": "1",
+	"currency": "EGP",
+	"invoice_url": "url",
+	"merchant": 1,
+	"status": "pending"
+}
+```
+Retrieve all settlements.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+merchant_id <sub style="color: red;">required</sub> |            |
+date_time <sub style="color: lightblue;">optional</sub> |            |
+status <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns a settlement object list. The list has a separate settlement objects. If no more settlements are available, the resulting array will be empty. 
+
+####################################################################################
+
+## Get settlement Status
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/settlements/get_status/3'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"status": "pending"
+}
+```
+Retrieve the status of settlement.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns the status of the settlement object.
+
+####################################################################################
