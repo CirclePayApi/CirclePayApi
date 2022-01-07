@@ -455,6 +455,26 @@
               </ul>
           </li>
           <li>
+            <a href="#form" class="toc-h1 toc-link" data-title="Form">Form</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-form" class="toc-h2 toc-link" data-title="Create a form">Create a form</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-form" class="toc-h2 toc-link" data-title="Retrieve a form">Retrieve a form</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-form" class="toc-h2 toc-link" data-title="Update a form">Update a form</a>
+                  </li>
+                  <li>
+                    <a href="#list-form-responses" class="toc-h2 toc-link" data-title="List form responses">List form responses</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-specific-response" class="toc-h2 toc-link" data-title="Retrieve a specific response">Retrieve a specific response</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1805,6 +1825,8 @@ At least one input is required.
 <h1 id='coupon'>Coupon</h1><h2 id='create-a-coupon'>Create a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>1
+     <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"ahmed"</span>
      <span class="s1">'http://www.example.com/coupon/create'</span>
 </code></pre></div>
 <blockquote>
@@ -1887,6 +1909,9 @@ At least one input is required.
 <h2 id='update-a-coupon'>Update a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>1
+     <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span><span class="s2">"1"</span>
      <span class="s1">'http://www.example.com/coupon/update'</span>
 </code></pre></div>
 <blockquote>
@@ -1982,6 +2007,362 @@ At least one input is required.
 <p>No parameters.</p>
 <h3 id='returns-33'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
+<h1 id='form'>Form</h1><h2 id='create-a-form'>Create a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>1
+     <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"title"</span>
+     <span class="s1">'http://www.example.com/form/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint helps you to create form.</p>
+<h3 id='parameters-34'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>title <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>question_list <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: red;">required</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-34'>Returns</h3>
+<p>Returns form object which has the questions array. Status is &quot;active&quot; by default.</p>
+<h2 id='retrieve-a-form'>Retrieve a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">form_id</span><span class="o">=</span>3
+     <span class="s1">'http://www.example.com/form/get'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a form object.</p>
+<h3 id='parameters-35'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>form_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-35'>Returns</h3>
+<p>Returns a form object if founded, else an error will be thrown.</p>
+
+<aside class="notice">
+At least one attribute to be provided   
+</aside>
+<h2 id='update-a-form'>Update a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">form_id</span><span class="o">=</span>1
+     <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"title"</span>
+     <span class="s1">'http://www.example.com/form/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"questions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"questionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"question?"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"type"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"editable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Updates details in a form object.</p>
+<h3 id='parameters-36'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>form_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>title <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>questions <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>status <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-36'>Returns</h3>
+<p>Returns The newly updated form object if the call succeeded. Otherwise, this call returns an error.</p>
+
+<aside class="notice">
+At least one attribute to be provided for the payment link. 
+</aside>
+
+<aside class="notice">
+Questions list can't be updated after receiving responses
+</aside>
+<h2 id='list-form-responses'>List form responses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>3
+     <span class="s1">'http://www.example.com/form/list_responses'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"form"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"form"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>List all form responses.</p>
+<h3 id='parameters-37'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>form_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-37'>Returns</h3>
+<p>Returns response object list if the call succeeded. Otherwise, this call returns an error.</p>
+
+<aside class="notice">
+at least one attribute to be provided. 
+</aside>
+<h2 id='retrieve-a-specific-response'>Retrieve a specific response</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>3
+     <span class="nt">-d</span> <span class="nv">customer_id</span><span class="o">=</span>1
+     <span class="s1">'http://www.example.com/form/get_response'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"form"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieves a specific form responses.</p>
+<h3 id='parameters-38'>Parameters</h3>
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>form_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+<tr>
+<td>customer_id <sub style="color: lightblue;">optional</sub></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='returns-38'>Returns</h3>
+<p>Returns one response object if the call succeeded. Otherwise, this call returns an error.</p>
+
+<aside class="notice">
+at least one attribute to be provided. 
+</aside>
 <h1 id='errors'>Errors</h1>
 <p>The CirclePay API uses the following error codes:</p>
 
