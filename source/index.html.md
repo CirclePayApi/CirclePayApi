@@ -1871,3 +1871,152 @@ at least one attribute to be provided.
 </aside>
 
 ####################################################################################
+
+# Circle
+
+Circle Pay can be used to send and request money domestically and abroad using either a contact’s phone number or email without incurring charges for the transfer. 
+
+## Create a circle
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d merchant_id=3
+     -d name="circle"
+     'http://www.example.com/circle/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"name": "circle",
+	"merchant": 1,
+	"customer_id": []
+}
+```
+Creates a circle object.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+merchant_id <sub style="color: red;">required</sub> |            |
+name <sub style="color: red;">required</sub> |            |
+
+### Returns
+
+Returns cricle object that has been created if the call succeeded. Otherwise, this call returns an error.
+
+####################################################################################
+
+## Retrieve a circle
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/circle/get/1'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"name": "circle",
+	"merchant": 1,
+	"customer_id": []
+}
+```
+Retrieve a specific circle.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns cricle object if the id provided is valid.
+
+####################################################################################
+
+## Update a circle
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     -d circle_id=3
+     -d name="circle"
+     'http://www.example.com/circle/update'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"name": "circle",
+	"merchant": 1,
+	"customer_id": []
+}
+```
+Updates a circle object.
+
+### Parameters
+
+          |          |
+--------- | ---------|
+circle_id <sub style="color: red;">required</sub> |            |
+name <sub style="color: lightblue;">optional</sub> |            |
+
+### Returns
+
+Returns cricle object that has been updated.
+
+####################################################################################
+
+## List all circles
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'access-token: Bearer'
+     'http://www.example.com/circle/list/2'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+	"id": 1,
+	"name": "circle",
+	"merchant": 1,
+	"customer_id": []
+},
+{
+	"id": 1,
+	"name": "circle",
+	"merchant": 1,
+	"customer_id": []
+}
+```
+List all circles.
+
+### Parameters
+
+No parameters.
+
+### Returns
+
+Returns circle object list. Each entry in the list is a separate circle object. If no more circles are available, the resulting list will be empty. This request should never return an error.
+
+####################################################################################
+
+
+
+
+
