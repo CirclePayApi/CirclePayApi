@@ -102,8 +102,8 @@ Retrieves a specific payment gateway.
 
           |          |
 --------- | ---------|
-gateway_id <sub style="color: lightblue;">optional</sub> | The id of payment gateway. |
-user_id <sub style="color: lightblue;">optional</sub> |  The id of the merchant.|
+gateway_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment gateway object. |
+user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.|
 
 ### Returns
 Return a payment gateway object.
@@ -152,7 +152,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 [
-
 	{
 		"id": 1,
 		"name": "ahmed",
@@ -167,7 +166,6 @@ curl -X GET --header 'Accept: application/json'
 		"gateway": "paymob",
 		"rate": 1
 	}
-
 ]
 ```
 
@@ -212,14 +210,14 @@ Retrieves a specific payment method.
 
           |          |
 --------- | ---------|
-gateway_id <sub style="color: lightblue;">optional</sub> | The id of payment gateway. |
-user_id <sub style="color: lightblue;">optional</sub> |  The id of the merchant.|
+gateway_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment gateway object. |
+user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.|
 
 ### Returns
 
 Returns a payment channel object.
 
-###########################################################################################
+##########################################################################################
 
 # Merchants
 
@@ -266,16 +264,16 @@ This endpoint helps you to create new merchant.
 
           |          |
 --------- | ---------|
-first_name <sub style="color: red;">required</sub> |            |
-last_name <sub style="color: red;">required</sub> |             |
-email <sub style="color: red;">required</sub>  |                |
-phone_number <sub style="color: red;">required</sub> |          |
-picture <sub style="color: lightblue;">optional</sub> |              |
-id_card <sub style="color: lightblue;">optional</sub> |              |
-billing_info <sub style="color: lightblue;">optional</sub> |         |
-documents <sub style="color: lightblue;">optional</sub> |            |
-business_individual <sub style="color: lightblue;">optional</sub> |  |
-type_of_business <sub style="color: lightblue;">optional</sub> |     |
+first_name <sub style="color: red;">required</sub> | The merchant's first name. |
+last_name <sub style="color: red;">required</sub> | The merchant's last name. |
+email <sub style="color: red;">required</sub>  | The merchant's email. |
+phone_number<sub style="color: red;">required</sub>  | The merchant's phone number. |
+picture <sub style="color: lightblue;">optional</sub> | The merchant's picture. |
+id_card <sub style="color: lightblue;">optional</sub> | The merchant's id card. |
+business_individual<sub style="color: lightblue;">optional</sub> | check if the business is individual or corporated. |
+type_of_business<sub style="color: lightblue;">optional</sub> | Type of merchant's business. |
+documents <sub style="color: lightblue;">optional</sub> | The documents concerning a legal matter like: passport or national id. |
+billing_info <sub style="color: lightblue;">optional</sub> | Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
 
 ### Returns
 
@@ -321,7 +319,7 @@ Retrieves a specific merchant.
 
           |          |
 --------- | ---------|
-user_id <sub style="color: lightblue;">optional</sub> |            |
+user_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
 
 ### Returns
 
@@ -366,19 +364,19 @@ Updates the specified merchant by setting the values of the parameters passed. A
 
           |          |
 --------- | ---------|
-user_id <sub style="color: red;">required</sub> |            |
-first_name <sub style="color: red;">required</sub> |             |
-last_name <sub style="color: red;">required</sub>  |                |
-email <sub style="color: red;">required</sub> |          |
-phone_number <sub style="color: red;">required</sub> |              |
-picture <sub style="color: lightblue;">optional</sub> |              |
-id_card <sub style="color: lightblue;">optional</sub> |         |
-billing_info <sub style="color: lightblue;">optional</sub> |            |
-documents <sub style="color: lightblue;">optional</sub> |  |
-business_individual <sub style="color: lightblue;">optional</sub> |     |
-type_of_business <sub style="color: lightblue;">optional</sub> |     |
-payment_methods <sub style="color: lightblue;">optional</sub> |     |
-circles <sub style="color: lightblue;">optional</sub> |     |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+first_name <sub style="color: red;">required</sub> | The merchant's first name. |
+last_name <sub style="color: red;">required</sub> | The merchant's last name. |
+email <sub style="color: red;">required</sub>  | The merchant's email. |
+phone_number<sub style="color: red;">required</sub>  | The merchant's phone number. |
+picture <sub style="color: lightblue;">optional</sub> | The merchant's picture. |
+id_card <sub style="color: lightblue;">optional</sub> | The merchant's id card. |
+business_individual<sub style="color: lightblue;">optional</sub> | check if the business is individual or corporated. |
+type_of_business<sub style="color: lightblue;">optional</sub> | Type of merchant's business. |
+documents <sub style="color: lightblue;">optional</sub> | The documents concerning a legal matter like: passport or national id. |
+billing_info <sub style="color: lightblue;">optional</sub> | Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
+payment_methods<sub style="color: lightblue;">optional</sub> | The payment methods which merchant uses.|
+circles <sub style="color: lightblue;">optional</sub> | The circles which merchant uses (circles used to send and request money domestically and abroad using either a contact's phone number or email without incurring charges for the transfer).|
 
 ### Returns
 
@@ -484,7 +482,7 @@ Retrieves all merchants' documents.
 
           |          |
 --------- | ---------|
-user_id <sub style="color: lightblue;">optional</sub> |            |
+user_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
 
 ### Returns
 
@@ -520,13 +518,13 @@ To upload a file, The request should contain the document you would like to uplo
 
           |          |
 --------- | ---------|
-user_id  |            |
-document_list  |            |
-document_list.id  |            |
-document_list.name  |            |
-document_list.size  |            |
-document_list.upload_state  |            |
-document_list.last_update  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+document_list <sub style="color: red;">required</sub> | It contains the details of the uploaded document. |
+document_list.id <sub style="color: red;">required</sub> | The id of the document. |
+document_list.name <sub style="color: red;">required</sub> | The name of the document for example, national id.|
+document_list.size <sub style="color: red;">required</sub> | The size of the document in MB.|
+document_list.upload_state<sub style="color: red;">required</sub> | The upload state of the document. |
+document_list.last_update<sub style="color: red;">required</sub> | Last update of the document. |
 
 ### Returns
 
@@ -561,8 +559,8 @@ This endpoint enable specific gateway.
 
           |          |
 --------- | ---------|
-user_id  |            |
-gateway_id  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object.           |
+gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -640,8 +638,8 @@ This endpoint enable specific payment method.
 
           |          |
 --------- | ---------|
-user_id  |            |
-gateway_id  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -674,8 +672,8 @@ This endpoint disable specific payment method.
 
           |          |
 --------- | ---------|
-user_id  |            |
-gateway_id  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -705,7 +703,7 @@ curl -X POST --header 'Content-Type: application/json'
     "name": "payment channel-2",
     "id": 3
   }
-]
+ ]
 }
 ```
 
@@ -715,7 +713,7 @@ This endpoint list payment methods of the merchant.
 
           |          |
 --------- | ---------|
-user_id  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
 
 ### Returns
 
@@ -748,8 +746,8 @@ This endpoint flag the user.
 
           |          |
 --------- | ---------|
-user_id  |            |
-note  |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+note <sub style="color: red;">required</sub> | The note shown when the user flagged. |
 
 ### Returns
 
@@ -826,8 +824,8 @@ Retrieves a list of your customers.
 
           |          |
 --------- | ---------|
-user_id  |            |
-circle_id <sub style="color: lightblue;">optional</sub> |            |
+user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
 
 <aside class="notice">
 Select the fields you want to retrieve.
@@ -880,14 +878,14 @@ This endpoint helps you to create payment link.
 
           |          |
 --------- | ---------|
-value <sub style="color: red;">required</sub> |            |
-currency <sub style="color: red;">required</sub> |             |
-description <sub style="color: red;">required</sub>  |                |
-expire_date <sub style="color: red;">required</sub> |          |
-payment_method_id <sub style="color: lightblue;">optional</sub> |              |
-status <sub style="color: lightblue;">optional</sub> |              |
-circle_id <sub style="color: lightblue;">optional</sub> |         |
-fees_list <sub style="color: lightblue;">optional</sub> |            |
+value <sub style="color: red;">required</sub> | The value of payment. |
+currency <sub style="color: red;">required</sub> | Currency type used in payment. |
+description <sub style="color: red;">required</sub>  | Description of transaction. |
+expire_date <sub style="color: red;">required</sub> | Expire date of the payment link. |
+payment_method_id<sub style="color: lightblue;">optional</sub> | List of unique identifier(s) for the payment method object(s). |
+status <sub style="color: lightblue;">optional</sub> | The status of the payment link, to know if the payment link is still valid. |
+circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
+fees_list <sub style="color: lightblue;">optional</sub> | The fixed price charged for a payment. |
 
 ### Returns
 
@@ -932,8 +930,8 @@ Retrieves a specific payment link.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> |         |
-payment_link_url <sub style="color: lightblue;">optional</sub> |         |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
 
 ### Returns
 
@@ -977,14 +975,14 @@ This endpoint helps you to udpate payment link.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> |            |
-payment_link_url <sub style="color: red;">required</sub> |             |
-value <sub style="color: lightblue;">optional</sub> |              |
-description <sub style="color: lightblue;">optional</sub> |              |
-expire_date <sub style="color: lightblue;">optional</sub> |         |
-payment_method_id <sub style="color: lightblue;">optional</sub> |            |
-status <sub style="color: lightblue;">optional</sub> |         |
-fees_list <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: red;">required</sub> | The url of the payment link. |
+value <sub style="color: lightblue;">optional</sub> |The value of payment.|
+description <sub style="color: lightblue;">optional</sub> | Description of transaction. |
+expire_date <sub style="color: lightblue;">optional</sub> | Expire date of the payment link. |
+payment_method_id<sub style="color: lightblue;">optional</sub> | List of unique identifier(s) for the payment method object(s). |
+status <sub style="color: lightblue;">optional</sub> | The status of the payment link, to know if the payment link is still valid. |
+fees_list <sub style="color: lightblue;">optional</sub> | The fixed price charged for a payment. |
 
 ### Returns
 
@@ -1028,7 +1026,7 @@ Retrieves all payment links.
 
           |          |
 --------- | ---------|
-circle_id |         |
+circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
 
 <aside class="notice">
 Select the fields you want to retrieve.
@@ -1131,7 +1129,7 @@ Retrieves all payments.
 
           |          |
 --------- | ---------|
-payment_id |         |
+payment_id <sub style="color: red;">required</sub>| The list of Unique identifier(s) for the payment object(s). |
 
 ### Returns
 
@@ -1175,19 +1173,23 @@ This endpoint helps you to request refund.
 
           |          |
 --------- | ---------|
-refund_id <sub style="color: red;">required</sub> |            |
-value <sub style="color: red;">required</sub> |             |
-currency <sub style="color: red;">required</sub> |              |
-payment_id <sub style="color: red;">required</sub> |              |
-fees_list <sub style="color: red;">required</sub> |         |
-payment_method <sub style="color: red;">required</sub> |            |
-payment_gateway <sub style="color: red;">required</sub> |         |
-customer_id <sub style="color: red;">required</sub> |            |
-invoice_id <sub style="color: red;">required</sub> |            |
+refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object.|
+value <sub style="color: red;">required</sub> |Value of the refund.|
+currency <sub style="color: red;">required</sub> | The currency type used. |
+payment_id <sub style="color: red;">required</sub> |Unique identifier for the payment object.|
+fees_list <sub style="color: red;">required</sub> |The list of fees which are fixed price charged for a payment.|
+payment_method <sub style="color: red;">required</sub> | The payment method that used in payment. |
+payment_gateway <sub style="color: red;">required</sub> | Payment gateway used in payment |
+customer_id <sub style="color: red;">required</sub> | Unique identifier for the user oject. |
+invoice_id <sub style="color: red;">required</sub> | Unique identifier for the invoice object. |
 
 ### Returns
 
 Returns the refund object. Status in refund object will be in pending state.
+
+<aside class="notice">
+Default value of refund is equal to payment value.
+</aside>
 
 ######################################################################################
 
@@ -1222,7 +1224,7 @@ Returns refund object with rejected status.
 
           |          |
 --------- | ---------|
-refund_id <sub style="color: red;">required</sub> |            |
+refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object. |
 
 ### Returns
 
@@ -1261,7 +1263,7 @@ Returns refund object with approved status.
 
           |          |
 --------- | ---------|
-refund_id <sub style="color: red;">required</sub> |            |
+refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object. |
 
 ### Returns
 
@@ -1318,10 +1320,10 @@ List refund objects.
 
           |          |
 --------- | ---------|
-circle_id <sub style="color: lightblue;">optional</sub> |            |
-customer_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_url <sub style="color: lightblue;">optional</sub> |            |
+circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
+customer_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
 
 ### Returns
 
@@ -1383,7 +1385,7 @@ curl -X POST --header 'Accept: application/json'
 	"value": 1,
 	"name": "ahmed",
 	"number_of_uses": 1,
-	"discount_t": ""
+	"discount_t": "%"
 }
 ```
 This endpoint helps you to create coupon.
@@ -1392,17 +1394,21 @@ This endpoint helps you to create coupon.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> |            |
-value <sub style="color: red;">required</sub> |            |
-name <sub style="color: red;">required</sub> |            |
-expire_date <sub style="color: red;">required</sub> |            |
-number_of_users <sub style="color: red;">required</sub> |            |
-status <sub style="color: red;">required</sub> |            |
-times_per_customer <sub style="color: red;">required</sub> |            |
+payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
+value <sub style="color: red;">required</sub> | The value of the payment after discounting. |
+name <sub style="color: red;">required</sub> | The name of the coupon. |
+expire_date <sub style="color: red;">required</sub> | Coupon's expire date.|
+number_of_users <sub style="color: red;">required</sub> | Number of users who can use the coupon. |
+status <sub style="color: red;">required</sub> | The status of the coupon for example, expired. |
+times_per_customer <sub style="color: red;">required</sub> | Times that customer can use the same coupon. |
 
 ### Returns
 
-Returns the coupon object. Status of coupon is "active" by default.
+Returns the coupon object. 
+
+<aside class="notice">
+Status of coupon is "active" by default.
+</aside>
 
 ##############################################################################
 
@@ -1477,13 +1483,13 @@ Updates the metadata of a coupon.
 
           |          |
 --------- | ---------|
-coupon_id <sub style="color: red;">required</sub> |            |
-value <sub style="color: red;">required</sub> |            |
-name <sub style="color: red;">required</sub> |            |
-expire_date <sub style="color: red;">required</sub> |            |
-number_of_users <sub style="color: red;">required</sub> |            |
-status <sub style="color: red;">required</sub> |            |
-times_per_customer <sub style="color: red;">required</sub> |            |
+coupon_id <sub style="color: red;">required</sub> |Unique identifier for the coupon object.|
+value <sub style="color: red;">required</sub> | The value of the payment after discounting. |
+name <sub style="color: red;">required</sub> |The name of the coupon.|
+expire_date <sub style="color: red;">required</sub> |Coupon's expire date.|
+number_of_users <sub style="color: red;">required</sub> | Number of users who can use the coupon. |
+status <sub style="color: red;">required</sub> |The status of the coupon for example, expired.|
+times_per_customer <sub style="color: red;">required</sub> | Times that customer can use the same coupon. |
 
 ### Returns
 
@@ -1608,10 +1614,10 @@ This endpoint helps you to create form.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> |            |
-title <sub style="color: red;">required</sub> |            |
-question_list <sub style="color: red;">required</sub> |            |
-status <sub style="color: red;">required</sub> |            |
+payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
+title <sub style="color: red;">required</sub> |The title of the form.|
+question_list <sub style="color: red;">required</sub> |The list that has questions objects. |
+status <sub style="color: red;">required</sub> | The status of the form for example, "pending".|
 
 ### Returns
 
@@ -1684,8 +1690,8 @@ Retrieves a form object.
 
           |          |
 --------- | ---------|
-form_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_id <sub style="color: lightblue;">optional</sub> |            |
+form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object. |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
 
 ### Returns
 
@@ -1763,12 +1769,12 @@ Updates details in a form object.
 
           |          |
 --------- | ---------|
-form_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_url <sub style="color: lightblue;">optional</sub> |            |
-title <sub style="color: lightblue;">optional</sub> |            |
-questions <sub style="color: lightblue;">optional</sub> |            |
-status <sub style="color: lightblue;">optional</sub> |            |
+form_id <sub style="color: lightblue;">optional</sub> |Unique identifier for the form object. |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link.|
+title <sub style="color: lightblue;">optional</sub> | The title of the form.|
+questions_list <sub style="color: lightblue;">optional</sub> | The list that has questions objects.|
+status <sub style="color: lightblue;">optional</sub> | The status of the form for example, "pending". |
 
 ### Returns
 
@@ -1816,9 +1822,9 @@ List all form responses.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_url <sub style="color: lightblue;">optional</sub> |            |
-form_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
+form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object. |
 
 
 ### Returns
@@ -1857,10 +1863,10 @@ Retrieves a specific form responses.
 
           |          |
 --------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> |            |
-payment_link_url <sub style="color: lightblue;">optional</sub> |            |
-form_id <sub style="color: lightblue;">optional</sub> |            |
-customer_id <sub style="color: lightblue;">optional</sub> |            |
+payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
+form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object.|
+customer_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
 
 ### Returns
 
@@ -1903,8 +1909,8 @@ Creates a circle object.
 
           |          |
 --------- | ---------|
-merchant_id <sub style="color: red;">required</sub> |            |
-name <sub style="color: red;">required</sub> |            |
+merchant_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+name <sub style="color: red;">required</sub> | The name of the circle.|
 
 ### Returns
 
@@ -1970,8 +1976,8 @@ Updates a circle object.
 
           |          |
 --------- | ---------|
-circle_id <sub style="color: red;">required</sub> |            |
-name <sub style="color: lightblue;">optional</sub> |            |
+circle_id <sub style="color: red;">required</sub> |Unique identifier for the circle object.|
+name <sub style="color: lightblue;">optional</sub> |The name of the circle.|
 
 ### Returns
 
@@ -2050,8 +2056,8 @@ Retrieve the details of settlement.
 
           |          |
 --------- | ---------|
-merchant_id <sub style="color: red;">required</sub> |            |
-settlement_id <sub style="color: red;">required</sub> |            |
+merchant_id <sub style="color: red;">required</sub> |Unique identifier for the user object. |
+settlement_id <sub style="color: red;">required</sub> |Unique identifier for the settlement object.|
 
 ### Returns
 
@@ -2098,9 +2104,9 @@ Retrieve all settlements.
 
           |          |
 --------- | ---------|
-merchant_id <sub style="color: red;">required</sub> |            |
-date_time <sub style="color: lightblue;">optional</sub> |            |
-status <sub style="color: lightblue;">optional</sub> |            |
+merchant_id <sub style="color: red;">required</sub> |Unique identifier for the user object.|
+date_time <sub style="color: lightblue;">optional</sub> |The date time when the settlement happened. |
+status <sub style="color: lightblue;">optional</sub> |The status of the settlement for example, "pending".|
 
 ### Returns
 
@@ -2170,12 +2176,12 @@ This endpoint creates an invoice for a given customer. The invoice created will 
 
           |          |
 --------- | ---------|
-merchant <sub style="color: red;">required</sub> |            |
-item <sub style="color: red;">required</sub> |            |
-item.name |            |
-item.description |            |
-item.price |            |
-customer <sub style="color: red;">required</sub> |            |
+merchant <sub style="color: red;">required</sub> | The details of the merchant.|
+item <sub style="color: red;">required</sub> |The item used in the invoice.|
+item.name <sub style="color: red;">required</sub> | The item name.|
+item.description <sub style="color: red;">required</sub> | The description of item. |
+item.price <sub style="color: red;">required</sub> |Item's price. |
+customer <sub style="color: red;">required</sub> |The details of the customer. |
 
 ### Returns
 
@@ -2231,11 +2237,11 @@ curl -X GET --header 'Accept: application/json'
  "number": 1,
  "merchant": 1,
  "customer": 1,
- "status": "Void",
+ "status": "deactivated",
  "due_date": "2022-10-12"
 }
 ```
-Retrieves the deactivated invoice with the given id.
+Deactivate the invoice with the given id.
 
 ### Parameters
 
@@ -2267,7 +2273,7 @@ curl -X PUT --header 'Accept: application/json'
  "due_date": "2022-10-12"
 }
 ```
-Retrieves the settled invoice with the given id.
+Settle the invoice with the given id.
 
 ### Parameters
 
@@ -2278,9 +2284,3 @@ No parameters.
 Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.
 
 ####################################################################################
-
-
-
-
-
-
