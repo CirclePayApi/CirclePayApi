@@ -599,11 +599,11 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </thead><tbody>
 <tr>
 <td>gateway_id <sub style="color: lightblue;">optional</sub></td>
-<td>The id of payment gateway.</td>
+<td>Unique identifier for the payment gateway object.</td>
 </tr>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
-<td>The id of the merchant.</td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-2'>Returns</h3>
@@ -642,7 +642,6 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-
     </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
@@ -657,7 +656,6 @@ Each of these payment gateways are supporting a number of payment methods. So, a
         </span><span class="nl">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paymob"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
-
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment methods of the merchant.</p>
@@ -693,11 +691,11 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </thead><tbody>
 <tr>
 <td>gateway_id <sub style="color: lightblue;">optional</sub></td>
-<td>The id of payment gateway.</td>
+<td>Unique identifier for the payment gateway object.</td>
 </tr>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
-<td>The id of the merchant.</td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-4'>Returns</h3>
@@ -744,43 +742,43 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </thead><tbody>
 <tr>
 <td>first_name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s first name.</td>
 </tr>
 <tr>
 <td>last_name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s last name.</td>
 </tr>
 <tr>
 <td>email <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s email.</td>
 </tr>
 <tr>
-<td>phone_number <sub style="color: red;">required</sub></td>
-<td></td>
+<td>phone_number<sub style="color: red;">required</sub></td>
+<td>The merchant&#39;s phone number.</td>
 </tr>
 <tr>
 <td>picture <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The merchant&#39;s picture.</td>
 </tr>
 <tr>
 <td>id_card <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The merchant&#39;s id card.</td>
 </tr>
 <tr>
-<td>billing_info <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>business_individual<sub style="color: lightblue;">optional</sub></td>
+<td>check if the business is individual or corporated.</td>
+</tr>
+<tr>
+<td>type_of_business<sub style="color: lightblue;">optional</sub></td>
+<td>Type of merchant&#39;s business.</td>
 </tr>
 <tr>
 <td>documents <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The documents concerning a legal matter like: passport or national id.</td>
 </tr>
 <tr>
-<td>business_individual <sub style="color: lightblue;">optional</sub></td>
-<td></td>
-</tr>
-<tr>
-<td>type_of_business <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>billing_info <sub style="color: lightblue;">optional</sub></td>
+<td>Billing information that enables any person to access the merchant&#39;s account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-5'>Returns</h3>
@@ -822,7 +820,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </thead><tbody>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-6'>Returns</h3>
@@ -863,55 +861,55 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </thead><tbody>
 <tr>
 <td>user_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>first_name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s first name.</td>
 </tr>
 <tr>
 <td>last_name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s last name.</td>
 </tr>
 <tr>
 <td>email <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The merchant&#39;s email.</td>
 </tr>
 <tr>
-<td>phone_number <sub style="color: red;">required</sub></td>
-<td></td>
+<td>phone_number<sub style="color: red;">required</sub></td>
+<td>The merchant&#39;s phone number.</td>
 </tr>
 <tr>
 <td>picture <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The merchant&#39;s picture.</td>
 </tr>
 <tr>
 <td>id_card <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The merchant&#39;s id card.</td>
 </tr>
 <tr>
-<td>billing_info <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>business_individual<sub style="color: lightblue;">optional</sub></td>
+<td>check if the business is individual or corporated.</td>
+</tr>
+<tr>
+<td>type_of_business<sub style="color: lightblue;">optional</sub></td>
+<td>Type of merchant&#39;s business.</td>
 </tr>
 <tr>
 <td>documents <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The documents concerning a legal matter like: passport or national id.</td>
 </tr>
 <tr>
-<td>business_individual <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>billing_info <sub style="color: lightblue;">optional</sub></td>
+<td>Billing information that enables any person to access the merchant&#39;s account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.</td>
 </tr>
 <tr>
-<td>type_of_business <sub style="color: lightblue;">optional</sub></td>
-<td></td>
-</tr>
-<tr>
-<td>payment_methods <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>payment_methods<sub style="color: lightblue;">optional</sub></td>
+<td>The payment methods which merchant uses.</td>
 </tr>
 <tr>
 <td>circles <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The circles which merchant uses (circles used to send and request money domestically and abroad using either a contact&#39;s phone number or email without incurring charges for the transfer).</td>
 </tr>
 </tbody></table>
 <h3 id='returns-7'>Returns</h3>
@@ -1000,7 +998,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </thead><tbody>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-9'>Returns</h3>
@@ -1031,32 +1029,32 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
-<td>document_list</td>
-<td></td>
+<td>document_list <sub style="color: red;">required</sub></td>
+<td>It contains the details of the uploaded document.</td>
 </tr>
 <tr>
-<td>document_list.id</td>
-<td></td>
+<td>document_list.id <sub style="color: red;">required</sub></td>
+<td>The id of the document.</td>
 </tr>
 <tr>
-<td>document_list.name</td>
-<td></td>
+<td>document_list.name <sub style="color: red;">required</sub></td>
+<td>The name of the document for example, national id.</td>
 </tr>
 <tr>
-<td>document_list.size</td>
-<td></td>
+<td>document_list.size <sub style="color: red;">required</sub></td>
+<td>The size of the document in MB.</td>
 </tr>
 <tr>
-<td>document_list.upload_state</td>
-<td></td>
+<td>document_list.upload_state<sub style="color: red;">required</sub></td>
+<td>The upload state of the document.</td>
 </tr>
 <tr>
-<td>document_list.last_update</td>
-<td></td>
+<td>document_list.last_update<sub style="color: red;">required</sub></td>
+<td>Last update of the document.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-10'>Returns</h3>
@@ -1086,12 +1084,12 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
-<td>gateway_id</td>
-<td></td>
+<td>gateway_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-11'>Returns</h3>
@@ -1152,12 +1150,12 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
-<td>gateway_id</td>
-<td></td>
+<td>gateway_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-13'>Returns</h3>
@@ -1185,12 +1183,12 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
-<td>gateway_id</td>
-<td></td>
+<td>gateway_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-14'>Returns</h3>
@@ -1213,7 +1211,7 @@ Each of these payment gateways are supporting a number of payment methods. So, a
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment channel-2"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+ </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list payment methods of the merchant.</p>
@@ -1225,8 +1223,8 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-15'>Returns</h3>
@@ -1254,12 +1252,12 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
-<td>note</td>
-<td></td>
+<td>note <sub style="color: red;">required</sub></td>
+<td>The note shown when the user flagged.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-16'>Returns</h3>
@@ -1317,12 +1315,12 @@ Each of these payment gateways are supporting a number of payment methods. So, a
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
-<td></td>
+<td>user_id <sub style="color: red;">required</sub></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>circle_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the circle object.</td>
 </tr>
 </tbody></table>
 
@@ -1369,35 +1367,35 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>value <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The value of payment.</td>
 </tr>
 <tr>
 <td>currency <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Currency type used in payment.</td>
 </tr>
 <tr>
 <td>description <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Description of transaction.</td>
 </tr>
 <tr>
 <td>expire_date <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Expire date of the payment link.</td>
 </tr>
 <tr>
-<td>payment_method_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>payment_method_id<sub style="color: lightblue;">optional</sub></td>
+<td>List of unique identifier(s) for the payment method object(s).</td>
 </tr>
 <tr>
 <td>status <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The status of the payment link, to know if the payment link is still valid.</td>
 </tr>
 <tr>
 <td>circle_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the circle object.</td>
 </tr>
 <tr>
 <td>fees_list <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The fixed price charged for a payment.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-19'>Returns</h3>
@@ -1438,11 +1436,11 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-20'>Returns</h3>
@@ -1483,35 +1481,35 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 <tr>
 <td>value <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The value of payment.</td>
 </tr>
 <tr>
 <td>description <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Description of transaction.</td>
 </tr>
 <tr>
 <td>expire_date <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Expire date of the payment link.</td>
 </tr>
 <tr>
-<td>payment_method_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>payment_method_id<sub style="color: lightblue;">optional</sub></td>
+<td>List of unique identifier(s) for the payment method object(s).</td>
 </tr>
 <tr>
 <td>status <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The status of the payment link, to know if the payment link is still valid.</td>
 </tr>
 <tr>
 <td>fees_list <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The fixed price charged for a payment.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-21'>Returns</h3>
@@ -1550,8 +1548,8 @@ Select the fields you want to retrieve.
 </tr>
 </thead><tbody>
 <tr>
-<td>circle_id</td>
-<td></td>
+<td>circle_id <sub style="color: lightblue;">optional</sub></td>
+<td>Unique identifier for the circle object.</td>
 </tr>
 </tbody></table>
 
@@ -1634,8 +1632,8 @@ Select the fields you want to retrieve.
 </tr>
 </thead><tbody>
 <tr>
-<td>payment_id</td>
-<td></td>
+<td>payment_id <sub style="color: red;">required</sub></td>
+<td>The list of Unique identifier(s) for the payment object(s).</td>
 </tr>
 </tbody></table>
 <h3 id='returns-24'>Returns</h3>
@@ -1674,43 +1672,47 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>refund_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the refund object.</td>
 </tr>
 <tr>
 <td>value <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Value of the refund.</td>
 </tr>
 <tr>
 <td>currency <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The currency type used.</td>
 </tr>
 <tr>
 <td>payment_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the payment object.</td>
 </tr>
 <tr>
 <td>fees_list <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The list of fees which are fixed price charged for a payment.</td>
 </tr>
 <tr>
 <td>payment_method <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The payment method that used in payment.</td>
 </tr>
 <tr>
 <td>payment_gateway <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Payment gateway used in payment</td>
 </tr>
 <tr>
 <td>customer_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the user oject.</td>
 </tr>
 <tr>
 <td>invoice_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the invoice object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-25'>Returns</h3>
 <p>Returns the refund object. Status in refund object will be in pending state.</p>
+
+<aside class="notice">
+Default value of refund is equal to payment value.
+</aside>
 <h2 id='reject-a-refund'>Reject a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
@@ -1742,7 +1744,7 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>refund_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-26'>Returns</h3>
@@ -1778,7 +1780,7 @@ Select the fields you want to retrieve.
 </thead><tbody>
 <tr>
 <td>refund_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-27'>Returns</h3>
@@ -1832,19 +1834,19 @@ Requires a % value of the full value.
 </thead><tbody>
 <tr>
 <td>circle_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the circle object.</td>
 </tr>
 <tr>
 <td>customer_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-28'>Returns</h3>
@@ -1886,7 +1888,7 @@ At least one input is required.
     </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"number_of_uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"discount_t"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="nl">"discount_t"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create coupon.</p>
@@ -1899,35 +1901,39 @@ At least one input is required.
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>value <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The value of the payment after discounting.</td>
 </tr>
 <tr>
 <td>name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The name of the coupon.</td>
 </tr>
 <tr>
 <td>expire_date <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Coupon&#39;s expire date.</td>
 </tr>
 <tr>
 <td>number_of_users <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Number of users who can use the coupon.</td>
 </tr>
 <tr>
 <td>status <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The status of the coupon for example, expired.</td>
 </tr>
 <tr>
 <td>times_per_customer <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-30'>Returns</h3>
-<p>Returns the coupon object. Status of coupon is &quot;active&quot; by default.</p>
+<p>Returns the coupon object. </p>
+
+<aside class="notice">
+Status of coupon is "active" by default.
+</aside>
 <h2 id='retrieve-a-coupon'>Retrieve a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
@@ -1988,31 +1994,31 @@ At least one input is required.
 </thead><tbody>
 <tr>
 <td>coupon_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the coupon object.</td>
 </tr>
 <tr>
 <td>value <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The value of the payment after discounting.</td>
 </tr>
 <tr>
 <td>name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The name of the coupon.</td>
 </tr>
 <tr>
 <td>expire_date <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Coupon&#39;s expire date.</td>
 </tr>
 <tr>
 <td>number_of_users <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Number of users who can use the coupon.</td>
 </tr>
 <tr>
 <td>status <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The status of the coupon for example, expired.</td>
 </tr>
 <tr>
 <td>times_per_customer <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-32'>Returns</h3>
@@ -2121,19 +2127,19 @@ At least one input is required.
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>title <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The title of the form.</td>
 </tr>
 <tr>
 <td>question_list <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The list that has questions objects.</td>
 </tr>
 <tr>
 <td>status <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-34'>Returns</h3>
@@ -2203,11 +2209,11 @@ At least one input is required.
 </thead><tbody>
 <tr>
 <td>form_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the form object.</td>
 </tr>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-35'>Returns</h3>
@@ -2282,27 +2288,27 @@ At least one attribute to be provided
 </thead><tbody>
 <tr>
 <td>form_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the form object.</td>
 </tr>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 <tr>
 <td>title <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The title of the form.</td>
 </tr>
 <tr>
-<td>questions <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>questions_list <sub style="color: lightblue;">optional</sub></td>
+<td>The list that has questions objects.</td>
 </tr>
 <tr>
 <td>status <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-36'>Returns</h3>
@@ -2347,15 +2353,15 @@ Questions list can't be updated after receiving responses
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 <tr>
 <td>form_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the form object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-37'>Returns</h3>
@@ -2390,19 +2396,19 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>payment_link_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the payment link object.</td>
 </tr>
 <tr>
 <td>payment_link_url <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The url of the payment link.</td>
 </tr>
 <tr>
 <td>form_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the form object.</td>
 </tr>
 <tr>
 <td>customer_id <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-38'>Returns</h3>
@@ -2440,11 +2446,11 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>merchant_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>name <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The name of the circle.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-39'>Returns</h3>
@@ -2496,11 +2502,11 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>circle_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the circle object.</td>
 </tr>
 <tr>
 <td>name <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The name of the circle.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-41'>Returns</h3>
@@ -2563,11 +2569,11 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>merchant_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>settlement_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the settlement object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-43'>Returns</h3>
@@ -2611,15 +2617,15 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>merchant_id <sub style="color: red;">required</sub></td>
-<td></td>
+<td>Unique identifier for the user object.</td>
 </tr>
 <tr>
 <td>date_time <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The date time when the settlement happened.</td>
 </tr>
 <tr>
 <td>status <sub style="color: lightblue;">optional</sub></td>
-<td></td>
+<td>The status of the settlement for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-44'>Returns</h3>
@@ -2673,27 +2679,27 @@ at least one attribute to be provided.
 </thead><tbody>
 <tr>
 <td>merchant <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The details of the merchant.</td>
 </tr>
 <tr>
 <td>item <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The item used in the invoice.</td>
 </tr>
 <tr>
-<td>item.name</td>
-<td></td>
+<td>item.name <sub style="color: red;">required</sub></td>
+<td>The item name.</td>
 </tr>
 <tr>
-<td>item.description</td>
-<td></td>
+<td>item.description <sub style="color: red;">required</sub></td>
+<td>The description of item.</td>
 </tr>
 <tr>
-<td>item.price</td>
-<td></td>
+<td>item.price <sub style="color: red;">required</sub></td>
+<td>Item&#39;s price.</td>
 </tr>
 <tr>
 <td>customer <sub style="color: red;">required</sub></td>
-<td></td>
+<td>The details of the customer.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-46'>Returns</h3>
@@ -2731,11 +2737,11 @@ at least one attribute to be provided.
  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
  </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
- </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Void"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deactivated"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieves the deactivated invoice with the given id.</p>
+<p>Deactivate the invoice with the given id.</p>
 <h3 id='parameters-48'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-48'>Returns</h3>
@@ -2756,7 +2762,7 @@ at least one attribute to be provided.
  </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-10-12"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieves the settled invoice with the given id.</p>
+<p>Settle the invoice with the given id.</p>
 <h3 id='parameters-49'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-49'>Returns</h3>
