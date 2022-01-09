@@ -98,12 +98,10 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific payment gateway.
 
-### Parameters
-
-          |          |
---------- | ---------|
-gateway_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment gateway object. |
-user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.|
+Parameter|Type|Required|Description|
+---------|--------|---------|--------|
+gateway_id |  |<span style="color: lightblue;">optional</span>| Unique identifier for the payment gateway object.
+user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.| |
 
 ### Returns
 Return a payment gateway object.
@@ -119,14 +117,14 @@ MyFatoorh | Fawry | Paymob |
 --------- | ---------|----------|
 Visa|Visa|Visa|
 MasterCard|MasterCard|MasterCard
-meeza|meeza|
-etisalatCash|   |
-orangeCash|   |
-VodavoneCash|   |
-Valu|   |
-SADAD|   |
-mada|   |
-ApplePay |   |
+meeza|meeza|Kiosk Payments
+etisalatCash|3D Secure Card Payment|Cash Collection
+orangeCash|Authorize and Capture Payment|ValU
+VodavoneCash|E-wallet Payment|Mobile Wallets
+ValU|Payment Request using Reference Number|Bank Installments
+SADAD|ValU|Premium Card
+mada|Installment Payment|SOUHOOLA
+ApplePay |   |GET_GO
 Knet|   |
 American express|   |     
 
@@ -201,10 +199,8 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific payment method.
 
-### Parameters
-
-          |          |
---------- | ---------|
+Parameter|Type|Required|Description|
+---------|--------|---------|--------|
 gateway_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment gateway object. |
 user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.|
 
