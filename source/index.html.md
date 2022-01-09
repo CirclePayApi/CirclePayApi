@@ -115,28 +115,23 @@ Return a payment gateway object.
 <span style="color: red">A payment method</span> is a way that customers pay for a product or service. CirclePay gives customers the freedom to choose between payment methods like: cash, credit cards, prepaid cards, debit cards, or mobile payments.
 
 
-CirclePay supports these payment methods:
+MyFatoorh | Fawry | Paymob | 
+--------- | ---------|----------|
+Visa|Visa|Visa|
+MasterCard|MasterCard|MasterCard
+meeza|meeza|
+etisalatCash|   |
+orangeCash|   |
+VodavoneCash|   |
+Valu|   |
+SADAD|   |
+mada|   |
+ApplePay |   |
+Knet|   |
+American express|   |     
 
-<ul>
-  <li>meeza</li>
-  <li>valu</li>
-  <li>VodavoneCash</li>
-  <li>etisalatCash</li>
-  <li>orangeCash</li>
-  <li>PREMIUM CARD</li>
-  <li>Visa</li>
-  <li>MasterCard</li>
-  <li>SADAD</li>
-  <li>mada</li>
-  <li>ApplePay</li>
-  <li>Knet</li>
-  <li>American express</li>
-</ul>
-
-
-<aside class="notice">Paymob, Fawry, MyFatoorah are payment gateways. 
-
-Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
+<aside class="notice">
+<span style="color: red">Paymob, Fawry, MyFatoorah</span> are payment gateways. Each of these payment gateways are supporting a number of payment methods. So, a payment method won't be available unless you enable the corresponding payment gateway.
 </aside>
 
 ## List a Payment Methods
@@ -1875,150 +1870,6 @@ Returns one response object if the call succeeded. Otherwise, this call returns 
 <aside class="notice">
 at least one attribute to be provided. 
 </aside>
-
-####################################################################################
-
-# Circle
-
-Circle Pay can be used to send and request money domestically and abroad using either a contact’s phone number or email without incurring charges for the transfer. 
-
-## Create a circle
-
-```shell
-curl -X POST --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
-     -d merchant_id=3
-     -d name="circle"
-     'http://www.example.com/circle/create'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-	"id": 1,
-	"name": "circle",
-	"merchant": 1,
-	"customer_id": []
-}
-```
-Creates a circle object.
-
-### Parameters
-
-          |          |
---------- | ---------|
-merchant_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-name <sub style="color: red;">required</sub> | The name of the circle.|
-
-### Returns
-
-Returns cricle object that has been created if the call succeeded. Otherwise, this call returns an error.
-
-####################################################################################
-
-## Retrieve a circle
-
-```shell
-curl -X GET --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
-     'http://www.example.com/circle/get/{circleId}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-	"id": 1,
-	"name": "circle",
-	"merchant": 1,
-	"customer_id": []
-}
-```
-Retrieve a specific circle.
-
-### Parameters
-
-No parameters.
-
-### Returns
-
-Returns cricle object if the id provided is valid.
-
-####################################################################################
-
-## Update a circle
-
-```shell
-curl -X PUT --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
-     -d circle_id=3
-     -d name="circle"
-     'http://www.example.com/circle/update'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-	"id": 1,
-	"name": "circle",
-	"merchant": 1,
-	"customer_id": []
-}
-```
-Updates a circle object.
-
-### Parameters
-
-          |          |
---------- | ---------|
-circle_id <sub style="color: red;">required</sub> |Unique identifier for the circle object.|
-name <sub style="color: lightblue;">optional</sub> |The name of the circle.|
-
-### Returns
-
-Returns cricle object that has been updated.
-
-####################################################################################
-
-## List all circles
-
-```shell
-curl -X GET --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
-     'http://www.example.com/circle/list/{merchantId}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-	"id": 1,
-	"name": "circle",
-	"merchant": 1,
-	"customer_id": []
-},
-{
-	"id": 1,
-	"name": "circle",
-	"merchant": 1,
-	"customer_id": []
-}
-```
-List all circles.
-
-### Parameters
-
-No parameters.
-
-### Returns
-
-Returns circle object list. Each entry in the list is a separate circle object. If no more circles are available, the resulting list will be empty. This request should never return an error.
 
 ####################################################################################
 
