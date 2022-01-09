@@ -573,20 +573,26 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific payment gateway.</p>
-<h3 id='parameters-2'>Parameters</h3>
+
 <table><thead>
 <tr>
-<th></th>
-<th></th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>gateway_id <sub style="color: lightblue;">optional</sub></td>
+<td>gateway_id</td>
+<td></td>
+<td><span style="color: lightblue;">optional</span></td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
 <td>Unique identifier for the user object.</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h3 id='returns-2'>Returns</h3>
@@ -614,42 +620,42 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <tr>
 <td>meeza</td>
 <td>meeza</td>
-<td></td>
+<td>Kiosk Payments</td>
 </tr>
 <tr>
 <td>etisalatCash</td>
-<td></td>
-<td></td>
+<td>3D Secure Card Payment</td>
+<td>Cash Collection</td>
 </tr>
 <tr>
 <td>orangeCash</td>
-<td></td>
-<td></td>
+<td>Authorize and Capture Payment</td>
+<td>ValU</td>
 </tr>
 <tr>
 <td>VodavoneCash</td>
-<td></td>
-<td></td>
+<td>E-wallet Payment</td>
+<td>Mobile Wallets</td>
 </tr>
 <tr>
-<td>Valu</td>
-<td></td>
-<td></td>
+<td>ValU</td>
+<td>Payment Request using Reference Number</td>
+<td>Bank Installments</td>
 </tr>
 <tr>
 <td>SADAD</td>
-<td></td>
-<td></td>
+<td>ValU</td>
+<td>Premium Card</td>
 </tr>
 <tr>
 <td>mada</td>
-<td></td>
-<td></td>
+<td>Installment Payment</td>
+<td>SOUHOOLA</td>
 </tr>
 <tr>
 <td>ApplePay</td>
 <td></td>
-<td></td>
+<td>GET_GO</td>
 </tr>
 <tr>
 <td>Knet</td>
@@ -692,7 +698,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment methods of the merchant.</p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='parameters-2'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-3'>Returns</h3>
 <p>Returns a payment channel list.</p>
@@ -715,20 +721,26 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific payment method.</p>
-<h3 id='parameters-4'>Parameters</h3>
+
 <table><thead>
 <tr>
-<th></th>
-<th></th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>gateway_id <sub style="color: lightblue;">optional</sub></td>
 <td>Unique identifier for the payment gateway object.</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>user_id <sub style="color: lightblue;">optional</sub></td>
 <td>Unique identifier for the user object.</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h3 id='returns-4'>Returns</h3>
@@ -766,7 +778,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create new merchant.</p>
-<h3 id='parameters-5'>Parameters</h3>
+<h3 id='parameters-3'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -844,7 +856,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific merchant.</p>
-<h3 id='parameters-6'>Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -885,7 +897,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates the specified merchant by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
-<h3 id='parameters-7'>Parameters</h3>
+<h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -993,7 +1005,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all merchants.</p>
-<h3 id='parameters-8'>Parameters</h3>
+<h3 id='parameters-6'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-8'>Returns</h3>
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
@@ -1022,7 +1034,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all merchants&#39; documents.</p>
-<h3 id='parameters-9'>Parameters</h3>
+<h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1054,7 +1066,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.</p>
-<h3 id='parameters-10'>Parameters</h3>
+<h3 id='parameters-8'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1109,7 +1121,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific gateway.</p>
-<h3 id='parameters-11'>Parameters</h3>
+<h3 id='parameters-9'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1154,7 +1166,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific gateway and it&#39;s related payment methods.</p>
-<h3 id='parameters-12'>Parameters</h3>
+<h3 id='parameters-10'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-12'>Returns</h3>
 <p>Returns success message if gateway disabled.</p>
@@ -1175,7 +1187,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific payment method.</p>
-<h3 id='parameters-13'>Parameters</h3>
+<h3 id='parameters-11'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1208,7 +1220,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific payment method.</p>
-<h3 id='parameters-14'>Parameters</h3>
+<h3 id='parameters-12'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1248,7 +1260,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list payment methods of the merchant.</p>
-<h3 id='parameters-15'>Parameters</h3>
+<h3 id='parameters-13'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1277,7 +1289,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint flag the user.</p>
-<h3 id='parameters-16'>Parameters</h3>
+<h3 id='parameters-14'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1315,7 +1327,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific customer.</p>
-<h3 id='parameters-17'>Parameters</h3>
+<h3 id='parameters-15'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-17'>Returns</h3>
 <p>Returns the Customer object for a valid identifier.</p>
@@ -1340,7 +1352,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
-<h3 id='parameters-18'>Parameters</h3>
+<h3 id='parameters-16'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1391,7 +1403,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create payment link.</p>
-<h3 id='parameters-19'>Parameters</h3>
+<h3 id='parameters-17'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1460,7 +1472,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific payment link.</p>
-<h3 id='parameters-20'>Parameters</h3>
+<h3 id='parameters-18'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1505,7 +1517,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to udpate payment link.</p>
-<h3 id='parameters-21'>Parameters</h3>
+<h3 id='parameters-19'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1573,7 +1585,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment links.</p>
-<h3 id='parameters-22'>Parameters</h3>
+<h3 id='parameters-20'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1614,7 +1626,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the details of an existing payment.</p>
-<h3 id='parameters-23'>Parameters</h3>
+<h3 id='parameters-21'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-23'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
@@ -1657,7 +1669,7 @@ Select the fields you want to retrieve.
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payments.</p>
-<h3 id='parameters-24'>Parameters</h3>
+<h3 id='parameters-22'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1696,7 +1708,7 @@ Select the fields you want to retrieve.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to request refund.</p>
-<h3 id='parameters-25'>Parameters</h3>
+<h3 id='parameters-23'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1768,7 +1780,7 @@ Default value of refund is equal to payment value.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns refund object with rejected status.</p>
-<h3 id='parameters-26'>Parameters</h3>
+<h3 id='parameters-24'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1804,7 +1816,7 @@ Default value of refund is equal to payment value.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns refund object with approved status.</p>
-<h3 id='parameters-27'>Parameters</h3>
+<h3 id='parameters-25'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1858,7 +1870,7 @@ Requires a % value of the full value.
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>List refund objects.</p>
-<h3 id='parameters-28'>Parameters</h3>
+<h3 id='parameters-26'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1901,7 +1913,7 @@ At least one input is required.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the status of refund object.</p>
-<h3 id='parameters-29'>Parameters</h3>
+<h3 id='parameters-27'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-29'>Returns</h3>
 <p>Returns the status of refund object, for example: &quot;approved&quot;, &quot;pending&quot; or &quot;rejected&quot;.</p>
@@ -1925,7 +1937,7 @@ At least one input is required.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create coupon.</p>
-<h3 id='parameters-30'>Parameters</h3>
+<h3 id='parameters-28'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -1989,7 +2001,7 @@ Status of coupon is "active" by default.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific coupon.</p>
-<h3 id='parameters-31'>Parameters</h3>
+<h3 id='parameters-29'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-31'>Returns</h3>
 <p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
@@ -2018,7 +2030,7 @@ Status of coupon is "active" by default.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates the metadata of a coupon.</p>
-<h3 id='parameters-32'>Parameters</h3>
+<h3 id='parameters-30'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2090,7 +2102,7 @@ Status of coupon is "active" by default.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns a list of your coupons.</p>
-<h3 id='parameters-33'>Parameters</h3>
+<h3 id='parameters-31'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-33'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
@@ -2151,7 +2163,7 @@ Status of coupon is "active" by default.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint helps you to create form.</p>
-<h3 id='parameters-34'>Parameters</h3>
+<h3 id='parameters-32'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2233,7 +2245,7 @@ Status of coupon is "active" by default.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a form object.</p>
-<h3 id='parameters-35'>Parameters</h3>
+<h3 id='parameters-33'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2312,7 +2324,7 @@ At least one attribute to be provided
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates details in a form object.</p>
-<h3 id='parameters-36'>Parameters</h3>
+<h3 id='parameters-34'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2377,7 +2389,7 @@ Questions list can't be updated after receiving responses
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>List all form responses.</p>
-<h3 id='parameters-37'>Parameters</h3>
+<h3 id='parameters-35'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2420,7 +2432,7 @@ at least one attribute to be provided.
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific form responses.</p>
-<h3 id='parameters-38'>Parameters</h3>
+<h3 id='parameters-36'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2473,7 +2485,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieve the details of settlement.</p>
-<h3 id='parameters-39'>Parameters</h3>
+<h3 id='parameters-37'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2521,7 +2533,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieve all settlements.</p>
-<h3 id='parameters-40'>Parameters</h3>
+<h3 id='parameters-38'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2556,7 +2568,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieve the status of settlement.</p>
-<h3 id='parameters-41'>Parameters</h3>
+<h3 id='parameters-39'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-41'>Returns</h3>
 <p>Returns the status of the settlement object.</p>
@@ -2583,7 +2595,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint creates an invoice for a given customer. The invoice created will be in &quot;pending&quot; status.</p>
-<h3 id='parameters-42'>Parameters</h3>
+<h3 id='parameters-40'>Parameters</h3>
 <table><thead>
 <tr>
 <th></th>
@@ -2634,7 +2646,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the invoice with the given id.</p>
-<h3 id='parameters-43'>Parameters</h3>
+<h3 id='parameters-41'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-43'>Returns</h3>
 <p>Returns an invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
@@ -2655,7 +2667,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deactivate the invoice with the given id.</p>
-<h3 id='parameters-44'>Parameters</h3>
+<h3 id='parameters-42'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-44'>Returns</h3>
 <p>Returns the deactivated invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
@@ -2676,7 +2688,7 @@ at least one attribute to be provided.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Settle the invoice with the given id.</p>
-<h3 id='parameters-45'>Parameters</h3>
+<h3 id='parameters-43'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-45'>Returns</h3>
 <p>Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
