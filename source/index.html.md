@@ -98,10 +98,10 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific payment gateway.
 
-Parameter|Type|Required|Description|
----------|--------|---------|--------|
-gateway_id |  |<span style="color: lightblue;">optional</span>| Unique identifier for the payment gateway object.
-user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.| |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+gateway_id |  |<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object.
+user_id | |<span style="color: lightblue;">optional</span> | |Unique identifier for the user object.
 
 ### Returns
 Return a payment gateway object.
@@ -199,10 +199,10 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific payment method.
 
-Parameter|Type|Required|Description|
----------|--------|---------|--------|
-gateway_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment gateway object. |
-user_id <sub style="color: lightblue;">optional</sub> |  Unique identifier for the user object.|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+gateway_id ||<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object. |
+user_id ||<span style="color: lightblue;">optional</span>| | Unique identifier for the user object.|
 
 ### Returns
 
@@ -251,20 +251,18 @@ curl -X POST --header 'Accept: application/json'
 
 This endpoint helps you to create new merchant.
 
-### Parameters
-
-          |          |
---------- | ---------|
-first_name <sub style="color: red;">required</sub> | The merchant's first name. |
-last_name <sub style="color: red;">required</sub> | The merchant's last name. |
-email <sub style="color: red;">required</sub>  | The merchant's email. |
-phone_number<sub style="color: red;">required</sub>  | The merchant's phone number. |
-picture <sub style="color: lightblue;">optional</sub> | The merchant's picture. |
-id_card <sub style="color: lightblue;">optional</sub> | The merchant's id card. |
-business_individual<sub style="color: lightblue;">optional</sub> | check if the business is individual or corporated. |
-type_of_business<sub style="color: lightblue;">optional</sub> | Type of merchant's business. |
-documents <sub style="color: lightblue;">optional</sub> | The documents concerning a legal matter like: passport or national id. |
-billing_info <sub style="color: lightblue;">optional</sub> | Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+first_name ||<span style="color: red;">required</span>|| The merchant's first name. |
+last_name ||<span style="color: red;">required</span>|| The merchant's last name. |
+email ||<span style="color: red;">required</span>|| The merchant's email. |
+phone_number||<span style="color: red;">required</span>|| The merchant's phone number. |
+picture ||<span style="color: lightblue;">optional</span>|| The merchant's picture. |
+id_card ||<span style="color: lightblue;">optional</span>|| The merchant's id card. |
+business_individual ||<span style="color: lightblue;">optional</span> || check if the business is individual or corporated. |
+type_of_business ||<span style="color: lightblue;">optional</span> || Type of merchant's business. |
+documents ||<span style="color: lightblue;">optional</span> || The documents concerning a legal matter like: passport or national id. |
+billing_info ||<span style="color: lightblue;">optional</span> || Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
 
 ### Returns
 
@@ -306,11 +304,9 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific merchant.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
 
 ### Returns
 
@@ -351,23 +347,21 @@ curl -X PUT --header 'Accept: application/json'
 
 Updates the specified merchant by setting the values of the parameters passed. Any parameters not provided will be left unchanged.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-first_name <sub style="color: red;">required</sub> | The merchant's first name. |
-last_name <sub style="color: red;">required</sub> | The merchant's last name. |
-email <sub style="color: red;">required</sub>  | The merchant's email. |
-phone_number<sub style="color: red;">required</sub>  | The merchant's phone number. |
-picture <sub style="color: lightblue;">optional</sub> | The merchant's picture. |
-id_card <sub style="color: lightblue;">optional</sub> | The merchant's id card. |
-business_individual<sub style="color: lightblue;">optional</sub> | check if the business is individual or corporated. |
-type_of_business<sub style="color: lightblue;">optional</sub> | Type of merchant's business. |
-documents <sub style="color: lightblue;">optional</sub> | The documents concerning a legal matter like: passport or national id. |
-billing_info <sub style="color: lightblue;">optional</sub> | Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
-payment_methods<sub style="color: lightblue;">optional</sub> | The payment methods which merchant uses.|
-circles <sub style="color: lightblue;">optional</sub> | The circles which merchant uses (circles used to send and request money domestically and abroad using either a contact's phone number or email without incurring charges for the transfer).|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+first_name ||<span style="color: red;">required</span> || The merchant's first name. |
+last_name ||<span style="color: red;">required</span> || The merchant's last name. |
+email ||<span style="color: red;">required</span> || The merchant's email. |
+phone_number ||<span style="color: red;">required</span> || The merchant's phone number. |
+picture ||<span style="color: lightblue;">optional</span> || The merchant's picture. |
+id_card ||<span style="color: lightblue;">optional</span> || The merchant's id card. |
+business_individual ||<span style="color: lightblue;">optional</span> || check if the business is individual or corporated. |
+type_of_business ||<span style="color: lightblue;">optional</span> || Type of merchant's business. |
+documents ||<span style="color: lightblue;">optional</span> || The documents concerning a legal matter like: passport or national id. |
+billing_info ||<span style="color: lightblue;">optional</span> || Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
+payment_methods ||<span style="color: lightblue;">optional</span> || The payment methods which merchant uses.|
+circles ||<span style="color: lightblue;">optional</span> || The circles which merchant uses (circles used to send and request money domestically and abroad using either a contact's phone number or email without incurring charges for the transfer).|
 
 ### Returns
 
@@ -469,11 +463,9 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves all merchants' documents.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
 
 ### Returns
 
@@ -505,17 +497,15 @@ curl -X POST --header 'Content-Type: application/json'
 
 To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-document_list <sub style="color: red;">required</sub> | It contains the details of the uploaded document. |
-document_list.id <sub style="color: red;">required</sub> | The id of the document. |
-document_list.name <sub style="color: red;">required</sub> | The name of the document for example, national id.|
-document_list.size <sub style="color: red;">required</sub> | The size of the document in MB.|
-document_list.upload_state<sub style="color: red;">required</sub> | The upload state of the document. |
-document_list.last_update<sub style="color: red;">required</sub> | Last update of the document. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+document_list ||<span style="color: red;">required</span> || It contains the details of the uploaded document. |
+document_list.id ||<span style="color: red;">required</span> || The id of the document. |
+document_list.name ||<span style="color: red;">required</span> || The name of the document for example, national id.|
+document_list.size ||<span style="color: red;">required</span> || The size of the document in MB.|
+document_list.upload_state ||<span style="color: red;">required</span> || The upload state of the document. |
+document_list.last_update ||<span style="color: red;">required</span> || Last update of the document. |
 
 ### Returns
 
@@ -546,12 +536,10 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint enable specific gateway.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object.           |
-gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -625,12 +613,10 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint enable specific payment method.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -659,12 +645,10 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint disable specific payment method.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-gateway_id <sub style="color: red;">required</sub> | Unique identifier for the payment gateway object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -700,11 +684,9 @@ curl -X POST --header 'Content-Type: application/json'
 
 This endpoint list payment methods of the merchant.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
 
 ### Returns
 
@@ -733,12 +715,10 @@ curl -X POST --header 'Content-Type: application/json'
 
 This endpoint flag the user.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-note <sub style="color: red;">required</sub> | The note shown when the user flagged. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+note ||<span style="color: red;">required</span> || The note shown when the user flagged. |
 
 ### Returns
 
@@ -811,12 +791,10 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves a list of your customers.
 
-### Parameters
-
-          |          |
---------- | ---------|
-user_id <sub style="color: red;">required</sub> | Unique identifier for the user object. |
-circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
 
 <aside class="notice">
 Select the fields you want to retrieve.
@@ -865,18 +843,16 @@ curl -X POST --header 'Accept: application/json'
 
 This endpoint helps you to create payment link.
 
-### Parameters
-
-          |          |
---------- | ---------|
-value <sub style="color: red;">required</sub> | The value of payment. |
-currency <sub style="color: red;">required</sub> | Currency type used in payment. |
-description <sub style="color: red;">required</sub>  | Description of transaction. |
-expire_date <sub style="color: red;">required</sub> | Expire date of the payment link. |
-payment_method_id<sub style="color: lightblue;">optional</sub> | List of unique identifier(s) for the payment method object(s). |
-status <sub style="color: lightblue;">optional</sub> | The status of the payment link, to know if the payment link is still valid. |
-circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
-fees_list <sub style="color: lightblue;">optional</sub> | The fixed price charged for a payment. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+value ||<span style="color: red;">required</span> || The value of payment. |
+currency ||<span style="color: red;">required</span> || Currency type used in payment. |
+description ||<span style="color: red;">required</span> || Description of transaction. |
+expire_date ||<span style="color: red;">required</span> || Expire date of the payment link. |
+payment_method_id ||<span style="color: lightblue;">optional</span> || List of unique identifier(s) for the payment method object(s). |
+status || <span style="color: lightblue;">optional</span> || The status of the payment link, to know if the payment link is still valid. |
+circle_id || <span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
+fees_list || <span style="color: lightblue;">optional</span> || The fixed price charged for a payment. |
 
 ### Returns
 
@@ -917,12 +893,10 @@ curl -X POST --header 'Accept: application/json'
 
 Retrieves a specific payment link.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
 
 ### Returns
 
@@ -962,18 +936,16 @@ curl -X PUT --header 'Accept: application/json'
 ```
 This endpoint helps you to udpate payment link.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: red;">required</sub> | The url of the payment link. |
-value <sub style="color: lightblue;">optional</sub> |The value of payment.|
-description <sub style="color: lightblue;">optional</sub> | Description of transaction. |
-expire_date <sub style="color: lightblue;">optional</sub> | Expire date of the payment link. |
-payment_method_id<sub style="color: lightblue;">optional</sub> | List of unique identifier(s) for the payment method object(s). |
-status <sub style="color: lightblue;">optional</sub> | The status of the payment link, to know if the payment link is still valid. |
-fees_list <sub style="color: lightblue;">optional</sub> | The fixed price charged for a payment. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: red;">required</span> || The url of the payment link. |
+value ||<span style="color: lightblue;">optional</span> ||The value of payment.|
+description ||<span style="color: lightblue;">optional</span> || Description of transaction. |
+expire_date ||<span style="color: lightblue;">optional</span> || Expire date of the payment link. |
+payment_method_id ||<span style="color: lightblue;">optional</span> || List of unique identifier(s) for the payment method object(s). |
+status ||<span style="color: lightblue;">optional</span> || The status of the payment link, to know if the payment link is still valid. |
+fees_list ||<span style="color: lightblue;">optional</span> || The fixed price charged for a payment. |
 
 ### Returns
 
@@ -1013,11 +985,9 @@ curl -X POST --header 'Accept: application/json'
 
 Retrieves all payment links.
 
-### Parameters
-
-          |          |
---------- | ---------|
-circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
 
 <aside class="notice">
 Select the fields you want to retrieve.
@@ -1116,11 +1086,9 @@ curl -X POST --header 'Accept: application/json'
 
 Retrieves all payments.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_id <sub style="color: red;">required</sub>| The list of Unique identifier(s) for the payment object(s). |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_id ||<span style="color: red;">required</span>|| The list of Unique identifier(s) for the payment object(s). |
 
 ### Returns
 
@@ -1160,19 +1128,17 @@ curl -X POST --header 'Accept: application/json'
 ```
 This endpoint helps you to request refund.
 
-### Parameters
-
-          |          |
---------- | ---------|
-refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object.|
-value <sub style="color: red;">required</sub> |Value of the refund.|
-currency <sub style="color: red;">required</sub> | The currency type used. |
-payment_id <sub style="color: red;">required</sub> |Unique identifier for the payment object.|
-fees_list <sub style="color: red;">required</sub> |The list of fees which are fixed price charged for a payment.|
-payment_method <sub style="color: red;">required</sub> | The payment method that used in payment. |
-payment_gateway <sub style="color: red;">required</sub> | Payment gateway used in payment |
-customer_id <sub style="color: red;">required</sub> | Unique identifier for the user oject. |
-invoice_id <sub style="color: red;">required</sub> | Unique identifier for the invoice object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object.|
+value ||<span style="color: red;">required</span> || Value of the refund.|
+currency ||<span style="color: red;">required</span> || The currency type used. |
+payment_id ||<span style="color: red;">required</span> ||Unique identifier for the payment object.|
+fees_list ||<span style="color: red;">required</span> ||The list of fees which are fixed price charged for a payment.|
+payment_method ||<span style="color: red;">required</span> || The payment method that used in payment. |
+payment_gateway ||<span style="color: red;">required</span> || Payment gateway used in payment |
+customer_id ||<span style="color: red;">required</span> || Unique identifier for the user oject. |
+invoice_id ||<span style="color: red;">required</span> || Unique identifier for the invoice object. |
 
 ### Returns
 
@@ -1211,11 +1177,9 @@ curl -X PUT --header 'Accept: application/json'
 ```
 Returns refund object with rejected status.
 
-### Parameters
-
-          |          |
---------- | ---------|
-refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object. |
 
 ### Returns
 
@@ -1250,11 +1214,9 @@ curl -X PUT --header 'Accept: application/json'
 ```
 Returns refund object with approved status.
 
-### Parameters
-
-          |          |
---------- | ---------|
-refund_id <sub style="color: red;">required</sub> | Unique identifier for the refund object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object. |
 
 ### Returns
 
@@ -1307,14 +1269,12 @@ curl -X POST --header 'Accept: application/json'
 ```
 List refund objects.
 
-### Parameters
-
-          |          |
---------- | ---------|
-circle_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the circle object. |
-customer_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
+customer_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
 
 ### Returns
 
@@ -1381,17 +1341,15 @@ curl -X POST --header 'Accept: application/json'
 ```
 This endpoint helps you to create coupon.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
-value <sub style="color: red;">required</sub> | The value of the payment after discounting. |
-name <sub style="color: red;">required</sub> | The name of the coupon. |
-expire_date <sub style="color: red;">required</sub> | Coupon's expire date.|
-number_of_users <sub style="color: red;">required</sub> | Number of users who can use the coupon. |
-status <sub style="color: red;">required</sub> | The status of the coupon for example, expired. |
-times_per_customer <sub style="color: red;">required</sub> | Times that customer can use the same coupon. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
+value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
+name ||<span style="color: red;">required</span> || The name of the coupon. |
+expire_date ||<span style="color: red;">required</span> || Coupon's expire date.|
+number_of_users ||<span style="color: red;">required</span> || Number of users who can use the coupon. |
+status ||<span style="color: red;">required</span> || The status of the coupon for example, expired. |
+times_per_customer ||<span style="color: red;">required</span> || Times that customer can use the same coupon. |
 
 ### Returns
 
@@ -1470,17 +1428,15 @@ curl -X PUT --header 'Accept: application/json'
 ```
 Updates the metadata of a coupon.
 
-### Parameters
-
-          |          |
---------- | ---------|
-coupon_id <sub style="color: red;">required</sub> |Unique identifier for the coupon object.|
-value <sub style="color: red;">required</sub> | The value of the payment after discounting. |
-name <sub style="color: red;">required</sub> |The name of the coupon.|
-expire_date <sub style="color: red;">required</sub> |Coupon's expire date.|
-number_of_users <sub style="color: red;">required</sub> | Number of users who can use the coupon. |
-status <sub style="color: red;">required</sub> |The status of the coupon for example, expired.|
-times_per_customer <sub style="color: red;">required</sub> | Times that customer can use the same coupon. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+coupon_id ||<span style="color: red;">required</span> ||Unique identifier for the coupon object.|
+value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
+name ||<span style="color: red;">required</span> ||The name of the coupon.|
+expire_date ||<span style="color: red;">required</span> ||Coupon's expire date.|
+number_of_users ||<span style="color: red;">required</span> || Number of users who can use the coupon. |
+status ||<span style="color: red;">required</span> ||The status of the coupon for example, expired.|
+times_per_customer ||<span style="color: red;">required</span> || Times that customer can use the same coupon. |
 
 ### Returns
 
@@ -1601,14 +1557,12 @@ curl -X POST --header 'Accept: application/json'
 ```
 This endpoint helps you to create form.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: red;">required</sub> | Unique identifier for the payment link object. |
-title <sub style="color: red;">required</sub> |The title of the form.|
-question_list <sub style="color: red;">required</sub> |The list that has questions objects. |
-status <sub style="color: red;">required</sub> | The status of the form for example, "pending".|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
+title ||<span style="color: red;">required</span> ||The title of the form.|
+question_list ||<span style="color: red;">required</span> ||The list that has questions objects. |
+status ||<span style="color: red;">required</span> || The status of the form for example, "pending".|
 
 ### Returns
 
@@ -1677,12 +1631,10 @@ curl -X POST --header 'Accept: application/json'
 ```
 Retrieves a form object.
 
-### Parameters
-
-          |          |
---------- | ---------|
-form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object. |
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object. |
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
 
 ### Returns
 
@@ -1756,16 +1708,14 @@ curl -X PUT --header 'Accept: application/json'
 ```
 Updates details in a form object.
 
-### Parameters
-
-          |          |
---------- | ---------|
-form_id <sub style="color: lightblue;">optional</sub> |Unique identifier for the form object. |
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link.|
-title <sub style="color: lightblue;">optional</sub> | The title of the form.|
-questions_list <sub style="color: lightblue;">optional</sub> | The list that has questions objects.|
-status <sub style="color: lightblue;">optional</sub> | The status of the form for example, "pending". |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+form_id ||<span style="color: lightblue;">optional</span> ||Unique identifier for the form object. |
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link.|
+title ||<span style="color: lightblue;">optional</span> || The title of the form.|
+questions_list ||<span style="color: lightblue;">optional</span> || The list that has questions objects.|
+status ||<span style="color: lightblue;">optional</span> || The status of the form for example, "pending". |
 
 ### Returns
 
@@ -1809,13 +1759,11 @@ curl -X POST --header 'Accept: application/json'
 ```
 List all form responses.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
-form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
+form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object. |
 
 
 ### Returns
@@ -1850,14 +1798,12 @@ curl -X POST --header 'Accept: application/json'
 ```
 Retrieves a specific form responses.
 
-### Parameters
-
-          |          |
---------- | ---------|
-payment_link_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the payment link object. |
-payment_link_url <sub style="color: lightblue;">optional</sub> | The url of the payment link. |
-form_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the form object.|
-customer_id <sub style="color: lightblue;">optional</sub> | Unique identifier for the user object. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
+form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object.|
+customer_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
 
 ### Returns
 
@@ -1899,12 +1845,10 @@ curl -X POST --header 'Accept: application/json'
 ```
 Retrieve the details of settlement.
 
-### Parameters
-
-          |          |
---------- | ---------|
-merchant_id <sub style="color: red;">required</sub> |Unique identifier for the user object. |
-settlement_id <sub style="color: red;">required</sub> |Unique identifier for the settlement object.|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_id ||<span style="color: red;">required</span> ||Unique identifier for the user object. |
+settlement_id ||<span style="color: red;">required</span> ||Unique identifier for the settlement object.|
 
 ### Returns
 
@@ -1947,13 +1891,11 @@ curl -X POST --header 'Accept: application/json'
 ```
 Retrieve all settlements.
 
-### Parameters
-
-          |          |
---------- | ---------|
-merchant_id <sub style="color: red;">required</sub> |Unique identifier for the user object.|
-date_time <sub style="color: lightblue;">optional</sub> |The date time when the settlement happened. |
-status <sub style="color: lightblue;">optional</sub> |The status of the settlement for example, "pending".|
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_id ||<span style="color: red;">required</span> ||Unique identifier for the user object.|
+date_time ||<span style="color: lightblue;">optional</span> ||The date time when the settlement happened. |
+status ||<span style="color: lightblue;">optional</span> ||The status of the settlement for example, "pending".|
 
 ### Returns
 
@@ -2019,16 +1961,14 @@ curl -X POST --header 'Accept: application/json'
 ```
 This endpoint creates an invoice for a given customer. The invoice created will be in "pending" status.
 
-### Parameters
-
-          |          |
---------- | ---------|
-merchant <sub style="color: red;">required</sub> | The details of the merchant.|
-item <sub style="color: red;">required</sub> |The item used in the invoice.|
-item.name <sub style="color: red;">required</sub> | The item name.|
-item.description <sub style="color: red;">required</sub> | The description of item. |
-item.price <sub style="color: red;">required</sub> |Item's price. |
-customer <sub style="color: red;">required</sub> |The details of the customer. |
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant ||<span style="color: red;">required</span> || The details of the merchant.|
+item ||<span style="color: red;">required</span> ||The item used in the invoice.|
+item.name ||<span style="color: red;">required</span> || The item name.|
+item.description ||<span style="color: red;">required</span> || The description of item. |
+item.price ||<span style="color: red;">required</span> ||Item's price. |
+customer ||<span style="color: red;">required</span> ||The details of the customer. |
 
 ### Returns
 
