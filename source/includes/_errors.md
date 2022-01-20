@@ -21,7 +21,7 @@ Error&nbsp;Code | Error Text | Error Message
 2112   | Password is invalid | The provided password isn't following the password requirements.
 2113   | Password isnot matching | The password entered is not matching the first password field.
 
-## Customers
+## Customer
 
 Error&nbsp;Code | Error Text | Error Message
 --------- | ----------|------------
@@ -42,7 +42,7 @@ Error&nbsp;Code | Error Text | Error Message
 4312   | Cannot update the coupon | Cannot update the coupon as it might be linked to payments.
 4313   | Cannot delete the coupon | Cannot delete the coupon as it might be linked to payments.
 
-## Invoice
+## Invoices
 
 Error&nbsp;Code | Error Text | Error Message
 --------- | ----------|------------
@@ -53,7 +53,7 @@ Error&nbsp;Code | Error Text | Error Message
 5114   | Customer phone number is incorrect | Cannot change the customer phone attached to the invoice.
 
 
-## Invoice
+## Payment gateways
 
 Error&nbsp;Code | Error Text | Error Message
 --------- | ----------|------------
