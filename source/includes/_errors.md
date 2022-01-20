@@ -6,7 +6,7 @@ Error code is a numeric or alphanumeric code that helps you to determine the nat
 
 Error&nbsp;Code | Error Text | Error Message
 --------- | ----------|------------
-1110   | Data missing | {ATTRIBUTE} is missing.
+<span id="1110">1110</span>   | Data missing | {ATTRIBUTE} is missing.
 1111   | Invalid request structure | The object structure sent is invalid. If you follow the documentation and still facing the same issue, please contact the support team.
 1112   | Invalid request data | The {ATTRIBUTE} has invalid value.
 1114   | Field length error | The field {ATTRIBUTE} length must be less than {ATTRIBUTE} and more than {ATTRIBUTE}.
