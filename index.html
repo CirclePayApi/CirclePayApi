@@ -582,6 +582,10 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <p>No parameters.</p>
 <h3 id='returns'>Returns</h3>
 <p>Returns payment gateway list.</p>
+
+<aside class="notice">
+Error code used when you fail to list payment gateways is <a href="#1110">1110</a>
+</aside>
 <h2 id='retrieve-a-payment-gateway'>Retrieve a Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
@@ -3191,7 +3195,7 @@ at least one attribute to be provided.
 </tr>
 </thead><tbody>
 <tr>
-<td>1110</td>
+<td><span id="1110">1110</span></td>
 <td>Data missing</td>
 <td>{ATTRIBUTE} is missing.</td>
 </tr>
