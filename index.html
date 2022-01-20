@@ -507,6 +507,32 @@
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general" class="toc-h2 toc-link" data-title="General">General</a>
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#customers" class="toc-h2 toc-link" data-title="Customers">Customers</a>
+                  </li>
+                  <li>
+                    <a href="#payment-links" class="toc-h2 toc-link" data-title="Payment Links">Payment Links</a>
+                  </li>
+                  <li>
+                    <a href="#invoice" class="toc-h2 toc-link" data-title="Invoice">Invoice</a>
+                  </li>
+                  <li>
+                    <a href="#invoice-2" class="toc-h2 toc-link" data-title="Invoice">Invoice</a>
+                  </li>
+                  <li>
+                    <a href="#merchant" class="toc-h2 toc-link" data-title="Merchant">Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#transactions" class="toc-h2 toc-link" data-title="Transactions">Transactions</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -3155,53 +3181,262 @@ at least one attribute to be provided.
 <h3 id='returns-45'>Returns</h3>
 <p>Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
-<p>The CirclePay API uses the following error codes:</p>
-
+<p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
+<h2 id='general'>General</h2>
 <table><thead>
 <tr>
 <th>Error&nbsp;Code</th>
-<th>Meaning</th>
+<th>Error Text</th>
+<th>Error Message</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>1110</td>
+<td>Data missing</td>
+<td>{ATTRIBUTE} is missing.</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>1111</td>
+<td>Invalid request structure</td>
+<td>The object structure sent is invalid. If you follow the documentation and still facing the same issue, please contact the support team.</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The payment gateway or method requested is hidden for administrators only.</td>
+<td>1112</td>
+<td>Invalid request data</td>
+<td>The {ATTRIBUTE} has invalid value.</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified gateway or payment method could not be found.</td>
+<td>1114</td>
+<td>Field length error</td>
+<td>The field {ATTRIBUTE} length must be less than {ATTRIBUTE} and more than {ATTRIBUTE}.</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a gateway or payment method with an invalid method.</td>
+<td>1116</td>
+<td>Invalid email</td>
+<td>The email format is invalid.</td>
+</tr>
+</tbody></table>
+<h2 id='authentication'>Authentication</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2110</td>
+<td>Merchant key is incorrect</td>
+<td>The merchant key might be incorrect or doesnot exist.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>2111</td>
+<td>Invalid verification code</td>
+<td>The provided verification code is incorrect.</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The gateway or payment method requested has been removed from our servers.</td>
+<td>2112</td>
+<td>Password is invalid</td>
+<td>The provided password isn&#39;t following the password requirements.</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many gateway or payment methods! Slow down!</td>
+<td>2113</td>
+<td>Password isnot matching</td>
+<td>The password entered is not matching the first password field.</td>
+</tr>
+</tbody></table>
+<h2 id='customers'>Customers</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>3110</td>
+<td>Cannot find the customer</td>
+<td>The customer phone number might be incorrect or doesnot exist.</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>3111</td>
+<td>Customer already exist</td>
+<td>Another customer exists with the same phone number.</td>
+</tr>
+</tbody></table>
+<h2 id='payment-links'>Payment Links</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4101</td>
+<td>Cannot create Payment link</td>
+<td>Cannot create a payment link for an unknown reason. Please contact CirclePay support team.</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>4111</td>
+<td>Cannot find the payment link</td>
+<td>The Payment link URL might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td>4112</td>
+<td>Expire date cannot be in the past</td>
+<td>Cannot add a past date for a payment link {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td>4115</td>
+<td>Payment link is expired</td>
+<td>Cannot pay an expired payment link.</td>
+</tr>
+<tr>
+<td>4211</td>
+<td>Cannot find form</td>
+<td>The form id might be incorrect or doesnot exist.</td>
+</tr>
+<tr>
+<td>4212</td>
+<td>Cannot update the form</td>
+<td>Cannot update the form as it might include responses.</td>
+</tr>
+<tr>
+<td>4311</td>
+<td>Cannot find coupon</td>
+<td>The coupon code might be incorrect or doesnot exist.</td>
+</tr>
+<tr>
+<td>4312</td>
+<td>Cannot update the coupon</td>
+<td>Cannot update the coupon as it might be linked to payments.</td>
+</tr>
+<tr>
+<td>4313</td>
+<td>Cannot delete the coupon</td>
+<td>Cannot delete the coupon as it might be linked to payments.</td>
+</tr>
+</tbody></table>
+<h2 id='invoice'>Invoice</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5101</td>
+<td>Cannot create an invoice</td>
+<td>Cannot create an invoice for an unknown reason. Please contact CirlepPay support team.</td>
+</tr>
+<tr>
+<td>5111</td>
+<td>Cannot find the invoice</td>
+<td>The invoice number might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td>5112</td>
+<td>Cannot create the invoice</td>
+<td>Cannot add a past date for an invoice {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td>5113</td>
+<td>Cannot delete the invoice</td>
+<td>Cannot delete the invoice as it might be linked to other fields.</td>
+</tr>
+<tr>
+<td>5114</td>
+<td>Customer phone number is incorrect</td>
+<td>Cannot change the customer phone attached to the invoice.</td>
+</tr>
+</tbody></table>
+<h2 id='invoice-2'>Invoice</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>7110</td>
+<td>Cannot enable the payment gateway</td>
+<td>Cannot enable the payment gate for an unknow reason. Please contact CirclePay support team.</td>
+</tr>
+<tr>
+<td>7111</td>
+<td>Cannot find the payment gateway</td>
+<td>The payment gateway ID might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td>7112</td>
+<td>Cannot enable the payment method</td>
+<td>Cannot enable the payment method for an unknow reason. Please contact CirclePay support team.</td>
+</tr>
+<tr>
+<td>7113</td>
+<td>Cannot find the payment method</td>
+<td>The payment method ID might be incorrect or doesnot exist.</td>
+</tr>
+<tr>
+<td>7114</td>
+<td>Cannot set the payment method fee</td>
+<td>Cannot set the payment method fee. Please contact the support team.</td>
+</tr>
+</tbody></table>
+<h2 id='merchant'>Merchant</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>8110</td>
+<td>Cannot create a merchant</td>
+<td>The merchant phone number is being used by another account.</td>
+</tr>
+<tr>
+<td>8111</td>
+<td>Cannot find the merchant</td>
+<td>The merchant key might be incorrect or doesnot exist.</td>
+</tr>
+<tr>
+<td>8112</td>
+<td>Config file has incorrect structure</td>
+<td>The config JSON file structure is incorrect.</td>
+</tr>
+<tr>
+<td>8116</td>
+<td>Cannot update the merchant phone number</td>
+<td>Cannot update the merchant phone number as it&#39;s being used by another account.</td>
+</tr>
+</tbody></table>
+<h2 id='transactions'>Transactions</h2>
+<table><thead>
+<tr>
+<th>Error&nbsp;Code</th>
+<th>Error Text</th>
+<th>Error Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>9110</td>
+<td>Transaction data request is missing</td>
+<td>The transaction data request is missing {ATTRIBUTE}.</td>
+</tr>
+<tr>
+<td>9111</td>
+<td>Cannot find the transaction</td>
+<td>The transaction ID might be incorrect or doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td>9112</td>
+<td>Refund request rejected</td>
+<td>The payment gateway rejected the refund request for the following reason {ATTRIBUTE}.</td>
 </tr>
 </tbody></table>
 
