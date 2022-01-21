@@ -74,7 +74,7 @@ No parameters.
 Returns payment gateway list.
 
 <aside class="notice">
-Error code used when you fail to list payment gateways is <a href="#1110">1110</a>
+The error code used when you fail to list payment gateways is <a href="#1110">1110</a>
 </aside>
 
 ########################################################################
@@ -109,6 +109,10 @@ user_id | |<span style="color: lightblue;">optional</span> | |Unique identifier 
 
 ### Returns
 Return a payment gateway object.
+
+<aside class="notice">
+The error codes used when you fail to get specific payment gateway are <a href="#1110">1110</a> , <a href="#7111">7111</a>
+</aside>
 
 ##############################################################################
 
@@ -176,6 +180,10 @@ No parameters.
 
 Returns a payment channel list.
 
+<aside class="notice">
+The error codes used when you fail to list payment methods are <a href="#8111">8111</a> , <a href="#7111">7111</a>
+</aside>
+
 #################################################################################
 
 ## Retrieve a Payment Method
@@ -211,6 +219,10 @@ user_id ||<span style="color: lightblue;">optional</span>| | Unique identifier f
 ### Returns
 
 Returns a payment channel object.
+
+<aside class="notice">
+The error codes used when you fail to get a specific payment method are <a href="#8111">8111</a> , <a href="#7113">7113</a>
+</aside>
 
 ##########################################################################################
 
@@ -271,6 +283,10 @@ billing_info ||<span style="color: lightblue;">optional</span> || Billing inform
 ### Returns
 
 Returns the user object if the update succeeded. Returns an error if create parameters are invalid.
+
+<aside class="notice">
+The error codes used when you fail to create a merchant are <a href="#8110">8110</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
+</aside>
 
 ########################################################################################
 
@@ -369,7 +385,11 @@ circles ||<span style="color: lightblue;">optional</span> || The circles which m
 
 ### Returns
 
-Returns the user object if the update succeeded. Returns an error if update parameters are invalid
+Returns the user object if the update succeeded. Returns an error if update parameters are invalid.
+
+<aside class="notice">
+The error codes used when you fail to update a merchant are <a href="#8116">8116</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
+</aside>
 
 
 #################################################################################
@@ -549,6 +569,10 @@ gateway_id ||<span style="color: red;">required</span> || Unique identifier for 
 
 Returns success message if gateway enabled.
 
+<aside class="notice">
+The error codes used when you fail to enable gateway are <a href="#7110">7110</a> , <a href="#7111">7111</a>
+</aside>
+
 ####################################################################################
 
 ## Disable gateway
@@ -626,6 +650,10 @@ gateway_id ||<span style="color: red;">required</span> || Unique identifier for 
 
 Returns success message if payment method enabled.
 
+<aside class="notice">
+The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
+</aside>
+
 #######################################################################################
 
 ## Disable payment method
@@ -657,6 +685,10 @@ gateway_id ||<span style="color: red;">required</span> || Unique identifier for 
 ### Returns
 
 Returns success message if payment method disabled.
+
+<aside class="notice">
+The error code used when you fail to disable payment method is <a href="#7113">7113</a>
+</aside>
 
 #######################################################################################
 
@@ -766,6 +798,10 @@ No parameters.
 
 Returns the Customer object for a valid identifier.
 
+<aside class="notice">
+The error code used when you fail to retrieve a specific customer is <a href="#3110">3110</a>
+</aside>
+
 ####################################################################################
 
 ## List all customers
@@ -862,6 +898,10 @@ fees_list || <span style="color: lightblue;">optional</span> || The fixed price 
 
 Returns the payment link object.
 
+<aside class="notice">
+The error codes used when you fail to create payment link are <a href="#4101">4101</a> , <a href="#1110">1110</a> , <a href="#4112">4112</a> 
+</aside>
+
 ####################################################################################
 
 ## Retrieves a payment link
@@ -955,6 +995,10 @@ fees_list ||<span style="color: lightblue;">optional</span> || The fixed price c
 
 Returns the payment link object.
 
+<aside class="notice">
+The error codes used when you fail to update payment link are <a href="#4111">4111</a> , <a href="#1110">1110</a> , <a href="#4112">4112</a> 
+</aside>
+
 #################################################################################
 
 ## List all payment links
@@ -1001,6 +1045,10 @@ Select the fields you want to retrieve.
 
 Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.
 
+<aside class="notice">
+The error codes used when you fail to list all payment links are <a href="#3110">3110</a> , <a href="#1110">1110</a>
+</aside>
+
 
 ####################################################################################
 
@@ -1042,6 +1090,10 @@ No parameters.
 ### Returns
 
 Returns a payment object if a valid identifier was provided, and returns an error otherwise.
+
+<aside class="notice">
+The error code used when you fail to get payment object is <a href="#9111">9111</a>
+</aside>
 
 ######################################################################################
 
@@ -1098,6 +1150,10 @@ payment_id ||<span style="color: red;">required</span>|| The list of Unique iden
 
 Returns a payment list which has the details of the payment like: status, amount paid and payment method.
 
+<aside class="notice">
+The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
+</aside>
+
 ######################################################################################
 
 # Refund
@@ -1152,6 +1208,10 @@ Returns the refund object. Status in refund object will be in pending state.
 Default value of refund is equal to payment value.
 </aside>
 
+<aside class="notice">
+The error code used when you fail to request refund is <a href="#9112">9112</a>
+</aside>
+
 ######################################################################################
 
 ## Reject a refund
@@ -1187,7 +1247,7 @@ refund_id ||<span style="color: red;">required</span> || Unique identifier for t
 
 ### Returns
 
-Returns the rejected refund object if a valid ID was provided. Returns an error otherwise. 
+Returns the rejected refund object if a valid ID was provided. Returns an error otherwise.
 
 ######################################################################################
 
@@ -1288,6 +1348,10 @@ Returns refund list. If no more refunds are available, the resulting array will 
 At least one input is required.
 </aside>
 
+<aside class="notice">
+The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
+</aside>
+
 #######################################################################################
 
 ## Get refund status
@@ -1315,6 +1379,10 @@ No parameters.
 ### Returns
 
 Returns the status of refund object, for example: "approved", "pending" or "rejected".
+
+<aside class="notice">
+The error code used when you fail to get refund status is <a href="#9111">9111</a>
+</aside>
 
 ##############################################################################
 
@@ -1363,6 +1431,10 @@ Returns the coupon object.
 Status of coupon is "active" by default.
 </aside>
 
+<aside class="notice">
+The error codes used when you fail to create new coupon are <a href="#4115">4115</a> , <a href="#4112">4112</a> , <a href="#4111">4111</a> , <a href="#1110">1110</a>
+</aside>
+
 ##############################################################################
 
 ## Retrieve a coupon
@@ -1399,6 +1471,10 @@ No parameters.
 ### Returns
 
 Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.
+
+<aside class="notice">
+The error code used when you fail to get a coupon is <a href="#4311">4311</a>
+</aside>
 
 ##############################################################################
 
@@ -1445,6 +1521,10 @@ times_per_customer ||<span style="color: red;">required</span> || Times that cus
 ### Returns
 
 The newly updated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
+
+<aside class="notice">
+The error codes used when you fail to update a coupon are <a href="#4312">4312</a> , <a href="#4112">4112</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
+</aside>
 
 ##############################################################################
 
@@ -1494,6 +1574,10 @@ No parameters.
 ### Returns
 
 Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.
+
+<aside class="notice">
+The error code used when you fail to list coupons is <a href="#4111">4111</a>
+</aside>
 
 ##############################################################################
 
@@ -1572,6 +1656,10 @@ status ||<span style="color: red;">required</span> || The status of the form for
 
 Returns form object which has the questions array. Status is "active" by default.
 
+<aside class="notice">
+The error codes used when you fail to create a form are <a href="#4111">4111</a> , <a href="#4115">4115</a> , <a href="#1110">1110</a>
+</aside>
+
 ##################################################################################
 
 ## Retrieve a form
@@ -1646,6 +1734,10 @@ Returns a form object if founded, else an error will be thrown.
 
 <aside class="notice">
 At least one attribute to be provided	
+</aside>
+
+<aside class="notice">
+The error code used when you fail to get a form is <a href="#4111">4111</a>
 </aside>
 
 ##################################################################################
@@ -1733,6 +1825,10 @@ At least one attribute to be provided for the payment link.
 Questions list can't be updated after receiving responses
 </aside>
 
+<aside class="notice">
+The error codes used when you fail to update a form are <a href="#4111">4111</a>, <a href="#1110">1110</a>
+</aside>
+
 #################################################################################
 
 ## List form responses
@@ -1776,6 +1872,10 @@ Returns response object list if the call succeeded. Otherwise, this call returns
 
 <aside class="notice">
 at least one attribute to be provided. 
+</aside>
+
+<aside class="notice">
+The error codes used when you fail to update a coupon are <a href="#4111">4111</a> , <a href="#3110">3110</a> 
 </aside>
 
 ####################################################################################
@@ -1978,6 +2078,10 @@ customer ||<span style="color: red;">required</span> ||The details of the custom
 
 Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.
 
+<aside class="notice">
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>
+</aside>
+
 ####################################################################################
 
 ## Retrieve an invoice
@@ -2009,6 +2113,10 @@ No parameters.
 ### Returns
 
 Returns an invoice object if a valid invoice ID was provided. Returns an error otherwise.
+
+<aside class="notice">
+The error code used when you fail to retrieve an invoice is <a href="#5111">5111</a>
+</aside>
 
 ####################################################################################
 
