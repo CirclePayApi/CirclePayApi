@@ -49,18 +49,26 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
-   {
-			"id": 1,
-			"name": "ahmed",
-			"payment_methods": []
-	},
-   {
-			"id": 1,
-			"name": "ahmed",
-			"payment_methods": []
-	}
-]
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 { 
+		"id": 1,
+		"name": "ahmed",
+		"payment_methods": []
+	 },
+	 {
+		"id": 1,
+		"name": "ahmed",
+		"payment_methods": []
+	 }  
+	]
+}
 ```
 
 Retrieves all payment gateways to the merchant.
@@ -94,9 +102,17 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
-	"id": 1,
-	"name": "ahmed",
-	"payment_methods": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" : 
+   {
+	 "id": 1,
+	 "name": "ahmed",
+	 "payment_methods": []
+   }
 }
 ```
 
@@ -152,22 +168,30 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
-	{
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
 		"id": 1,
 		"name": "ahmed",
 		"type": "card",
 		"gateway": "paymob",
 		"rate": 1
-	},
-	{
+	 },
+	 {
 		"id": 1,
 		"name": "ahmed",
 		"type": "card",
 		"gateway": "paymob",
 		"rate": 1
-	}
-]
+	 }
+	]
+}
 ```
 
 Retrieves all payment methods of the merchant.
@@ -201,11 +225,19 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
-	"id": 1,
-	"name": "ahmed",
-	"type": "card",
-	"gateway": "paymob",
-	"rate": 1
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "name": "ahmed",
+	 "type": "card",
+	 "gateway": "paymob",
+	 "rate": 1
+	}
 }
 ```
 
@@ -247,21 +279,29 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"firstName": "ahmed",
-	"lastName": "khaled",
-	"email": "hi@bye.com",
-	"phone_number": "22222",
-	"picture": null,
-	"id_card": null,
-	"payment_method": null,
-	"circles": [],
-	"billing_info": null,
-	"documents": null,
-	"alert": null,
-	"settlement": null,
-	"business_individual": null,
-	"type_of_business": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "firstName": "ahmed",
+	 "lastName": "khaled",
+	 "email": "hi@bye.com",
+	 "phone_number": "22222",
+	 "picture": null,
+	 "id_card": null,
+	 "payment_method": null,
+	 "circles": [],
+	 "billing_info": null,
+	 "documents": null,
+	 "alert": null,
+	 "settlement": null,
+	 "business_individual": null,
+	 "type_of_business": null
+	}
 }
 ```
 
@@ -304,21 +344,29 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
-	"id": 1,
-	"firstName": "ahmed",
-	"lastName": "khaled",
-	"email": "hi@bye.com",
-	"phone_number": "22222",
-	"picture": null,
-	"id_card": null,
-	"payment_method": null,
-	"circles": [],
-	"billing_info": null,
-	"documents": null,
-	"alert": null,
-	"settlement": null,
-	"business_individual": null,
-	"type_of_business": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "firstName": "ahmed",
+	 "lastName": "khaled",
+	 "email": "hi@bye.com",
+	 "phone_number": "22222",
+	 "picture": null,
+	 "id_card": null,
+	 "payment_method": null,
+	 "circles": [],
+	 "billing_info": null,
+	 "documents": null,
+	 "alert": null,
+	 "settlement": null,
+	 "business_individual": null,
+	 "type_of_business": null
+	}
 }
 ```
 
@@ -347,21 +395,29 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"firstName": "ahmed",
-	"lastName": "khaled",
-	"email": "hi@bye.com",
-	"phone_number": "22222",
-	"picture": null,
-	"id_card": null,
-	"payment_method": null,
-	"circles": [],
-	"billing_info": null,
-	"documents": null,
-	"alert": null,
-	"settlement": null,
-	"business_individual": null,
-	"type_of_business": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "firstName": "ahmed",
+	 "lastName": "khaled",
+	 "email": "hi@bye.com",
+	 "phone_number": "22222",
+	 "picture": null,
+	 "id_card": null,
+	 "payment_method": null,
+	 "circles": [],
+	 "billing_info": null,
+	 "documents": null,
+	 "alert": null,
+	 "settlement": null,
+	 "business_individual": null,
+	 "type_of_business": null
+	}
 }
 ```
 
@@ -406,42 +462,50 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
- {
-	"id": 1,
-	"firstName": "ahmed",
-	"lastName": "khaled",
-	"email": "hi@bye.com",
-	"phone_number": "22222",
-	"picture": null,
-	"id_card": null,
-	"payment_method": null,
-	"circles": [],
-	"billing_info": null,
-	"documents": null,
-	"alert": null,
-	"settlement": null,
-	"business_individual": null,
-	"type_of_business": null
- },
- {
-	"id": 1,
-	"firstName": "ahmed",
-	"lastName": "khaled",
-	"email": "hi@bye.com",
-	"phone_number": "22222",
-	"picture": null,
-	"id_card": null,
-	"payment_method": null,
-	"circles": [],
-	"billing_info": null,
-	"documents": null,
-	"alert": null,
-	"settlement": null,
-	"business_individual": null,
-	"type_of_business": null
- }
-]
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+   [
+	{
+	 "id": 1,
+	 "firstName": "ahmed",
+	 "lastName": "khaled",
+	 "email": "hi@bye.com",
+	 "phone_number": "22222",
+	 "picture": null,
+	 "id_card": null,
+	 "payment_method": null,
+	 "circles": [],
+	 "billing_info": null,
+	 "documents": null,
+	 "alert": null,
+	 "settlement": null,
+	 "business_individual": null,
+	 "type_of_business": null
+	},
+	{
+	 "id": 1,
+	 "firstName": "ahmed",
+	 "lastName": "khaled",
+	 "email": "hi@bye.com",
+	 "phone_number": "22222",
+	 "picture": null,
+	 "id_card": null,
+	 "payment_method": null,
+	 "circles": [],
+	 "billing_info": null,
+	 "documents": null,
+	 "alert": null,
+	 "settlement": null,
+	 "business_individual": null,
+	 "type_of_business": null
+	}
+   ]
+}
 ```
 
 Retrieves all merchants.
@@ -470,18 +534,28 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
-	"id": "124234",
-	"name": "national id",
-  "size": 7969,
-  "upload_state": "success",
-  "last_update": 23-3-2022
-},
-{
-	"id": "12434234",
-	"name": "passport",
-  "size": 7969,
-  "upload_state": "success",
-  "last_update": 21-1-2022
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
+	  "id": "124234",
+	  "name": "national id",
+	  "size": 7969,
+	  "upload_state": "success",
+	  "last_update": 23-3-2022
+	 },
+	 {
+	  "id": "12434234",
+	  "name": "passport",
+	  "size": 7969,
+	  "upload_state": "success",
+	  "last_update": 21-1-2022
+	 }
+	]
 }
 ```
 
@@ -512,10 +586,18 @@ curl -X POST --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "title":"success",
-  "message":"Documents Uploaded successfully",
-  "status":"200"
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "title":"success",
+	 "message":"Documents Uploaded successfully",
+	 "status":"200"
+	}
 }
 ```
 
@@ -551,10 +633,18 @@ curl -X PUT --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "title":"success",
-  "message":"Gateway enabled successfully",
-  "status":"200"
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "title":"success",
+	 "message":"Gateway enabled successfully",
+	 "status":"200"
+	}
 }
 ```
 
@@ -587,22 +677,31 @@ curl -X PUT --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "success":"The following payment gateways and payment methods got disabled",
-  "payment_gateway": {
-    "name": "paymob",
-    "id": 1
-  }
-  "payment_channels":[ 
-  {
-    "name": "payment channel-1",
-    "id": 2
-  },
-  {
-    "name": "payment channel-2",
-    "id": 3
-  }
-  ]
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "success":"The following payment gateways and payment methods got disabled",
+	 "payment_gateway": {
+		"name": "paymob",
+		"id": 1
+	 },
+	 "payment_channels":
+	   [ 
+		{
+		 "name": "payment channel-1",
+		 "id": 2
+		},
+		{
+		 "name": "payment channel-2",
+		 "id": 3
+		}
+	   ]
+   }
 }
 ```
 
@@ -632,10 +731,18 @@ curl -X PUT --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "title":"success",
-  "message":"The following payment method has been enabled",
-  "status":"200"
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "title":"success",
+	 "message":"The following payment method has been enabled",
+	 "status":"200"
+	}
 }
 ```
 
@@ -668,10 +775,18 @@ curl -X PUT --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "title":"success",
-  "message":"The following payment method has been disabled",
-  "status":"200"
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "title":"success",
+	 "message":"The following payment method has been disabled",
+	 "status":"200"
+	}
 }
 ```
 
@@ -705,16 +820,25 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
- "payment_channels":[ 
-  {
-    "name": "payment channel-1",
-    "id": 2
-  },
-  {
-    "name": "payment channel-2",
-    "id": 3
-  }
- ]
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "payment_channels":
+	  [ 
+		{
+		  "name": "payment channel-1",
+		  "id": 2
+		},
+		{
+		  "name": "payment channel-2",
+		  "id": 3
+		}
+	  ]
+	}
 }
 ```
 
@@ -744,8 +868,13 @@ curl -X POST --header 'Content-Type: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "message":"The user has been flagged. CirclePay admins shall investigate this customer"
+{
+ "status" : boolean,
+ "message" : "The user has been flagged. CirclePay admins shall investigate this  customer",
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :{}
 }
 ```
 
@@ -776,15 +905,23 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "id": 3,
-  "first_name": "Ahmed",
-  "last_name": "khaled",
-  "email":"ahmedkhaled@gmail.com",
-  "phone_number": "0238432",
-  "transaction_id": {},
-  "refund_id": {},
-  "circle_id": {}
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "id": 3,
+	 "first_name": "Ahmed",
+	 "last_name": "khaled",
+	 "email":"ahmedkhaled@gmail.com",
+	 "phone_number": "0238432",
+	 "transaction_id": {},
+	 "refund_id": {},
+	 "circle_id": {}
+	}
 }
 ```
 
@@ -817,15 +954,23 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-{  
-  "id": 3,
-  "first_name": "Ahmed",
-  "last_name": "khaled",
-  "email":"ahmedkhaled@gmail.com",
-  "phone_number": "0238432",
-  "transaction_id": {},
-  "refund_id": {},
-  "circle_id": {}
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{  
+	 "id": 3,
+	 "first_name": "Ahmed",
+	 "last_name": "khaled",
+	 "email":"ahmedkhaled@gmail.com",
+	 "phone_number": "0238432",
+	 "transaction_id": {},
+	 "refund_id": {},
+	 "circle_id": {}
+	}
 }
 ```
 
@@ -865,19 +1010,27 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 0,
-	"url": "ahmed",
-	"form_id": 0,
-	"coupon_id": [],
-	"description": "desc",
-	"value": 0,
-	"currency": "EGP",
-	"expire_date": "2022-10-12",
-	"payment_method": [],
-	"payment": [],
-	"status": true,
-	"paying_customer": [],
-	"fees_list": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 0,
+	 "url": "ahmed",
+	 "form_id": 0,
+	 "coupon_id": [],
+	 "description": "desc",
+	 "value": 0,
+	 "currency": "EGP",
+	 "expire_date": "2022-10-12",
+	 "payment_method": [],
+	 "payment": [],
+	 "status": true,
+	 "paying_customer": [],
+	 "fees_list": []
+	}
 }
 ```
 
@@ -919,19 +1072,27 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 0,
-	"url": "ahmed",
-	"form_id": 0,
-	"coupon_id": [],
-	"description": "desc",
-	"value": 0,
-	"currency": "EGP",
-	"expire_date": "2022-10-12",
-	"payment_method": [],
-	"payment": [],
-	"status": true,
-	"paying_customer": [],
-	"fees_list": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 0,
+	 "url": "ahmed",
+	 "form_id": 0,
+	 "coupon_id": [],
+	 "description": "desc",
+	 "value": 0,
+	 "currency": "EGP",
+	 "expire_date": "2022-10-12",
+	 "payment_method": [],
+	 "payment": [],
+	 "status": true,
+	 "paying_customer": [],
+	 "fees_list": []
+	}
 }
 ```
 
@@ -963,19 +1124,27 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
-	"id": 0,
-	"url": "ahmed",
-	"form_id": 0,
-	"coupon_id": [],
-	"description": "desc",
-	"value": 0,
-	"currency": "EGP",
-	"expire_date": "2022-10-12",
-	"payment_method": [],
-	"payment": [],
-	"status": true,
-	"paying_customer": [],
-	"fees_list": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 0,
+	 "url": "ahmed",
+	 "form_id": 0,
+	 "coupon_id": [],
+	 "description": "desc",
+	 "value": 0,
+	 "currency": "EGP",
+	 "expire_date": "2022-10-12",
+	 "payment_method": [],
+	 "payment": [],
+	 "status": true,
+	 "paying_customer": [],
+	 "fees_list": []
+	}
 }
 ```
 This endpoint helps you to udpate payment link.
@@ -1015,19 +1184,27 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 0,
-	"url": "https://buy.circlepay.ai/sldkfhsd",
-	"form_id": 0,
-	"coupon_id": [],
-	"description": "desc",
-	"value": 0,
-	"currency": "EGP",
-	"expire_date": "2022-10-12",
-	"payment_method": [],
-	"payment": [],
-	"status": true,
-	"paying_customer": [],
-	"fees_list": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 0,
+	 "url": "https://buy.circlepay.ai/sldkfhsd",
+	 "form_id": 0,
+	 "coupon_id": [],
+	 "description": "desc",
+	 "value": 0,
+	 "currency": "EGP",
+	 "expire_date": "2022-10-12",
+	 "payment_method": [],
+	 "payment": [],
+	 "status": true,
+	 "paying_customer": [],
+	 "fees_list": []
+	}
 }
 ```
 
@@ -1067,17 +1244,25 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
-  "id": 1,
-  "date_time": "2022-10-12",
-  "merchant_id": 1,
-  "customer_id": 1,
-  "status": true,
-  "payment_link_id": 1,
-  "coupon_id": 1,
-  "amount_paid": 1,
-  "currency": "EGP",
-  "payment_method": null,
-  "source": "external"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "date_time": "2022-10-12",
+	 "merchant_id": 1,
+	 "customer_id": 1,
+	 "status": true,
+	 "payment_link_id": 1,
+	 "coupon_id": 1,
+	 "amount_paid": 1,
+	 "currency": "EGP",
+	 "payment_method": null,
+	 "source": "external"
+	}
 }
 ```
 
@@ -1110,8 +1295,15 @@ curl -X POST --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
-	{
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
 		"id": 1,
 		"date_time": "2022-10-12",
 		"merchant_id": 1,
@@ -1123,8 +1315,8 @@ curl -X POST --header 'Accept: application/json'
 		"currency": "EGP",
 		"payment_method": null,
 		"source": "external"
-	},
-	{
+	 },
+	 {
 		"id": 1,
 		"date_time": "2022-10-12",
 		"merchant_id": 1,
@@ -1136,8 +1328,9 @@ curl -X POST --header 'Accept: application/json'
 		"currency": "EGP",
 		"payment_method": null,
 		"source": "external"
-	}
-]
+	 }
+	]
+}
 ```
 
 Retrieves all payments.
@@ -1175,15 +1368,23 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-  "id": 1,
-  "request_date": "2022-10-12",
-  "refund_date": "2022-10-12",
-  "value": 1,
-  "payment_id": 1,
-  "fees_list": [],
-  "payment_method": [],
-  "status": "pending",
-  "customer": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "request_date": "2022-10-12",
+	 "refund_date": "2022-10-12",
+	 "value": 1,
+	 "payment_id": 1,
+	 "fees_list": [],
+	 "payment_method": [],
+	 "status": "pending",
+	 "customer": null
+	}
 }
 ```
 This endpoint helps you to request refund.
@@ -1228,15 +1429,23 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
-  "id": 1,
-  "request_date": "2022-10-12",
-  "refund_date": "2022-10-12",
-  "value": 1,
-  "payment_id": 1,
-  "fees_list": [],
-  "payment_method": [],
-  "status": "rejected",
-  "customer": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "request_date": "2022-10-12",
+	 "refund_date": "2022-10-12",
+	 "value": 1,
+	 "payment_id": 1,
+	 "fees_list": [],
+	 "payment_method": [],
+	 "status": "rejected",
+	 "customer": null
+	}
 }
 ```
 Returns refund object with rejected status.
@@ -1265,15 +1474,23 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
-  "id": 1,
-  "request_date": "2022-10-12",
-  "refund_date": "2022-10-12",
-  "value": 1,
-  "payment_id": 1,
-  "fees_list": [],
-  "payment_method": [],
-  "status": "approved",
-  "customer": null
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "request_date": "2022-10-12",
+	 "refund_date": "2022-10-12",
+	 "value": 1,
+	 "payment_id": 1,
+	 "fees_list": [],
+	 "payment_method": [],
+	 "status": "approved",
+	 "customer": null
+	}
 }
 ```
 Returns refund object with approved status.
@@ -1306,30 +1523,38 @@ curl -X POST --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "request_date": "2022-10-12",
-    "refund_date": "2022-10-12",
-    "value": 1,
-    "payment_id": 1,
-    "fees_list": [],
-    "payment_method": [],
-    "status": [],
-    "customer": null
-  },
-  {
-    "id": 2,
-    "request_date": "2022-10-12",
-    "refund_date": "2022-10-12",
-    "value": 2,
-    "payment_id": 2,
-    "fees_list": [],
-    "payment_method": [],
-    "status": [],
-    "customer": null
-  }
-]
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
+		"id": 1,
+		"request_date": "2022-10-12",
+		"refund_date": "2022-10-12",
+		"value": 1,
+		"payment_id": 1,
+		"fees_list": [],
+		"payment_method": [],
+		"status": [],
+		"customer": null
+	 },
+	 {
+		"id": 2,
+		"request_date": "2022-10-12",
+		"refund_date": "2022-10-12",
+		"value": 2,
+		"payment_id": 2,
+		"fees_list": [],
+		"payment_method": [],
+		"status": [],
+		"customer": null
+	 }
+    ]
+}
 ```
 List refund objects.
 
@@ -1367,7 +1592,15 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
-  "status":"pending"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "status":"pending"
+	}
 }
 ```
 Retrieves the status of refund object.
@@ -1403,12 +1636,20 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"payment_link_id": 1,
-	"code": 1,
-	"value": 1,
-	"name": "ahmed",
-	"number_of_uses": 1,
-	"discount_t": "%"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "payment_link_id": 1,
+	 "code": 1,
+	 "value": 1,
+	 "name": "ahmed",
+	 "number_of_uses": 1,
+	 "discount_t": "%"
+	}
 }
 ```
 This endpoint helps you to create coupon.
@@ -1450,16 +1691,24 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"value": 1,
-	"name": "ahmed",
-	"expire_date": "2022-12-22",
-	"number_of_uses": 1,
-	"payment_link_id": 1,
-	"payments": null,
-	"status": 1,
-	"times_per_customer": 1,
-	"customer": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "value": 1,
+	 "name": "ahmed",
+	 "expire_date": "2022-12-22",
+	 "number_of_uses": 1,
+	 "payment_link_id": 1,
+	 "payments": null,
+	 "status": 1,
+	 "times_per_customer": 1,
+	 "customer": []
+	}
 }
 ```
 Retrieves a specific coupon.
@@ -1494,16 +1743,24 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"value": 1,
-	"name": "ahmed",
-	"expire_date": "2022-12-22",
-	"number_of_uses": 1,
-	"payment_link_id": 1,
-	"payments": null,
-	"status": 1,
-	"times_per_customer": 1,
-	"customer": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "value": 1,
+	 "name": "ahmed",
+	 "expire_date": "2022-12-22",
+	 "number_of_uses": 1,
+	 "payment_link_id": 1,
+	 "payments": null,
+	 "status": 1,
+	 "times_per_customer": 1,
+	 "customer": []
+	}
 }
 ```
 Updates the metadata of a coupon.
@@ -1541,28 +1798,38 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"value": 1,
-	"name": "ahmed",
-	"expire_date": "2022-12-22",
-	"number_of_uses": 1,
-	"payment_link_id": 1,
-	"payments": null,
-	"status": 1,
-	"times_per_customer": 1,
-	"customer": []
-},
-{
-	"id": 1,
-	"value": 1,
-	"name": "ahmed",
-	"expire_date": "2022-12-22",
-	"number_of_uses": 1,
-	"payment_link_id": 1,
-	"payments": null,
-	"status": 1,
-	"times_per_customer": 1,
-	"customer": []
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
+		"id": 1,
+		"value": 1,
+		"name": "ahmed",
+		"expire_date": "2022-12-22",
+		"number_of_uses": 1,
+		"payment_link_id": 1,
+		"payments": null,
+		"status": 1,
+		"times_per_customer": 1,
+		"customer": []
+	 },
+	 {
+		"id": 1,
+		"value": 1,
+		"name": "ahmed",
+		"expire_date": "2022-12-22",
+		"number_of_uses": 1,
+		"payment_link_id": 1,
+		"payments": null,
+		"status": 1,
+		"times_per_customer": 1,
+		"customer": []
+	 }
+	]
 }
 ```
 Returns a list of your coupons.
@@ -1598,6 +1865,13 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+   {
 	"payment_link_id": 1,
 	"title": "title",
 	"questions": [
@@ -1641,6 +1915,7 @@ curl -X POST --header 'Accept: application/json'
 		}
 	],
 	"status": "pending"
+  }
 }
 ```
 This endpoint helps you to create form.
@@ -1676,6 +1951,13 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+   {
 	"payment_link_id": 1,
 	"title": "title",
 	"questions": [
@@ -1719,6 +2001,7 @@ curl -X POST --header 'Accept: application/json'
 		}
 	],
 	"status": "active"
+   }
 }
 ```
 Retrieves a form object.
@@ -1757,6 +2040,13 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+   {
 	"payment_link_id": 1,
 	"title": "title",
 	"questions": [
@@ -1800,6 +2090,7 @@ curl -X PUT --header 'Accept: application/json'
 		}
 	],
 	"status": "active"
+  }
 }
 ```
 Updates details in a form object.
@@ -1844,18 +2135,26 @@ curl -X POST --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-   "id": 1,
-   "customer": null,
-   "form": null
-  },
-  {
-   "id": 1,
-   "customer": null,
-   "form": null
-  }
-]
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	[
+	 {
+	  "id": 1,
+	  "customer": null,
+	  "form": null
+	 },
+	 {
+	  "id": 1,
+	  "customer": null,
+	  "form": null
+	 }
+	]
+}
 ```
 List all form responses.
 
@@ -1894,11 +2193,19 @@ curl -X POST --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
-  {
-   "id": 1,
-   "customer": null,
-   "form": null
-  }
+{
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "customer": null,
+	 "form": null
+	}
+}
 ```
 Retrieves a specific form responses.
 
@@ -1938,13 +2245,21 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"date_time": "2022-10-22",
-	"value": "1",
-	"currency": "EGP",
-	"invoice_url": "url",
-	"merchant": 1,
-	"status": "pending"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "id": 1,
+	 "date_time": "2022-10-22",
+	 "value": "1",
+	 "currency": "EGP",
+	 "invoice_url": "url",
+	 "merchant": 1,
+	 "status": "pending"
+	}
 }
 ```
 Retrieve the details of settlement.
@@ -1975,22 +2290,32 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
-	"id": 1,
-	"date_time": "2022-10-22",
-	"value": "1",
-	"currency": "EGP",
-	"invoice_url": "url",
-	"merchant": 1,
-	"status": "pending"
-},
-{
-	"id": 1,
-	"date_time": "2022-10-22",
-	"value": "1",
-	"currency": "EGP",
-	"invoice_url": "url",
-	"merchant": 1,
-	"status": "pending"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+  [
+	{
+	 "id": 1,
+	 "date_time": "2022-10-22",
+	 "value": "1",
+	 "currency": "EGP",
+	 "invoice_url": "url",
+	 "merchant": 1,
+	 "status": "pending"
+	},
+	{
+	 "id": 1,
+	 "date_time": "2022-10-22",
+	 "value": "1",
+	 "currency": "EGP",
+	 "invoice_url": "url",
+	 "merchant": 1,
+	 "status": "pending"
+	}
+  ]
 }
 ```
 Retrieve all settlements.
@@ -2020,7 +2345,15 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
-	"status": "pending"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "status": "pending"
+	}
 }
 ```
 Retrieve the status of settlement.
@@ -2056,11 +2389,19 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "number": 1,
- "merchant": 1,
- "customer": 1,
- "status": "pending",
- "due_date": "2022-10-12"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "number": 1,
+	 "merchant": 1,
+	 "customer": 1,
+	 "status": "pending",
+	 "due_date": "2022-10-12"
+	}
 }
 ```
 This endpoint creates an invoice for a given customer. The invoice created will be in "pending" status.
@@ -2097,11 +2438,19 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "number": 1,
- "merchant": 1,
- "customer": 1,
- "status": "pending",
- "due_date": "2022-10-12"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "number": 1,
+	 "merchant": 1,
+	 "customer": 1,
+	 "status": "pending",
+	 "due_date": "2022-10-12"
+	}
 }
 ```
 Retrieves the invoice with the given id.
@@ -2133,11 +2482,19 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "number": 1,
- "merchant": 1,
- "customer": 1,
- "status": "deactivated",
- "due_date": "2022-10-12"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "number": 1,
+	 "merchant": 1,
+	 "customer": 1,
+	 "status": "deactivated",
+	 "due_date": "2022-10-12"
+	}
 }
 ```
 Deactivate the invoice with the given id.
@@ -2165,11 +2522,19 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "number": 1,
- "merchant": 1,
- "customer": 1,
- "status": "Paid",
- "due_date": "2022-10-12"
+ "status" : boolean,
+ "message" : text,
+ "isError" : boolean,
+ "errorCode" : Integer,
+ "errorDetails" : text,
+ "data" :
+	{
+	 "number": 1,
+	 "merchant": 1,
+	 "customer": 1,
+	 "status": "Paid",
+	 "due_date": "2022-10-12"
+	}
 }
 ```
 Settle the invoice with the given id.
