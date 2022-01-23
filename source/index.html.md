@@ -42,7 +42,8 @@ Each transaction requires a definition for a payment gateway and a payment metho
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/gateway/list_paymentgateway'
 ```
 
@@ -92,7 +93,8 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d gateway_id="2"
      -d user_id=1
      'http://www.example.com/gateway/get_paymentgateway'
@@ -161,7 +163,8 @@ American express|   |
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/payment_methods/list_paymentmethod/{merchantId}'
 ```
 
@@ -215,7 +218,8 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d gateway_id="2"
      -d user_id=1
      'http://www.example.com/payment_methods/get_paymentmethod'
@@ -267,7 +271,8 @@ The error codes used when you fail to get a specific payment method are <a href=
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "first_name": "Ahmed"
      -d "last_name": "Khaled"
      -d "email": "ahmedkahled@gmail.com"
@@ -335,7 +340,8 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
      'http://www.example.com/merchants/get'
 ```
@@ -387,7 +393,8 @@ Returns the user object for a valid identifier.
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/merchants/update'
 ```
 
@@ -455,7 +462,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/merchants/list'
 ```
 
@@ -525,7 +533,8 @@ Returns an array. Each entry in the array is a separate user object.This request
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=1
      'http://www.example.com/merchants/list_documents'
 ```
@@ -576,7 +585,8 @@ Returns a document list.
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "document_list[id]"="124234" \
      -d "document_list[name]"="national id" \
      -d "document_list[size]"=7969 \
@@ -624,7 +634,8 @@ Returns success message if document uploaded.
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
      -d gateway_id="4"
      'http://www.example.com/merchants/enable_gateway'
@@ -670,7 +681,8 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/merchants/disable_gateway'
 ```
 
@@ -722,7 +734,8 @@ Returns success message if gateway disabled.
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
      -d gateway_id="4"
      'http://www.example.com/merchants/enable_payment_method'
@@ -768,7 +781,8 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 ```shell
 curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/merchants/disable_payment_method'
 ```
 
@@ -812,7 +826,8 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/merchants/list_payment_methods'
 ```
 
@@ -859,7 +874,8 @@ Returns a payment channel list.
 ```shell
 curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
      -d note=""
      'http://www.example.com/merchants/set_alert'
@@ -898,7 +914,8 @@ Returns a message to inform you if the user flagged or not.
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/customers/get/{customerId}'
 ```
 
@@ -946,7 +963,8 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
      'http://www.example.com/customers/list'
 ```
@@ -998,7 +1016,8 @@ Returns customer list, If no more customers are available, the resulting array w
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "value": 0
      -d "currency": "EGP"
      -d "description": "payment link"
@@ -1062,7 +1081,8 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "payment_link_id": 4
      -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd" 
      'http://www.example.com/payment_link/get'
@@ -1114,7 +1134,8 @@ Returns the payment link object.
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "payment_link_id": 3
      -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
      'http://www.example.com/payment_link/update'
@@ -1175,7 +1196,8 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "circle_id": 4
      'http://www.example.com/payment_link/list'
 ```
@@ -1236,7 +1258,8 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/payment/get/{paymentId}'
 ```
 
@@ -1287,7 +1310,8 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "payment_id": 4
      'http://www.example.com/payment/list'
 ```
@@ -1358,7 +1382,8 @@ Allows you to refund a charge that has previously been created but not yet refun
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=54
      -d currency="EGP"
      'http://www.example.com/refund/request_refund'
@@ -1420,7 +1445,8 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d refund_id=4
      'http://www.example.com/refund/reject_refund'
 ```
@@ -1465,7 +1491,8 @@ Returns the rejected refund object if a valid ID was provided. Returns an error 
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d refund_id=4
      'http://www.example.com/refund/approve_refund'
 ```
@@ -1514,7 +1541,8 @@ Requires a % value of the full value.
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d payment_link_id=4
      -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
      'http://www.example.com/refund/list'
@@ -1584,7 +1612,8 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/refund/get_status/{refundId}'
 ```
 
@@ -1626,7 +1655,8 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=1
      -d name="ahmed"
      'http://www.example.com/coupon/create'
@@ -1683,7 +1713,8 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/coupon/get/{couponId}'
 ```
 
@@ -1732,7 +1763,8 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=1
      -d name="ahmed"
      -d status="1"
@@ -1790,7 +1822,8 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/coupon/list/{paymentLinkId}'
 ```
 
@@ -1855,7 +1888,8 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d payment_link_id=1
      -d title="title"
      'http://www.example.com/form/create'
@@ -1942,7 +1976,8 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d form_id=3
      'http://www.example.com/form/get'
 ```
@@ -2030,7 +2065,8 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d form_id=1
      -d title="title"
      'http://www.example.com/form/update'
@@ -2127,7 +2163,8 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d payment_link_id=3
      'http://www.example.com/form/list_responses'
 ```
@@ -2184,7 +2221,8 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d payment_link_id=3
      -d customer_id=1
      'http://www.example.com/form/get_response'
@@ -2235,7 +2273,8 @@ Means that payments or transactions finally settle and clear for customer use.
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d merchant_id=3
      -d settlement_id=5
      'http://www.example.com/settlements/get'
@@ -2280,7 +2319,8 @@ Returns a settlement object.
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d merchant_id=3
      -d status="pending"
      'http://www.example.com/settlements/list'
@@ -2337,7 +2377,8 @@ Returns a settlement object list. The list has a separate settlement objects. If
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/settlements/get_status/{settlementId}'
 ```
 
@@ -2377,7 +2418,8 @@ An invoice is an itemized list that records the products or services you provide
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d merchant=1
      -d "item[name]"="book"
      -d "item[description]"="rich dad poor dad"
@@ -2430,7 +2472,8 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/invoice/get/{invoiceId}'
 ```
 
@@ -2474,7 +2517,8 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 ```shell
 curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/invoice/deactive/{invoiceId}'
 ```
 
@@ -2514,7 +2558,8 @@ Returns the deactivated invoice object if a valid invoice ID was provided. Retur
 ```shell
 curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
-     --header 'access-token: Bearer'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      'http://www.example.com/invoice/settle_invoice/1'
 ```
 
