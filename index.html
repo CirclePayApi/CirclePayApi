@@ -565,11 +565,11 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment gateways list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w"> 
@@ -605,11 +605,11 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment gateway object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
    </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -734,11 +734,11 @@ The error codes used when you fail to get specific payment gateway are <a href="
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment methods list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -778,11 +778,11 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment method object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -840,11 +840,11 @@ The error codes used when you fail to get a specific payment method are <a href=
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully created a new merchant"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -963,11 +963,11 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully retrieve the merchant"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1018,11 +1018,11 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully update the merchant"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -1161,11 +1161,11 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Merchants list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
    </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1220,11 +1220,11 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Documents list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -1277,11 +1277,11 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully uploaded documents"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
@@ -1364,11 +1364,11 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully enabled gateway"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
@@ -1418,11 +1418,11 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully disabled gateway"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"success"</span><span class="p">:</span><span class="s2">"The following payment gateways and payment methods got disabled"</span><span class="p">,</span><span class="w">
@@ -1460,11 +1460,11 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully enabled the payment method"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
@@ -1514,11 +1514,11 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully disabled the payment method"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
@@ -1568,11 +1568,11 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Merchant's payment methods list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"payment_channels"</span><span class="p">:</span><span class="w">
@@ -1621,11 +1621,11 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
  </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The user has been flagged. CirclePay admins shall investigate this  customer"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1666,11 +1666,11 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -1703,11 +1703,11 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Customers list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -1766,11 +1766,11 @@ Select the fields you want to retrieve.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully created the payment link"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1874,11 +1874,11 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment link object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1936,11 +1936,11 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully updated the payment link"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -2043,11 +2043,11 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment links list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -2104,11 +2104,11 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2144,11 +2144,11 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Payments list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -2218,11 +2218,11 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully requested a refund"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2332,11 +2332,11 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully rejected a refund"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2382,11 +2382,11 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully approved a refund"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2437,11 +2437,11 @@ Requires a % value of the full value.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Refunds list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -2528,11 +2528,11 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Refund's status returned successfully "</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"pending"</span><span class="w">
@@ -2559,11 +2559,11 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully created a coupon"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2655,11 +2655,11 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully retrieved the coupon"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2696,11 +2696,11 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully updated the coupon"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2792,11 +2792,11 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Coupons list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -2846,11 +2846,11 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully created a form"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
    </span><span class="p">{</span><span class="w">
     </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2955,11 +2955,11 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Form object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
    </span><span class="p">{</span><span class="w">
     </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3055,11 +3055,11 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully updated the form"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
    </span><span class="p">{</span><span class="w">
     </span><span class="nl">"payment_link_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3186,11 +3186,11 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"form responses list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -3260,11 +3260,11 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"form response object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3332,11 +3332,11 @@ at least one attribute to be provided.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Settlement object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3388,11 +3388,11 @@ at least one attribute to be provided.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Settlements list returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
   </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -3460,11 +3460,11 @@ at least one attribute to be provided.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Settlement's status retrieved successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
@@ -3491,11 +3491,11 @@ at least one attribute to be provided.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully created an invoice"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3575,11 +3575,11 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice object returned successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3608,11 +3608,11 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully deactivated an invoice"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3637,11 +3637,11 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">boolean</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">text</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully settled the invoice"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
