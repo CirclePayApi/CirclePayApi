@@ -558,7 +558,8 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <p><img src="https://devathon.com/wp-content/uploads/2020/02/Patement-gateway-process-Devathon.png" ></p>
 <h2 id='list-payment-gateways'>List Payment Gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/gateway/list_paymentgateway'</span>
 </code></pre></div>
 <blockquote>
@@ -596,7 +597,8 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 </aside>
 <h2 id='retrieve-a-payment-gateway'>Retrieve a Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"2"</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
      <span class="s1">'http://www.example.com/gateway/get_paymentgateway'</span>
@@ -727,7 +729,8 @@ The error codes used when you fail to get specific payment gateway are <a href="
 </aside>
 <h2 id='list-a-payment-methods'>List a Payment Methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/payment_methods/list_paymentmethod/{merchantId}'</span>
 </code></pre></div>
 <blockquote>
@@ -769,7 +772,8 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 </aside>
 <h2 id='retrieve-a-payment-method'>Retrieve a Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"2"</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
      <span class="s1">'http://www.example.com/payment_methods/get_paymentmethod'</span>
@@ -829,7 +833,8 @@ The error codes used when you fail to get a specific payment method are <a href=
 <p><span style="color: red">Merchant</span> is the person or company engaged in the business of selling products or services. For example, wholesaler or retail store owner.</p>
 <h2 id='create-a-merchant'>Create a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"first_name"</span>: <span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="s2">"last_name"</span>: <span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="s2">"email"</span>: <span class="s2">"ahmedkahled@gmail.com"</span>
@@ -955,7 +960,8 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 </aside>
 <h2 id='retrieve-a-merchant'>Retrieve a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
      <span class="s1">'http://www.example.com/merchants/get'</span>
 </code></pre></div>
@@ -1011,7 +1017,8 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 <p>Returns the user object for a valid identifier.</p>
 <h2 id='update-a-merchant'>Update a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/merchants/update'</span>
 </code></pre></div>
 <blockquote>
@@ -1154,7 +1161,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 </aside>
 <h2 id='list-all-merchants'>List all merchants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/merchants/list'</span>
 </code></pre></div>
 <blockquote>
@@ -1212,7 +1220,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
 <h2 id='list-all-documents'>List all documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>1
      <span class="s1">'http://www.example.com/merchants/list_documents'</span>
 </code></pre></div>
@@ -1267,7 +1276,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>Returns a document list.</p>
 <h2 id='upload-documents'>Upload documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"document_list[id]"</span><span class="o">=</span><span class="s2">"124234"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s2">"document_list[name]"</span><span class="o">=</span><span class="s2">"national id"</span> <span class="se">\</span>
      <span class="nt">-d</span> <span class="s2">"document_list[size]"</span><span class="o">=</span>7969 <span class="se">\</span>
@@ -1355,7 +1365,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>Returns success message if document uploaded.</p>
 <h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
      <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
      <span class="s1">'http://www.example.com/merchants/enable_gateway'</span>
@@ -1411,7 +1422,8 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 </aside>
 <h2 id='disable-gateway'>Disable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/merchants/disable_gateway'</span>
 </code></pre></div>
 <blockquote>
@@ -1451,7 +1463,8 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <p>Returns success message if gateway disabled.</p>
 <h2 id='enable-payment-method'>Enable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
      <span class="nt">-d</span> <span class="nv">gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
      <span class="s1">'http://www.example.com/merchants/enable_payment_method'</span>
@@ -1507,7 +1520,8 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 </aside>
 <h2 id='disable-payment-method'>Disable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/merchants/disable_payment_method'</span>
 </code></pre></div>
 <blockquote>
@@ -1561,7 +1575,8 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </aside>
 <h2 id='list-payment-methods'>List payment methods</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/merchants/list_payment_methods'</span>
 </code></pre></div>
 <blockquote>
@@ -1612,7 +1627,8 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>Returns a payment channel list.</p>
 <h2 id='set-alert'>Set Alert</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
      <span class="nt">-d</span> <span class="nv">note</span><span class="o">=</span><span class="s2">""</span>
      <span class="s1">'http://www.example.com/merchants/set_alert'</span>
@@ -1659,7 +1675,8 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>Returns a message to inform you if the user flagged or not.</p>
 <h1 id='customers'>Customers</h1><h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/customers/get/{customerId}'</span>
 </code></pre></div>
 <blockquote>
@@ -1695,7 +1712,8 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </aside>
 <h2 id='list-all-customers'>List all customers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
      <span class="s1">'http://www.example.com/customers/list'</span>
 </code></pre></div>
@@ -1755,7 +1773,8 @@ Select the fields you want to retrieve.
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='payment-link'>Payment Link</h1><h2 id='create-a-payment-link'>Create a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"value"</span>: 0
      <span class="nt">-d</span> <span class="s2">"currency"</span>: <span class="s2">"EGP"</span>
      <span class="nt">-d</span> <span class="s2">"description"</span>: <span class="s2">"payment link"</span>
@@ -1865,7 +1884,8 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 </aside>
 <h2 id='retrieves-a-payment-link'>Retrieves a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 4
      <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span> 
      <span class="s1">'http://www.example.com/payment_link/get'</span>
@@ -1927,7 +1947,8 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <p>Returns the payment link object.</p>
 <h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 3
      <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span>
      <span class="s1">'http://www.example.com/payment_link/update'</span>
@@ -2035,7 +2056,8 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 </aside>
 <h2 id='list-all-payment-links'>List all payment links</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"circle_id"</span>: 4
      <span class="s1">'http://www.example.com/payment_link/list'</span>
 </code></pre></div>
@@ -2097,7 +2119,8 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 </aside>
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/payment/get/{paymentId}'</span>
 </code></pre></div>
 <blockquote>
@@ -2136,7 +2159,8 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 </aside>
 <h2 id='list-all-payments'>List all payments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="s2">"payment_id"</span>: 4
      <span class="s1">'http://www.example.com/payment/list'</span>
 </code></pre></div>
@@ -2209,7 +2233,8 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
 <h2 id='request-a-refund'>Request a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>54
      <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
      <span class="s1">'http://www.example.com/refund/request_refund'</span>
@@ -2324,7 +2349,8 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 </aside>
 <h2 id='reject-a-refund'>Reject a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">refund_id</span><span class="o">=</span>4
      <span class="s1">'http://www.example.com/refund/reject_refund'</span>
 </code></pre></div>
@@ -2374,7 +2400,8 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>Returns the rejected refund object if a valid ID was provided. Returns an error otherwise.</p>
 <h2 id='approve-a-refund'>Approve a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">refund_id</span><span class="o">=</span>4
      <span class="s1">'http://www.example.com/refund/approve_refund'</span>
 </code></pre></div>
@@ -2428,7 +2455,8 @@ Requires a % value of the full value.
 </aside>
 <h2 id='list-all-refunds'>List all refunds</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>4
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span>
      <span class="s1">'http://www.example.com/refund/list'</span>
@@ -2521,7 +2549,8 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 </aside>
 <h2 id='get-refund-status'>Get refund status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/refund/get_status/{refundId}'</span>
 </code></pre></div>
 <blockquote>
@@ -2550,7 +2579,8 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 </aside>
 <h1 id='coupon'>Coupon</h1><h2 id='create-a-coupon'>Create a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"ahmed"</span>
      <span class="s1">'http://www.example.com/coupon/create'</span>
@@ -2648,7 +2678,8 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 </aside>
 <h2 id='retrieve-a-coupon'>Retrieve a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/coupon/get/{couponId}'</span>
 </code></pre></div>
 <blockquote>
@@ -2686,7 +2717,8 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 </aside>
 <h2 id='update-a-coupon'>Update a coupon</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"ahmed"</span>
      <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span><span class="s2">"1"</span>
@@ -2785,7 +2817,8 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 </aside>
 <h2 id='list-all-coupons'>List all coupons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/coupon/list/{paymentLinkId}'</span>
 </code></pre></div>
 <blockquote>
@@ -2837,7 +2870,8 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 </aside>
 <h1 id='form'>Form</h1><h2 id='create-a-form'>Create a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"title"</span>
      <span class="s1">'http://www.example.com/form/create'</span>
@@ -2947,7 +2981,8 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 </aside>
 <h2 id='retrieve-a-form'>Retrieve a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">form_id</span><span class="o">=</span>3
      <span class="s1">'http://www.example.com/form/get'</span>
 </code></pre></div>
@@ -3046,7 +3081,8 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 </aside>
 <h2 id='update-a-form'>Update a form</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">form_id</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"title"</span>
      <span class="s1">'http://www.example.com/form/update'</span>
@@ -3178,7 +3214,8 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 </aside>
 <h2 id='list-form-responses'>List form responses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>3
      <span class="s1">'http://www.example.com/form/list_responses'</span>
 </code></pre></div>
@@ -3251,7 +3288,8 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 </aside>
 <h2 id='retrieve-a-specific-response'>Retrieve a specific response</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_id</span><span class="o">=</span>3
      <span class="nt">-d</span> <span class="nv">customer_id</span><span class="o">=</span>1
      <span class="s1">'http://www.example.com/form/get_response'</span>
@@ -3323,7 +3361,8 @@ at least one attribute to be provided.
 <p>Means that payments or transactions finally settle and clear for customer use.</p>
 <h2 id='retrieve-a-settlement'>Retrieve a settlement</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">merchant_id</span><span class="o">=</span>3
      <span class="nt">-d</span> <span class="nv">settlement_id</span><span class="o">=</span>5
      <span class="s1">'http://www.example.com/settlements/get'</span>
@@ -3379,7 +3418,8 @@ at least one attribute to be provided.
 <p>Returns a settlement object. </p>
 <h2 id='list-all-settlements'>List all settlements</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">merchant_id</span><span class="o">=</span>3
      <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span><span class="s2">"pending"</span>
      <span class="s1">'http://www.example.com/settlements/list'</span>
@@ -3453,7 +3493,8 @@ at least one attribute to be provided.
 <p>Returns a settlement object list. The list has a separate settlement objects. If no more settlements are available, the resulting array will be empty. </p>
 <h2 id='get-settlement-status'>Get settlement Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/settlements/get_status/{settlementId}'</span>
 </code></pre></div>
 <blockquote>
@@ -3480,7 +3521,8 @@ at least one attribute to be provided.
 <p>An invoice is an itemized list that records the products or services you provided to your customers, the total amount due, and a method for them to pay you for those items or services. Invoices can be paid in one payment or in installments.</p>
 <h2 id='create-an-invoice'>Create an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">merchant</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="s2">"item[name]"</span><span class="o">=</span><span class="s2">"book"</span>
      <span class="nt">-d</span> <span class="s2">"item[description]"</span><span class="o">=</span><span class="s2">"rich dad poor dad"</span>
@@ -3568,7 +3610,8 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 </aside>
 <h2 id='retrieve-an-invoice'>Retrieve an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/invoice/get/{invoiceId}'</span>
 </code></pre></div>
 <blockquote>
@@ -3601,7 +3644,8 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 </aside>
 <h2 id='deactive-an-invoice'>Deactive an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/invoice/deactive/{invoiceId}'</span>
 </code></pre></div>
 <blockquote>
@@ -3630,7 +3674,8 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <p>Returns the deactivated invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
 <h2 id='settle-an-invoice'>Settle an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'access-token: Bearer'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="s1">'http://www.example.com/invoice/settle_invoice/1'</span>
 </code></pre></div>
 <blockquote>
