@@ -23,7 +23,7 @@ meta:
 
 CirclePay is a platform that enables merchants to develop their projects by connecting many electronic payment gateways located in Egypt in one place with the freedom to choose the appropriate payment method.
 
-# Gateway
+# Payment Gateway
 
 To process online transactions, you will need both a payment gateway and a payment method. 
 
@@ -44,7 +44,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/gateway/list_paymentgateway'
+     'https://circlepay.ai/apis/PaymentGateway/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -95,9 +95,8 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d gateway_id="2"
-     -d user_id=1
-     'http://www.example.com/gateway/get_paymentgateway'
+     -d gateway_id=2
+     'https://circlepay.ai/apis/PaymentGateway/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -123,7 +122,7 @@ Retrieves a specific payment gateway.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 gateway_id |  |<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object.
-user_id | |<span style="color: lightblue;">optional</span> | |Unique identifier for the user object.
+
 
 ### Returns
 Return a payment gateway object.
@@ -161,11 +160,12 @@ American express|   |
 ## List a Payment Methods
 
 ```shell
-curl -X GET --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/payment_methods/list_paymentmethod/{merchantId}'
+	 -d gateway_id=2 
+     'https://circlepay.ai/apis/PaymentMethod/list/'
 ```
 
 > The above command returns JSON structured like this:
@@ -199,13 +199,13 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves all payment methods of the merchant.
 
-### Parameters
-
-No parameters.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+gateway_id |  |<span style="color: red;">required</span>| |Unique identifier for the payment gateway object.
 
 ### Returns
 
-Returns a payment channel list.
+Returns a payment methods list.
 
 <aside class="notice">
 The error codes used when you fail to list payment methods are <a href="#8111">8111</a> , <a href="#7111">7111</a>
@@ -220,9 +220,8 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d gateway_id="2"
-     -d user_id=1
-     'http://www.example.com/payment_methods/get_paymentmethod'
+     -d gateway_id=2
+     'https://circlepay.ai/apis/PaymentMethod/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -250,11 +249,10 @@ Retrieves a specific payment method.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 gateway_id ||<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object. |
-user_id ||<span style="color: lightblue;">optional</span>| | Unique identifier for the user object.|
 
 ### Returns
 
-Returns a payment channel object.
+Returns a payment method object.
 
 <aside class="notice">
 The error codes used when you fail to get a specific payment method are <a href="#8111">8111</a> , <a href="#7113">7113</a>
@@ -276,8 +274,10 @@ curl -X POST --header 'Accept: application/json'
      -d "first_name": "Ahmed"
      -d "last_name": "Khaled"
      -d "email": "ahmedkahled@gmail.com"
-     -d "phone_number": "923847"
-     'http://www.example.com/merchants/create'
+     -d "mobile_number": "923847"
+	 -d "Business_Name": "CirclePay"
+     -d "Business_Address": "El-maadi"
+     'https://circlepay.ai/apis/Merchant/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -317,17 +317,17 @@ Parameter|Type|Required|Default|Description|
 first_name ||<span style="color: red;">required</span>|| The merchant's first name. |
 last_name ||<span style="color: red;">required</span>|| The merchant's last name. |
 email ||<span style="color: red;">required</span>|| The merchant's email. |
-phone_number||<span style="color: red;">required</span>|| The merchant's phone number. |
-picture ||<span style="color: lightblue;">optional</span>|| The merchant's picture. |
-id_card ||<span style="color: lightblue;">optional</span>|| The merchant's id card. |
-business_individual ||<span style="color: lightblue;">optional</span> || check if the business is individual or corporated. |
-type_of_business ||<span style="color: lightblue;">optional</span> || Type of merchant's business. |
-documents ||<span style="color: lightblue;">optional</span> || The documents concerning a legal matter like: passport or national id. |
-billing_info ||<span style="color: lightblue;">optional</span> || Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
+mobile_number||<span style="color: red;">required</span>|| The merchant's phone number. |
+Business_Name ||<span style="color: red;">required</span>|| The business name. |
+Business_Address ||<span style="color: red;">required</span>|| The business address. |
+
+<aside class="notice">
+Password will be auto generated.
+</aside>
 
 ### Returns
 
-Returns the user object if the update succeeded. Returns an error if create parameters are invalid.
+Returns the merchant object if the update succeeded. Returns an error if create parameters are invalid.
 
 <aside class="notice">
 The error codes used when you fail to create a merchant are <a href="#8110">8110</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
@@ -342,8 +342,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=2
-     'http://www.example.com/merchants/get'
+     'https://circlepay.ai/apis/Merchant/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -378,13 +377,9 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves a specific merchant.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
-
 ### Returns
 
-Returns the user object for a valid identifier.
+Returns the merchant object for a valid identifier.
 
 #################################################################################
 
@@ -395,7 +390,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/merchants/update'
+     'https://circlepay.ai/apis/Merchant/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -432,23 +427,16 @@ Updates the specified merchant by setting the values of the parameters passed. A
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-first_name ||<span style="color: red;">required</span> || The merchant's first name. |
-last_name ||<span style="color: red;">required</span> || The merchant's last name. |
-email ||<span style="color: red;">required</span> || The merchant's email. |
-phone_number ||<span style="color: red;">required</span> || The merchant's phone number. |
-picture ||<span style="color: lightblue;">optional</span> || The merchant's picture. |
-id_card ||<span style="color: lightblue;">optional</span> || The merchant's id card. |
-business_individual ||<span style="color: lightblue;">optional</span> || check if the business is individual or corporated. |
-type_of_business ||<span style="color: lightblue;">optional</span> || Type of merchant's business. |
-documents ||<span style="color: lightblue;">optional</span> || The documents concerning a legal matter like: passport or national id. |
-billing_info ||<span style="color: lightblue;">optional</span> || Billing information that enables any person to access the merchant's account, such as a credit card, checking, savings, share or similar account, utility bill, or debit card.|
-payment_methods ||<span style="color: lightblue;">optional</span> || The payment methods which merchant uses.|
-circles ||<span style="color: lightblue;">optional</span> || The circles which merchant uses (circles used to send and request money domestically and abroad using either a contact's phone number or email without incurring charges for the transfer).|
+first_name ||<span style="color: red;">required</span>|| The merchant's first name. |
+last_name ||<span style="color: red;">required</span>|| The merchant's last name. |
+email ||<span style="color: red;">required</span>|| The merchant's email. |
+mobile_number||<span style="color: red;">required</span>|| The merchant's phone number. |
+Business_Name ||<span style="color: red;">required</span>|| The business name. |
+Business_Address ||<span style="color: red;">required</span>|| The business address. |
 
 ### Returns
 
-Returns the user object if the update succeeded. Returns an error if update parameters are invalid.
+Returns the merchant object if the update succeeded. Returns an error if update parameters are invalid.
 
 <aside class="notice">
 The error codes used when you fail to update a merchant are <a href="#8116">8116</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
@@ -464,7 +452,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/merchants/list'
+     'https://circlepay.ai/apis/Merchant/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -535,8 +523,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=1
-     'http://www.example.com/merchants/list_documents'
+     'https://circlepay.ai/apis/Merchant/listDocuments'
 ```
 
 > The above command returns JSON structured like this:
@@ -551,18 +538,18 @@ curl -X POST --header 'Content-Type: application/json'
  "data" :
 	[
 	 {
-	  "id": "124234",
-	  "name": "national id",
-	  "size": 7969,
-	  "upload_state": "success",
-	  "last_update": 23-3-2022
+	  "document_id": "124234",
+	  "file_size": 7969,
+	  "upload_date": 22-3-2022,
+	  "last_modified": 23-3-2022,
+	  "document_type": "national id"
 	 },
 	 {
-	  "id": "12434234",
-	  "name": "passport",
-	  "size": 7969,
-	  "upload_state": "success",
-	  "last_update": 21-1-2022
+	  "document_id": "13534234",
+	  "file_size": 799,
+	  "upload_date": 22-2-2022,
+	  "last_modified": 23-3-2022,
+	  "document_type": "passport"
 	 }
 	]
 }
@@ -570,9 +557,9 @@ curl -X POST --header 'Content-Type: application/json'
 
 Retrieves all merchants' documents.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
+### Parameters
+
+No parameters.
 
 ### Returns
 
@@ -636,9 +623,8 @@ curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=2
-     -d gateway_id="4"
-     'http://www.example.com/merchants/enable_gateway'
+     -d gateway_id=4
+     'https://circlepay.ai/apis/Merchant/enable'
 ```
 
 > The above command returns JSON structured like this:
@@ -663,7 +649,6 @@ This endpoint enable specific gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
 gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
@@ -683,7 +668,8 @@ curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/merchants/disable_gateway'
+	 -d gateway_id=4
+     'https://circlepay.ai/apis/Merchant/disable'
 ```
 
 > The above command returns JSON structured like this:
@@ -702,14 +688,14 @@ curl -X PUT --header 'Content-Type: application/json'
 		"name": "paymob",
 		"id": 1
 	 },
-	 "payment_channels":
+	 "payment_methods":
 	   [ 
 		{
-		 "name": "payment channel-1",
+		 "name": "payment method-1",
 		 "id": 2
 		},
 		{
-		 "name": "payment channel-2",
+		 "name": "payment method-2",
 		 "id": 3
 		}
 	   ]
@@ -719,9 +705,9 @@ curl -X PUT --header 'Content-Type: application/json'
 
 This endpoint disable specific gateway and it's related payment methods.
 
-### Parameters
-
-No parameters.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -736,9 +722,8 @@ curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=2
-     -d gateway_id="4"
-     'http://www.example.com/merchants/enable_payment_method'
+     -d payment_method_id=4
+     'https://circlepay.ai/apis/Merchant/enablePaymentMethod'
 ```
 
 > The above command returns JSON structured like this:
@@ -751,10 +736,18 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorCode" : 0,
  "errorDetails" : "No error till now",
  "data" :
-	{  
-	 "title":"success",
-	 "message":"The following payment method has been enabled",
-	 "status":"200"
+	{
+	  "status": true,
+	  "totalRevenue": 0,
+	  "paymentFeePercentage": 0,
+	  "paymentFeeAmount": 0,
+	  "refundFeePercentage": 0,
+	  "refundFeeAmount": 0,
+	  "id": 0,
+	  "MerchantId": 0,
+	  "PaymentMethodId": 0,
+	  "createdAt": 23-2-2022,
+	  "updatedAt": 24-2-2022
 	}
 }
 ```
@@ -763,12 +756,11 @@ This endpoint enable specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payment_method_id ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
 
 ### Returns
 
-Returns success message if payment method enabled.
+Returns the payment method object.
 
 <aside class="notice">
 The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
@@ -783,7 +775,8 @@ curl -X PUT --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/merchants/disable_payment_method'
+     -d payment_method_id=4
+     'https://circlepay.ai/apis/Merchant/disablePaymentMethod'
 ```
 
 > The above command returns JSON structured like this:
@@ -796,10 +789,18 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorCode" : 0,
  "errorDetails" : "No error till now",
  "data" :
-	{  
-	 "title":"success",
-	 "message":"The following payment method has been disabled",
-	 "status":"200"
+	{
+	  "status": false,
+	  "totalRevenue": 0,
+	  "paymentFeePercentage": 0,
+	  "paymentFeeAmount": 0,
+	  "refundFeePercentage": 0,
+	  "refundFeeAmount": 0,
+	  "id": 0,
+	  "MerchantId": 0,
+	  "PaymentMethodId": 0,
+	  "createdAt": 23-2-2022,
+	  "updatedAt": 24-2-2022
 	}
 }
 ```
@@ -808,12 +809,11 @@ This endpoint disable specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payment_method_id ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
 
 ### Returns
 
-Returns success message if payment method disabled.
+Returns the payment method object.
 
 <aside class="notice">
 The error code used when you fail to disable payment method is <a href="#7113">7113</a>
@@ -824,11 +824,11 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 ## List payment methods
 
 ```shell
-curl -X POST --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/merchants/list_payment_methods'
+     'https://circlepay.ai/apis/Merchant/listPaymentMethods'
 ```
 
 > The above command returns JSON structured like this:
@@ -842,14 +842,14 @@ curl -X POST --header 'Content-Type: application/json'
  "errorDetails" : "No error till now",
  "data" :
 	{
-	 "payment_channels":
+	 "payment_methods":
 	  [ 
 		{
-		  "name": "payment channel-1",
+		  "name": "payment method-1",
 		  "id": 2
 		},
 		{
-		  "name": "payment channel-2",
+		  "name": "payment method-2",
 		  "id": 3
 		}
 	  ]
@@ -857,53 +857,15 @@ curl -X POST --header 'Content-Type: application/json'
 }
 ```
 
-This endpoint list payment methods of the merchant.
+This endpoint list allowed payment methods to the merchant.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
+### Parameters
 
-### Returns
-
-Returns a payment channel list.
-
-########################################################################################
-
-## Set Alert
-
-```shell
-curl -X POST --header 'Content-Type: application/json'
-     --header 'Accept: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=2
-     -d note=""
-     'http://www.example.com/merchants/set_alert'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "The user has been flagged. CirclePay admins shall investigate this  customer",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :{}
-}
-```
-
-This endpoint flag the user.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-note ||<span style="color: red;">required</span> || The note shown when the user flagged. |
+No parameters.
 
 ### Returns
 
-Returns a message to inform you if the user flagged or not.
+Returns a payment methods list.
 
 ####################################################################################
 
