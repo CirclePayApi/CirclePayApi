@@ -567,55 +567,6 @@ Returns a document list.
 
 ####################################################################################
 
-## Upload documents
-
-```shell
-curl -X POST --header 'Content-Type: application/json'
-     --header 'Accept: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "document_list[id]"="124234" \
-     -d "document_list[name]"="national id" \
-     -d "document_list[size]"=7969 \
-     'http://www.example.com/merchants/upload_documents?user_id=2'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "You successfully uploaded documents",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{  
-	 "title":"success",
-	 "message":"Documents Uploaded successfully",
-	 "status":"200"
-	}
-}
-```
-
-To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-document_list ||<span style="color: red;">required</span> || It contains the details of the uploaded document. |
-document_list.id ||<span style="color: red;">required</span> || The id of the document. |
-document_list.name ||<span style="color: red;">required</span> || The name of the document for example, national id.|
-document_list.size ||<span style="color: red;">required</span> || The size of the document in MB.|
-document_list.upload_state ||<span style="color: red;">required</span> || The upload state of the document. |
-document_list.last_update ||<span style="color: red;">required</span> || Last update of the document. |
-
-### Returns
-
-Returns success message if document uploaded.
-
-###########################################################################
-
 ## Enable gateway
 
 ```shell
@@ -874,11 +825,12 @@ Returns a payment methods list.
 ## Retrieve a customer
 
 ```shell
-curl -X GET --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/customers/get/{customerId}'
+	 -d mobile_number=239487
+     'https://circlepay.ai/apis/Customers/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -906,13 +858,13 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves a specific customer.
 
-### Parameters
-
-No parameters.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+mobile_number ||<span style="color: red;">required</span> || The mobile number of the customer. |
 
 ### Returns
 
-Returns the Customer object for a valid identifier.
+Returns the Customer object for a valid mobile number.
 
 <aside class="notice">
 The error code used when you fail to retrieve a specific customer is <a href="#3110">3110</a>
@@ -928,7 +880,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d user_id=2
-     'http://www.example.com/customers/list'
+     'https://circlepay.ai/apis/Customers/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -956,13 +908,12 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves a list of your customers.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-user_id ||<span style="color: red;">required</span> || Unique identifier for the user object. |
-circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
+### Parameters
+
+No parameters.
 
 <aside class="notice">
-Select the fields you want to retrieve.
+List all customers using filters.
 </aside>
 
 ### Returns
@@ -984,7 +935,7 @@ curl -X POST --header 'Accept: application/json'
      -d "currency": "EGP"
      -d "description": "payment link"
      -d "expire_date": "1-22-2022"
-     'http://www.example.com/payment_link/create'
+     'https://circlepay.ai/apis/Payment_Link/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -1021,12 +972,19 @@ Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 value ||<span style="color: red;">required</span> || The value of payment. |
 currency ||<span style="color: red;">required</span> || Currency type used in payment. |
-description ||<span style="color: red;">required</span> || Description of transaction. |
+enable_Survey ||<span style="color: red;">required</span> || Switch that helps you to enable or disable survey. |
 expire_date ||<span style="color: red;">required</span> || Expire date of the payment link. |
-payment_method_id ||<span style="color: lightblue;">optional</span> || List of unique identifier(s) for the payment method object(s). |
-status || <span style="color: lightblue;">optional</span> || The status of the payment link, to know if the payment link is still valid. |
-circle_id || <span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
-fees_list || <span style="color: lightblue;">optional</span> || The fixed price charged for a payment. |
+description ||<span style="color: red;">required</span> || Description of transaction. |
+shippingPolicyFlag ||<span style="color: red;">required</span> || The shipping policy flag. |
+status || <span style="color: red;">required</span> || The status of the payment link, to know if the payment link is still valid. |
+refundPolicyFlag || <span style="color: red;">required</span> || The refund policy flag. |
+shippingPolicyDetails || <span style="color: red;">required</span> || The shipping policy Details for example, original sales receipt must accompany returns. |
+refundPolicyDetails || <span style="color: red;">required</span> || The refund policy details for example, refunds and exchanges, Right to cancel your order. |
+comments || <span style="color: red;">required</span> || Comments help merchant and customer to know more about order details and order process. |
+name || <span style="color: red;">required</span> || The name of the customer. |
+getCustAddress || <span style="color: red;">required</span> || The customer's address. |
+merchantId || <span style="color: red;">required</span> || Unique identifier for the merchant object. |
+
 
 ### Returns
 
@@ -1045,9 +1003,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_id": 4
      -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd" 
-     'http://www.example.com/payment_link/get'
+     'https://circlepay.ai/apis/Payment_Link/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -1082,7 +1039,6 @@ Retrieves a specific payment link.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
 payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
 
 ### Returns
@@ -1098,9 +1054,8 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_id": 3
      -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
-     'http://www.example.com/payment_link/update'
+     'https://circlepay.ai/apis/Payment_Link/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -1160,8 +1115,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "circle_id": 4
-     'http://www.example.com/payment_link/list'
+     -d "customer_mobile": 239494
+     'https://circlepay.ai/apis/Payment_Link/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1196,7 +1151,7 @@ Retrieves all payment links.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
+customer_mobile ||<span style="color: lightblue;">optional</span> || Customer's mobile number. |
 
 <aside class="notice">
 Select the fields you want to retrieve.
