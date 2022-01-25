@@ -356,9 +356,6 @@
                     <a href="#list-all-documents" class="toc-h2 toc-link" data-title="List all documents">List all documents</a>
                   </li>
                   <li>
-                    <a href="#upload-documents" class="toc-h2 toc-link" data-title="Upload documents">Upload documents</a>
-                  </li>
-                  <li>
                     <a href="#enable-gateway" class="toc-h2 toc-link" data-title="Enable gateway">Enable gateway</a>
                   </li>
                   <li>
@@ -1165,95 +1162,6 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <p>No parameters.</p>
 <h3 id='returns-9'>Returns</h3>
 <p>Returns a document list.</p>
-<h2 id='upload-documents'>Upload documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"document_list[id]"</span><span class="o">=</span><span class="s2">"124234"</span> <span class="se">\</span>
-     <span class="nt">-d</span> <span class="s2">"document_list[name]"</span><span class="o">=</span><span class="s2">"national id"</span> <span class="se">\</span>
-     <span class="nt">-d</span> <span class="s2">"document_list[size]"</span><span class="o">=</span>7969 <span class="se">\</span>
-     <span class="s1">'http://www.example.com/merchants/upload_documents?user_id=2'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully uploaded documents"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"No error till now"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">  
-     </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Documents Uploaded successfully"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"200"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>To upload a file, The request should contain the document you would like to upload, as well as the parameters for creating a document.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>user_id</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Unique identifier for the user object.</td>
-</tr>
-<tr>
-<td>document_list</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>It contains the details of the uploaded document.</td>
-</tr>
-<tr>
-<td>document_list.id</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The id of the document.</td>
-</tr>
-<tr>
-<td>document_list.name</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The name of the document for example, national id.</td>
-</tr>
-<tr>
-<td>document_list.size</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The size of the document in MB.</td>
-</tr>
-<tr>
-<td>document_list.upload_state</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The upload state of the document.</td>
-</tr>
-<tr>
-<td>document_list.last_update</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Last update of the document.</td>
-</tr>
-</tbody></table>
-<h3 id='returns-10'>Returns</h3>
-<p>Returns success message if document uploaded.</p>
 <h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1297,7 +1205,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-11'>Returns</h3>
+<h3 id='returns-10'>Returns</h3>
 <p>Returns success message if gateway enabled.</p>
 
 <aside class="notice">
@@ -1359,7 +1267,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-12'>Returns</h3>
+<h3 id='returns-11'>Returns</h3>
 <p>Returns success message if gateway disabled.</p>
 <h2 id='enable-payment-method'>Enable payment method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1412,7 +1320,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-13'>Returns</h3>
+<h3 id='returns-12'>Returns</h3>
 <p>Returns the payment method object.</p>
 
 <aside class="notice">
@@ -1469,7 +1377,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-14'>Returns</h3>
+<h3 id='returns-13'>Returns</h3>
 <p>Returns the payment method object.</p>
 
 <aside class="notice">
@@ -1509,13 +1417,14 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>This endpoint list allowed payment methods to the merchant.</p>
 <h3 id='parameters-4'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-15'>Returns</h3>
+<h3 id='returns-14'>Returns</h3>
 <p>Returns a payment methods list.</p>
-<h1 id='customers'>Customers</h1><h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h1 id='customers'>Customers</h1><h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="s1">'http://www.example.com/customers/get/{customerId}'</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span>239487
+     <span class="s1">'https://circlepay.ai/apis/Customers/get'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1540,10 +1449,26 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific customer.</p>
-<h3 id='parameters-5'>Parameters</h3>
-<p>No parameters.</p>
-<h3 id='returns-16'>Returns</h3>
-<p>Returns the Customer object for a valid identifier.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mobile_number</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>The mobile number of the customer.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-15'>Returns</h3>
+<p>Returns the Customer object for a valid mobile number.</p>
 
 <aside class="notice">
 The error code used when you fail to retrieve a specific customer is <a href="#3110">3110</a>
@@ -1553,7 +1478,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">user_id</span><span class="o">=</span>2
-     <span class="s1">'http://www.example.com/customers/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/Customers/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1578,36 +1503,13 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>user_id</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Unique identifier for the user object.</td>
-</tr>
-<tr>
-<td>circle_id</td>
-<td></td>
-<td><span style="color: lightblue;">optional</span></td>
-<td></td>
-<td>Unique identifier for the circle object.</td>
-</tr>
-</tbody></table>
+<h3 id='parameters-5'>Parameters</h3>
+<p>No parameters.</p>
 
 <aside class="notice">
-Select the fields you want to retrieve.
+List all customers using filters.
 </aside>
-<h3 id='returns-17'>Returns</h3>
+<h3 id='returns-16'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='payment-link'>Payment Link</h1><h2 id='create-a-payment-link'>Create a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1617,7 +1519,7 @@ Select the fields you want to retrieve.
      <span class="nt">-d</span> <span class="s2">"currency"</span>: <span class="s2">"EGP"</span>
      <span class="nt">-d</span> <span class="s2">"description"</span>: <span class="s2">"payment link"</span>
      <span class="nt">-d</span> <span class="s2">"expire_date"</span>: <span class="s2">"1-22-2022"</span>
-     <span class="s1">'http://www.example.com/payment_link/create'</span>
+     <span class="s1">'https://circlepay.ai/apis/Payment_Link/create'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1672,11 +1574,11 @@ Select the fields you want to retrieve.
 <td>Currency type used in payment.</td>
 </tr>
 <tr>
-<td>description</td>
+<td>enable_Survey</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
 <td></td>
-<td>Description of transaction.</td>
+<td>Switch that helps you to enable or disable survey.</td>
 </tr>
 <tr>
 <td>expire_date</td>
@@ -1686,35 +1588,77 @@ Select the fields you want to retrieve.
 <td>Expire date of the payment link.</td>
 </tr>
 <tr>
-<td>payment_method_id</td>
+<td>description</td>
 <td></td>
-<td><span style="color: lightblue;">optional</span></td>
+<td><span style="color: red;">required</span></td>
 <td></td>
-<td>List of unique identifier(s) for the payment method object(s).</td>
+<td>Description of transaction.</td>
+</tr>
+<tr>
+<td>shippingPolicyFlag</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>The shipping policy flag.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
-<td><span style="color: lightblue;">optional</span></td>
+<td><span style="color: red;">required</span></td>
 <td></td>
 <td>The status of the payment link, to know if the payment link is still valid.</td>
 </tr>
 <tr>
-<td>circle_id</td>
+<td>refundPolicyFlag</td>
 <td></td>
-<td><span style="color: lightblue;">optional</span></td>
+<td><span style="color: red;">required</span></td>
 <td></td>
-<td>Unique identifier for the circle object.</td>
+<td>The refund policy flag.</td>
 </tr>
 <tr>
-<td>fees_list</td>
+<td>shippingPolicyDetails</td>
 <td></td>
-<td><span style="color: lightblue;">optional</span></td>
+<td><span style="color: red;">required</span></td>
 <td></td>
-<td>The fixed price charged for a payment.</td>
+<td>The shipping policy Details for example, original sales receipt must accompany returns.</td>
+</tr>
+<tr>
+<td>refundPolicyDetails</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>The refund policy details for example, refunds and exchanges, Right to cancel your order.</td>
+</tr>
+<tr>
+<td>comments</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>Comments help merchant and customer to know more about order details and order process.</td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>The name of the customer.</td>
+</tr>
+<tr>
+<td>getCustAddress</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>The customer&#39;s address.</td>
+</tr>
+<tr>
+<td>merchantId</td>
+<td></td>
+<td><span style="color: red;">required</span></td>
+<td></td>
+<td>Unique identifier for the merchant object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-18'>Returns</h3>
+<h3 id='returns-17'>Returns</h3>
 <p>Returns the payment link object.</p>
 
 <aside class="notice">
@@ -1724,9 +1668,8 @@ The error codes used when you fail to create payment link are <a href="#4101">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 4
      <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span> 
-     <span class="s1">'http://www.example.com/payment_link/get'</span>
+     <span class="s1">'https://circlepay.ai/apis/Payment_Link/get'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1767,13 +1710,6 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 </tr>
 </thead><tbody>
 <tr>
-<td>payment_link_id</td>
-<td></td>
-<td><span style="color: lightblue;">optional</span></td>
-<td></td>
-<td>Unique identifier for the payment link object.</td>
-</tr>
-<tr>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
@@ -1781,15 +1717,14 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>The url of the payment link.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-19'>Returns</h3>
+<h3 id='returns-18'>Returns</h3>
 <p>Returns the payment link object.</p>
 <h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_id"</span>: 3
      <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span>
-     <span class="s1">'http://www.example.com/payment_link/update'</span>
+     <span class="s1">'https://circlepay.ai/apis/Payment_Link/update'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1886,7 +1821,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>The fixed price charged for a payment.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-20'>Returns</h3>
+<h3 id='returns-19'>Returns</h3>
 <p>Returns the payment link object.</p>
 
 <aside class="notice">
@@ -1896,8 +1831,8 @@ The error codes used when you fail to update payment link are <a href="#4111">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"circle_id"</span>: 4
-     <span class="s1">'http://www.example.com/payment_link/list'</span>
+     <span class="nt">-d</span> <span class="s2">"customer_mobile"</span>: 239494
+     <span class="s1">'https://circlepay.ai/apis/Payment_Link/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1938,18 +1873,18 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 </tr>
 </thead><tbody>
 <tr>
-<td>circle_id</td>
+<td>customer_mobile</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
 <td></td>
-<td>Unique identifier for the circle object.</td>
+<td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
 Select the fields you want to retrieve.
 </aside>
-<h3 id='returns-21'>Returns</h3>
+<h3 id='returns-20'>Returns</h3>
 <p>Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -1989,7 +1924,7 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 <p>Retrieves the details of an existing payment.</p>
 <h3 id='parameters-6'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-22'>Returns</h3>
+<h3 id='returns-21'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2061,7 +1996,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>The list of Unique identifier(s) for the payment object(s).</td>
 </tr>
 </tbody></table>
-<h3 id='returns-23'>Returns</h3>
+<h3 id='returns-22'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 
 <aside class="notice">
@@ -2175,7 +2110,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <td>Unique identifier for the invoice object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-24'>Returns</h3>
+<h3 id='returns-23'>Returns</h3>
 <p>Returns the refund object. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -2234,7 +2169,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-25'>Returns</h3>
+<h3 id='returns-24'>Returns</h3>
 <p>Returns the rejected refund object if a valid ID was provided. Returns an error otherwise.</p>
 <h2 id='approve-a-refund'>Approve a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2285,7 +2220,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-26'>Returns</h3>
+<h3 id='returns-25'>Returns</h3>
 <p>Returns the aprroved refund object if a valid ID was provided. Returns an error otherwise. </p>
 
 <aside class="notice">
@@ -2375,7 +2310,7 @@ Requires a % value of the full value.
 <td>The url of the payment link.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-26'>Returns</h3>
 <p>Returns refund list. If no more refunds are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -2409,7 +2344,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 <p>Retrieves the status of refund object.</p>
 <h3 id='parameters-7'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-27'>Returns</h3>
 <p>Returns the status of refund object, for example: &quot;approved&quot;, &quot;pending&quot; or &quot;rejected&quot;.</p>
 
 <aside class="notice">
@@ -2504,7 +2439,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns the coupon object. </p>
 
 <aside class="notice">
@@ -2547,7 +2482,7 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 <p>Retrieves a specific coupon.</p>
 <h3 id='parameters-8'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2647,7 +2582,7 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 <td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>The newly updated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
 <aside class="notice">
@@ -2700,7 +2635,7 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 <p>Returns a list of your coupons.</p>
 <h3 id='parameters-9'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-32'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 
 <aside class="notice">
@@ -2811,7 +2746,7 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-33'>Returns</h3>
+<h3 id='returns-32'>Returns</h3>
 <p>Returns form object which has the questions array. Status is &quot;active&quot; by default.</p>
 
 <aside class="notice">
@@ -2907,7 +2842,7 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 <td>Unique identifier for the payment link object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-33'>Returns</h3>
 <p>Returns a form object if founded, else an error will be thrown.</p>
 
 <aside class="notice">
@@ -3036,7 +2971,7 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-35'>Returns</h3>
+<h3 id='returns-34'>Returns</h3>
 <p>Returns The newly updated form object if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -3114,7 +3049,7 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 <td>Unique identifier for the form object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-36'>Returns</h3>
+<h3 id='returns-35'>Returns</h3>
 <p>Returns response object list if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -3189,7 +3124,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>Unique identifier for the user object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-37'>Returns</h3>
+<h3 id='returns-36'>Returns</h3>
 <p>Returns one response object if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -3252,7 +3187,7 @@ at least one attribute to be provided.
 <td>Unique identifier for the settlement object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-38'>Returns</h3>
+<h3 id='returns-37'>Returns</h3>
 <p>Returns a settlement object. </p>
 <h2 id='list-all-settlements'>List all settlements</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -3327,7 +3262,7 @@ at least one attribute to be provided.
 <td>The status of the settlement for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-39'>Returns</h3>
+<h3 id='returns-38'>Returns</h3>
 <p>Returns a settlement object list. The list has a separate settlement objects. If no more settlements are available, the resulting array will be empty. </p>
 <h2 id='get-settlement-status'>Get settlement Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -3353,7 +3288,7 @@ at least one attribute to be provided.
 <p>Retrieve the status of settlement.</p>
 <h3 id='parameters-10'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-40'>Returns</h3>
+<h3 id='returns-39'>Returns</h3>
 <p>Returns the status of the settlement object.</p>
 <h1 id='invoice'>Invoice</h1>
 <p>An invoice is an itemized list that records the products or services you provided to your customers, the total amount due, and a method for them to pay you for those items or services. Invoices can be paid in one payment or in installments.</p>
@@ -3440,7 +3375,7 @@ at least one attribute to be provided.
 <td>The details of the customer.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-41'>Returns</h3>
+<h3 id='returns-40'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -3474,7 +3409,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <p>Retrieves the invoice with the given id.</p>
 <h3 id='parameters-11'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-42'>Returns</h3>
+<h3 id='returns-41'>Returns</h3>
 <p>Returns an invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -3508,7 +3443,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <p>Deactivate the invoice with the given id.</p>
 <h3 id='parameters-12'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-43'>Returns</h3>
+<h3 id='returns-42'>Returns</h3>
 <p>Returns the deactivated invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
 <h2 id='settle-an-invoice'>Settle an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -3538,7 +3473,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <p>Settle the invoice with the given id.</p>
 <h3 id='parameters-13'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-44'>Returns</h3>
+<h3 id='returns-43'>Returns</h3>
 <p>Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
