@@ -1177,7 +1177,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/payment/get/{paymentId}'
+     'https://circlepay.ai/apis/Payment/get/{transactionId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1229,8 +1229,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_id": 4
-     'http://www.example.com/payment/list'
+     -d "coupon_code": 423746
+     'https://circlepay.ai/apis/Payment/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1278,11 +1278,19 @@ Retrieves all payments.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_id ||<span style="color: red;">required</span>|| The list of Unique identifier(s) for the payment object(s). |
+coupon_code ||<span style="color: red;">required</span>|| The coupon code. |
+customer_mobile ||<span style="color: lightblue;">optional</span>|| Customer's mobile number. |
+payment_link_url ||<span style="color: lighblue;">optional</span>|| The payment link url. |
+invoice_num ||<span style="color: lighblue;">optional</span>|| The invoice number. |
 
 ### Returns
 
 Returns a payment list which has the details of the payment like: status, amount paid and payment method.
+
+<aside class="notice">
+Also there is a filter object which contains values of wanted payment objects.
+</aside>
+
 
 <aside class="notice">
 The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
@@ -1301,9 +1309,9 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d value=54
      -d currency="EGP"
-     'http://www.example.com/refund/request_refund'
+	 -d value=33
+     'https://circlepay.ai/apis/Refund/requestRefund'
 ```
 
 > The above command returns JSON structured like this:
@@ -1320,7 +1328,7 @@ curl -X POST --header 'Accept: application/json'
 	 "id": 1,
 	 "request_date": "2022-10-12",
 	 "refund_date": "2022-10-12",
-	 "value": 1,
+	 "value": 33,
 	 "payment_id": 1,
 	 "fees_list": [],
 	 "payment_method": [],
@@ -1333,15 +1341,10 @@ This endpoint helps you to request refund.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object.|
+transaction_id ||<span style="color: red;">required</span> || Unique identifier for the transaction object.|
 value ||<span style="color: red;">required</span> || Value of the refund.|
 currency ||<span style="color: red;">required</span> || The currency type used. |
-payment_id ||<span style="color: red;">required</span> ||Unique identifier for the payment object.|
-fees_list ||<span style="color: red;">required</span> ||The list of fees which are fixed price charged for a payment.|
-payment_method ||<span style="color: red;">required</span> || The payment method that used in payment. |
-payment_gateway ||<span style="color: red;">required</span> || Payment gateway used in payment |
-customer_id ||<span style="color: red;">required</span> || Unique identifier for the user oject. |
-invoice_id ||<span style="color: red;">required</span> || Unique identifier for the invoice object. |
+
 
 ### Returns
 
@@ -1357,102 +1360,6 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 
 ######################################################################################
 
-## Reject a refund
-
-```shell
-curl -X PUT --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d refund_id=4
-     'http://www.example.com/refund/reject_refund'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "You successfully rejected a refund",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{
-	 "id": 1,
-	 "request_date": "2022-10-12",
-	 "refund_date": "2022-10-12",
-	 "value": 1,
-	 "payment_id": 1,
-	 "fees_list": [],
-	 "payment_method": [],
-	 "status": "rejected",
-	 "customer": null
-	}
-}
-```
-Returns refund object with rejected status.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object. |
-
-### Returns
-
-Returns the rejected refund object if a valid ID was provided. Returns an error otherwise.
-
-######################################################################################
-
-## Approve a refund
-
-```shell
-curl -X PUT --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d refund_id=4
-     'http://www.example.com/refund/approve_refund'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "You successfully approved a refund",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{
-	 "id": 1,
-	 "request_date": "2022-10-12",
-	 "refund_date": "2022-10-12",
-	 "value": 1,
-	 "payment_id": 1,
-	 "fees_list": [],
-	 "payment_method": [],
-	 "status": "approved",
-	 "customer": null
-	}
-}
-```
-Returns refund object with approved status.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-refund_id ||<span style="color: red;">required</span> || Unique identifier for the refund object. |
-
-### Returns
-
-Returns the aprroved refund object if a valid ID was provided. Returns an error otherwise. 
-
-<aside class="notice">
-Requires a % value of the full value.
-</aside>
-
-######################################################################################
-
 ## List all refunds
 
 ```shell
@@ -1460,9 +1367,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_id=4
      -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     'http://www.example.com/refund/list'
+     'https://circlepay.ai/apis/Refund/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1481,7 +1387,7 @@ curl -X POST --header 'Accept: application/json'
 		"request_date": "2022-10-12",
 		"refund_date": "2022-10-12",
 		"value": 1,
-		"payment_id": 1,
+		"transaction_id": 1,
 		"fees_list": [],
 		"payment_method": [],
 		"status": [],
@@ -1492,7 +1398,7 @@ curl -X POST --header 'Accept: application/json'
 		"request_date": "2022-10-12",
 		"refund_date": "2022-10-12",
 		"value": 2,
-		"payment_id": 2,
+		"transaction_id": 2,
 		"fees_list": [],
 		"payment_method": [],
 		"status": [],
@@ -1505,17 +1411,17 @@ List refund objects.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-circle_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the circle object. |
-customer_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
-payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
+transaction_id ||<span style="color: lightblue;">optional</span>|| Unique identifier of transaction object. |
+customer_mobile ||<span style="color: lightblue;">optional</span>|| Customer's mobile number. |
+payment_link_url ||<span style="color: lighblue;">optional</span>|| The payment link url. |
+invoice_num ||<span style="color: lighblue;">optional</span>|| The invoice number. |
 
 ### Returns
 
 Returns refund list. If no more refunds are available, the resulting array will be empty.
 
 <aside class="notice">
-At least one input is required.
+Also there is a filter object which contains values of wanted payment objects.
 </aside>
 
 <aside class="notice">
@@ -1531,7 +1437,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/refund/get_status/{refundId}'
+     'https://circlepay.ai/apis/refund/getRefund/{refundId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1575,8 +1481,9 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=1
-     -d name="ahmed"
-     'http://www.example.com/coupon/create'
+     -d name="AHMEDCOUPON"
+	 -d expire_date=22-2-2022
+     'https://circlepay.ai/apis/Coupon/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -1603,13 +1510,14 @@ This endpoint helps you to create coupon.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: red;">required</span> || The payment link url. |
+code ||<span style="color: red;">required</span> || The code of coupon. |
 value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
 name ||<span style="color: red;">required</span> || The name of the coupon. |
 expire_date ||<span style="color: red;">required</span> || Coupon's expire date.|
-number_of_users ||<span style="color: red;">required</span> || Number of users who can use the coupon. |
-status ||<span style="color: red;">required</span> || The status of the coupon for example, expired. |
-times_per_customer ||<span style="color: red;">required</span> || Times that customer can use the same coupon. |
+number_of_uses ||<span style="color: red;">required</span> || Number of uses to this coupon. |
+discount_value ||<span style="color: red;">required</span> || Coupon's discount value. |
+discount_type ||<span style="color: red;">required</span> || number or percentage. |
 
 ### Returns
 
@@ -1632,7 +1540,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/coupon/get/{couponId}'
+     'https://circlepay.ai/apis/Coupon/get/{couponCode}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1683,9 +1591,8 @@ curl -X PUT --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=1
-     -d name="ahmed"
-     -d status="1"
-     'http://www.example.com/coupon/update'
+     -d name="AHMEDCOUPON"
+     'https://circlepay.ai/apis/Coupon/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -1706,7 +1613,7 @@ curl -X PUT --header 'Accept: application/json'
 	 "number_of_uses": 1,
 	 "payment_link_id": 1,
 	 "payments": null,
-	 "status": 1,
+	 "status": "active",
 	 "times_per_customer": 1,
 	 "customer": []
 	}
@@ -1716,11 +1623,11 @@ Updates the metadata of a coupon.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-coupon_id ||<span style="color: red;">required</span> ||Unique identifier for the coupon object.|
+coupon_code ||<span style="color: red;">required</span> ||The code of coupon.|
 value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
 name ||<span style="color: red;">required</span> ||The name of the coupon.|
 expire_date ||<span style="color: red;">required</span> ||Coupon's expire date.|
-number_of_users ||<span style="color: red;">required</span> || Number of users who can use the coupon. |
+number_of_uses ||<span style="color: red;">required</span> || Number of uses for this coupon. |
 status ||<span style="color: red;">required</span> ||The status of the coupon for example, expired.|
 times_per_customer ||<span style="color: red;">required</span> || Times that customer can use the same coupon. |
 
@@ -1741,7 +1648,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/coupon/list/{paymentLinkId}'
+     'https://circlepay.ai/apis/Coupon/list/{paymentLinkUrl}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1763,7 +1670,7 @@ curl -X GET --header 'Accept: application/json'
 		"number_of_uses": 1,
 		"payment_link_id": 1,
 		"payments": null,
-		"status": 1,
+		"status": "active",
 		"times_per_customer": 1,
 		"customer": []
 	 },
@@ -1775,14 +1682,14 @@ curl -X GET --header 'Accept: application/json'
 		"number_of_uses": 1,
 		"payment_link_id": 1,
 		"payments": null,
-		"status": 1,
+		"status": "expired",
 		"times_per_customer": 1,
 		"customer": []
 	 }
 	]
 }
 ```
-Returns a list of your coupons.
+Returns a list of your coupons per payment link.
 
 ### Parameters
 
