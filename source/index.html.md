@@ -1714,65 +1714,100 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_id=1
+     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
      -d title="title"
-     'http://www.example.com/form/create'
+     'https://circlepay.ai/apis/form/create'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
- "status" : True,
- "message" : "You successfully created a form",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-   {
-	"payment_link_id": 1,
-	"title": "title",
-	"questions": [
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		},
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		}
-	],
-	"status": "pending"
+  "message": "Survey fetched successfully",
+  "status":"true",
+  data:
+  {
+    "survey": {
+      "title": "new_survey",
+      "status": false,
+      "questions": [
+        {
+          "qid": 0,
+          "question": "how are you",
+          "questionType": "Text",
+          "options": [
+            {
+              "oid": 0,
+              "name": ""
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 0, 
+            "name": "greaaat"
+          }]
+        },
+        {
+          "qid": 1,
+          "question": "whos is this",
+          "questionType": "Single Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "me"
+            },
+            {
+              "oid": 1,
+              "name": "you"
+            },
+            {
+              "oid": 2,
+              "name": "someone else"
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 1,
+            "name": ""
+          }]
+        },
+        {
+          "qid": 2,
+          "question": "list projects",
+          "questionType": "Multiple Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "circlehub"
+            },
+            {
+              "0id": 1,
+              "name": "circlepay"
+            },
+            {
+              "oid": 2,
+              "name": "all"
+            },
+            {
+              "oid": 3,
+              "name": "none"
+            }
+          ],
+          "mandatory": true,
+          "answer": [
+            {
+              "oid": 0,
+              "name": ""
+            },
+            {
+              "oid": 1,
+              "name": ""
+            }
+          ]
+        }
+      ],
+      "MemberId": "543"
+    }
   }
 }
 ```
@@ -1780,14 +1815,22 @@ This endpoint helps you to create form.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
 title ||<span style="color: red;">required</span> ||The title of the form.|
 question_list ||<span style="color: red;">required</span> ||The list that has questions objects. |
 status ||<span style="color: red;">required</span> || The status of the form for example, "pending".|
 
 ### Returns
 
-Returns form object which has the questions array. Status is "active" by default.
+Returns form object which has the questions array
+
+<aside class="notice">
+Status is "active" by default.
+</aside>
+
+<aside class="notice">
+We have three types of questions: Text, Single Choice, Multiple Choice. 
+</aside>
 
 <aside class="notice">
 The error codes used when you fail to create a form are <a href="#4111">4111</a> , <a href="#4115">4115</a> , <a href="#1110">1110</a>
@@ -1802,73 +1845,107 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d form_id=3
-     'http://www.example.com/form/get'
+     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
+     'https://circlepay.ai/apis/form/get'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
- "status" : True,
- "message" : "Form object returned successfully",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-   {
-	"payment_link_id": 1,
-	"title": "title",
-	"questions": [
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		},
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		}
-	],
-	"status": "active"
-   }
+  "message": "Survey fetched successfully",
+  "status":"true",
+  data:
+  {
+    "survey": {
+      "title": "new_survey",
+      "status": false,
+      "questions": [
+        {
+          "qid": 0,
+          "question": "how are you",
+          "questionType": "Text",
+          "options": [
+            {
+              "oid": 0,
+              "name": ""
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 0, 
+            "name": "greaaat"
+          }]
+        },
+        {
+          "qid": 1,
+          "question": "whos is this",
+          "questionType": "Single Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "me"
+            },
+            {
+              "oid": 1,
+              "name": "you"
+            },
+            {
+              "oid": 2,
+              "name": "someone else"
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 1,
+            "name": ""
+          }]
+        },
+        {
+          "qid": 2,
+          "question": "list projects",
+          "questionType": "Multiple Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "circlehub"
+            },
+            {
+              "0id": 1,
+              "name": "circlepay"
+            },
+            {
+              "oid": 2,
+              "name": "all"
+            },
+            {
+              "oid": 3,
+              "name": "none"
+            }
+          ],
+          "mandatory": true,
+          "answer": [
+            {
+              "oid": 0,
+              "name": ""
+            },
+            {
+              "oid": 1,
+              "name": ""
+            }
+          ]
+        }
+      ],
+      "MemberId": "543"
+    }
+  }
 }
 ```
 Retrieves a form object.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object. |
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
+payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
 
 ### Returns
 
@@ -1891,65 +1968,100 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d form_id=1
+     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
      -d title="title"
-     'http://www.example.com/form/update'
+     'https://circlepay.ai/apis/form/update'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
- "status" : True,
- "message" : "You successfully updated the form",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-   {
-	"payment_link_id": 1,
-	"title": "title",
-	"questions": [
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		},
-		{
-			"question": "question?",
-			"questionType": "type",
-			"editable": true,
-			"mandatory": true,
-			"answer": "answer",
-			"options": [
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				},
-				{
-					"name": "question?",
-					"type": "type",
-					"editable": true
-				}
-			]
-		}
-	],
-	"status": "active"
+  "message": "Survey fetched successfully",
+  "status":"true",
+  data:
+  {
+    "survey": {
+      "title": "new_survey",
+      "status": false,
+      "questions": [
+        {
+          "qid": 0,
+          "question": "how are you",
+          "questionType": "Text",
+          "options": [
+            {
+              "oid": 0,
+              "name": ""
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 0, 
+            "name": "greaaat"
+          }]
+        },
+        {
+          "qid": 1,
+          "question": "whos is this",
+          "questionType": "Single Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "me"
+            },
+            {
+              "oid": 1,
+              "name": "you"
+            },
+            {
+              "oid": 2,
+              "name": "someone else"
+            }
+          ],
+          "mandatory": true,
+          "answer": [{
+            "oid": 1,
+            "name": ""
+          }]
+        },
+        {
+          "qid": 2,
+          "question": "list projects",
+          "questionType": "Multiple Choice",
+          "options": [
+            {
+              "oid": 0,
+              "name": "circlehub"
+            },
+            {
+              "0id": 1,
+              "name": "circlepay"
+            },
+            {
+              "oid": 2,
+              "name": "all"
+            },
+            {
+              "oid": 3,
+              "name": "none"
+            }
+          ],
+          "mandatory": true,
+          "answer": [
+            {
+              "oid": 0,
+              "name": ""
+            },
+            {
+              "oid": 1,
+              "name": ""
+            }
+          ]
+        }
+      ],
+      "MemberId": "543"
+    }
   }
 }
 ```
@@ -1957,12 +2069,10 @@ Updates details in a form object.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-form_id ||<span style="color: lightblue;">optional</span> ||Unique identifier for the form object. |
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
-payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link.|
-title ||<span style="color: lightblue;">optional</span> || The title of the form.|
-questions_list ||<span style="color: lightblue;">optional</span> || The list that has questions objects.|
-status ||<span style="color: lightblue;">optional</span> || The status of the form for example, "pending". |
+payment_link_url ||<span style="color: lightblue;">optional</span> || Payment link url. |
+title ||<span style="color: lightblue;">optional</span> ||The title of the form.|
+question_list ||<span style="color: lightblue;">optional</span> ||The list that has questions objects. |
+status ||<span style="color: lightblue;">optional</span> || The status of the form for example, "pending".|
 
 ### Returns
 
@@ -1989,8 +2099,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_id=3
-     'http://www.example.com/form/list_responses'
+     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
+     'https://circlepay.ai/apis/form/listResponses'
 ```
 
 > The above command returns JSON structured like this:
@@ -2021,10 +2131,8 @@ List all form responses.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
-payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
-form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object. |
-
+payment_link_url ||<span style="color: red;">required</span> || The url of the payment link. |
+customer_mobile ||<span style="color: lightblue;">optional</span> || Customer's mobile number. |
 
 ### Returns
 
@@ -2040,54 +2148,6 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 
 ####################################################################################
 
-## Retrieve a specific response
-
-```shell
-curl -X POST --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_id=3
-     -d customer_id=1
-     'http://www.example.com/form/get_response'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "form response object returned successfully",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{
-	 "id": 1,
-	 "customer": null,
-	 "form": null
-	}
-}
-```
-Retrieves a specific form responses.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the payment link object. |
-payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
-form_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the form object.|
-customer_id ||<span style="color: lightblue;">optional</span> || Unique identifier for the user object. |
-
-### Returns
-
-Returns one response object if the call succeeded. Otherwise, this call returns an error.
-
-<aside class="notice">
-at least one attribute to be provided. 
-</aside>
-
-####################################################################################
-
 # Settlements
 
 Means that payments or transactions finally settle and clear for customer use.
@@ -2099,9 +2159,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d merchant_id=3
      -d settlement_id=5
-     'http://www.example.com/settlements/get'
+     'https://circlepay.ai/apis/settlements/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -2129,7 +2188,6 @@ Retrieve the details of settlement.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-merchant_id ||<span style="color: red;">required</span> ||Unique identifier for the user object. |
 settlement_id ||<span style="color: red;">required</span> ||Unique identifier for the settlement object.|
 
 ### Returns
@@ -2145,9 +2203,9 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d merchant_id=3
-     -d status="pending"
-     'http://www.example.com/settlements/list'
+     -d filter[status]="pending"
+	 -d filter[date_time]=22-2-2022
+     'https://circlepay.ai/apis/settlements/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -2186,50 +2244,13 @@ Retrieve all settlements.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-merchant_id ||<span style="color: red;">required</span> ||Unique identifier for the user object.|
-date_time ||<span style="color: lightblue;">optional</span> ||The date time when the settlement happened. |
-status ||<span style="color: lightblue;">optional</span> ||The status of the settlement for example, "pending".|
+Filter ||<span style="color: lightblue;">optional</span> || This is the filter object.|
+Filter.date_time ||<span style="color: lightblue;">optional</span> ||The date time when the settlement happened. |
+Filter.status ||<span style="color: lightblue;">optional</span> ||The status of the settlement for example, "pending".|
 
 ### Returns
 
 Returns a settlement object list. The list has a separate settlement objects. If no more settlements are available, the resulting array will be empty. 
-
-####################################################################################
-
-## Get settlement Status
-
-```shell
-curl -X GET --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/settlements/get_status/{settlementId}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "Settlement's status retrieved successfully",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{
-	 "status": "pending"
-	}
-}
-```
-Retrieve the status of settlement.
-
-### Parameters
-
-No parameters.
-
-### Returns
-
-Returns the status of the settlement object.
 
 ####################################################################################
 
@@ -2245,10 +2266,10 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d merchant=1
-     -d "item[name]"="book"
-     -d "item[description]"="rich dad poor dad"
-     -d "item[price]"=55
-     'http://www.example.com/invoice/create'
+     -d "customer[email]"="ahmed@gmail.com"
+     -d "customer[city]"="mansoura"
+     -d "invoice[invoice_number]"=55
+     'https://circlepay.ai/apis/invoice/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -2274,12 +2295,12 @@ This endpoint creates an invoice for a given customer. The invoice created will 
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-merchant ||<span style="color: red;">required</span> || The details of the merchant.|
 item ||<span style="color: red;">required</span> ||The item used in the invoice.|
 item.name ||<span style="color: red;">required</span> || The item name.|
 item.description ||<span style="color: red;">required</span> || The description of item. |
 item.price ||<span style="color: red;">required</span> ||Item's price. |
 customer ||<span style="color: red;">required</span> ||The details of the customer. |
+invoice ||<span style="color: red;">required</span> ||The details of the invoice. |
 
 ### Returns
 
@@ -2298,7 +2319,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/invoice/get/{invoiceId}'
+     'https://circlepay.ai/apis/invoice/get/{invoice_number}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2336,47 +2357,6 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 
 ####################################################################################
 
-## Deactive an invoice
-
-```shell
-curl -X GET --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/invoice/deactive/{invoiceId}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
- "status" : True,
- "message" : "You successfully deactivated an invoice",
- "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
- "data" :
-	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "deactivated",
-	 "due_date": "2022-10-12"
-	}
-}
-```
-Deactivate the invoice with the given id.
-
-### Parameters
-
-No parameters.
-
-### Returns
-
-Returns the deactivated invoice object if a valid invoice ID was provided. Returns an error otherwise.
-
-####################################################################################
-
 ## Settle an invoice
 
 ```shell
@@ -2384,7 +2364,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'http://www.example.com/invoice/settle_invoice/1'
+     'https://circlepay.ai/apis/invoice/setInvoiceToPaid/{invoice_number}'
 ```
 
 > The above command returns JSON structured like this:
