@@ -3127,7 +3127,7 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
 
 ####################################################################################
 
-## Pay invoice
+## Pay an invoice
 
 ```shell
 curl -X PUT --header 'Accept: application/json'
@@ -3170,8 +3170,6 @@ payment_gateway_name ||<span style="color: lightblue;">optional</span> || The pa
 <aside class="notice">
 Payment method and payent gateway must be together, can't send only one.
 </aside>
-
-5111, 5114, 7113, 7111
 
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
