@@ -528,7 +528,7 @@
                     <a href="#delete-an-invoice" class="toc-h2 toc-link" data-title="Delete an invoice">Delete an invoice</a>
                   </li>
                   <li>
-                    <a href="#pay-invoice" class="toc-h2 toc-link" data-title="Pay invoice">Pay invoice</a>
+                    <a href="#pay-an-invoice" class="toc-h2 toc-link" data-title="Pay an invoice">Pay an invoice</a>
                   </li>
                   <li>
                     <a href="#settle-an-invoice" class="toc-h2 toc-link" data-title="Settle an invoice">Settle an invoice</a>
@@ -4339,7 +4339,7 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 <aside class="notice">
 The error code used when you fail to delete an invoice is <a href="#5111">5111</a>
 </aside>
-<h2 id='pay-invoice'>Pay invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h2 id='pay-an-invoice'>Pay an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
@@ -4409,8 +4409,6 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
 <aside class="notice">
 Payment method and payent gateway must be together, can't send only one.
 </aside>
-
-<p>5111, 5114, 7113, 7111</p>
 
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
