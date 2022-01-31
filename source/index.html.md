@@ -143,13 +143,11 @@ MyFatoorh | Fawry | Paymob |
 Visa|Visa|Visa|
 MasterCard|MasterCard|MasterCard
 meeza|meeza|Kiosk Payments
-etisalatCash|3D Secure Card Payment|Cash Collection
-orangeCash|Authorize and Capture Payment|ValU
-VodavoneCash|E-wallet Payment|Mobile Wallets
-ValU|Payment Request using Reference Number|Bank Installments
-SADAD|ValU|Premium Card
-mada|Installment Payment|SOUHOOLA
-ApplePay |   |GET_GO
+Mobile Wallet|E-wallet Payment|Cash Collection
+ValU|Reference Number|ValU
+SADAD|ValU|Mobile Wallets
+mada||SOUHOOLA
+ApplePay |   |
 Knet|   |
 American express|   |     
 
