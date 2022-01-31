@@ -54,8 +54,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment gateways list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 { 
@@ -106,8 +106,8 @@ curl -X POST --header 'Content-Type: application/json'
  "status" : True,
  "message" : "Payment gateway object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" : 
    {
 	 "id": 1,
@@ -173,8 +173,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment methods list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -229,8 +229,8 @@ curl -X POST --header 'Content-Type: application/json'
  "status" : True,
  "message" : "Payment method object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -285,8 +285,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created a new merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -350,8 +350,8 @@ curl -X POST --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully retrieve the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -398,8 +398,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -460,8 +460,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
      {
       "document_id": "124234",
@@ -512,8 +512,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
      {
        "status": "SUSPENDED"
@@ -550,8 +550,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Merchants list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
    [
 	{
@@ -621,8 +621,8 @@ curl -X POST --header 'Content-Type: application/json'
  "status" : True,
  "message" : "Documents list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -672,8 +672,8 @@ curl -X GET --header 'Content-Type: application/json'
  "status" : True,
  "message" : "Documents list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	 {
       "document_Id":"3264",
@@ -714,8 +714,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
      {
 	  "Bank_Name": "cairo bank",
@@ -767,8 +767,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
      {
 	  "payment_gateway_id": "2089472",
@@ -813,8 +813,8 @@ curl -X PUT --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully enabled gateway",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{ }
 }
@@ -854,8 +854,8 @@ curl -X PUT --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully disabled gateway",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{}
 ```
@@ -890,8 +890,8 @@ curl -X PUT --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully enabled the payment method",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	  "status": true,
@@ -947,8 +947,8 @@ curl -X PUT --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully enabled the payment method",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	  "status": true,
@@ -1000,8 +1000,8 @@ curl -X PUT --header 'Content-Type: application/json'
  "status" : True,
  "message" : "You successfully disabled the payment method",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	  "status": false,
@@ -1052,8 +1052,8 @@ curl -X GET --header 'Content-Type: application/json'
  "status" : True,
  "message" : "Merchant's payment methods list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "payment_methods":
@@ -1108,8 +1108,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created a new customer",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{  
 	 "id": 3,
@@ -1171,8 +1171,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully updated cutomer",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{  
 	 "id": 3,
@@ -1229,8 +1229,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Customer object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{  
 	 "id": 3,
@@ -1279,8 +1279,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Customers list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{  
 	 "id": 3,
@@ -1334,8 +1334,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created the payment link",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 0,
@@ -1403,8 +1403,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment link object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 0,
@@ -1454,8 +1454,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully updated the payment link",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 0,
@@ -1515,8 +1515,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment links list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{}
 }
@@ -1557,8 +1557,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment links list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 0,
@@ -1614,8 +1614,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment links list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{}
 }
@@ -1667,8 +1667,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Payment object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -1720,8 +1720,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Payments list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -1801,8 +1801,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully requested a refund",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -1858,8 +1858,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Refunds list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -1927,8 +1927,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Refund's status returned successfully ",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "status":"pending"
@@ -1973,8 +1973,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created a coupon",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "payment_link_id": 1,
@@ -2030,8 +2030,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully retrieved the coupon",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -2082,8 +2082,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully updated the coupon",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -2139,8 +2139,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully updated the coupon",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -2190,8 +2190,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully updated the coupon",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -2240,8 +2240,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Coupons list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -2776,8 +2776,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "form responses list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	[
 	 {
@@ -2836,8 +2836,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Settlement object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "id": 1,
@@ -2881,8 +2881,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "Settlements list returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
   [
 	{
@@ -2945,8 +2945,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created an invoice",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "number": 1,
@@ -2995,8 +2995,8 @@ curl -X GET --header 'Accept: application/json'
  "status" : True,
  "message" : "Invoice object returned successfully",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "number": 1,
@@ -3041,8 +3041,8 @@ curl -X POST --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully created an invoice",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
    [
 	{
@@ -3097,8 +3097,8 @@ curl -X DELETE --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully deleted an invoice",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "number": 1,
@@ -3143,8 +3143,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully pay the invoice",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "number": 1,
@@ -3196,8 +3196,8 @@ curl -X PUT --header 'Accept: application/json'
  "status" : True,
  "message" : "You successfully settled the invoice",
  "isError" : False,
- "errorCode" : 0,
- "errorDetails" : "No error till now",
+ "errorCode" : null,
+ "errorDetails" : null,
  "data" :
 	{
 	 "number": 1,
