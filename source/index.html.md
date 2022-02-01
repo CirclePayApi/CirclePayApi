@@ -117,7 +117,7 @@ Retrieves a specific payment gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_ID |  |<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object.
+payment_gateway_ID |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
 
 
 ### Returns
@@ -190,7 +190,7 @@ Retrieves all payment methods of the merchant.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_id |  |<span style="color: red;">required</span>| |Unique identifier for the payment gateway object.
+payment_gateway_id |  |<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; - |Unique identifier for the payment gateway object.
 
 ### Returns
 
@@ -234,7 +234,7 @@ Retrieves a specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_id ||<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object. |
+payment_gateway_id ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; - |Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -286,12 +286,12 @@ This endpoint helps you to create new merchant.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-first_name ||<span style="color: red;">required</span>|| The merchant's first name. |
-last_name ||<span style="color: red;">required</span>|| The merchant's last name. |
-email ||<span style="color: red;">required</span>|| The merchant's email. |
-mobile_number||<span style="color: red;">required</span>|| The merchant's phone number. |
-Business_Name ||<span style="color: red;">required</span>|| The business name. |
-Business_Address ||<span style="color: red;">required</span>|| The business address. |
+first_name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's first name. |
+last_name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's last name. |
+email ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's email. |
+mobile_number||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
+Business_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
+Business_Address ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
 
 <aside class="notice">
 Password will be auto generated.
@@ -397,12 +397,12 @@ Updates the specified merchant by setting the values of the parameters passed. A
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-first_name ||<span style="color: red;">required</span>|| The merchant's first name. |
-last_name ||<span style="color: red;">required</span>|| The merchant's last name. |
-email ||<span style="color: red;">required</span>|| The merchant's email. |
-mobile_number||<span style="color: red;">required</span>|| The merchant's phone number. |
-Business_Name ||<span style="color: red;">required</span>|| The business name. |
-Business_Address ||<span style="color: red;">required</span>|| The business address. |
+first_name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's first name. |
+last_name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's last name. |
+email ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's email. |
+mobile_number||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
+Business_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
+Business_Address ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
 
 ### Returns
 
@@ -443,9 +443,9 @@ Updates the specified merchant's doucment by setting the values of the parameter
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-File ||<span style="color: red;">required</span>|| The merchant's document file. |
-document_id ||<span style="color: red;">required</span>|| Unique identifer of document. |
-document_type ||<span style="color: red;">required</span>|| Document's type (from predefined list). |
+File ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's document file. |
+document_id ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Unique identifer of document. |
+document_type ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Document's type (from predefined list). |
 
 
 ### Returns
@@ -488,7 +488,7 @@ Updates the specified merchant's status.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-status ||<span style="color: red;">required</span>|| The merchant's status (ACTIVATED - DEACTIVATED - SUSPENDED)). |
+status ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's status (ACTIVATED - DEACTIVATED - SUSPENDED)). |
 
 ### Returns
 
@@ -613,8 +613,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d document_id="405843398798"
-     'https://circlepay.ai/apis/Merchant/getFile'
+     'https://circlepay.ai/apis/Merchant/getFile/{document_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -636,10 +635,6 @@ curl -X GET --header 'Content-Type: application/json'
 ```
 
 Retrieves file document.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-document_id ||<span style="color: red;">required</span>|| Unique identifier of document file. |
 
 ### Returns
 
@@ -677,11 +672,11 @@ Updates the billing info by setting the values of the parameters passed. Any par
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-Bank_Name ||<span style="color: red;">required</span>|| Bank's name. |
-Bank_Account_Num ||<span style="color: red;">required</span>|| The bank account number. |
-Bank_Branch_Name ||<span style="color: red;">required</span>|| The bank branch name. |
-SWIFT ||<span style="color: red;">required</span>|| Society for Worldwide Interbank Financial Telecommunications, the SWIFT code can be found on a bank's website, on your bank statement, or through an online search. |
-IBAN ||<span style="color: lightblue;">optional</span>|| international bank account number, is a standard international numbering system developed to identify an overseas bank account. The number starts with a two-digit country code, then two numbers, followed by several more alphanumeric characters. |
+Bank_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Bank's name. |
+Bank_Account_Num ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The bank account number. |
+Bank_Branch_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The bank branch name. |
+SWIFT ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Society for Worldwide Interbank Financial Telecommunications, the SWIFT code can be found on a bank's website, on your bank statement, or through an online search. |
+IBAN ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| international bank account number, is a standard international numbering system developed to identify an overseas bank account. The number starts with a two-digit country code, then two numbers, followed by several more alphanumeric characters. |
 
 
 ### Returns
@@ -702,7 +697,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d payment_gateway_id="34534534"
+	 -d payment_gateway_id="3"
      'https://circlepay.ai/apis/Merchant/configurePaymentGateway'
 ```
 
@@ -717,7 +712,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
      {
-	  "payment_gateway_id": "2089472",
+	  "payment_gateway_id": "3",
      }
 }
 ```
@@ -726,8 +721,8 @@ Set the payment gateway keys for a specific merchant to allow CirclePay connect 
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_id ||<span style="color: red;">required</span>|| Unique identifier of payment gateway. |
-Gateway_Config_Object ||<span style="color: red;">required</span>|| The gateway config object. |
+payment_gateway_id ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of payment gateway. |
+Gateway_Config_Object ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The gateway config object. |
 
 
 ### Returns
@@ -772,7 +767,7 @@ This endpoint enable specific gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payemnt_gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payemnt_gateway_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -791,8 +786,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d payment_gateway_id="4"
-     'https://circlepay.ai/apis/Merchant/disable'
+     'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -814,7 +808,7 @@ This endpoint disable specific gateway and it's related payment methods.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payment_gateway_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -853,11 +847,11 @@ This endpoint Set the fees for each payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_method_id ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
-Fee_Fixed ||<span style="color: red;">required</span> || The fixed fee. |
-Fee_Percent ||<span style="color: red;">required</span> || The percentage fee. |
-Refund_Fee_Fixed ||<span style="color: red;">required</span> || The Refund fixed fee. |
-Refund_Fee_Percent ||<span style="color: red;">required</span> || The Refund fee percentage. |
+payment_method_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the payment method object. |
+Fee_Fixed ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The fixed fee. |
+Fee_Percent ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The percentage fee. |
+Refund_Fee_Fixed ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The Refund fixed fee. |
+Refund_Fee_Percent ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The Refund fee percentage. |
 
 ### Returns
 
@@ -876,8 +870,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_method_ID="4"
-     'https://circlepay.ai/apis/Merchant/enablePaymentMethod'
+     'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -898,13 +891,9 @@ curl -X GET --header 'Content-Type: application/json'
 
 This endpoint enable specific payment method.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_method_ID ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
-
 ### Returns
 
-Returns the payment method object.
+Returns the payment method id.
 
 <aside class="notice">
 The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
@@ -919,8 +908,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_method_ID="4"
-     'https://circlepay.ai/apis/Merchant/disablePaymentMethod'
+     'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -943,11 +931,11 @@ This endpoint disable specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_method_id ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
+payment_method_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the payment method object. |
 
 ### Returns
 
-Returns the payment method object.
+Returns the payment method id.
 
 <aside class="notice">
 The error code used when you fail to disable payment method is <a href="#7113">7113</a>
@@ -1044,19 +1032,19 @@ This endpoint helps you to create new customer.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-First_Name ||<span style="color: red;">required</span>|| The customer's first name. |
-Last_Name ||<span style="color: red;">required</span>|| The customer's last name. |
-email ||<span style="color: red;">required</span>|| The customer's email. |
-mobile_number||<span style="color: red;">required</span>|| The customer's phone number. |
-country ||<span style="color: red;">required</span>|| The customer's country. |
-governorate ||<span style="color: red;">required</span>|| The customer's governorate. |
-city ||<span style="color: red;">required</span>|| The customer's city. |
-address ||<span style="color: red;">required</span>|| The customer's address. |
-apt_num ||<span style="color: red;">required</span>|| The customer's apartment number. |
+First_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's first name. |
+Last_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's last name. |
+email ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's email. |
+mobile_number||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
+country ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's country. |
+governorate ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's governorate. |
+city ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's city. |
+address ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's address. |
+apt_num ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's apartment number. |
 
 ### Returns
 
-Returns the customer object if the customer's creation succeeded. Returns an error if parameters are invalid.
+Returns the customer mobile number if the customer's creation succeeded. Returns an error if parameters are invalid.
 
 <aside class="notice">
 The error codes used when you fail to create a customer are <a href="#3111">3111</a> , <a href="#1110">1110</a>
@@ -1096,19 +1084,19 @@ curl -X PUT --header 'Accept: application/json'
 }
 ```
 
-This endpoint helps you to create new customer.
+This endpoint helps you to update customer details.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-First_Name ||<span style="color: red;">required</span>|| The customer's first name. |
-Last_Name ||<span style="color: red;">required</span>|| The customer's last name. |
-email ||<span style="color: red;">required</span>|| The customer's email. |
-mobile_number||<span style="color: red;">required</span>|| The customer's phone number. |
-country ||<span style="color: red;">required</span>|| The customer's country. |
-governorate ||<span style="color: red;">required</span>|| The customer's governorate. |
-city ||<span style="color: red;">required</span>|| The customer's city. |
-address ||<span style="color: red;">required</span>|| The customer's address. |
-apt_num ||<span style="color: red;">required</span>|| The customer's apartment number. |
+First_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's first name. |
+Last_Name ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's last name. |
+email ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's email. |
+mobile_number||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
+country ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's country. |
+governorate ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's governorate. |
+city ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's city. |
+address ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's address. |
+apt_num ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's apartment number. |
 
 ### Returns
 
@@ -1155,10 +1143,6 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves a specific customer.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-customer_mobile_number ||<span style="color: red;">required</span> || The mobile number of the customer. |
 
 ### Returns
 
@@ -1245,7 +1229,7 @@ curl -X POST --header 'Accept: application/json'
      -d "value": 0
      -d "currency": "EGP"
      -d "description": "for grocery delivery"
-     -d "expire_date": 1-22-2022
+     -d "expire_date": 22-02-2022
      'https://circlepay.ai/apis/Payment_Link/create'
 ```
 
@@ -1269,21 +1253,20 @@ This endpoint helps you to create payment link.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-value ||<span style="color: red;">required</span> || The value of payment. |
-currency ||<span style="color: red;">required</span> || Currency type used in payment. |
-enable_Survey ||<span style="color: red;">required</span> || Switch that helps you to enable or disable survey. |
-expire_date ||<span style="color: red;">required</span> || Expire date of the payment link. |
-description ||<span style="color: red;">required</span> || Description of transaction. |
-shippingPolicyFlag ||<span style="color: red;">required</span> || The shipping policy flag. |
-status || <span style="color: red;">required</span> || The status of the payment link, to know if the payment link is still valid. |
-refundPolicyFlag || <span style="color: red;">required</span> || The refund policy flag. |
-shippingPolicyDetails || <span style="color: red;">required</span> || The shipping policy Details for example, original sales receipt must accompany returns. |
-refundPolicyDetails || <span style="color: red;">required</span> || The refund policy details for example, refunds and exchanges, Right to cancel your order. |
-comments || <span style="color: red;">required</span> || Comments help merchant and customer to know more about order details and order process. |
-name || <span style="color: red;">required</span> || The name of the customer. |
-getCustAddress || <span style="color: red;">required</span> || The customer's address. |
-merchantId || <span style="color: red;">required</span> || Unique identifier for the merchant object. |
-
+value ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The value of payment. |
+currency ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Currency type used in payment. |
+enable_Survey ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Switch that helps you to enable or disable survey. |
+expire_date ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Expire date of the payment link. |
+description ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Description of transaction. |
+shippingPolicyFlag ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy flag. |
+status || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the payment link, to know if the payment link is still valid. |
+refundPolicyFlag || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The refund policy flag. |
+shippingPolicyDetails || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy Details for example, original sales receipt must accompany returns. |
+refundPolicyDetails || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The refund policy details for example, refunds and exchanges, Right to cancel your order. |
+comments || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Comments help merchant and customer to know more about order details and order process. |
+name || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The name of the customer. |
+getCustAddress || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The customer's address. |
+merchantId || <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the merchant object. |
 
 ### Returns
 
@@ -1343,10 +1326,6 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves a specific payment link.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: lightblue;">optional</span> || The url of the payment link. |
-
 ### Returns
 
 Returns the payment link object.
@@ -1360,7 +1339,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://bit.ly/3KXl3iA"
+     -d "payment_link_url"="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Payment_Link/update'
 ```
 
@@ -1383,26 +1362,26 @@ This endpoint helps you to udpate payment link.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-link ||<span style="color: red;">required</span> || The payment link. |
-value ||<span style="color: red;">required</span> || The value of the payment. |
-enable_survey ||<span style="color: red;">required</span> || to enable survey with payment link.|
-last_used ||<span style="color: lightblue;">optional</span> || The date of last payment link use. |
-editable ||<span style="color: lightblue;">optional</span> || choose if you want to edit or not to edit payment link in the future. |
-form_id ||<span style="color: red;">required</span> || Unique identifier of the form. |
-description ||<span style="color: lightblue;">optional</span> || The description of the payment in general. |
-currency ||<span style="color: red;">required</span> || The currency used in payment. |
-expire_date ||<span style="color: red;">required</span> || expire date of the payment link. |
-create_date ||<span style="color: lightblue;">optional</span> || creation date of the payment link. |
-status ||<span style="color: red;">required</span> || The status of payment link (Active or Not active). |
-totalRefund ||<span style="color: lightblue;">optional</span> || total refund if exists. |
-totalTransactions ||<span style="color: red;">required</span> || Total transaction happened. |
-shippingPolicyFlag ||<span style="color: lightblue;">optional</span> || The shipping policy flag. |
-refundPolicyFlag ||<span style="color: lightblue;">optional</span> || The refund policy flag. |
-shippingPolicyDetails ||<span style="color: lightblue;">optional</span> || The shipping policy Details for example, original sales receipt must accompany returns. |
-refundPolicyDetails ||<span style="color: lightblue;">optional</span> || The refund policy details for example, refunds and exchanges, Right to cancel your order. |
-comments ||<span style="color: lightblue;">optional</span> || Comments help merchant and customer to know more about order details and order process. |
-name ||<span style="color: red;">required</span> || Name of the order. |
-getCustAddress ||<span style="color: lightblue;">optional</span> || Choose if you want to get customer address or not. |
+link ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The payment link. |
+value ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The value of the payment. |
+enable_survey ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| to enable survey with payment link.|
+last_used ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The date of last payment link use. |
+editable ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| choose if you want to edit or not to edit payment link in the future. |
+form_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier of the form. |
+description ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The description of the payment in general. |
+currency ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The currency used in payment. |
+expire_date ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| expire date of the payment link. |
+create_date ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| creation date of the payment link. |
+status ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of payment link (Active or Not active). |
+totalRefund ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| total refund if exists. |
+totalTransactions ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Total transaction happened. |
+shippingPolicyFlag ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy flag. |
+refundPolicyFlag ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The refund policy flag. |
+shippingPolicyDetails ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy Details for example, original sales receipt must accompany returns. |
+refundPolicyDetails ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The refund policy details for example, refunds and exchanges, Right to cancel your order. |
+comments ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Comments help merchant and customer to know more about order details and order process. |
+name ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Name of the order. |
+getCustAddress ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Choose if you want to get customer address or not. |
 
 
 ### Returns
@@ -1443,11 +1422,11 @@ Deactivate an active payment link.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || Payment link url.|
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Payment link url.|
 
 ### Returns
 
-Deactivate an active payment link. This will show an error page "Payment Link isn't available.
+Deactivate an active payment link. If invalid payment link is provided an error page "Payment Link isn't available" will show.
 
 <aside class="notice">
 The error code used when you fail to deactive payment link is <a href="#4111">4111</a>
@@ -1506,11 +1485,6 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves all payment links.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-customer_mobile ||<span style="color: lightblue;">optional</span> || Customer's mobile number. |
-Filter ||<span style="color: red;">required</span> || The filter object that has fields you want to retrieve. |
-
 ### Returns
 
 Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.
@@ -1529,7 +1503,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://bit.ly/3KXl3iA"
+     -d "payment_link_url"="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/PayPaymentLink/list'
 ```
 
@@ -1551,12 +1525,12 @@ Execute a payment for a specific payment link or an invoice.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || The payment link url. |
-Customer Object ||<span style="color: lightblue;">optional</span> || The customer object. |
-Form_Response Object ||<span style="color: lightblue;">optional</span> || The form response object. |
-payment_method_name ||<span style="color: lightblue;">optional</span> || The payment method name. |
-payment_gateway_name ||<span style="color: lightblue;">optional</span> || The payment gateway name. |
-coupon_code ||<span style="color: lightblue;">optional</span> || The coupon code. |
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The payment link url. |
+Customer Object ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The customer object. |
+Form_Response Object ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The form response object. |
+payment_method_name ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment method name. |
+payment_gateway_name ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment gateway name. |
+coupon_code ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The coupon code. |
 
 ### Returns
 
@@ -1619,10 +1593,6 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves the details of an existing payment.
 
-### Parameters
-
-No parameters.
-
 ### Returns
 
 Returns a payment object if a valid identifier was provided, and returns an error otherwise.
@@ -1640,7 +1610,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "coupon_code": 423746
+     -d "coupon_code": "HEMACOUPON"
      'https://circlepay.ai/apis/Payment/list'
 ```
 
@@ -1699,10 +1669,10 @@ Retrieves all payments.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-coupon_code ||<span style="color: red;">required</span>|| The coupon code. |
-customer_mobile ||<span style="color: lightblue;">optional</span>|| Customer's mobile number. |
-payment_link_url ||<span style="color: lighblue;">optional</span>|| The payment link url. |
-invoice_num ||<span style="color: lighblue;">optional</span>|| The invoice number. |
+coupon_code ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The coupon code. |
+customer_mobile ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
+payment_link_url ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
+invoice_num ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 
 ### Returns
 
@@ -1711,7 +1681,6 @@ Returns a payment list which has the details of the payment like: status, amount
 <aside class="notice">
 Also there is a filter object which contains values of wanted payment objects.
 </aside>
-
 
 <aside class="notice">
 The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
@@ -1754,9 +1723,9 @@ This endpoint helps you to request refund.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-transaction_id ||<span style="color: red;">required</span> || Unique identifier for the transaction object.|
-value ||<span style="color: lightblue;">optional</span> || Value of the refund.|
-currency ||<span style="color: red;">required</span> || The currency type used. |
+transaction_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the transaction object.|
+value ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Value of the refund.|
+currency ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The currency type used. |
 
 
 ### Returns
@@ -1780,7 +1749,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Refund/list'
 ```
 
@@ -1826,10 +1795,10 @@ List refund objects.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-transaction_id ||<span style="color: lightblue;">optional</span>|| Unique identifier of transaction object. |
-customer_mobile ||<span style="color: lightblue;">optional</span>|| Customer's mobile number. |
-payment_link_url ||<span style="color: lighblue;">optional</span>|| The payment link url. |
-invoice_num ||<span style="color: lighblue;">optional</span>|| The invoice number. |
+transaction_id ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of transaction object. |
+customer_mobile ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
+payment_link_url ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
+invoice_num ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 
 ### Returns
 
@@ -1845,7 +1814,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 
 #######################################################################################
 
-## Get refund status
+## Get refund 
 
 ```shell
 curl -X GET --header 'Accept: application/json'
@@ -1881,13 +1850,9 @@ curl -X GET --header 'Accept: application/json'
 ```
 Retrieves the refund object.
 
-### Parameters
-
-No parameters.
-
 ### Returns
 
-Returns the status of refund object, for example: "approved", "pending" or "rejected".
+Returns refund object if a valid refund id is provided.
 
 <aside class="notice">
 The error code used when you fail to get refund status is <a href="#9111">9111</a>
@@ -1929,14 +1894,14 @@ This endpoint helps you to create coupon.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || The payment link url. |
-code ||<span style="color: red;">required</span> || The code of coupon. |
-value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
-name ||<span style="color: red;">required</span> || The name of the coupon. |
-expire_date ||<span style="color: red;">required</span> || Coupon's expire date.|
-number_of_uses ||<span style="color: red;">required</span> || Number of uses to this coupon. |
-discount_value ||<span style="color: red;">required</span> || Coupon's discount value. |
-discount_type ||<span style="color: red;">required</span> || number or percentage. |
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The payment link url. |
+code ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The code of coupon. |
+value ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The value of the payment after discounting. |
+name ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The name of the coupon. |
+expire_date ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Coupon's expire date.|
+number_of_uses ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Number of uses to this coupon. |
+discount_value ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Coupon's discount value. |
+discount_type ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| number or percentage. |
 
 ### Returns
 
@@ -1989,10 +1954,6 @@ curl -X GET --header 'Accept: application/json'
 ```
 Retrieves a specific coupon.
 
-### Parameters
-
-No parameters.
-
 ### Returns
 
 Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.
@@ -2044,13 +2005,13 @@ Updates the metadata of a coupon.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-coupon_code ||<span style="color: red;">required</span> ||The code of coupon.|
-value ||<span style="color: red;">required</span> || The value of the payment after discounting. |
-name ||<span style="color: red;">required</span> ||The name of the coupon.|
-expire_date ||<span style="color: red;">required</span> ||Coupon's expire date.|
-number_of_uses ||<span style="color: red;">required</span> || Number of uses for this coupon. |
-status ||<span style="color: red;">required</span> ||The status of the coupon for example, expired.|
-times_per_customer ||<span style="color: red;">required</span> || Times that customer can use the same coupon. |
+coupon_code ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The code of coupon.|
+value ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The value of the payment after discounting. |
+name ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of the coupon.|
+expire_date ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Coupon's expire date.|
+number_of_uses ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Number of uses for this coupon. |
+status ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The status of the coupon for example, expired.|
+times_per_customer ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Times that customer can use the same coupon. |
 
 ### Returns
 
@@ -2088,10 +2049,6 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Updates status of the coupon to active.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-coupon_id ||<span style="color: red;">required</span> ||Unique identifier of coupon object.|
 
 ### Returns
 
@@ -2132,7 +2089,7 @@ Updates status of the coupon to deactive.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-coupon_id ||<span style="color: red;">required</span> ||Unique identifier of coupon object.|
+coupon_id ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|
 
 ### Returns
 
@@ -2195,10 +2152,6 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Returns a list of your coupons per payment link.
-
-### Parameters
-
-No parameters.
 
 ### Returns
 
@@ -2320,14 +2273,14 @@ This endpoint helps you to create form.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
-title ||<span style="color: red;">required</span> ||The title of the form.|
-question_list ||<span style="color: red;">required</span> ||The list that has questions objects. |
-status ||<span style="color: red;">required</span> || The status of the form for example, "pending".|
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Payment link url. |
+title ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The title of the form.|
+question_list ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The list that has questions objects. |
+status ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the form for example, "pending".|
 
 ### Returns
 
-Returns form object which has the questions array
+Returns form object which has the questions array.
 
 <aside class="notice">
 Status is "active" by default.
@@ -2446,10 +2399,6 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Retrieves a form object.
-
-### Parameters
-
-No parameters.
 
 ### Returns
 
@@ -2573,10 +2522,10 @@ Updates details in a form object.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: lightblue;">optional</span> || Payment link url. |
-title ||<span style="color: lightblue;">optional</span> ||The title of the form.|
-question_list ||<span style="color: lightblue;">optional</span> ||The list that has questions objects. |
-status ||<span style="color: lightblue;">optional</span> || The status of the form for example, "pending".|
+payment_link_url ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Payment link url. |
+title ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The title of the form.|
+question_list ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The list that has questions objects. |
+status ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The status of the form for example, "pending".|
 
 ### Returns
 
@@ -2613,15 +2562,11 @@ curl -X GET --header 'Accept: application/json'
   "message": "Survey fetched successfully",
   "status":"true",
   "data":
-  {
-    "payment_link_url": "https://bit.ly/3KXl3iA"
-  }
+	{
+	  "payment_link_url": "https://bit.ly/3KXl3iA"
+	}
 ```
 Activate a form to collect responses in the checkout.
-
-### Parameters
-
-No parameters.
 
 ### Returns
 
@@ -2659,7 +2604,7 @@ Deactivate the form.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Payment link url. |
 
 ### Returns
 
@@ -2711,8 +2656,8 @@ List all form responses.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || The url of the payment link. |
-customer_mobile ||<span style="color: lightblue;">optional</span> || Customer's mobile number. |
+payment_link_url ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The url of the payment link. |
+customer_mobile ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 
 ### Returns
 
@@ -2762,11 +2707,7 @@ curl -X GET --header 'Accept: application/json'
 	}
 }
 ```
-Retrieve the details of settlement.
-
-### Parameters
-
-No parameters.
+Retrieves the details of settlement.
 
 ### Returns
 
@@ -2820,9 +2761,9 @@ Retrieve all settlements.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-Filter ||<span style="color: lightblue;">optional</span> || This is the filter object.|
-Filter.date_time_range ||<span style="color: lightblue;">optional</span> ||The time range you allowed to settle. |
-Filter.status ||<span style="color: lightblue;">optional</span> ||The status of the settlement for example, "pending".|
+Filter ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| This is the filter object.|
+Filter.date_time_range ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The time range you allowed to settle. |
+Filter.status ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The status of the settlement for example, "pending".|
 
 ### Returns
 
@@ -2882,8 +2823,8 @@ This endpoint creates an invoice for a given customer. The invoice created will 
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-customer ||<span style="color: red;">required</span> ||The details of the customer object. |
-invoice ||<span style="color: red;">required</span> ||The details of the invoice object. |
+customer ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the customer object. |
+invoice ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the invoice object. |
 
 ### Returns
 
@@ -2936,10 +2877,6 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Retrieves the invoice with the given invoice number.
-
-### Parameters
-
-No parameters.
 
 ### Returns
 
@@ -3013,10 +2950,6 @@ curl -X GET --header 'Accept: application/json'
 ```
 This endpoint list invoices for a given customer.
 
-### Parameters
-
-No parameters
-
 ### Returns
 
 Returns list of invoice objects.
@@ -3056,11 +2989,11 @@ Delete an invoice ONLY IF the invoice has no transactions.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-invoice_number ||<span style="color: red;">required</span> || Invoice's number.|
+invoice_number ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
 
 ### Returns
 
-Returns the deleted invoice object.
+Returns the deleted invoice number.
 
 <aside class="notice">
 The error code used when you fail to delete an invoice is <a href="#5111">5111</a>
@@ -3097,13 +3030,13 @@ Pay an invoice.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-invoice_number ||<span style="color: red;">required</span> || Invoice's number.|
-Customer Object ||<span style="color: lightblue;">optional</span> || Customer object (needed to update the current customer).|
-payment_method_name ||<span style="color: lightblue;">optional</span> || The payment method name.|
-payment_gateway_name ||<span style="color: lightblue;">optional</span> || The payment gateway name.|
+invoice_number ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
+Customer Object ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Customer object (needed to update the current customer).|
+payment_method_name ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment method name.|
+payment_gateway_name ||<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment gateway name.|
 
 <aside class="notice">
-Payment method and payent gateway must be together, can't send only one.
+Payment method and payment gateway must be together, can't send only one.
 </aside>
 
 <aside class="notice">
@@ -3112,7 +3045,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 
 ### Returns
 
-Returns the paid invoice object if a valid invoice number was provided. Returns an error otherwise.
+Pay the invoice if a valid invoice number was provided. Returns an error otherwise.
 
 ####################################################################################
 
@@ -3147,10 +3080,10 @@ Settle the invoice with the given id.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-invoice_number ||<span style="color: red;">required</span> || Invoice's number.|
+invoice_number ||<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
 
 ### Returns
 
-Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.
+Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.
 
 ####################################################################################
