@@ -451,7 +451,7 @@
                     <a href="#list-all-refunds" class="toc-h2 toc-link" data-title="List all refunds">List all refunds</a>
                   </li>
                   <li>
-                    <a href="#get-refund-status" class="toc-h2 toc-link" data-title="Get refund status">Get refund status</a>
+                    <a href="#get-refund" class="toc-h2 toc-link" data-title="Get refund">Get refund</a>
                   </li>
               </ul>
           </li>
@@ -658,9 +658,9 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 </thead><tbody>
 <tr>
 <td>payment_gateway_ID</td>
-<td></td>
+<td>String</td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
@@ -780,7 +780,7 @@ The error codes used when you fail to get specific payment gateway are <a href="
 <td>payment_gateway_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
@@ -828,7 +828,7 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 <td>payment_gateway_id</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
@@ -882,42 +882,42 @@ The error codes used when you fail to get a specific payment method are <a href=
 <td>first_name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s first name.</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s last name.</td>
 </tr>
 <tr>
 <td>email</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s email.</td>
 </tr>
 <tr>
 <td>mobile_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s phone number.</td>
 </tr>
 <tr>
 <td>Business_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The business name.</td>
 </tr>
 <tr>
 <td>Business_Address</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The business address.</td>
 </tr>
 </tbody></table>
@@ -1015,42 +1015,42 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 <td>first_name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s first name.</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s last name.</td>
 </tr>
 <tr>
 <td>email</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s email.</td>
 </tr>
 <tr>
 <td>mobile_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s phone number.</td>
 </tr>
 <tr>
 <td>Business_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The business name.</td>
 </tr>
 <tr>
 <td>Business_Address</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The business address.</td>
 </tr>
 </tbody></table>
@@ -1095,21 +1095,21 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 <td>File</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s document file.</td>
 </tr>
 <tr>
 <td>document_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifer of document.</td>
 </tr>
 <tr>
 <td>document_type</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Document&#39;s type (from predefined list).</td>
 </tr>
 </tbody></table>
@@ -1154,7 +1154,7 @@ The error codes used when you fail to update the merchant's document are <a href
 <td>status</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The merchant&#39;s status (ACTIVATED - DEACTIVATED - SUSPENDED)).</td>
 </tr>
 </tbody></table>
@@ -1250,8 +1250,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">document_id</span><span class="o">=</span><span class="s2">"405843398798"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/getFile'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/getFile/{document_id}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1271,24 +1270,6 @@ The error codes used when you fail to update the merchant's document are <a href
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves file document.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>document_id</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Unique identifier of document file.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-12'>Returns</h3>
 <p>Returns the file document object.</p>
 <h2 id='set-billing-info'>Set Billing info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1327,35 +1308,35 @@ The error codes used when you fail to update the merchant's document are <a href
 <td>Bank_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Bank&#39;s name.</td>
 </tr>
 <tr>
 <td>Bank_Account_Num</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The bank account number.</td>
 </tr>
 <tr>
 <td>Bank_Branch_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The bank branch name.</td>
 </tr>
 <tr>
 <td>SWIFT</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Society for Worldwide Interbank Financial Telecommunications, the SWIFT code can be found on a bank&#39;s website, on your bank statement, or through an online search.</td>
 </tr>
 <tr>
 <td>IBAN</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>international bank account number, is a standard international numbering system developed to identify an overseas bank account. The number starts with a two-digit country code, then two numbers, followed by several more alphanumeric characters.</td>
 </tr>
 </tbody></table>
@@ -1369,7 +1350,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"34534534"</span>
+     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"3"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/configurePaymentGateway'</span>
 </code></pre></div>
 <blockquote>
@@ -1383,7 +1364,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
      </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2089472"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
      </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1402,14 +1383,14 @@ The error code used when you fail to set the billing info is <a href="#1110">111
 <td>payment_gateway_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier of payment gateway.</td>
 </tr>
 <tr>
 <td>Gateway_Config_Object</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The gateway config object.</td>
 </tr>
 </tbody></table>
@@ -1456,7 +1437,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
 <td>payemnt_gateway_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
@@ -1470,8 +1451,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/disable'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1502,7 +1482,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>payment_gateway_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
@@ -1545,35 +1525,35 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>payment_method_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment method object.</td>
 </tr>
 <tr>
 <td>Fee_Fixed</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The fixed fee.</td>
 </tr>
 <tr>
 <td>Fee_Percent</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The percentage fee.</td>
 </tr>
 <tr>
 <td>Refund_Fee_Fixed</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The Refund fixed fee.</td>
 </tr>
 <tr>
 <td>Refund_Fee_Percent</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The Refund fee percentage.</td>
 </tr>
 </tbody></table>
@@ -1587,8 +1567,7 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_method_ID</span><span class="o">=</span><span class="s2">"4"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/enablePaymentMethod'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1606,26 +1585,8 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific payment method.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>payment_method_ID</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Unique identifier for the payment method object.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-18'>Returns</h3>
-<p>Returns the payment method object.</p>
+<p>Returns the payment method id.</p>
 
 <aside class="notice">
 The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
@@ -1634,8 +1595,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_method_ID</span><span class="o">=</span><span class="s2">"4"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/disablePaymentMethod'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1667,12 +1627,12 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 <td>payment_method_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-19'>Returns</h3>
-<p>Returns the payment method object.</p>
+<p>Returns the payment method id.</p>
 
 <aside class="notice">
 The error code used when you fail to disable payment method is <a href="#7113">7113</a>
@@ -1758,68 +1718,68 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <td>First_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s first name.</td>
 </tr>
 <tr>
 <td>Last_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s last name.</td>
 </tr>
 <tr>
 <td>email</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s email.</td>
 </tr>
 <tr>
 <td>mobile_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s phone number.</td>
 </tr>
 <tr>
 <td>country</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s country.</td>
 </tr>
 <tr>
 <td>governorate</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s governorate.</td>
 </tr>
 <tr>
 <td>city</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s city.</td>
 </tr>
 <tr>
 <td>address</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s address.</td>
 </tr>
 <tr>
 <td>apt_num</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-21'>Returns</h3>
-<p>Returns the customer object if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
+<p>Returns the customer mobile number if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
 The error codes used when you fail to create a customer are <a href="#3111">3111</a> , <a href="#1110">1110</a>
@@ -1851,7 +1811,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint helps you to create new customer.</p>
+<p>This endpoint helps you to update customer details.</p>
 
 <table><thead>
 <tr>
@@ -1866,63 +1826,63 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 <td>First_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s first name.</td>
 </tr>
 <tr>
 <td>Last_Name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s last name.</td>
 </tr>
 <tr>
 <td>email</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s email.</td>
 </tr>
 <tr>
 <td>mobile_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s phone number.</td>
 </tr>
 <tr>
 <td>country</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s country.</td>
 </tr>
 <tr>
 <td>governorate</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s governorate.</td>
 </tr>
 <tr>
 <td>city</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s city.</td>
 </tr>
 <tr>
 <td>address</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s address.</td>
 </tr>
 <tr>
 <td>apt_num</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
@@ -1962,24 +1922,6 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific customer.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>customer_mobile_number</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The mobile number of the customer.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-23'>Returns</h3>
 <p>Returns the Customer object for a valid mobile number.</p>
 
@@ -2044,7 +1986,7 @@ List all customers using filters.
      <span class="nt">-d</span> <span class="s2">"value"</span>: 0
      <span class="nt">-d</span> <span class="s2">"currency"</span>: <span class="s2">"EGP"</span>
      <span class="nt">-d</span> <span class="s2">"description"</span>: <span class="s2">"for grocery delivery"</span>
-     <span class="nt">-d</span> <span class="s2">"expire_date"</span>: 1-22-2022
+     <span class="nt">-d</span> <span class="s2">"expire_date"</span>: 22-02-2022
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/create'</span>
 </code></pre></div>
 <blockquote>
@@ -2077,98 +2019,98 @@ List all customers using filters.
 <td>value</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The value of payment.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Currency type used in payment.</td>
 </tr>
 <tr>
 <td>enable_Survey</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Switch that helps you to enable or disable survey.</td>
 </tr>
 <tr>
 <td>expire_date</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Expire date of the payment link.</td>
 </tr>
 <tr>
 <td>description</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Description of transaction.</td>
 </tr>
 <tr>
 <td>shippingPolicyFlag</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The shipping policy flag.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of the payment link, to know if the payment link is still valid.</td>
 </tr>
 <tr>
 <td>refundPolicyFlag</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The refund policy flag.</td>
 </tr>
 <tr>
 <td>shippingPolicyDetails</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The shipping policy Details for example, original sales receipt must accompany returns.</td>
 </tr>
 <tr>
 <td>refundPolicyDetails</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The refund policy details for example, refunds and exchanges, Right to cancel your order.</td>
 </tr>
 <tr>
 <td>comments</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Comments help merchant and customer to know more about order details and order process.</td>
 </tr>
 <tr>
 <td>name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The name of the customer.</td>
 </tr>
 <tr>
 <td>getCustAddress</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer&#39;s address.</td>
 </tr>
 <tr>
 <td>merchantId</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the merchant object.</td>
 </tr>
 </tbody></table>
@@ -2220,31 +2162,13 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific payment link.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>payment_link_url</td>
-<td></td>
-<td><span style="color: lightblue;">optional</span></td>
-<td></td>
-<td>The url of the payment link.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-26'>Returns</h3>
 <p>Returns the payment link object.</p>
 <h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/update'</span>
 </code></pre></div>
 <blockquote>
@@ -2277,140 +2201,140 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>link</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment link.</td>
 </tr>
 <tr>
 <td>value</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The value of the payment.</td>
 </tr>
 <tr>
 <td>enable_survey</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>to enable survey with payment link.</td>
 </tr>
 <tr>
 <td>last_used</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The date of last payment link use.</td>
 </tr>
 <tr>
 <td>editable</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>choose if you want to edit or not to edit payment link in the future.</td>
 </tr>
 <tr>
 <td>form_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier of the form.</td>
 </tr>
 <tr>
 <td>description</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The description of the payment in general.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The currency used in payment.</td>
 </tr>
 <tr>
 <td>expire_date</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>expire date of the payment link.</td>
 </tr>
 <tr>
 <td>create_date</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>creation date of the payment link.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of payment link (Active or Not active).</td>
 </tr>
 <tr>
 <td>totalRefund</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>total refund if exists.</td>
 </tr>
 <tr>
 <td>totalTransactions</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Total transaction happened.</td>
 </tr>
 <tr>
 <td>shippingPolicyFlag</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The shipping policy flag.</td>
 </tr>
 <tr>
 <td>refundPolicyFlag</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The refund policy flag.</td>
 </tr>
 <tr>
 <td>shippingPolicyDetails</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The shipping policy Details for example, original sales receipt must accompany returns.</td>
 </tr>
 <tr>
 <td>refundPolicyDetails</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The refund policy details for example, refunds and exchanges, Right to cancel your order.</td>
 </tr>
 <tr>
 <td>comments</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Comments help merchant and customer to know more about order details and order process.</td>
 </tr>
 <tr>
 <td>name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Name of the order.</td>
 </tr>
 <tr>
 <td>getCustAddress</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Choose if you want to get customer address or not.</td>
 </tr>
 </tbody></table>
@@ -2454,12 +2378,12 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Payment link url.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-28'>Returns</h3>
-<p>Deactivate an active payment link. This will show an error page &quot;Payment Link isn&#39;t available.</p>
+<p>Deactivate an active payment link. If invalid payment link is provided an error page &quot;Payment Link isn&#39;t available&quot; will show.</p>
 
 <aside class="notice">
 The error code used when you fail to deactive payment link is <a href="#4111">4111</a>
@@ -2508,31 +2432,6 @@ The error code used when you fail to deactive payment link is <a href="#4111">41
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment links.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>customer_mobile</td>
-<td></td>
-<td><span style="color: lightblue;">optional</span></td>
-<td></td>
-<td>Customer&#39;s mobile number.</td>
-</tr>
-<tr>
-<td>Filter</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>The filter object that has fields you want to retrieve.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-29'>Returns</h3>
 <p>Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.</p>
 
@@ -2543,7 +2442,7 @@ The error codes used when you fail to list all payment links are <a href="#3110"
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span>: <span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/PayPaymentLink/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2574,42 +2473,42 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment link url.</td>
 </tr>
 <tr>
 <td>Customer Object</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The customer object.</td>
 </tr>
 <tr>
 <td>Form_Response Object</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The form response object.</td>
 </tr>
 <tr>
 <td>payment_method_name</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment method name.</td>
 </tr>
 <tr>
 <td>payment_gateway_name</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment gateway name.</td>
 </tr>
 <tr>
 <td>coupon_code</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The coupon code.</td>
 </tr>
 </tbody></table>
@@ -2662,8 +2561,6 @@ The error codes used when you fail to pay or execute payment link are <a href="#
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the details of an existing payment.</p>
-<h3 id='parameters-7'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-31'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
@@ -2674,7 +2571,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"coupon_code"</span>: 423746
+     <span class="nt">-d</span> <span class="s2">"coupon_code"</span>: <span class="s2">"HEMACOUPON"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2742,28 +2639,28 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>coupon_code</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The coupon code.</td>
 </tr>
 <tr>
 <td>customer_mobile</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Customer&#39;s mobile number.</td>
 </tr>
 <tr>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: lighblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment link url.</td>
 </tr>
 <tr>
 <td>invoice_num</td>
 <td></td>
 <td><span style="color: lighblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
@@ -2817,21 +2714,21 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <td>transaction_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the transaction object.</td>
 </tr>
 <tr>
 <td>value</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Value of the refund.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The currency type used.</td>
 </tr>
 </tbody></table>
@@ -2849,7 +2746,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://buy.circlepay.ai/sldkfhsd"</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/Refund/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2905,28 +2802,28 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>transaction_id</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier of transaction object.</td>
 </tr>
 <tr>
 <td>customer_mobile</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Customer&#39;s mobile number.</td>
 </tr>
 <tr>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: lighblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment link url.</td>
 </tr>
 <tr>
 <td>invoice_num</td>
 <td></td>
 <td><span style="color: lighblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
@@ -2940,7 +2837,7 @@ Also there is a filter object which contains values of wanted payment objects.
 <aside class="notice">
 The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
 </aside>
-<h2 id='get-refund-status'>Get refund status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h2 id='get-refund'>Get refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
@@ -2971,10 +2868,8 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the refund object.</p>
-<h3 id='parameters-8'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-35'>Returns</h3>
-<p>Returns the status of refund object, for example: &quot;approved&quot;, &quot;pending&quot; or &quot;rejected&quot;.</p>
+<p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
 The error code used when you fail to get refund status is <a href="#9111">9111</a>
@@ -3018,56 +2913,56 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment link url.</td>
 </tr>
 <tr>
 <td>code</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The code of coupon.</td>
 </tr>
 <tr>
 <td>value</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The value of the payment after discounting.</td>
 </tr>
 <tr>
 <td>name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The name of the coupon.</td>
 </tr>
 <tr>
 <td>expire_date</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Coupon&#39;s expire date.</td>
 </tr>
 <tr>
 <td>number_of_uses</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Number of uses to this coupon.</td>
 </tr>
 <tr>
 <td>discount_value</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Coupon&#39;s discount value.</td>
 </tr>
 <tr>
 <td>discount_type</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>number or percentage.</td>
 </tr>
 </tbody></table>
@@ -3113,8 +3008,6 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific coupon.</p>
-<h3 id='parameters-9'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-37'>Returns</h3>
 <p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
 
@@ -3169,49 +3062,49 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 <td>coupon_code</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The code of coupon.</td>
 </tr>
 <tr>
 <td>value</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The value of the payment after discounting.</td>
 </tr>
 <tr>
 <td>name</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The name of the coupon.</td>
 </tr>
 <tr>
 <td>expire_date</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Coupon&#39;s expire date.</td>
 </tr>
 <tr>
 <td>number_of_uses</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Number of uses for this coupon.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of the coupon for example, expired.</td>
 </tr>
 <tr>
 <td>times_per_customer</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
@@ -3243,24 +3136,6 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates status of the coupon to active.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>coupon_id</td>
-<td></td>
-<td><span style="color: red;">required</span></td>
-<td></td>
-<td>Unique identifier of coupon object.</td>
-</tr>
-</tbody></table>
 <h3 id='returns-39'>Returns</h3>
 <p>The activated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
@@ -3303,7 +3178,7 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
 <td>coupon_id</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier of coupon object.</td>
 </tr>
 </tbody></table>
@@ -3360,8 +3235,6 @@ The error code used when you fail to deactive the coupon is <a href="#4311">4311
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns a list of your coupons per payment link.</p>
-<h3 id='parameters-10'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-41'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 
@@ -3483,33 +3356,33 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Payment link url.</td>
 </tr>
 <tr>
 <td>title</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The title of the form.</td>
 </tr>
 <tr>
 <td>question_list</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The list that has questions objects.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-42'>Returns</h3>
-<p>Returns form object which has the questions array</p>
+<p>Returns form object which has the questions array.</p>
 
 <aside class="notice">
 Status is "active" by default.
@@ -3621,8 +3494,6 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a form object.</p>
-<h3 id='parameters-11'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-43'>Returns</h3>
 <p>Returns a form object if founded, else an error will be thrown.</p>
 
@@ -3748,28 +3619,28 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Payment link url.</td>
 </tr>
 <tr>
 <td>title</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The title of the form.</td>
 </tr>
 <tr>
 <td>question_list</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The list that has questions objects.</td>
 </tr>
 <tr>
 <td>status</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
@@ -3800,13 +3671,11 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Survey fetched successfully"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Activate a form to collect responses in the checkout.</p>
-<h3 id='parameters-12'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-45'>Returns</h3>
 <p>Returns The payment link url of activated form if the call succeeded. Otherwise, this call returns an error.</p>
 
@@ -3846,7 +3715,7 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Payment link url.</td>
 </tr>
 </tbody></table>
@@ -3903,14 +3772,14 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
 <td>payment_link_url</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The url of the payment link.</td>
 </tr>
 <tr>
 <td>customer_mobile</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
@@ -3952,9 +3821,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieve the details of settlement.</p>
-<h3 id='parameters-13'>Parameters</h3>
-<p>No parameters.</p>
+<p>Retrieves the details of settlement.</p>
 <h3 id='returns-48'>Returns</h3>
 <p>Returns a settlement object. </p>
 <h2 id='list-all-settlements'>List all settlements</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -4010,21 +3877,21 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>Filter</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>This is the filter object.</td>
 </tr>
 <tr>
 <td>Filter.date_time_range</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The time range you allowed to settle.</td>
 </tr>
 <tr>
 <td>Filter.status</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The status of the settlement for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
@@ -4087,14 +3954,14 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>customer</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The details of the customer object.</td>
 </tr>
 <tr>
 <td>invoice</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The details of the invoice object.</td>
 </tr>
 </tbody></table>
@@ -4141,8 +4008,6 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the invoice with the given invoice number.</p>
-<h3 id='parameters-14'>Parameters</h3>
-<p>No parameters.</p>
 <h3 id='returns-51'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
@@ -4206,8 +4071,6 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list invoices for a given customer.</p>
-<h3 id='parameters-15'>Parameters</h3>
-<p>No parameters</p>
 <h3 id='returns-52'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 
@@ -4250,12 +4113,12 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 <td>invoice_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-53'>Returns</h3>
-<p>Returns the deleted invoice object.</p>
+<p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
 The error code used when you fail to delete an invoice is <a href="#5111">5111</a>
@@ -4295,41 +4158,41 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
 <td>invoice_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Invoice&#39;s number.</td>
 </tr>
 <tr>
 <td>Customer Object</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Customer object (needed to update the current customer).</td>
 </tr>
 <tr>
 <td>payment_method_name</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment method name.</td>
 </tr>
 <tr>
 <td>payment_gateway_name</td>
 <td></td>
 <td><span style="color: lightblue;">optional</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The payment gateway name.</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-Payment method and payent gateway must be together, can't send only one.
+Payment method and payment gateway must be together, can't send only one.
 </aside>
 
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
 <h3 id='returns-54'>Returns</h3>
-<p>Returns the paid invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
+<p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h2 id='settle-an-invoice'>Settle an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -4368,12 +4231,12 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 <td>invoice_number</td>
 <td></td>
 <td><span style="color: red;">required</span></td>
-<td></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-55'>Returns</h3>
-<p>Returns the settled invoice object if a valid invoice ID was provided. Returns an error otherwise.</p>
+<p>Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
 <h2 id='general'>General</h2>
