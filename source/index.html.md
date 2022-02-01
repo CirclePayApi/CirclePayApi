@@ -59,14 +59,12 @@ curl -X GET --header 'Accept: application/json'
  "data" :
 	[
 	 { 
-		"id": 1,
-		"name": "ahmed",
-		"payment_methods": []
+		"id": "1",
+		"name": "MyFatoorh"
 	 },
 	 {
-		"id": 1,
-		"name": "ahmed",
-		"payment_methods": []
+		"id": "2",
+		"name": "Fawry"
 	 }  
 	]
 }
@@ -91,12 +89,11 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 ## Retrieve a Payment Gateway
 
 ```shell
-curl -X POST --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d gateway_id=2
-     'https://circlepay.ai/apis/PaymentGateway/get'
+     'https://circlepay.ai/apis/PaymentGateway/get/{payment_gateway_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -110,9 +107,8 @@ curl -X POST --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" : 
    {
-	 "id": 1,
-	 "name": "ahmed",
-	 "payment_methods": []
+	 "id": "1",
+	 "name": "Paymob"
    }
 }
 ```
@@ -121,7 +117,7 @@ Retrieves a specific payment gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-gateway_id |  |<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object.
+payment_gateway_ID |  |<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object.
 
 
 ### Returns
@@ -158,12 +154,11 @@ American express|   |
 ## List a Payment Methods
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d gateway_id=2 
-     'https://circlepay.ai/apis/PaymentMethod/list/'
+     'https://circlepay.ai/apis/PaymentMethod/list/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -178,18 +173,14 @@ curl -X POST --header 'Accept: application/json'
  "data" :
 	[
 	 {
-		"id": 1,
-		"name": "ahmed",
-		"type": "card",
-		"gateway": "paymob",
-		"rate": 1
+		"id": "1",
+		"name": "Visa",
+		"gateway_id": "1"
 	 },
 	 {
-		"id": 1,
-		"name": "ahmed",
-		"type": "card",
-		"gateway": "paymob",
-		"rate": 1
+		"id": "2",
+		"name": "MasterCard",
+		"gateway_id": "1"
 	 }
 	]
 }
@@ -199,7 +190,7 @@ Retrieves all payment methods of the merchant.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-gateway_id |  |<span style="color: red;">required</span>| |Unique identifier for the payment gateway object.
+payment_gateway_id |  |<span style="color: red;">required</span>| |Unique identifier for the payment gateway object.
 
 ### Returns
 
@@ -214,12 +205,11 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 ## Retrieve a Payment Method
 
 ```shell
-curl -X POST --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d gateway_id=2
-     'https://circlepay.ai/apis/PaymentMethod/get'
+     'https://circlepay.ai/apis/PaymentMethod/get/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -233,11 +223,9 @@ curl -X POST --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "name": "ahmed",
-	 "type": "card",
-	 "gateway": "paymob",
-	 "rate": 1
+	 "id": "1",
+	 "name": "Visa",
+	 "gateway_id": "1",
 	}
 }
 ```
@@ -246,7 +234,7 @@ Retrieves a specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-gateway_id ||<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object. |
+payment_gateway_id ||<span style="color: lightblue;">optional</span>| |Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -272,8 +260,8 @@ curl -X POST --header 'Accept: application/json'
      -d "first_name"="Ahmed"
      -d "last_name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="923847"
-	 -d "Business_Name"="CirclePay"
+     -d "mobile_number"=01001414133
+	 -d "Business_Name"="E-commerce"
      -d "Business_Address"="El-maadi"
      'https://circlepay.ai/apis/Merchant/create'
 ```
@@ -289,21 +277,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "firstName": "ahmed",
-	 "lastName": "khaled",
-	 "email": "hi@bye.com",
-	 "phone_number": "22222",
-	 "picture": null,
-	 "id_card": null,
-	 "payment_method": null,
-	 "circles": [],
-	 "billing_info": null,
-	 "documents": null,
-	 "alert": null,
-	 "settlement": null,
-	 "business_individual": null,
-	 "type_of_business": null
+	 "merchant_id": "1"
 	}
 }
 ```
@@ -325,7 +299,7 @@ Password will be auto generated.
 
 ### Returns
 
-Returns the merchant object if the update succeeded. Returns an error if create parameters are invalid.
+Returns the merchant id if the merchant created successfully. Returns an error if create parameters are invalid.
 
 <aside class="notice">
 The error codes used when you fail to create a merchant are <a href="#8110">8110</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
@@ -336,7 +310,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 ## Retrieve a Merchant
 
 ```shell
-curl -X POST --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -348,32 +322,30 @@ curl -X POST --header 'Content-Type: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully retrieve the merchant",
+ "message" : "You successfully retrieved the merchant",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "firstName": "ahmed",
-	 "lastName": "khaled",
-	 "email": "hi@bye.com",
-	 "phone_number": "22222",
-	 "picture": null,
-	 "id_card": null,
-	 "payment_method": null,
-	 "circles": [],
-	 "billing_info": null,
-	 "documents": null,
-	 "alert": null,
-	 "settlement": null,
-	 "business_individual": null,
-	 "type_of_business": null
+	 "first_name": "ahmed",
+	 "last_name": "khaled",
+	 "email": "ahmed@gmail.com",
+	 "mobile_number": 01001212155,
+	 "business_name": "ecommerce",
+	 "business_address": "el-maadi",
+	 "refund_policy": null,
+	 "shipping_policy": null,
+	 "status": null,
 	}
 }
 ```
 
 Retrieves a specific merchant.
+
+### Parameters
+
+No parameters.
 
 ### Returns
 
@@ -388,6 +360,12 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 -d "first_name"="ahmed"
+	 -d "last_name"="khaled"
+	 -d "email"="ahmed@gmail.com"
+	 -d "mobile_number"=01001215155
+	 -d "business_name"="ecommerce"
+	 -d "business_address"="el-maadi"
      'https://circlepay.ai/apis/Merchant/update'
 ```
 
@@ -402,21 +380,15 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "firstName": "ahmed",
-	 "lastName": "khaled",
-	 "email": "hi@bye.com",
-	 "phone_number": "22222",
-	 "picture": null,
-	 "id_card": null,
-	 "payment_method": null,
-	 "circles": [],
-	 "billing_info": null,
-	 "documents": null,
-	 "alert": null,
-	 "settlement": null,
-	 "business_individual": null,
-	 "type_of_business": null
+	 "first_name": "ahmed",
+	 "last_name": "khaled",
+	 "email": "ahmed@gmail.com",
+	 "mobile_number": 01001212155,
+	 "business_name": "ecommerce",
+	 "business_address": "el-maadi",
+	 "refund_policy": null,
+	 "shipping_policy": null,
+	 "status": null,
 	}
 }
 ```
@@ -445,7 +417,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 ## Update Document
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -458,18 +430,12 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully update the merchant",
+ "message" : "You successfully update the merchant's document",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {
-      "document_id": "124234",
-      "file_size": 7969,
-      "upload_date": 22-3-2022,
-      "last_modified": 23-3-2022,
-      "document_type": "national id"
-     }
+     {}
 }
 ```
 
@@ -479,7 +445,7 @@ Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 File ||<span style="color: red;">required</span>|| The merchant's document file. |
 document_id ||<span style="color: red;">required</span>|| Unique identifer of document. |
-document_type ||<span style="color: red;">required</span>|| Document's type (predefined list). |
+document_type ||<span style="color: red;">required</span>|| Document's type (from predefined list). |
 
 
 ### Returns
@@ -503,21 +469,18 @@ curl -X PUT --header 'Accept: application/json'
 	 -d status="SUSPENDED"
      'https://circlepay.ai/apis/Merchant/updateStatus'
 ```
-- Status ((ACTIVATED - DEACTIVATED - SUSPENDED))
 
 > The above command returns JSON structured like this:
 
 ```json
 {
  "status" : True,
- "message" : "You successfully update the merchant",
+ "message" : "You successfully update the merchant's status",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {
-       "status": "SUSPENDED"
-     }
+     {}
 }
 ```
 
@@ -525,7 +488,7 @@ Updates the specified merchant's status.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-status ||<span style="color: red;">required</span>|| The merchant's status. |
+status ||<span style="color: red;">required</span>|| The merchant's status (ACTIVATED - DEACTIVATED - SUSPENDED)). |
 
 ### Returns
 
@@ -555,38 +518,26 @@ curl -X GET --header 'Accept: application/json'
  "data" :
    [
 	{
-	 "id": 1,
-	 "firstName": "ahmed",
-	 "lastName": "khaled",
-	 "email": "hi@bye.com",
-	 "phone_number": "22222",
-	 "picture": null,
-	 "id_card": null,
-	 "payment_method": null,
-	 "circles": [],
-	 "billing_info": null,
-	 "documents": null,
-	 "alert": null,
-	 "settlement": null,
-	 "business_individual": null,
-	 "type_of_business": null
+	 "first_name": "ahmed",
+	 "last_name": "khaled",
+	 "email": "ahmed@gmail.com",
+	 "mobile_number": 01001212155,
+	 "business_name": "ecommerce",
+	 "business_address": "el-maadi",
+	 "refund_policy": null,
+	 "shipping_policy": null,
+	 "status": null,
 	},
 	{
-	 "id": 1,
-	 "firstName": "ahmed",
-	 "lastName": "khaled",
-	 "email": "hi@bye.com",
-	 "phone_number": "22222",
-	 "picture": null,
-	 "id_card": null,
-	 "payment_method": null,
-	 "circles": [],
-	 "billing_info": null,
-	 "documents": null,
-	 "alert": null,
-	 "settlement": null,
-	 "business_individual": null,
-	 "type_of_business": null
+	 "first_name": "ibrahim",
+	 "last_name": "salah",
+	 "email": "ibrahim@gmail.com",
+	 "mobile_number": 01001812155,
+	 "business_name": "nike",
+	 "business_address": "el-maadi",
+	 "refund_policy": null,
+	 "shipping_policy": null,
+	 "status": null,
 	}
    ]
 }
@@ -607,11 +558,11 @@ Returns an array. Each entry in the array is a separate user object.This request
 ## List all documents
 
 ```shell
-curl -X POST --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/Merchant/listDocuments'
+     'https://circlepay.ai/apis/Merchant/listDocuments
 ```
 
 > The above command returns JSON structured like this:
@@ -634,7 +585,7 @@ curl -X POST --header 'Content-Type: application/json'
 	 },
 	 {
 	  "document_id": "13534234",
-	  "file_size": 799,
+	  "file_size": 7990,
 	  "upload_date": 22-2-2022,
 	  "last_modified": 23-3-2022,
 	  "document_type": "passport"
@@ -662,6 +613,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 -d document_id="405843398798"
      'https://circlepay.ai/apis/Merchant/getFile'
 ```
 
@@ -670,7 +622,7 @@ curl -X GET --header 'Content-Type: application/json'
 ```json
 {
  "status" : True,
- "message" : "Documents list returned successfully",
+ "message" : "Document file returned successfully",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
@@ -685,20 +637,20 @@ curl -X GET --header 'Content-Type: application/json'
 
 Retrieves file document.
 
-### Parameters
-
-No parameters.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+document_id ||<span style="color: red;">required</span>|| Unique identifier of document file. |
 
 ### Returns
 
-Returns file document.
+Returns the file document object.
 
 ####################################################################################
 
 ## Set Billing info
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -712,18 +664,12 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully update the merchant",
+ "message" : "You successfully updated the billing info",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {
-	  "Bank_Name": "cairo bank",
-	  "Bank_Account_Num": 234242,
-	  "Bank_Branch_Name": "maadi branch",
-	  "SWIFT": "BCAIEGCXXXX",
-	  "IBAN": "GB98 MIDL 0700 9312 3456 78"
-     }
+     {}
 }
 ```
 
@@ -752,7 +698,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
 ## Configure payment gateway
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -765,7 +711,7 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully update the merchant",
+ "message" : "You successfully configured payment gateway",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
@@ -798,11 +744,11 @@ The error codes used when you fail to configure payment gateway are <a href="#71
 ## Enable gateway
 
 ```shell
-curl -X PUT --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d gateway_id=4
+     -d payment_gateway_id="4"
      'https://circlepay.ai/apis/Merchant/enable'
 ```
 
@@ -816,7 +762,9 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{ }
+	{
+      "payment_gateway_ID": "4"
+	}
 }
 ```
 
@@ -824,7 +772,7 @@ This endpoint enable specific gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payemnt_gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -839,11 +787,11 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 ## Disable gateway
 
 ```shell
-curl -X PUT --header 'Content-Type: application/json'
+curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d gateway_id=4
+	 -d payment_gateway_id="4"
      'https://circlepay.ai/apis/Merchant/disable'
 ```
 
@@ -857,14 +805,16 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{}
+	{
+	  "payment_gateway_ID":"4"
+	}
 ```
 
 This endpoint disable specific gateway and it's related payment methods.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
+payment_gateway_id ||<span style="color: red;">required</span> || Unique identifier for the payment gateway object. |
 
 ### Returns
 
@@ -875,7 +825,7 @@ Returns success message if gateway disabled.
 ## Set payment method fee
 
 ```shell
-curl -X PUT --header 'Content-Type: application/json'
+curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -888,23 +838,13 @@ curl -X PUT --header 'Content-Type: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully enabled the payment method",
+ "message" : "You successfully set payment method fee",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{
-	  "status": true,
-	  "totalRevenue": 0,
-	  "paymentFeePercentage": 0,
-	  "paymentFeeAmount": 0,
-	  "refundFeePercentage": 0,
-	  "refundFeeAmount": 0,
-	  "id": 0,
-	  "MerchantId": 0,
-	  "PaymentMethodId": 0,
-	  "createdAt": 23-2-2022,
-	  "updatedAt": 24-2-2022
+	  "payment_method_ID": "9"
 	}
 }
 ```
@@ -932,11 +872,11 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
 ## Enable payment method
 
 ```shell
-curl -X PUT --header 'Content-Type: application/json'
+curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_method_id=4
+     -d payment_method_ID="4"
      'https://circlepay.ai/apis/Merchant/enablePaymentMethod'
 ```
 
@@ -951,17 +891,7 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "status": true,
-	  "totalRevenue": 0,
-	  "paymentFeePercentage": 0,
-	  "paymentFeeAmount": 0,
-	  "refundFeePercentage": 0,
-	  "refundFeeAmount": 0,
-	  "id": 0,
-	  "MerchantId": 0,
-	  "PaymentMethodId": 0,
-	  "createdAt": 23-2-2022,
-	  "updatedAt": 24-2-2022
+	  "payment_method_ID": "4",
 	}
 }
 ```
@@ -970,7 +900,7 @@ This endpoint enable specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_method_id ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
+payment_method_ID ||<span style="color: red;">required</span> || Unique identifier for the payment method object. |
 
 ### Returns
 
@@ -985,11 +915,11 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 ## Disable payment method
 
 ```shell
-curl -X PUT --header 'Content-Type: application/json'
+curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_method_id=4
+     -d payment_method_ID="4"
      'https://circlepay.ai/apis/Merchant/disablePaymentMethod'
 ```
 
@@ -1004,17 +934,7 @@ curl -X PUT --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "status": false,
-	  "totalRevenue": 0,
-	  "paymentFeePercentage": 0,
-	  "paymentFeeAmount": 0,
-	  "refundFeePercentage": 0,
-	  "refundFeeAmount": 0,
-	  "id": 0,
-	  "MerchantId": 0,
-	  "PaymentMethodId": 0,
-	  "createdAt": 23-2-2022,
-	  "updatedAt": 24-2-2022
+	  "payment_method_ID": "4"
 	}
 }
 ```
@@ -1055,19 +975,22 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{
-	 "payment_methods":
 	  [ 
 		{
-		  "name": "payment method-1",
-		  "id": 2
+		  "id": "1",
+		  "name": "Visa",
+		  "gateway_id": "1",
+		  "status": true,
+		  "rate": "3" 
 		},
 		{
-		  "name": "payment method-2",
-		  "id": 3
+		  "id": "2",
+		  "name": "MasterCard",
+		  "gateway_id": "1",
+		  "status": true,
+		  "rate": "4" 
 		}
 	  ]
-	}
 }
 ```
 
@@ -1079,7 +1002,7 @@ No parameters.
 
 ### Returns
 
-Returns a payment methods list.
+Returns a payment methods list of the merchant.
 
 ####################################################################################
 
@@ -1095,7 +1018,7 @@ curl -X POST --header 'Accept: application/json'
      -d "First_Name"="Ahmed"
      -d "Last_Name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="923847"
+     -d "mobile_number"=01001616166
 	 -d "country"="Egypt"
      -d "city"="cairo"
      'https://circlepay.ai/apis/Customer/create'
@@ -1112,14 +1035,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{  
-	 "id": 3,
-	 "first_name": "Ahmed",
-	 "last_name": "khaled",
-	 "email":"ahmedkhaled@gmail.com",
-	 "phone_number": "0238432",
-	 "transaction_id": {},
-	 "refund_id": {},
-	 "circle_id": {}
+	 "customer_mobile_number": 01001616166
 	}
 }
 ```
@@ -1151,14 +1067,14 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 ## Update a Customer
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "First_Name"="Ahmed"
      -d "Last_Name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="923847"
+     -d "mobile_number"=01001717177
 	 -d "country"="Egypt"
      -d "city"="cairo"
      'https://circlepay.ai/apis/Customer/update'
@@ -1169,20 +1085,13 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully updated cutomer",
+ "message" : "You successfully updated the cutomer",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{  
-	 "id": 3,
-	 "first_name": "Ahmed",
-	 "last_name": "khaled",
-	 "email":"ahmedkhaled@gmail.com",
-	 "phone_number": "0238432",
-	 "transaction_id": {},
-	 "refund_id": {},
-	 "circle_id": {}
+	 "customer_mobile_number": 01001717177
 	}
 }
 ```
@@ -1203,7 +1112,7 @@ apt_num ||<span style="color: red;">required</span>|| The customer's apartment n
 
 ### Returns
 
-Returns the customer object if the customer's update succeeded. Returns an error if parameters are invalid.
+Returns the customer mobile number if the customer's update succeeded. Returns an error if parameters are invalid.
 
 <aside class="notice">
 The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>
@@ -1214,12 +1123,11 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 ## Retrieve a customer
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d mobile_number=239487
-     'https://circlepay.ai/apis/Customers/get'
+     'https://circlepay.ai/apis/Customers/get/{customer_mobile_number}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1233,14 +1141,15 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{  
-	 "id": 3,
-	 "first_name": "Ahmed",
-	 "last_name": "khaled",
-	 "email":"ahmedkhaled@gmail.com",
-	 "phone_number": "0238432",
-	 "transaction_id": {},
-	 "refund_id": {},
-	 "circle_id": {}
+	   "first_name": "Ibrahim",
+	   "last_name": "Salah",
+	   "email": "ibrahim@gmail.com",
+	   "mobile_number": 01001212144,
+	   "country": "Egypt",
+	   "governorate": "cairo",
+	   "city": "nasr",
+	   "address": "72 gamal st",
+	   "apt_num": "5"
 	}
 }
 ```
@@ -1249,7 +1158,7 @@ Retrieves a specific customer.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-mobile_number ||<span style="color: red;">required</span> || The mobile number of the customer. |
+customer_mobile_number ||<span style="color: red;">required</span> || The mobile number of the customer. |
 
 ### Returns
 
@@ -1268,7 +1177,6 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d user_id=2
      'https://circlepay.ai/apis/Customers/list'
 ```
 
@@ -1282,16 +1190,30 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{  
-	 "id": 3,
-	 "first_name": "Ahmed",
-	 "last_name": "khaled",
-	 "email":"ahmedkhaled@gmail.com",
-	 "phone_number": "0238432",
-	 "transaction_id": {},
-	 "refund_id": {},
-	 "circle_id": {}
+	   "first_name": "Ibrahim",
+	   "last_name": "Salah",
+	   "email": "ibrahim@gmail.com",
+	   "mobile_number": 01001212144,
+	   "country": "Egypt",
+	   "governorate": "cairo",
+	   "city": "nasr",
+	   "address": "72 gamal st",
+	   "apt_num": "5"
+	},
+	{  
+	   "first_name": "Ahmed",
+	   "last_name": "Osman",
+	   "email": "ahmedosman@gmail.com",
+	   "mobile_number": 01005212144,
+	   "country": "Egypt",
+	   "governorate": "cairo",
+	   "city": "nasr",
+	   "address": "72 gamal st",
+	   "apt_num": "5"
 	}
+   ]
 }
 ```
 
@@ -1322,8 +1244,8 @@ curl -X POST --header 'Accept: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d "value": 0
      -d "currency": "EGP"
-     -d "description": "payment link"
-     -d "expire_date": "1-22-2022"
+     -d "description": "for grocery delivery"
+     -d "expire_date": 1-22-2022
      'https://circlepay.ai/apis/Payment_Link/create'
 ```
 
@@ -1338,19 +1260,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 0,
-	 "url": "ahmed",
-	 "form_id": 0,
-	 "coupon_id": [],
-	 "description": "desc",
-	 "value": 0,
-	 "currency": "EGP",
-	 "expire_date": "2022-10-12",
-	 "payment_method": [],
-	 "payment": [],
-	 "status": true,
-	 "paying_customer": [],
-	 "fees_list": []
+	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
 }
 ```
@@ -1377,7 +1287,7 @@ merchantId || <span style="color: red;">required</span> || Unique identifier for
 
 ### Returns
 
-Returns the payment link object.
+Returns the payment link url.
 
 <aside class="notice">
 The error codes used when you fail to create payment link are <a href="#4101">4101</a> , <a href="#1110">1110</a> , <a href="#4112">4112</a> 
@@ -1388,12 +1298,11 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 ## Retrieves a payment link
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd" 
-     'https://circlepay.ai/apis/Payment_Link/get'
+     'https://circlepay.ai/apis/Payment_Link/get/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1407,19 +1316,27 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 0,
-	 "url": "ahmed",
-	 "form_id": 0,
-	 "coupon_id": [],
-	 "description": "desc",
-	 "value": 0,
+	 "link": "https://bit.ly/3KXl3iA",
+	 "value": 99.0,
+	 "enable_survey": 0,
+	 "last_used": 22-02-2022,
+	 "editable": 1,
+	 "form_id": "31",
+	 "description": "for grocery delivery",
 	 "currency": "EGP",
-	 "expire_date": "2022-10-12",
-	 "payment_method": [],
-	 "payment": [],
-	 "status": true,
-	 "paying_customer": [],
-	 "fees_list": []
+	 "expire_date": 22-02-2023,
+	 "create_date": 22-01-2022,
+	 "status": 1,
+	 "totalRevenue": 12,
+	 "totalRefund": 1,
+	 "totalTransactions": 2,
+	 "shippingPolicyFlag": 0,
+	 "refundPolicyFlag": 0,
+	 "shippingPolicyDetails": "",
+	 "refundPolicyDetails": "",
+	 "comments": "",
+	 "name": "grocery",
+	 "getCustAddress": 0
 	}
 }
 ```
@@ -1443,7 +1360,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
+     -d "payment_link_url": "https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Payment_Link/update'
 ```
 
@@ -1458,19 +1375,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 0,
-	 "url": "ahmed",
-	 "form_id": 0,
-	 "coupon_id": [],
-	 "description": "desc",
-	 "value": 0,
-	 "currency": "EGP",
-	 "expire_date": "2022-10-12",
-	 "payment_method": [],
-	 "payment": [],
-	 "status": true,
-	 "paying_customer": [],
-	 "fees_list": []
+	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
 }
 ```
@@ -1478,14 +1383,27 @@ This endpoint helps you to udpate payment link.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_link_id ||<span style="color: red;">required</span> || Unique identifier for the payment link object. |
-payment_link_url ||<span style="color: red;">required</span> || The url of the payment link. |
-value ||<span style="color: lightblue;">optional</span> ||The value of payment.|
-description ||<span style="color: lightblue;">optional</span> || Description of transaction. |
-expire_date ||<span style="color: lightblue;">optional</span> || Expire date of the payment link. |
-payment_method_id ||<span style="color: lightblue;">optional</span> || List of unique identifier(s) for the payment method object(s). |
-status ||<span style="color: lightblue;">optional</span> || The status of the payment link, to know if the payment link is still valid. |
-fees_list ||<span style="color: lightblue;">optional</span> || The fixed price charged for a payment. |
+link ||<span style="color: red;">required</span> || The payment link. |
+value ||<span style="color: red;">required</span> || The value of the payment. |
+enable_survey ||<span style="color: red;">required</span> || to enable survey with payment link.|
+last_used ||<span style="color: lightblue;">optional</span> || The date of last payment link use. |
+editable ||<span style="color: lightblue;">optional</span> || choose if you want to edit or not to edit payment link in the future. |
+form_id ||<span style="color: red;">required</span> || Unique identifier of the form. |
+description ||<span style="color: lightblue;">optional</span> || The description of the payment in general. |
+currency ||<span style="color: red;">required</span> || The currency used in payment. |
+expire_date ||<span style="color: red;">required</span> || expire date of the payment link. |
+create_date ||<span style="color: lightblue;">optional</span> || creation date of the payment link. |
+status ||<span style="color: red;">required</span> || The status of payment link (Active or Not active). |
+totalRefund ||<span style="color: lightblue;">optional</span> || total refund if exists. |
+totalTransactions ||<span style="color: red;">required</span> || Total transaction happened. |
+shippingPolicyFlag ||<span style="color: lightblue;">optional</span> || The shipping policy flag. |
+refundPolicyFlag ||<span style="color: lightblue;">optional</span> || The refund policy flag. |
+shippingPolicyDetails ||<span style="color: lightblue;">optional</span> || The shipping policy Details for example, original sales receipt must accompany returns. |
+refundPolicyDetails ||<span style="color: lightblue;">optional</span> || The refund policy details for example, refunds and exchanges, Right to cancel your order. |
+comments ||<span style="color: lightblue;">optional</span> || Comments help merchant and customer to know more about order details and order process. |
+name ||<span style="color: red;">required</span> || Name of the order. |
+getCustAddress ||<span style="color: lightblue;">optional</span> || Choose if you want to get customer address or not. |
+
 
 ### Returns
 
@@ -1500,12 +1418,11 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 ## Deactive payment link
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
-     'https://circlepay.ai/apis/Payment_Link/list'
+     'https://circlepay.ai/apis/Payment_Link/list/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1513,7 +1430,7 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "Payment links list returned successfully",
+ "message" : "You successfully deactived payment link",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
@@ -1542,11 +1459,10 @@ The error code used when you fail to deactive payment link is <a href="#4111">41
 ## List all payment links
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "customer_mobile": 239494
      'https://circlepay.ai/apis/Payment_Link/list'
 ```
 
@@ -1560,21 +1476,31 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
-	 "id": 0,
-	 "url": "https://buy.circlepay.ai/sldkfhsd",
-	 "form_id": 0,
-	 "coupon_id": [],
-	 "description": "desc",
-	 "value": 0,
+	 "link": "https://bit.ly/3KXl3iA",
+	 "value": 99.0,
+	 "enable_survey": 0,
+	 "last_used": 22-02-2022,
+	 "editable": 1,
+	 "form_id": "31",
+	 "description": "for grocery delivery",
 	 "currency": "EGP",
-	 "expire_date": "2022-10-12",
-	 "payment_method": [],
-	 "payment": [],
-	 "status": true,
-	 "paying_customer": [],
-	 "fees_list": []
+	 "expire_date": 22-02-2023,
+	 "create_date": 22-01-2022,
+	 "status": 1,
+	 "totalRevenue": 12,
+	 "totalRefund": 1,
+	 "totalTransactions": 2,
+	 "shippingPolicyFlag": 0,
+	 "refundPolicyFlag": 0,
+	 "shippingPolicyDetails": "",
+	 "refundPolicyDetails": "",
+	 "comments": "",
+	 "name": "grocery",
+	 "getCustAddress": 0
 	}
+   ]
 }
 ```
 
@@ -1603,7 +1529,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url": "https://buy.circlepay.ai/sldkfhsd"
+     -d "payment_link_url": "https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/PayPaymentLink/list'
 ```
 
@@ -1672,16 +1598,21 @@ curl -X GET --header 'Accept: application/json'
  "data" :
 	{
 	 "id": 1,
-	 "date_time": "2022-10-12",
-	 "merchant_id": 1,
-	 "customer_id": 1,
-	 "status": true,
-	 "payment_link_id": 1,
-	 "coupon_id": 1,
-	 "amount_paid": 1,
+	 "transaction_id": 6,
+	 "external_ref_id": 3,
+	 "init_date": 22-02-2022,
+	 "update_date": 23-02-2022,
+	 "customer_mobile": "01001212888",
+	 "status": "pending",
+	 "payment_link_url": "https://bit.ly/3KXl3iA",
+	 "invoice_num": "CIR_INV_1643670030261",
+	 "coupon_code": "HEMACOUPON",
+	 "value": 99.0,
+	 "net_fees": 1.0,
 	 "currency": "EGP",
-	 "payment_method": null,
-	 "source": "external"
+	 "payment_method_id": "1",
+	 "payment_method_name": "Visa",
+	 "payment_gateway_name": "MyFatoorh"
 	}
 }
 ```
@@ -1724,32 +1655,42 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	[
-	 {
+	  {
 		"id": 1,
-		"date_time": "2022-10-12",
-		"merchant_id": 1,
-		"customer_id": 1,
-		"status": "true",
-		"payment_link_id": 1,
-		"coupon_id": 1,
-		"amount_paid": 1,
+		"transaction_id": 6,
+		"external_ref_id": 3,
+		"init_date": 22-02-2022,
+		"update_date": 23-02-2022,
+		"customer_mobile": "01001212888",
+		"status": "pending",
+		"payment_link_url": "https://bit.ly/3KXl3iA",
+		"invoice_num": "CIR_INV_1643670030261",
+		"coupon_code": "HEMACOUPON",
+		"value": 99.0,
+		"net_fees": 1.0,
 		"currency": "EGP",
-		"payment_method": null,
-		"source": "external"
-	 },
-	 {
-		"id": 1,
-		"date_time": "2022-10-12",
-		"merchant_id": 1,
-		"customer_id": 1,
-		"status": true,
-		"payment_link_id": 1,
-		"coupon_id": 1,
-		"amount_paid": 1,
+		"payment_method_id": "1",
+		"payment_method_name": "Visa",
+		"payment_gateway_name": "MyFatoorh"
+	  },
+	  {
+		"id": 2,
+		"transaction_id": 5,
+		"external_ref_id": 2,
+		"init_date": 22-02-2022,
+		"update_date": 23-02-2022,
+		"customer_mobile": "01101212888",
+		"status": "pending",
+		"payment_link_url": "https://bit.ly/3RXl3iA",
+		"invoice_num": "CIR_INV_1643670030264",
+		"coupon_code": "AHMEDCOUPON",
+		"value": 99.0,
+		"net_fees": 1.0,
 		"currency": "EGP",
-		"payment_method": null,
-		"source": "external"
-	 }
+		"payment_method_id": "2",
+		"payment_method_name": "MasterCard",
+		"payment_gateway_name": "MyFatoorh"
+	  }
 	]
 }
 ```
@@ -1805,15 +1746,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "request_date": "2022-10-12",
-	 "refund_date": "2022-10-12",
-	 "value": 33,
-	 "payment_id": 1,
-	 "fees_list": [],
-	 "payment_method": [],
-	 "status": "pending",
-	 "customer": null
+	 "refund_id": "1"
 	}
 }
 ```
@@ -1822,13 +1755,13 @@ This endpoint helps you to request refund.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 transaction_id ||<span style="color: red;">required</span> || Unique identifier for the transaction object.|
-value ||<span style="color: red;">required</span> || Value of the refund.|
+value ||<span style="color: lightblue;">optional</span> || Value of the refund.|
 currency ||<span style="color: red;">required</span> || The currency type used. |
 
 
 ### Returns
 
-Returns the refund object. Status in refund object will be in pending state.
+Returns the refund id. Status in refund object will be in pending state.
 
 <aside class="notice">
 Default value of refund is equal to payment value.
@@ -1863,26 +1796,28 @@ curl -X POST --header 'Accept: application/json'
  "data" :
 	[
 	 {
-		"id": 1,
-		"request_date": "2022-10-12",
-		"refund_date": "2022-10-12",
-		"value": 1,
-		"transaction_id": 1,
-		"fees_list": [],
-		"payment_method": [],
-		"status": [],
-		"customer": null
+	    "refund_id": "1",
+		"external_ref_id": 2,
+		"init_date": 22-02-2022,
+		"update_date": 23-02-2022,
+		"value": 40.0,
+		"transaction_id": 3,
+		"refundFees": 2.0,
+		"Payment_Method": ["Visa","MasterCard"],
+		"customer_mobile": 01001313454,
+		"status": "pending"
 	 },
 	 {
-		"id": 2,
-		"request_date": "2022-10-12",
-		"refund_date": "2022-10-12",
-		"value": 2,
-		"transaction_id": 2,
-		"fees_list": [],
-		"payment_method": [],
-		"status": [],
-		"customer": null
+	    "refund_id": "2",
+		"external_ref_id": 3,
+		"init_date": 22-02-2022,
+		"update_date": 23-02-2022,
+		"value": 90.0,
+		"transaction_id": 3,
+		"refundFees": 4.0,
+		"Payment_Method": ["Visa","MasterCard"],
+		"customer_mobile": 01001323454,
+		"status": "paid"
 	 }
     ]
 }
@@ -1898,7 +1833,7 @@ invoice_num ||<span style="color: lighblue;">optional</span>|| The invoice numbe
 
 ### Returns
 
-Returns refund list. If no more refunds are available, the resulting array will be empty.
+Returns refund object list. If no more refunds are available, the resulting array will be empty.
 
 <aside class="notice">
 Also there is a filter object which contains values of wanted payment objects.
@@ -1925,17 +1860,26 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "Refund's status returned successfully ",
+ "message" : "Refund object returned successfully ",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{
-	 "status":"pending"
+	 "refund_id": "2",
+	 "external_ref_id": 3,
+	 "init_date": 22-02-2022,
+	 "update_date": 23-02-2022,
+	 "value": 90.0,
+	 "transaction_id": 3,
+	 "refundFees": 4.0,
+	 "Payment_Method": ["Visa","MasterCard"],
+	 "customer_mobile": 01001323454,
+	 "status": "paid"
 	}
 }
 ```
-Retrieves the status of refund object.
+Retrieves the refund object.
 
 ### Parameters
 
@@ -1962,7 +1906,7 @@ curl -X POST --header 'Accept: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d value=1
      -d name="AHMEDCOUPON"
-	 -d expire_date=22-2-2022
+	 -d expire_date=22-02-2022
      'https://circlepay.ai/apis/Coupon/create'
 ```
 
@@ -1977,12 +1921,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "payment_link_id": 1,
-	 "code": 1,
-	 "value": 1,
-	 "name": "ahmed",
-	 "number_of_uses": 1,
-	 "discount_t": "%"
+	 "coupon_code": "HEMACOUPON"
 	}
 }
 ```
@@ -2001,7 +1940,7 @@ discount_type ||<span style="color: red;">required</span> || number or percentag
 
 ### Returns
 
-Returns the coupon object. 
+Returns the coupon code. 
 
 <aside class="notice">
 Status of coupon is "active" by default.
@@ -2034,16 +1973,17 @@ curl -X GET --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "value": 1,
-	 "name": "ahmed",
-	 "expire_date": "2022-12-22",
+	 "code": "HEMACOUPON",
+	 "value": 99.0,
+	 "name": "50% offer",
+	 "create_date": "22-02-2022",
+	 "expire_date": "27-02-2022",
 	 "number_of_uses": 1,
-	 "payment_link_id": 1,
-	 "payments": null,
+	 "payment_link_url": "https://bit.ly/3KXl3iA",
 	 "status": 1,
-	 "times_per_customer": 1,
-	 "customer": []
+	 "used_times": 0,
+	 "discount_type": "percent" ,
+	 "discount_value": "50.0"
 	}
 }
 ```
@@ -2070,8 +2010,8 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d value=1
-     -d name="AHMEDCOUPON"
+     -d coupon_code="HEMACOUPON"
+     -d name="50% offer"
      'https://circlepay.ai/apis/Coupon/update'
 ```
 
@@ -2086,16 +2026,17 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "value": 1,
-	 "name": "ahmed",
-	 "expire_date": "2022-12-22",
+	 "code": "HEMACOUPON",
+	 "value": 99.0,
+	 "name": "50% offer",
+	 "create_date": "22-02-2022",
+	 "expire_date": "27-02-2022",
 	 "number_of_uses": 1,
-	 "payment_link_id": 1,
-	 "payments": null,
-	 "status": "active",
-	 "times_per_customer": 1,
-	 "customer": []
+	 "payment_link_url": "https://bit.ly/3KXl3iA",
+	 "status": 1,
+	 "used_times": 0,
+	 "discount_type": "percent" ,
+	 "discount_value": "50.0"
 	}
 }
 ```
@@ -2124,12 +2065,11 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 ## Activate coupon
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d coupon_id=1
-     'https://circlepay.ai/apis/Coupon/activate'
+     'https://circlepay.ai/apis/Coupon/activate/{coupon_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2137,22 +2077,13 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully updated the coupon",
+ "message" : "You successfully activated the coupon",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "value": 1,
-	 "name": "ahmed",
-	 "expire_date": "2022-12-22",
-	 "number_of_uses": 1,
-	 "payment_link_id": 1,
-	 "payments": null,
-	 "status": "active",
-	 "times_per_customer": 1,
-	 "customer": []
+	 "coupon_id": 1
 	}
 }
 ```
@@ -2164,7 +2095,7 @@ coupon_id ||<span style="color: red;">required</span> ||Unique identifier of cou
 
 ### Returns
 
-The newly activated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
+The activated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
 
 <aside class="notice">
 The error code used when you fail to active the coupon is <a href="#4311">4311</a>
@@ -2172,15 +2103,14 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
 
 ##############################################################################
 
-## deactive coupon
+## Deactive coupon
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d coupon_id=1
-     'https://circlepay.ai/apis/Coupon/deactive'
+     'https://circlepay.ai/apis/Coupon/deactive/{coupon_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2188,22 +2118,13 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully updated the coupon",
+ "message" : "You successfully deactivated the coupon",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "value": 1,
-	 "name": "ahmed",
-	 "expire_date": "2022-12-22",
-	 "number_of_uses": 1,
-	 "payment_link_id": 1,
-	 "payments": null,
-	 "status": "deactive",
-	 "times_per_customer": 1,
-	 "customer": []
+	 "coupon_id": 1
 	}
 }
 ```
@@ -2215,7 +2136,7 @@ coupon_id ||<span style="color: red;">required</span> ||Unique identifier of cou
 
 ### Returns
 
-The newly deactivated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
+The deactivated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.
 
 <aside class="notice">
 The error code used when you fail to deactive the coupon is <a href="#4311">4311</a>
@@ -2230,7 +2151,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/Coupon/list/{paymentLinkUrl}'
+     'https://circlepay.ai/apis/Coupon/list/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2245,28 +2166,30 @@ curl -X GET --header 'Accept: application/json'
  "data" :
 	[
 	 {
-		"id": 1,
-		"value": 1,
-		"name": "ahmed",
-		"expire_date": "2022-12-22",
-		"number_of_uses": 1,
-		"payment_link_id": 1,
-		"payments": null,
-		"status": "active",
-		"times_per_customer": 1,
-		"customer": []
+	  "code": "HEMACOUPON",
+	  "value": 99.0,
+	  "name": "50% offer",
+	  "create_date": "22-02-2022",
+	  "expire_date": "27-02-2022",
+	  "number_of_uses": 1,
+	  "payment_link_url": "https://bit.ly/3KXl3iA",
+	  "status": 1,
+	  "used_times": 0,
+	  "discount_type": "percent" ,
+	  "discount_value": "50.0"
 	 },
 	 {
-		"id": 1,
-		"value": 1,
-		"name": "ahmed",
-		"expire_date": "2022-12-22",
-		"number_of_uses": 1,
-		"payment_link_id": 1,
-		"payments": null,
-		"status": "expired",
-		"times_per_customer": 1,
-		"customer": []
+	  "code": "AHMEDCOUPON",
+	  "value": 99.0,
+	  "name": "50% offer",
+	  "create_date": "24-02-2022",
+	  "expire_date": "27-02-2022",
+	  "number_of_uses": 1,
+	  "payment_link_url": "https://bit.ly/3KOl3iA",
+	  "status": 1,
+	  "used_times": 0,
+	  "discount_type": "percent" ,
+	  "discount_value": "50.0"
 	 }
 	]
 }
@@ -2296,8 +2219,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     -d title="title"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
+     -d title="About order"
      'https://circlepay.ai/apis/form/create'
 ```
 
@@ -2307,7 +2230,7 @@ curl -X POST --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "status":"true",
-  data:
+  "data":
   {
     "survey": {
       "title": "new_survey",
@@ -2320,7 +2243,7 @@ curl -X POST --header 'Accept: application/json'
           "options": [
             {
               "oid": 0,
-              "name": ""
+              "name": "goood"
             }
           ],
           "mandatory": true,
@@ -2423,12 +2346,11 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 ## Retrieve a form
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     'https://circlepay.ai/apis/form/get'
+     'https://circlepay.ai/apis/form/get/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2437,7 +2359,7 @@ curl -X POST --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "status":"true",
-  data:
+  "data":
   {
     "survey": {
       "title": "new_survey",
@@ -2525,9 +2447,9 @@ curl -X POST --header 'Accept: application/json'
 ```
 Retrieves a form object.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
+### Parameters
+
+No parameters.
 
 ### Returns
 
@@ -2550,8 +2472,8 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     -d title="title"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
+     -d title="About you"
      'https://circlepay.ai/apis/form/update'
 ```
 
@@ -2561,7 +2483,7 @@ curl -X PUT --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "status":"true",
-  data:
+  "data":
   {
     "survey": {
       "title": "new_survey",
@@ -2677,12 +2599,11 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 ## Activate form
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     'https://circlepay.ai/apis/form/activate'
+     'https://circlepay.ai/apis/form/activate/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2691,24 +2612,20 @@ curl -X PUT --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "status":"true",
-  data:
+  "data":
   {
-    "survey": {
-      "title": "new_survey",
-      "status": true,
-      "questions": [.....]
-	}   
+    "payment_link_url": "https://bit.ly/3KXl3iA"
   }
 ```
 Activate a form to collect responses in the checkout.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_link_url ||<span style="color: red;">required</span> || Payment link url. |
+### Parameters
+
+No parameters.
 
 ### Returns
 
-Returns The newly updated form object if the call succeeded. Otherwise, this call returns an error.
+Returns The payment link url of activated form if the call succeeded. Otherwise, this call returns an error.
 
 <aside class="notice">
 The error code used when you fail to activate form is <a href="#4111">4111</a>
@@ -2719,12 +2636,11 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
 ## Deactivate form
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
-     'https://circlepay.ai/apis/form/deactivate'
+     'https://circlepay.ai/apis/form/deactivate/{payment_link_url}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2733,12 +2649,9 @@ curl -X PUT --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "status":"true",
-  data:
-  {
-    "survey": {
-      "title": "new_survey",
-      "status": false,
-      "questions": [.....]
+  "data":
+    {
+      "payment_link_url": "https://bit.ly/3KXl3iA"
 	}   
   }
 ```
@@ -2750,7 +2663,7 @@ payment_link_url ||<span style="color: red;">required</span> || Payment link url
 
 ### Returns
 
-Returns The newly deactivated form object if the call succeeded. Otherwise, this call returns an error.
+Returns the payment link of deactivated form if the call succeeded. Otherwise, this call returns an error.
 
 <aside class="notice">
 The error code used when you fail to activate form is <a href="#4111">4111</a>
@@ -2765,7 +2678,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_link_url="https://buy.circlepay.ai/sldkfhsd"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/form/listResponses'
 ```
 
@@ -2779,19 +2692,20 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	[
-	 {
-	  "id": 1,
-	  "customer": null,
-	  "form": null
-	 },
-	 {
-	  "id": 1,
-	  "customer": null,
-	  "form": null
-	 }
-	]
-}
+   [  
+    {
+     "id": "1",
+     "customer_mobile": "01000121213",
+     "form_id": "6",
+     "answers": ""
+    },
+	{
+     "id": "2",
+     "customer_mobile": "01100121213",
+     "form_id": "6",
+     "answers": ""
+	}
+   ]
 ```
 List all form responses.
 
@@ -2821,12 +2735,11 @@ Means that payments or transactions finally settle and clear for customer use.
 ## Retrieve a settlement
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d settlement_id=5
-     'https://circlepay.ai/apis/settlements/get'
+     'https://circlepay.ai/apis/settlements/get/{settlement_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -2840,21 +2753,20 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": 1,
-	 "date_time": "2022-10-22",
-	 "value": "1",
+	 "transfer_date": 22-02-2022,
+	 "transfer_value": 99.0,
 	 "currency": "EGP",
-	 "invoice_url": "url",
-	 "merchant": 1,
-	 "status": "pending"
+	 "external_settlement_id": "5",
+	 "status": 0,
+	 "update_date": 23-02-2022
 	}
 }
 ```
 Retrieve the details of settlement.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-settlement_id ||<span style="color: red;">required</span> ||Unique identifier for the settlement object.|
+### Parameters
+
+No parameters.
 
 ### Returns
 
@@ -2870,7 +2782,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d filter[status]="pending"
-	 -d filter[date_time]=22-2-2022
+	 -d filter[date_time_range]=5
      'https://circlepay.ai/apis/settlements/list'
 ```
 
@@ -2886,22 +2798,20 @@ curl -X POST --header 'Accept: application/json'
  "data" :
   [
 	{
-	 "id": 1,
-	 "date_time": "2022-10-22",
-	 "value": "1",
+	 "transfer_date": 23-02-2022,
+	 "transfer_value": 99.0,
 	 "currency": "EGP",
-	 "invoice_url": "url",
-	 "merchant": 1,
-	 "status": "pending"
+	 "external_settlement_id": "5",
+	 "status": 0,
+	 "update_date": 26-02-2022
 	},
 	{
-	 "id": 1,
-	 "date_time": "2022-10-22",
-	 "value": "1",
+	 "transfer_date": 22-02-2022,
+	 "transfer_value": 99.0,
 	 "currency": "EGP",
-	 "invoice_url": "url",
-	 "merchant": 1,
-	 "status": "pending"
+	 "external_settlement_id": "6",
+	 "status": 1,
+	 "update_date": 23-02-2022
 	}
   ]
 }
@@ -2911,7 +2821,7 @@ Retrieve all settlements.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 Filter ||<span style="color: lightblue;">optional</span> || This is the filter object.|
-Filter.date_time ||<span style="color: lightblue;">optional</span> ||The date time when the settlement happened. |
+Filter.date_time_range ||<span style="color: lightblue;">optional</span> ||The time range you allowed to settle. |
 Filter.status ||<span style="color: lightblue;">optional</span> ||The status of the settlement for example, "pending".|
 
 ### Returns
@@ -2949,11 +2859,22 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "pending",
-	 "due_date": "2022-10-12"
+	 "invoice_number": "CIR_INV_1643670030261",
+	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
+	 "customer_mobile": 01001212333,
+	 "status": 1,
+	 "create_date": 10-12-2022,
+	 "due_date": 14-12-2022,
+     "pref_payment_method": "CARD/PayMob",
+	 "shipping_fees": 4.0,
+	 "discount_value": 11.0,
+	 "discount_type": "percent",
+     "discount_value_calculated": 9.9,
+     "tax": 10.0,
+     "tax_value": 9.0,
+     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
+     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
+     "extra_notes":
 	}
 }
 ```
@@ -2961,12 +2882,8 @@ This endpoint creates an invoice for a given customer. The invoice created will 
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-item ||<span style="color: red;">required</span> ||The item used in the invoice.|
-item.name ||<span style="color: red;">required</span> || The item name.|
-item.description ||<span style="color: red;">required</span> || The description of item. |
-item.price ||<span style="color: red;">required</span> ||Item's price. |
-customer ||<span style="color: red;">required</span> ||The details of the customer. |
-invoice ||<span style="color: red;">required</span> ||The details of the invoice. |
+customer ||<span style="color: red;">required</span> ||The details of the customer object. |
+invoice ||<span style="color: red;">required</span> ||The details of the invoice object. |
 
 ### Returns
 
@@ -2999,15 +2916,26 @@ curl -X GET --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "pending",
-	 "due_date": "2022-10-12"
+	 "invoice_number": "CIR_INV_1643670030261",
+	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
+	 "customer_mobile": 01001212333,
+	 "status": 1,
+	 "create_date": 10-12-2022,
+	 "due_date": 14-12-2022,
+     "pref_payment_method": "CARD/PayMob",
+	 "shipping_fees": 4.0,
+	 "discount_value": 11.0,
+	 "discount_type": "percent",
+     "discount_value_calculated": 9.9,
+     "tax": 10.0,
+     "tax_value": 9.0,
+     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
+     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
+     "extra_notes":
 	}
 }
 ```
-Retrieves the invoice with the given id.
+Retrieves the invoice with the given invoice number.
 
 ### Parameters
 
@@ -3015,7 +2943,7 @@ No parameters.
 
 ### Returns
 
-Returns an invoice object if a valid invoice ID was provided. Returns an error otherwise.
+Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.
 
 <aside class="notice">
 The error code used when you fail to retrieve an invoice is <a href="#5111">5111</a>
@@ -3026,11 +2954,10 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 ## list invoices
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "customer_mobile"=923847
      'https://circlepay.ai/apis/invoice/list'
 ```
 
@@ -3039,35 +2966,56 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "status" : True,
- "message" : "You successfully created an invoice",
+ "message" : "You successfully returned invoice list",
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
    [
 	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "pending",
-	 "due_date": "2022-10-12"
+	 "invoice_number": "CIR_INV_1643670030261",
+	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
+	 "customer_mobile": 01001212333,
+	 "status": 1,
+	 "create_date": 10-12-2022,
+	 "due_date": 14-12-2022,
+     "pref_payment_method": "CARD/PayMob",
+	 "shipping_fees": 4.0,
+	 "discount_value": 11.0,
+	 "discount_type": "percent",
+     "discount_value_calculated": 9.9,
+     "tax": 10.0,
+     "tax_value": 9.0,
+     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
+     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
+     "extra_notes":
 	},
-	{
-	 "number": 2,
-	 "merchant": 2,
-	 "customer": 2,
-	 "status": "pending",
-	 "due_date": "2022-10-12"
+		{
+	 "invoice_number": "CIR_INV_16436702430261",
+	 "items": [{"name":"grocery","description":"","quantity": 4,"price":90.0}],
+	 "customer_mobile": 01001242333,
+	 "status": 1,
+	 "create_date": 10-12-2022,
+	 "due_date": 14-12-2022,
+     "pref_payment_method": "CARD/PayMob",
+	 "shipping_fees": 4.0,
+	 "discount_value": 11.0,
+	 "discount_type": "percent",
+     "discount_value_calculated": 9.9,
+     "tax": 10.0,
+     "tax_value": 9.0,
+     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
+     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
+     "extra_notes":
 	}
    ]
 }
 ```
 This endpoint list invoices for a given customer.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-customer_mobile ||<span style="color: lightblue;">optional</span> || Customer's mobile number.|
-Filter Object ||<span style="color: red;">required</span> || The Filter object that invoice will retrieved based on.|
+### Parameters
+
+No parameters
 
 ### Returns
 
@@ -3086,8 +3034,7 @@ curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "invoice_number"=923847
-     'https://circlepay.ai/apis/invoice/delete'
+     'https://circlepay.ai/apis/invoice/delete/{invoice_number}'
 ```
 
 > The above command returns JSON structured like this:
@@ -3101,11 +3048,7 @@ curl -X DELETE --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "pending",
-	 "due_date": "2022-10-12"
+	 "invoice_number": "CIR_INV_16436702430261"
 	}
 }
 ```
@@ -3128,11 +3071,11 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
 ## Pay an invoice
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d invoice_number=023847
+	 -d invoice_number="CIR_INV_16436702430261"
      'https://circlepay.ai/apis/invoice/payInvoice'
 ```
 
@@ -3146,13 +3089,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
-	 "status": "Pending",
-	 "due_date": "2022-10-12"
-	}
+	{}
 }
 ```
 
@@ -3182,11 +3119,12 @@ Returns the paid invoice object if a valid invoice number was provided. Returns 
 ## Settle an invoice
 
 ```shell
-curl -X PUT --header 'Accept: application/json'
+curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/invoice/setInvoiceToPaid/{invoice_number}'
+	 -d invoice_number="CIR_INV_16436702430261"
+     'https://circlepay.ai/apis/invoice/setInvoiceToPaid'
 ```
 
 > The above command returns JSON structured like this:
@@ -3200,19 +3138,16 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "number": 1,
-	 "merchant": 1,
-	 "customer": 1,
 	 "status": "Paid",
-	 "due_date": "2022-10-12"
+	 "invoice_number": "CIR_INV_16436702430261"
 	}
 }
 ```
 Settle the invoice with the given id.
 
-### Parameters
-
-No parameters.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+invoice_number ||<span style="color: red;">required</span> || Invoice's number.|
 
 ### Returns
 
