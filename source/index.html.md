@@ -1671,8 +1671,8 @@ Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 coupon_code ||<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The coupon code. |
 customer_mobile ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
-payment_link_url ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
-invoice_num ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
+payment_link_url ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
+invoice_num ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 
 ### Returns
 
@@ -1797,8 +1797,8 @@ Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 transaction_id ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of transaction object. |
 customer_mobile ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
-payment_link_url ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
-invoice_num ||<span style="color: lighblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
+payment_link_url ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
+invoice_num ||<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 
 ### Returns
 
