@@ -259,12 +259,12 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "first_name"="Ahmed"
-     -d "last_name"="Khaled"
-     -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="+201001414133"
-	 -d "Business_Name"="E-commerce"
-     -d "Business_Address"="El-maadi"
+     -d first_name="Ahmed"
+     -d last_name="Khaled"
+     -d email="ahmedkahled@gmail.com"
+     -d mobile_number="+201001414133"
+	 -d Business_Name="E-commerce"
+     -d Business_Address="El-maadi"
      'https://circlepay.ai/apis/Merchant/create'
 ```
 
@@ -363,12 +363,12 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d "first_name"="ahmed"
-	 -d "last_name"="khaled"
-	 -d "email"="ahmed@gmail.com"
-	 -d "mobile_number"="+201001215155"
-	 -d "business_name"="ecommerce"
-	 -d "business_address"="el-maadi"
+	 -d first_name="ahmed"
+	 -d last_name="khaled"
+	 -d email="ahmed@gmail.com"
+	 -d mobile_number="+201001215155"
+	 -d business_name="ecommerce"
+	 -d business_address="el-maadi"
      'https://circlepay.ai/apis/Merchant/update'
 ```
 
@@ -424,7 +424,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d document_id="124234"
+	 -d document_id="124234345678"
      'https://circlepay.ai/apis/Merchant/updateDocument'
 ```
 
@@ -1012,12 +1012,12 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "First_Name"="Ahmed"
-     -d "Last_Name"="Khaled"
-     -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="+201001616166"
-	 -d "country"="Egypt"
-     -d "city"="cairo"
+     -d First_Name="Ahmed"
+     -d Last_Name="Khaled"
+     -d email="ahmedkahled@gmail.com"
+     -d mobile_number="+201001616166"
+	 -d country="Egypt"
+     -d city="cairo"
      'https://circlepay.ai/apis/Customer/create'
 ```
 
@@ -1068,12 +1068,12 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "First_Name"="Ahmed"
-     -d "Last_Name"="Khaled"
-     -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"="+201001717177"
-	 -d "country"="Egypt"
-     -d "city"="cairo"
+     -d First_Name="Ahmed"
+     -d Last_Name="Khaled"
+     -d email="ahmedkahled@gmail.com"
+     -d mobile_number="+201001717177"
+	 -d country="Egypt"
+     -d city="cairo"
      'https://circlepay.ai/apis/Customer/update'
 ```
 
@@ -1239,10 +1239,10 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "value": 0
-     -d "currency": "EGP"
-     -d "description": "for grocery delivery"
-     -d "expire_date": 22-02-2022
+     -d value=0
+     -d currency="EGP"
+     -d description="for grocery delivery"
+     -d expire_date=22-02-2022
      'https://circlepay.ai/apis/Payment_Link/create'
 ```
 
@@ -1356,7 +1356,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url"="https://bit.ly/3KXl3iA"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Payment_Link/update'
 ```
 
@@ -1526,7 +1526,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "payment_link_url"="https://bit.ly/3KXl3iA"
+     -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/PayPaymentLink/list'
 ```
 
@@ -1637,7 +1637,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d "coupon_code": "HEMACOUPON"
+     -d coupon_code="HEMACOUPON"
      'https://circlepay.ai/apis/Payment/list'
 ```
 
@@ -2771,8 +2771,8 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d filter[status]="pending"
-	 -d filter[date_time_range]=5
+     -d "filter[status]"="pending"
+	 -d "filter[date_time_range]"=5
      'https://circlepay.ai/apis/settlements/list'
 ```
 
