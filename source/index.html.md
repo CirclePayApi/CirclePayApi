@@ -2080,6 +2080,8 @@ curl -X GET --header 'Accept: application/json'
 ```
 Updates status of the coupon to active.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
 coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|
 
 ### Returns
@@ -2119,6 +2121,8 @@ curl -X DELETE --header 'Accept: application/json'
 ```
 Updates status of the coupon to deactive.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
 coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|
 
 ### Returns
@@ -2183,6 +2187,8 @@ curl -X GET --header 'Accept: application/json'
 ```
 Returns a list of your coupons per payment link.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
 payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|payment link url.|
 
 ### Returns
@@ -3039,6 +3045,8 @@ curl -X DELETE --header 'Accept: application/json'
 ```
 Delete an invoice ONLY IF the invoice has no transactions.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
 invoice_num |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
 
 ### Returns
