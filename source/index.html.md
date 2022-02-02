@@ -292,7 +292,7 @@ Parameter|Type|Required|Default|Description|
 first_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's first name. |
 last_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's last name. |
 email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's email. |
-mobile_number|Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
+mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
 Business_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
 Business_Address |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
 callback_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| A callback URL will be invoked by the API method you're calling after it's done. |
@@ -404,7 +404,7 @@ Parameter|Type|Required|Default|Description|
 first_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's first name. |
 last_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's last name. |
 email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's email. |
-mobile_number|Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
+mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
 Business_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
 Business_Address |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
 
@@ -1045,7 +1045,7 @@ Parameter|Type|Required|Default|Description|
 First_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's first name. |
 Last_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's last name. |
 email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's email. |
-mobile_number|Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
+mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
 country |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's country. |
 governorate |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's governorate. |
 city |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's city. |
@@ -1101,7 +1101,7 @@ Parameter|Type|Required|Default|Description|
 First_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's first name. |
 Last_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's last name. |
 email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's email. |
-mobile_number|Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
+mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
 country |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's country. |
 governorate |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's governorate. |
 city |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's city. |
@@ -1698,7 +1698,7 @@ Retrieves all payments.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 coupon_code |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The coupon code. |
-customer_mobile |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
+customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
 invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Payments list returned based on this filter object.
@@ -1821,7 +1821,7 @@ List refund objects.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 transaction_id |Integer|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of transaction object. |
-customer_mobile |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
+customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
 invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
 Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Refunds list returned based on this filter object.
@@ -2697,7 +2697,7 @@ List all form responses.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The url of the payment link. |
-customer_mobile |Numeric|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
+customer_mobile |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 
 ### Returns
 
