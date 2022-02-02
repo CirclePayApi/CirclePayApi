@@ -3370,7 +3370,23 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 </span></code></pre></div>
 <p>Updates status of the coupon to active.</p>
 
-<p>coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coupon_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier of coupon object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-39'>Returns</h3>
 <p>The activated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
@@ -3400,7 +3416,23 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
 </span></code></pre></div>
 <p>Updates status of the coupon to deactive.</p>
 
-<p>coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coupon_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier of coupon object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-40'>Returns</h3>
 <p>The deactivated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
@@ -3455,7 +3487,23 @@ The error code used when you fail to deactive the coupon is <a href="#4311">4311
 </span></code></pre></div>
 <p>Returns a list of your coupons per payment link.</p>
 
-<p>payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|payment link url.|</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-41'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 
@@ -4417,7 +4465,23 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 </span></code></pre></div>
 <p>Delete an invoice ONLY IF the invoice has no transactions.</p>
 
-<p>invoice_num |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice&#39;s number.|</p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_num</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Invoice&#39;s number.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-53'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
