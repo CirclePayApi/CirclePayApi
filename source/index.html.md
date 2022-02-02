@@ -59,11 +59,11 @@ curl -X GET --header 'Accept: application/json'
  "data" :
 	[
 	 { 
-		"id": "1",
+		"id": "610b2c486df621209c85215b",
 		"name": "MyFatoorh"
 	 },
 	 {
-		"id": "2",
+		"id": "610b2c486df621209c85215a",
 		"name": "Fawry"
 	 }  
 	]
@@ -71,6 +71,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves all payment gateways to the merchant.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 
@@ -103,8 +107,8 @@ curl -X GET --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" : 
    {
-	 "id": "1",
-	 "name": "Paymob"
+	 "payment_gateway_ID": "610b2c486df621209c852123",
+	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
    }
 }
 ```
@@ -113,8 +117,8 @@ Retrieves a specific payment gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_ID |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
-
+payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 Return a payment gateway object.
@@ -169,24 +173,25 @@ curl -X GET --header 'Accept: application/json'
  "data" :
 	[
 	 {
-		"id": "1",
+		"id": "610b2c496df621209c852163",
 		"name": "Visa",
-		"gateway_id": "1"
+		"gateway_id": "610b2c486df621209c85215b"
 	 },
 	 {
-		"id": "2",
+		"id": "610b2c496df621209c852168",
 		"name": "MasterCard",
-		"gateway_id": "1"
+		"gateway_id": "610b2c486df621209c85215a"
 	 }
 	]
 }
 ```
 
-Retrieves all payment methods of the merchant.
+Retrieves all payment methods of the specific gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_gateway_id |String  |<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; - |Unique identifier for the payment gateway object.
+payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 
@@ -219,9 +224,9 @@ curl -X GET --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "id": "1",
+	 "id": "610b2c496df621209c852161",
 	 "name": "Visa",
-	 "gateway_id": "1",
+	 "gateway_id": "610b2c486df621209c85215b",
 	}
 }
 ```
@@ -230,7 +235,8 @@ Retrieves a specific payment method.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-payment_method_id |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; - |Unique identifier for the payment method object. |
+payment_method_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment method object.
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 
@@ -256,7 +262,7 @@ curl -X POST --header 'Accept: application/json'
      -d "first_name"="Ahmed"
      -d "last_name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"=01001414133
+     -d "mobile_number"="+201001414133"
 	 -d "Business_Name"="E-commerce"
      -d "Business_Address"="El-maadi"
      'https://circlepay.ai/apis/Merchant/create'
@@ -273,7 +279,8 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "merchant_id": "1"
+	 "merchant_id": "1",
+	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
 	}
 }
 ```
@@ -288,6 +295,7 @@ email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| T
 mobile_number|Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
 Business_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
 Business_Address |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
+callback_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| A callback URL will be invoked by the API method you're calling after it's done. |
 
 <aside class="notice">
 Password will be auto generated.
@@ -327,7 +335,7 @@ curl -X GET --header 'Content-Type: application/json'
 	 "first_name": "ahmed",
 	 "last_name": "khaled",
 	 "email": "ahmed@gmail.com",
-	 "mobile_number": 01001212155,
+	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
 	 "refund_policy": null,
@@ -338,6 +346,10 @@ curl -X GET --header 'Content-Type: application/json'
 ```
 
 Retrieves a specific merchant.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 
@@ -355,7 +367,7 @@ curl -X PUT --header 'Accept: application/json'
 	 -d "first_name"="ahmed"
 	 -d "last_name"="khaled"
 	 -d "email"="ahmed@gmail.com"
-	 -d "mobile_number"=01001215155
+	 -d "mobile_number"="+201001215155"
 	 -d "business_name"="ecommerce"
 	 -d "business_address"="el-maadi"
      'https://circlepay.ai/apis/Merchant/update'
@@ -375,7 +387,7 @@ curl -X PUT --header 'Accept: application/json'
 	 "first_name": "ahmed",
 	 "last_name": "khaled",
 	 "email": "ahmed@gmail.com",
-	 "mobile_number": 01001212155,
+	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
 	 "refund_policy": null,
@@ -513,7 +525,7 @@ curl -X GET --header 'Accept: application/json'
 	 "first_name": "ahmed",
 	 "last_name": "khaled",
 	 "email": "ahmed@gmail.com",
-	 "mobile_number": 01001212155,
+	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
 	 "refund_policy": null,
@@ -524,7 +536,7 @@ curl -X GET --header 'Accept: application/json'
 	 "first_name": "ibrahim",
 	 "last_name": "salah",
 	 "email": "ibrahim@gmail.com",
-	 "mobile_number": 01001812155,
+	 "mobile_number": "+201001812155",
 	 "business_name": "nike",
 	 "business_address": "el-maadi",
 	 "refund_policy": null,
@@ -536,6 +548,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves all merchants.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
 
 ### Returns
 
@@ -584,6 +600,10 @@ curl -X GET --header 'Content-Type: application/json'
 
 Retrieves all merchants' documents.
 
+### Parameters
+
+No parameters.
+
 ### Returns
 
 Returns a document list.
@@ -620,6 +640,10 @@ curl -X GET --header 'Content-Type: application/json'
 
 Retrieves file document.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+document_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the document object.
+
 ### Returns
 
 Returns the file document object.
@@ -634,7 +658,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 -d Bank_Name="cairo bank"
-	 -d Bank_Account_Num="24234234"
+	 -d Bank_Account_Num="242424242424"
      'https://circlepay.ai/apis/Merchant/setBillingInfo'
 ```
 
@@ -680,7 +704,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 -d payment_gateway_id="3"
+	 -d payment_gateway_id="610b2c486df621209c85215b"
      'https://circlepay.ai/apis/Merchant/configurePaymentGateway'
 ```
 
@@ -695,7 +719,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
      {
-	  "payment_gateway_id": "3",
+	  "payment_gateway_id": "610b2c486df621209c85215b",
      }
 }
 ```
@@ -726,8 +750,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_gateway_id="4"
-     'https://circlepay.ai/apis/Merchant/enable'
+     'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -741,12 +764,12 @@ curl -X GET --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-      "payment_gateway_ID": "4"
+      "payment_gateway_ID": "610b2c486df621209c85215b"
 	}
 }
 ```
 
-This endpoint enable specific gateway.
+This endpoint enable specific payment gateway.
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
@@ -754,7 +777,7 @@ payemnt_gateway_id |String|<span style="color: red;">required</span> |&nbsp;&nbs
 
 ### Returns
 
-Returns success message if gateway enabled.
+Returns id of enabled payment gateway.
 
 <aside class="notice">
 The error codes used when you fail to enable gateway are <a href="#7110">7110</a> , <a href="#7111">7111</a>
@@ -783,15 +806,19 @@ curl -X DELETE --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "payment_gateway_ID":"4"
+	  "payment_gateway_ID":"610b2c486df621209c85215b"
 	}
 ```
 
 This endpoint disable specific gateway and it's related payment methods.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
+
 ### Returns
 
-Returns the id of disabled gateway.
+Returns the id of disabled payment gateway.
 
 ####################################################################################
 
@@ -802,7 +829,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d payment_method_id="4"
+     -d payment_method_id="610b2c496df621209c852168"
      'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'
 ```
 
@@ -817,7 +844,7 @@ curl -X POST --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "payment_method_ID": "9"
+	  "payment_method_ID": "610b2c496df621209c852168"
 	}
 }
 ```
@@ -863,16 +890,20 @@ curl -X GET --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "payment_method_ID": "4",
+	  "payment_method_ID": "610b2c496df621209c852168"
 	}
 }
 ```
 
 This endpoint enable specific payment method.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_method_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment method object.
+
 ### Returns
 
-Returns the payment method id.
+Returns id of enabled payment method.
 
 <aside class="notice">
 The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
@@ -901,16 +932,20 @@ curl -X DELETE --header 'Content-Type: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	  "payment_method_ID": "4"
+	  "payment_method_ID": "610b2c496df621209c852168"
 	}
 }
 ```
 
 This endpoint disable specific payment method.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_method_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment method object.
+
 ### Returns
 
-Returns the disabled payment method id.
+Returns id of the disabled payment method.
 
 <aside class="notice">
 The error code used when you fail to disable payment method is <a href="#7113">7113</a>
@@ -940,14 +975,14 @@ curl -X GET --header 'Content-Type: application/json'
  "data" :
 	  [ 
 		{
-		  "id": "1",
+		  "id": "610b2c496df621209c852168",
 		  "name": "Visa",
 		  "gateway_id": "1",
 		  "status": true,
 		  "rate": "3" 
 		},
 		{
-		  "id": "2",
+		  "id": "610b2c496df621209c8521we",
 		  "name": "MasterCard",
 		  "gateway_id": "1",
 		  "status": true,
@@ -958,6 +993,10 @@ curl -X GET --header 'Content-Type: application/json'
 ```
 
 This endpoint list allowed payment methods to the merchant.
+
+### Parameters
+
+No parameters.
 
 ### Returns
 
@@ -977,7 +1016,7 @@ curl -X POST --header 'Accept: application/json'
      -d "First_Name"="Ahmed"
      -d "Last_Name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"=01001616166
+     -d "mobile_number"="+201001616166"
 	 -d "country"="Egypt"
      -d "city"="cairo"
      'https://circlepay.ai/apis/Customer/create'
@@ -994,7 +1033,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{  
-	 "customer_mobile_number": 01001616166
+	 "customer_mobile_number": "+201001616166"
 	}
 }
 ```
@@ -1033,7 +1072,7 @@ curl -X PUT --header 'Accept: application/json'
      -d "First_Name"="Ahmed"
      -d "Last_Name"="Khaled"
      -d "email"="ahmedkahled@gmail.com"
-     -d "mobile_number"=01001717177
+     -d "mobile_number"="+201001717177"
 	 -d "country"="Egypt"
      -d "city"="cairo"
      'https://circlepay.ai/apis/Customer/update'
@@ -1050,7 +1089,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{  
-	 "customer_mobile_number": 01001717177
+	 "customer_mobile_number": "+201001717177"
 	}
 }
 ```
@@ -1103,7 +1142,7 @@ curl -X GET --header 'Accept: application/json'
 	   "first_name": "Ibrahim",
 	   "last_name": "Salah",
 	   "email": "ibrahim@gmail.com",
-	   "mobile_number": 01001212144,
+	   "mobile_number": "+201001212144",
 	   "country": "Egypt",
 	   "governorate": "cairo",
 	   "city": "nasr",
@@ -1114,6 +1153,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves a specific customer.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer_mobile_number |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Customer's mobile number.
 
 ### Returns
 
@@ -1150,7 +1193,7 @@ curl -X GET --header 'Accept: application/json'
 	   "first_name": "Ibrahim",
 	   "last_name": "Salah",
 	   "email": "ibrahim@gmail.com",
-	   "mobile_number": 01001212144,
+	   "mobile_number": "+201001212144",
 	   "country": "Egypt",
 	   "governorate": "cairo",
 	   "city": "nasr",
@@ -1161,7 +1204,7 @@ curl -X GET --header 'Accept: application/json'
 	   "first_name": "Ahmed",
 	   "last_name": "Osman",
 	   "email": "ahmedosman@gmail.com",
-	   "mobile_number": 01005212144,
+	   "mobile_number": "+201005212144",
 	   "country": "Egypt",
 	   "governorate": "cairo",
 	   "city": "nasr",
@@ -1173,6 +1216,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves a list of your customers.
+
+### Parameters
+
+No parameters.
 
 <aside class="notice">
 List all customers using filters.
@@ -1293,6 +1340,10 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves a specific payment link.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Payment link url.
+
 ### Returns
 
 Returns the payment link object.
@@ -1387,6 +1438,10 @@ curl -X DELETE --header 'Accept: application/json'
 
 Deactivate an active payment link. 
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|payment link url.
+
 ### Returns
 
 Deactivate an active payment link. If invalid payment link is provided an error page "Payment Link isn't available" will show.
@@ -1447,6 +1502,12 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves all payment links.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Customer's mobile number.
+Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Payment links list returned based on this filter object.
+
 
 ### Returns
 
@@ -1539,7 +1600,7 @@ curl -X GET --header 'Accept: application/json'
 	 "external_ref_id": 3,
 	 "init_date": 22-02-2022,
 	 "update_date": 23-02-2022,
-	 "customer_mobile": "01001212888",
+	 "customer_mobile": "+201001212888",
 	 "status": "pending",
 	 "payment_link_url": "https://bit.ly/3KXl3iA",
 	 "invoice_num": "CIR_INV_1643670030261",
@@ -1555,6 +1616,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 
 Retrieves the details of an existing payment.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+transaction_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment object.
 
 ### Returns
 
@@ -1594,7 +1659,7 @@ curl -X POST --header 'Accept: application/json'
 		"external_ref_id": 3,
 		"init_date": 22-02-2022,
 		"update_date": 23-02-2022,
-		"customer_mobile": "01001212888",
+		"customer_mobile": "+201001212888",
 		"status": "pending",
 		"payment_link_url": "https://bit.ly/3KXl3iA",
 		"invoice_num": "CIR_INV_1643670030261",
@@ -1602,7 +1667,7 @@ curl -X POST --header 'Accept: application/json'
 		"value": 99.0,
 		"net_fees": 1.0,
 		"currency": "EGP",
-		"payment_method_id": "1",
+		"payment_method_id": "610b2c496df621209c852168",
 		"payment_method_name": "Visa",
 		"payment_gateway_name": "MyFatoorh"
 	  },
@@ -1612,7 +1677,7 @@ curl -X POST --header 'Accept: application/json'
 		"external_ref_id": 2,
 		"init_date": 22-02-2022,
 		"update_date": 23-02-2022,
-		"customer_mobile": "01101212888",
+		"customer_mobile": "+201101212888",
 		"status": "pending",
 		"payment_link_url": "https://bit.ly/3RXl3iA",
 		"invoice_num": "CIR_INV_1643670030264",
@@ -1620,7 +1685,7 @@ curl -X POST --header 'Accept: application/json'
 		"value": 99.0,
 		"net_fees": 1.0,
 		"currency": "EGP",
-		"payment_method_id": "2",
+		"payment_method_id": "610b2c496df621209c852162",
 		"payment_method_name": "MasterCard",
 		"payment_gateway_name": "MyFatoorh"
 	  }
@@ -1636,14 +1701,11 @@ coupon_code |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp
 customer_mobile |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
 invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
+Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Payments list returned based on this filter object.
 
 ### Returns
 
 Returns a payment list which has the details of the payment like: status, amount paid and payment method.
-
-<aside class="notice">
-Also there is a filter object which contains values of wanted payment objects.
-</aside>
 
 <aside class="notice">
 The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
@@ -1663,7 +1725,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      -d currency="EGP"
-	 -d value=33
+	 -d value=33.0
      'https://circlepay.ai/apis/Refund/requestRefund'
 ```
 
@@ -1736,7 +1798,7 @@ curl -X POST --header 'Accept: application/json'
 		"transaction_id": 3,
 		"refundFees": 2.0,
 		"Payment_Method": ["Visa","MasterCard"],
-		"customer_mobile": 01001313454,
+		"customer_mobile": "+201001313454",
 		"status": "pending"
 	 },
 	 {
@@ -1748,7 +1810,7 @@ curl -X POST --header 'Accept: application/json'
 		"transaction_id": 3,
 		"refundFees": 4.0,
 		"Payment_Method": ["Visa","MasterCard"],
-		"customer_mobile": 01001323454,
+		"customer_mobile": "+201001323454",
 		"status": "paid"
 	 }
     ]
@@ -1762,14 +1824,11 @@ transaction_id |Integer|<span style="color: lightblue;">optional</span>|&nbsp;&n
 customer_mobile |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
 payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
 invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
+Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Refunds list returned based on this filter object.
 
 ### Returns
 
 Returns refund object list. If no more refunds are available, the resulting array will be empty.
-
-<aside class="notice">
-Also there is a filter object which contains values of wanted payment objects.
-</aside>
 
 <aside class="notice">
 The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
@@ -1806,12 +1865,16 @@ curl -X GET --header 'Accept: application/json'
 	 "transaction_id": 3,
 	 "refundFees": 4.0,
 	 "Payment_Method": ["Visa","MasterCard"],
-	 "customer_mobile": 01001323454,
+	 "customer_mobile": "+201001323454",
 	 "status": "paid"
 	}
 }
 ```
 Retrieves the refund object.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+refund_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the refund object.
 
 ### Returns
 
@@ -1832,7 +1895,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d value=1
+     -d value=11.0
      -d name="AHMEDCOUPON"
 	 -d expire_date=22-02-2022
      'https://circlepay.ai/apis/Coupon/create'
@@ -1916,6 +1979,10 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Retrieves a specific coupon.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+coupon_code |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Coupon's code.
 
 ### Returns
 
@@ -2007,11 +2074,13 @@ curl -X GET --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "coupon_id": 1
+	 "coupon_id": "1"
 	}
 }
 ```
 Updates status of the coupon to active.
+
+coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|
 
 ### Returns
 
@@ -2044,11 +2113,13 @@ curl -X DELETE --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "coupon_id": 1
+	 "coupon_id": "1"
 	}
 }
 ```
 Updates status of the coupon to deactive.
+
+coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|
 
 ### Returns
 
@@ -2111,6 +2182,8 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Returns a list of your coupons per payment link.
+
+payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|payment link url.|
 
 ### Returns
 
@@ -2359,6 +2432,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 Retrieves a form object.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Payment link url.
+
 ### Returns
 
 Returns a form object if founded, else an error will be thrown.
@@ -2527,6 +2604,10 @@ curl -X GET --header 'Accept: application/json'
 ```
 Activate a form to collect responses in the checkout.
 
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Payment link url.
+
 ### Returns
 
 Returns The payment link url of activated form if the call succeeded. Otherwise, this call returns an error.
@@ -2560,6 +2641,10 @@ curl -X DELETE --header 'Accept: application/json'
   }
 ```
 Deactivate the form.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|payment link url.
 
 ### Returns
 
@@ -2595,13 +2680,13 @@ curl -X POST --header 'Accept: application/json'
    [  
     {
      "id": "1",
-     "customer_mobile": "01000121213",
+     "customer_mobile": "+201000121213",
      "form_id": "6",
      "answers": ""
     },
 	{
      "id": "2",
-     "customer_mobile": "01100121213",
+     "customer_mobile": "+201100121213",
      "form_id": "6",
      "answers": ""
 	}
@@ -2663,6 +2748,10 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Retrieves the details of settlement.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+settlement_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the settlement object.
 
 ### Returns
 
@@ -2737,7 +2826,6 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     -d merchant=1
      -d "customer[email]"="ahmed@gmail.com"
      -d "customer[city]"="mansoura"
      -d "invoice[invoice_number]"=55
@@ -2757,7 +2845,7 @@ curl -X POST --header 'Accept: application/json'
 	{
 	 "invoice_number": "CIR_INV_1643670030261",
 	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": 01001212333,
+	 "customer_mobile": "+201001212333",
 	 "status": 1,
 	 "create_date": 10-12-2022,
 	 "due_date": 14-12-2022,
@@ -2814,7 +2902,7 @@ curl -X GET --header 'Accept: application/json'
 	{
 	 "invoice_number": "CIR_INV_1643670030261",
 	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": 01001212333,
+	 "customer_mobile": "+201001212333",
 	 "status": 1,
 	 "create_date": 10-12-2022,
 	 "due_date": 14-12-2022,
@@ -2832,6 +2920,10 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 Retrieves the invoice with the given invoice number.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+invoice_number |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The invoice number.
 
 ### Returns
 
@@ -2867,7 +2959,7 @@ curl -X GET --header 'Accept: application/json'
 	{
 	 "invoice_number": "CIR_INV_1643670030261",
 	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": 01001212333,
+	 "customer_mobile": "+201001212333",
 	 "status": 1,
 	 "create_date": 10-12-2022,
 	 "due_date": 14-12-2022,
@@ -2885,7 +2977,7 @@ curl -X GET --header 'Accept: application/json'
 		{
 	 "invoice_number": "CIR_INV_16436702430261",
 	 "items": [{"name":"grocery","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": 01001242333,
+	 "customer_mobile": "+201001242333",
 	 "status": 1,
 	 "create_date": 10-12-2022,
 	 "due_date": 14-12-2022,
@@ -2904,6 +2996,11 @@ curl -X GET --header 'Accept: application/json'
 }
 ```
 This endpoint list invoices for a given customer.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Customer's mobile number.
+Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|invoices list returned based on this filter object.
 
 ### Returns
 
@@ -2941,6 +3038,8 @@ curl -X DELETE --header 'Accept: application/json'
 }
 ```
 Delete an invoice ONLY IF the invoice has no transactions.
+
+invoice_num |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
 
 ### Returns
 
