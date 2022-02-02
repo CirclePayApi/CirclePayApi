@@ -604,17 +604,35 @@ Each transaction requires a definition for a payment gateway and a payment metho
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w"> 
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fawry"</span><span class="w">
      </span><span class="p">}</span><span class="w">  
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment gateways to the merchant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchant_token</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
+</tr>
+</tbody></table>
 <h3 id='returns'>Returns</h3>
 <p>Returns payment gateway list.</p>
 
@@ -638,8 +656,8 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> 
    </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paymob"</span><span class="w">
+     </span><span class="nl">"payment_gateway_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c852123"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"merchant_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -657,9 +675,16 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
 <tr>
 <td>payment_gateway_ID</td>
 <td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
+<td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
+</tr>
+<tr>
+<td>merchant_token</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-2'>Returns</h3>
@@ -751,19 +776,19 @@ The error codes used when you fail to get specific payment gateway are <a href="
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">[</span><span class="w">
      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852163"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215a"</span><span class="w">
      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieves all payment methods of the merchant.</p>
+<p>Retrieves all payment methods of the specific gateway.</p>
 
 <table><thead>
 <tr>
@@ -775,11 +800,18 @@ The error codes used when you fail to get specific payment gateway are <a href="
 </tr>
 </thead><tbody>
 <tr>
-<td>payment_gateway_id</td>
+<td>payment_gateway_ID</td>
 <td>String</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
+</tr>
+<tr>
+<td>merchant_token</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-3'>Returns</h3>
@@ -805,9 +837,9 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852161"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -823,11 +855,18 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 </tr>
 </thead><tbody>
 <tr>
-<td>payment_method_id</td>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+<tr>
+<td>merchant_token</td>
 <td>String</td>
 <td><span style="color: lightblue;">optional</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Unique identifier for the payment method object.</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-4'>Returns</h3>
@@ -845,7 +884,7 @@ The error codes used when you fail to get a specific payment method are <a href=
      <span class="nt">-d</span> <span class="s2">"first_name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="s2">"last_name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span>01001414133
+     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001414133"</span>
      <span class="nt">-d</span> <span class="s2">"Business_Name"</span><span class="o">=</span><span class="s2">"E-commerce"</span>
      <span class="nt">-d</span> <span class="s2">"Business_Address"</span><span class="o">=</span><span class="s2">"El-maadi"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/create'</span>
@@ -861,7 +900,8 @@ The error codes used when you fail to get a specific payment method are <a href=
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+     </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"merchant_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -918,6 +958,13 @@ The error codes used when you fail to get a specific payment method are <a href=
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The business address.</td>
 </tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>A callback URL will be invoked by the API method you&#39;re calling after it&#39;s done.</td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -949,7 +996,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed@gmail.com"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212155</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212155"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecommerce"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -959,6 +1006,24 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific merchant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchant_token</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-6'>Returns</h3>
 <p>Returns the merchant object for a valid identifier.</p>
 <h2 id='update-a-merchant'>Update a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -968,7 +1033,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      <span class="nt">-d</span> <span class="s2">"first_name"</span><span class="o">=</span><span class="s2">"ahmed"</span>
      <span class="nt">-d</span> <span class="s2">"last_name"</span><span class="o">=</span><span class="s2">"khaled"</span>
      <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span>01001215155
+     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001215155"</span>
      <span class="nt">-d</span> <span class="s2">"business_name"</span><span class="o">=</span><span class="s2">"ecommerce"</span>
      <span class="nt">-d</span> <span class="s2">"business_address"</span><span class="o">=</span><span class="s2">"el-maadi"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/update'</span>
@@ -987,7 +1052,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed@gmail.com"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212155</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212155"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecommerce"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1177,7 +1242,7 @@ The error codes used when you fail to update the merchant's document are <a href
      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"khaled"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmed@gmail.com"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212155</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212155"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecommerce"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1188,7 +1253,7 @@ The error codes used when you fail to update the merchant's document are <a href
      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"salah"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001812155</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001812155"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nike"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"business_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"el-maadi"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"refund_policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1199,6 +1264,24 @@ The error codes used when you fail to update the merchant's document are <a href
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all merchants.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>merchant_token</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>contains the security credentials for a login session and identifies the user.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-10'>Returns</h3>
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
 <h2 id='list-all-documents'>List all documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1236,6 +1319,8 @@ The error codes used when you fail to update the merchant's document are <a href
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all merchants&#39; documents.</p>
+<h3 id='parameters'>Parameters</h3>
+<p>No parameters.</p>
 <h3 id='returns-11'>Returns</h3>
 <p>Returns a document list.</p>
 <h2 id='get-file'>Get file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1262,6 +1347,24 @@ The error codes used when you fail to update the merchant's document are <a href
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves file document.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>document_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the document object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-12'>Returns</h3>
 <p>Returns the file document object.</p>
 <h2 id='set-billing-info'>Set Billing info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1269,7 +1372,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">Bank_Name</span><span class="o">=</span><span class="s2">"cairo bank"</span>
-     <span class="nt">-d</span> <span class="nv">Bank_Account_Num</span><span class="o">=</span><span class="s2">"24234234"</span>
+     <span class="nt">-d</span> <span class="nv">Bank_Account_Num</span><span class="o">=</span><span class="s2">"242424242424"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/setBillingInfo'</span>
 </code></pre></div>
 <blockquote>
@@ -1342,7 +1445,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"3"</span>
+     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"610b2c486df621209c85215b"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/configurePaymentGateway'</span>
 </code></pre></div>
 <blockquote>
@@ -1356,7 +1459,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
      </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="p">,</span><span class="w">
      </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1396,8 +1499,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"4"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/enable'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1410,11 +1512,11 @@ The error codes used when you fail to configure payment gateway are <a href="#71
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_gateway_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+      </span><span class="nl">"payment_gateway_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint enable specific gateway.</p>
+<p>This endpoint enable specific payment gateway.</p>
 
 <table><thead>
 <tr>
@@ -1434,7 +1536,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
 </tr>
 </tbody></table>
 <h3 id='returns-15'>Returns</h3>
-<p>Returns success message if gateway enabled.</p>
+<p>Returns id of enabled payment gateway.</p>
 
 <aside class="notice">
 The error codes used when you fail to enable gateway are <a href="#7110">7110</a> , <a href="#7111">7111</a>
@@ -1456,17 +1558,35 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_gateway_ID"</span><span class="p">:</span><span class="s2">"4"</span><span class="w">
+      </span><span class="nl">"payment_gateway_ID"</span><span class="p">:</span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific gateway and it&#39;s related payment methods.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_gateway_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment gateway object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-16'>Returns</h3>
-<p>Returns the id of disabled gateway.</p>
+<p>Returns the id of disabled payment gateway.</p>
 <h2 id='set-payment-method-fee'>Set payment method fee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">payment_method_id</span><span class="o">=</span><span class="s2">"4"</span>
+     <span class="nt">-d</span> <span class="nv">payment_method_id</span><span class="o">=</span><span class="s2">"610b2c496df621209c852168"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'</span>
 </code></pre></div>
 <blockquote>
@@ -1480,7 +1600,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
+      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1554,13 +1674,31 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint enable specific payment method.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-18'>Returns</h3>
-<p>Returns the payment method id.</p>
+<p>Returns id of enabled payment method.</p>
 
 <aside class="notice">
 The error codes used when you fail to enable payment method are <a href="#7112">7112</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a>
@@ -1582,13 +1720,31 @@ The error codes used when you fail to enable payment method are <a href="#7112">
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+      </span><span class="nl">"payment_method_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint disable specific payment method.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method_ID</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment method object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-19'>Returns</h3>
-<p>Returns the disabled payment method id.</p>
+<p>Returns id of the disabled payment method.</p>
 
 <aside class="notice">
 The error code used when you fail to disable payment method is <a href="#7113">7113</a>
@@ -1611,14 +1767,14 @@ The error code used when you fail to disable payment method is <a href="#7113">7
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
       </span><span class="p">[</span><span class="w"> 
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
           </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w"> 
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c8521we"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -1628,6 +1784,8 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list allowed payment methods to the merchant.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<p>No parameters.</p>
 <h3 id='returns-20'>Returns</h3>
 <p>Returns a payment methods list of the merchant.</p>
 <h1 id='customers'>Customers</h1><h2 id='create-a-customer'>Create a Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1637,7 +1795,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">-d</span> <span class="s2">"First_Name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="s2">"Last_Name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span>01001616166
+     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001616166"</span>
      <span class="nt">-d</span> <span class="s2">"country"</span><span class="o">=</span><span class="s2">"Egypt"</span>
      <span class="nt">-d</span> <span class="s2">"city"</span><span class="o">=</span><span class="s2">"cairo"</span>
      <span class="s1">'https://circlepay.ai/apis/Customer/create'</span>
@@ -1653,7 +1811,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
-     </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001616166</span><span class="w">
+     </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001616166"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1745,7 +1903,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
      <span class="nt">-d</span> <span class="s2">"First_Name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="s2">"Last_Name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span>01001717177
+     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001717177"</span>
      <span class="nt">-d</span> <span class="s2">"country"</span><span class="o">=</span><span class="s2">"Egypt"</span>
      <span class="nt">-d</span> <span class="s2">"city"</span><span class="o">=</span><span class="s2">"cairo"</span>
      <span class="s1">'https://circlepay.ai/apis/Customer/update'</span>
@@ -1761,7 +1919,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">  
-     </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001717177</span><span class="w">
+     </span><span class="nl">"customer_mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001717177"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -1866,7 +2024,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ibrahim"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salah"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212144</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cairo"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
@@ -1876,6 +2034,24 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-23'>Returns</h3>
 <p>Returns the Customer object for a valid mobile number.</p>
 
@@ -1903,7 +2079,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ibrahim"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salah"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ibrahim@gmail.com"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212144</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212144"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cairo"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
@@ -1914,7 +2090,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ahmed"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Osman"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahmedosman@gmail.com"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">01005212144</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201005212144"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Egypt"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"governorate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cairo"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nasr"</span><span class="p">,</span><span class="w">
@@ -1925,6 +2101,8 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No parameters.</p>
 
 <aside class="notice">
 List all customers using filters.
@@ -2114,6 +2292,24 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific payment link.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-26'>Returns</h3>
 <p>Returns the payment link object.</p>
 <h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -2316,6 +2512,24 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deactivate an active payment link. </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-28'>Returns</h3>
 <p>Deactivate an active payment link. If invalid payment link is provided an error page &quot;Payment Link isn&#39;t available&quot; will show.</p>
 
@@ -2366,6 +2580,31 @@ The error code used when you fail to deactive payment link is <a href="#4111">41
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment links.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Payment links list returned based on this filter object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-29'>Returns</h3>
 <p>Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.</p>
 
@@ -2480,7 +2719,7 @@ The error codes used when you fail to pay or execute payment link are <a href="#
      </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
      </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">22-02-2022</span><span class="p">,</span><span class="w">
      </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-02-2022</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01001212888"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212888"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
@@ -2495,6 +2734,24 @@ The error codes used when you fail to pay or execute payment link are <a href="#
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the details of an existing payment.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the payment object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-31'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
@@ -2525,7 +2782,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">22-02-2022</span><span class="p">,</span><span class="w">
         </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-02-2022</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01001212888"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212888"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
@@ -2533,7 +2790,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852168"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_method_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Visa"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_gateway_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -2543,7 +2800,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"external_ref_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="nl">"init_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">22-02-2022</span><span class="p">,</span><span class="w">
         </span><span class="nl">"update_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-02-2022</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01101212888"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201101212888"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3RXl3iA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030264"</span><span class="p">,</span><span class="w">
@@ -2551,7 +2808,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c496df621209c852162"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_method_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MasterCard"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_gateway_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyFatoorh"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -2597,13 +2854,16 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The invoice number.</td>
 </tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Payments list returned based on this filter object.</td>
+</tr>
 </tbody></table>
 <h3 id='returns-32'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
-
-<aside class="notice">
-Also there is a filter object which contains values of wanted payment objects.
-</aside>
 
 <aside class="notice">
 The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
@@ -2615,7 +2875,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
-     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>33
+     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>33.0
      <span class="s1">'https://circlepay.ai/apis/Refund/requestRefund'</span>
 </code></pre></div>
 <blockquote>
@@ -2703,7 +2963,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
         </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="nl">"refundFees"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Payment_Method"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Visa"</span><span class="p">,</span><span class="s2">"MasterCard"</span><span class="p">],</span><span class="w">
-        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001313454</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001313454"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="p">{</span><span class="w">
@@ -2715,7 +2975,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
         </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="nl">"refundFees"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Payment_Method"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Visa"</span><span class="p">,</span><span class="s2">"MasterCard"</span><span class="p">],</span><span class="w">
-        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001323454</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001323454"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -2760,13 +3020,16 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The invoice number.</td>
 </tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Refunds list returned based on this filter object.</td>
+</tr>
 </tbody></table>
 <h3 id='returns-34'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
-
-<aside class="notice">
-Also there is a filter object which contains values of wanted payment objects.
-</aside>
 
 <aside class="notice">
 The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
@@ -2796,12 +3059,30 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
      </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
      </span><span class="nl">"refundFees"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
      </span><span class="nl">"Payment_Method"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Visa"</span><span class="p">,</span><span class="s2">"MasterCard"</span><span class="p">],</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001323454</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001323454"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the refund object.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>refund_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the refund object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-35'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
@@ -2812,7 +3093,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>1
+     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>11.0
      <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"AHMEDCOUPON"</span>
      <span class="nt">-d</span> <span class="nv">expire_date</span><span class="o">=</span>22-02-2022
      <span class="s1">'https://circlepay.ai/apis/Coupon/create'</span>
@@ -2942,6 +3223,24 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific coupon.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coupon_code</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Coupon&#39;s code.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-37'>Returns</h3>
 <p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
 
@@ -3065,11 +3364,13 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+     </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates status of the coupon to active.</p>
+
+<p>coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|</p>
 <h3 id='returns-39'>Returns</h3>
 <p>The activated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
@@ -3093,11 +3394,13 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
  </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+     </span><span class="nl">"coupon_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Updates status of the coupon to deactive.</p>
+
+<p>coupon_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of coupon object.|</p>
 <h3 id='returns-40'>Returns</h3>
 <p>The deactivated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
@@ -3151,6 +3454,8 @@ The error code used when you fail to deactive the coupon is <a href="#4311">4311
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns a list of your coupons per payment link.</p>
+
+<p>payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|payment link url.|</p>
 <h3 id='returns-41'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 
@@ -3410,6 +3715,24 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a form object.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-43'>Returns</h3>
 <p>Returns a form object if founded, else an error will be thrown.</p>
 
@@ -3592,6 +3915,24 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
     </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Activate a form to collect responses in the checkout.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-45'>Returns</h3>
 <p>Returns The payment link url of activated form if the call succeeded. Otherwise, this call returns an error.</p>
 
@@ -3617,6 +3958,24 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deactivate the form.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>payment link url.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-46'>Returns</h3>
 <p>Returns the payment link of deactivated form if the call succeeded. Otherwise, this call returns an error.</p>
 
@@ -3643,13 +4002,13 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
    </span><span class="p">[</span><span class="w">  
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01000121213"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201000121213"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01100121213"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201100121213"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -3720,6 +4079,24 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the details of settlement.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>settlement_id</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Unique identifier for the settlement object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-48'>Returns</h3>
 <p>Returns a settlement object. </p>
 <h2 id='list-all-settlements'>List all settlements</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -3801,7 +4178,6 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">merchant</span><span class="o">=</span>1
      <span class="nt">-d</span> <span class="s2">"customer[email]"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
      <span class="nt">-d</span> <span class="s2">"customer[city]"</span><span class="o">=</span><span class="s2">"mansoura"</span>
      <span class="nt">-d</span> <span class="s2">"invoice[invoice_number]"</span><span class="o">=</span>55
@@ -3820,7 +4196,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"shoe"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212333</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212333"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
      </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">10-12-2022</span><span class="p">,</span><span class="w">
      </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">14-12-2022</span><span class="p">,</span><span class="w">
@@ -3888,7 +4264,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"shoe"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212333</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212333"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
      </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">10-12-2022</span><span class="p">,</span><span class="w">
      </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">14-12-2022</span><span class="p">,</span><span class="w">
@@ -3906,6 +4282,24 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves the invoice with the given invoice number.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The invoice number.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-51'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
@@ -3932,7 +4326,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"shoe"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001212333</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001212333"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
      </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">10-12-2022</span><span class="p">,</span><span class="w">
      </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">14-12-2022</span><span class="p">,</span><span class="w">
@@ -3950,7 +4344,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
         </span><span class="p">{</span><span class="w">
      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_16436702430261"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"grocery"</span><span class="p">,</span><span class="nl">"description"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="nl">"price"</span><span class="p">:</span><span class="mf">90.0</span><span class="p">}],</span><span class="w">
-     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="mi">01001242333</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"customer_mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+201001242333"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
      </span><span class="nl">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">10-12-2022</span><span class="p">,</span><span class="w">
      </span><span class="nl">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">14-12-2022</span><span class="p">,</span><span class="w">
@@ -3969,6 +4363,31 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list invoices for a given customer.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>invoices list returned based on this filter object.</td>
+</tr>
+</tbody></table>
 <h3 id='returns-52'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 
@@ -3997,6 +4416,8 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Delete an invoice ONLY IF the invoice has no transactions.</p>
+
+<p>invoice_num |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice&#39;s number.|</p>
 <h3 id='returns-53'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
