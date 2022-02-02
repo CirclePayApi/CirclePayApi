@@ -279,7 +279,6 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "merchant_id": "1",
 	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
 	}
 }
