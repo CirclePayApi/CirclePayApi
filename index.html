@@ -881,12 +881,12 @@ The error codes used when you fail to get a specific payment method are <a href=
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"first_name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
-     <span class="nt">-d</span> <span class="s2">"last_name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
-     <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001414133"</span>
-     <span class="nt">-d</span> <span class="s2">"Business_Name"</span><span class="o">=</span><span class="s2">"E-commerce"</span>
-     <span class="nt">-d</span> <span class="s2">"Business_Address"</span><span class="o">=</span><span class="s2">"El-maadi"</span>
+     <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001414133"</span>
+     <span class="nt">-d</span> <span class="nv">Business_Name</span><span class="o">=</span><span class="s2">"E-commerce"</span>
+     <span class="nt">-d</span> <span class="nv">Business_Address</span><span class="o">=</span><span class="s2">"El-maadi"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/create'</span>
 </code></pre></div>
 <blockquote>
@@ -1029,12 +1029,12 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"first_name"</span><span class="o">=</span><span class="s2">"ahmed"</span>
-     <span class="nt">-d</span> <span class="s2">"last_name"</span><span class="o">=</span><span class="s2">"khaled"</span>
-     <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001215155"</span>
-     <span class="nt">-d</span> <span class="s2">"business_name"</span><span class="o">=</span><span class="s2">"ecommerce"</span>
-     <span class="nt">-d</span> <span class="s2">"business_address"</span><span class="o">=</span><span class="s2">"el-maadi"</span>
+     <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001215155"</span>
+     <span class="nt">-d</span> <span class="nv">business_name</span><span class="o">=</span><span class="s2">"ecommerce"</span>
+     <span class="nt">-d</span> <span class="nv">business_address</span><span class="o">=</span><span class="s2">"el-maadi"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/update'</span>
 </code></pre></div>
 <blockquote>
@@ -1124,7 +1124,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="nv">document_id</span><span class="o">=</span><span class="s2">"124234"</span>
+     <span class="nt">-d</span> <span class="nv">document_id</span><span class="o">=</span><span class="s2">"124234345678"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/updateDocument'</span>
 </code></pre></div>
 <blockquote>
@@ -1791,12 +1791,12 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"First_Name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
-     <span class="nt">-d</span> <span class="s2">"Last_Name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
-     <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001616166"</span>
-     <span class="nt">-d</span> <span class="s2">"country"</span><span class="o">=</span><span class="s2">"Egypt"</span>
-     <span class="nt">-d</span> <span class="s2">"city"</span><span class="o">=</span><span class="s2">"cairo"</span>
+     <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001616166"</span>
+     <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
+     <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
      <span class="s1">'https://circlepay.ai/apis/Customer/create'</span>
 </code></pre></div>
 <blockquote>
@@ -1899,12 +1899,12 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"First_Name"</span><span class="o">=</span><span class="s2">"Ahmed"</span>
-     <span class="nt">-d</span> <span class="s2">"Last_Name"</span><span class="o">=</span><span class="s2">"Khaled"</span>
-     <span class="nt">-d</span> <span class="s2">"email"</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"mobile_number"</span><span class="o">=</span><span class="s2">"+201001717177"</span>
-     <span class="nt">-d</span> <span class="s2">"country"</span><span class="o">=</span><span class="s2">"Egypt"</span>
-     <span class="nt">-d</span> <span class="s2">"city"</span><span class="o">=</span><span class="s2">"cairo"</span>
+     <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
+     <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
+     <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
+     <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001717177"</span>
+     <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
+     <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
      <span class="s1">'https://circlepay.ai/apis/Customer/update'</span>
 </code></pre></div>
 <blockquote>
@@ -2112,10 +2112,10 @@ List all customers using filters.
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"value"</span>: 0
-     <span class="nt">-d</span> <span class="s2">"currency"</span>: <span class="s2">"EGP"</span>
-     <span class="nt">-d</span> <span class="s2">"description"</span>: <span class="s2">"for grocery delivery"</span>
-     <span class="nt">-d</span> <span class="s2">"expire_date"</span>: 22-02-2022
+     <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>0
+     <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
+     <span class="nt">-d</span> <span class="nv">description</span><span class="o">=</span><span class="s2">"for grocery delivery"</span>
+     <span class="nt">-d</span> <span class="nv">expire_date</span><span class="o">=</span>22-02-2022
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/create'</span>
 </code></pre></div>
 <blockquote>
@@ -2315,7 +2315,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/update'</span>
 </code></pre></div>
 <blockquote>
@@ -2614,7 +2614,7 @@ The error codes used when you fail to list all payment links are <a href="#3110"
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"payment_link_url"</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
+     <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/PayPaymentLink/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2761,7 +2761,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> <span class="s2">"coupon_code"</span>: <span class="s2">"HEMACOUPON"</span>
+     <span class="nt">-d</span> <span class="nv">coupon_code</span><span class="o">=</span><span class="s2">"HEMACOUPON"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment/list'</span>
 </code></pre></div>
 <blockquote>
@@ -4150,8 +4150,8 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">-d</span> filter[status]<span class="o">=</span><span class="s2">"pending"</span>
-     <span class="nt">-d</span> filter[date_time_range]<span class="o">=</span>5
+     <span class="nt">-d</span> <span class="s2">"filter[status]"</span><span class="o">=</span><span class="s2">"pending"</span>
+     <span class="nt">-d</span> <span class="s2">"filter[date_time_range]"</span><span class="o">=</span>5
      <span class="s1">'https://circlepay.ai/apis/settlements/list'</span>
 </code></pre></div>
 <blockquote>
