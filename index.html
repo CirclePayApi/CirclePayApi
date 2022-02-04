@@ -881,6 +881,7 @@ The error codes used when you fail to get a specific payment method are <a href=
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
@@ -1029,6 +1030,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">first_name</span><span class="o">=</span><span class="s2">"ahmed"</span>
      <span class="nt">-d</span> <span class="nv">last_name</span><span class="o">=</span><span class="s2">"khaled"</span>
      <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
@@ -1124,6 +1126,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span> 
      <span class="nt">-d</span> <span class="nv">document_id</span><span class="o">=</span><span class="s2">"124234345678"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/updateDocument'</span>
 </code></pre></div>
@@ -1183,6 +1186,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span><span class="s2">"SUSPENDED"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/updateStatus'</span>
 </code></pre></div>
@@ -1224,6 +1228,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/list'</span>
 </code></pre></div>
 <blockquote>
@@ -1287,6 +1292,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/listDocuments
 </span></code></pre></div>
 <blockquote>
@@ -1326,6 +1332,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/getFile/{document_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -1370,6 +1377,7 @@ The error codes used when you fail to update the merchant's document are <a href
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">Bank_Name</span><span class="o">=</span><span class="s2">"cairo bank"</span>
      <span class="nt">-d</span> <span class="nv">Bank_Account_Num</span><span class="o">=</span><span class="s2">"242424242424"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/setBillingInfo'</span>
@@ -1444,6 +1452,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"610b2c486df621209c85215b"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/configurePaymentGateway'</span>
 </code></pre></div>
@@ -1498,6 +1507,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -1544,6 +1554,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -1585,6 +1596,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_method_id</span><span class="o">=</span><span class="s2">"610b2c496df621209c852168"</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'</span>
 </code></pre></div>
@@ -1660,6 +1672,7 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
@@ -1706,6 +1719,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
@@ -1752,6 +1766,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Merchant/listPaymentMethods'</span>
 </code></pre></div>
 <blockquote>
@@ -1791,6 +1806,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
@@ -1899,6 +1915,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">First_Name</span><span class="o">=</span><span class="s2">"Ahmed"</span>
      <span class="nt">-d</span> <span class="nv">Last_Name</span><span class="o">=</span><span class="s2">"Khaled"</span>
      <span class="nt">-d</span> <span class="nv">email</span><span class="o">=</span><span class="s2">"ahmedkahled@gmail.com"</span>
@@ -2007,6 +2024,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Customers/get/{customer_mobile_number}'</span>
 </code></pre></div>
 <blockquote>
@@ -2061,6 +2079,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Customers/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2112,6 +2131,7 @@ List all customers using filters.
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>0
      <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
      <span class="nt">-d</span> <span class="nv">description</span><span class="o">=</span><span class="s2">"for grocery delivery"</span>
@@ -2253,6 +2273,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/get/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -2315,6 +2336,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/update'</span>
 </code></pre></div>
@@ -2495,6 +2517,7 @@ The error codes used when you fail to update payment link are <a href="#4111">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/list/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -2539,6 +2562,7 @@ The error code used when you fail to deactive payment link is <a href="#4111">41
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Payment_Link/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2614,6 +2638,7 @@ The error codes used when you fail to list all payment links are <a href="#3110"
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/PayPaymentLink/list'</span>
 </code></pre></div>
@@ -2700,6 +2725,7 @@ The error codes used when you fail to pay or execute payment link are <a href="#
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Payment/get/{transactionId}'</span>
 </code></pre></div>
 <blockquote>
@@ -2761,6 +2787,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">coupon_code</span><span class="o">=</span><span class="s2">"HEMACOUPON"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment/list'</span>
 </code></pre></div>
@@ -2873,6 +2900,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>33.0
      <span class="s1">'https://circlepay.ai/apis/Refund/requestRefund'</span>
@@ -2939,6 +2967,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/Refund/list'</span>
 </code></pre></div>
@@ -3037,6 +3066,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/refund/getRefund/{refundId}'</span>
 </code></pre></div>
 <blockquote>
@@ -3092,6 +3122,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span>11.0
      <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"AHMEDCOUPON"</span>
      <span class="nt">-d</span> <span class="nv">expire_date</span><span class="o">=</span>22-02-2022
@@ -3194,6 +3225,7 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Coupon/get/{couponCode}'</span>
 </code></pre></div>
 <blockquote>
@@ -3250,6 +3282,7 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">coupon_code</span><span class="o">=</span><span class="s2">"HEMACOUPON"</span>
      <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"50% offer"</span>
      <span class="s1">'https://circlepay.ai/apis/Coupon/update'</span>
@@ -3350,6 +3383,7 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Coupon/activate/{coupon_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -3396,6 +3430,7 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Coupon/deactive/{coupon_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -3442,6 +3477,7 @@ The error code used when you fail to deactive the coupon is <a href="#4311">4311
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/Coupon/list/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -3513,6 +3549,7 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"About order"</span>
      <span class="s1">'https://circlepay.ai/apis/form/create'</span>
@@ -3667,6 +3704,7 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/form/get/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -3794,6 +3832,7 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="nt">-d</span> <span class="nv">title</span><span class="o">=</span><span class="s2">"About you"</span>
      <span class="s1">'https://circlepay.ai/apis/form/update'</span>
@@ -3948,6 +3987,7 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/form/activate/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -3990,6 +4030,7 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/form/deactivate/{payment_link_url}'</span>
 </code></pre></div>
 <blockquote>
@@ -4033,6 +4074,7 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span><span class="s2">"https://bit.ly/3KXl3iA"</span>
      <span class="s1">'https://circlepay.ai/apis/form/listResponses'</span>
 </code></pre></div>
@@ -4103,6 +4145,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/settlements/get/{settlement_id}'</span>
 </code></pre></div>
 <blockquote>
@@ -4150,6 +4193,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="s2">"filter[status]"</span><span class="o">=</span><span class="s2">"pending"</span>
      <span class="nt">-d</span> <span class="s2">"filter[date_time_range]"</span><span class="o">=</span>5
      <span class="s1">'https://circlepay.ai/apis/settlements/list'</span>
@@ -4225,6 +4269,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="s2">"customer[email]"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
      <span class="nt">-d</span> <span class="s2">"customer[city]"</span><span class="o">=</span><span class="s2">"mansoura"</span>
      <span class="nt">-d</span> <span class="s2">"invoice[invoice_number]"</span><span class="o">=</span>55
@@ -4296,6 +4341,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/get/{invoice_number}'</span>
 </code></pre></div>
 <blockquote>
@@ -4357,6 +4403,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/list'</span>
 </code></pre></div>
 <blockquote>
@@ -4445,6 +4492,7 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/delete/{invoice_number}'</span>
 </code></pre></div>
 <blockquote>
@@ -4491,6 +4539,7 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">invoice_number</span><span class="o">=</span><span class="s2">"CIR_INV_16436702430261"</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/payInvoice'</span>
 </code></pre></div>
@@ -4561,6 +4610,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">invoice_number</span><span class="o">=</span><span class="s2">"CIR_INV_16436702430261"</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/setInvoiceToPaid'</span>
 </code></pre></div>
