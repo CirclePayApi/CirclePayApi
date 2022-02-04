@@ -1277,6 +1277,7 @@ curl -X POST --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
+	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
 }
@@ -1333,7 +1334,7 @@ curl -X GET --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
-	 "link": "https://bit.ly/3KXl3iA",
+	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "value": 99.0,
 	 "enable_survey": 0,
 	 "last_used": 22-02-2022,
@@ -1393,6 +1394,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorDetails" : null,
  "data" :
 	{
+	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
 }
@@ -1498,7 +1500,7 @@ curl -X GET --header 'Accept: application/json'
  "data" :
    [
 	{
-	 "link": "https://bit.ly/3KXl3iA",
+	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "value": 99.0,
 	 "enable_survey": 0,
 	 "last_used": 22-02-2022,
