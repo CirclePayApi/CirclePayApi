@@ -539,10 +539,10 @@
               </ul>
           </li>
           <li>
-            <a href="#callback_service" class="toc-h1 toc-link" data-title="callback_service">callback_service</a>
+            <a href="#callback-service" class="toc-h1 toc-link" data-title="Callback Service">Callback Service</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#callback_service-2" class="toc-h2 toc-link" data-title="callback_service">callback_service</a>
+                    <a href="#internal-callback" class="toc-h2 toc-link" data-title="Internal Callback">Internal Callback</a>
                   </li>
               </ul>
           </li>
@@ -4715,9 +4715,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 </tbody></table>
 <h3 id='returns-56'>Returns</h3>
 <p>Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.</p>
-<h1 id='callback_service'>callback_service</h1>
-<p>This is internal callback from backend to open api layer to be forward to merchant callback.</p>
-<h2 id='callback_service-2'>callback_service</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h1 id='callback-service'>Callback Service</h1><h2 id='internal-callback'>Internal Callback</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
@@ -4785,7 +4783,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 </tr>
 </tbody></table>
 <h3 id='returns-57'>Returns</h3>
-<p>Returns 200 success message if it executed successfully.</p>
+<p>Internal callback from backend to open api layer to be forward to merchant callback.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
 <h2 id='general'>General</h2>
