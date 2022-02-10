@@ -3239,3 +3239,47 @@ invoice_number |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &
 Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.
 
 ####################################################################################
+
+# callback_service
+
+This is internal callback from backend to open api layer to be forward to merchant callback.
+
+## callback_service
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+     --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/callback_service/internalCallback'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "status" : True,
+ "message" : "The internal callback executed successfully",
+ "isError" : False,
+ "errorCode" : null,
+ "errorDetails" : null,
+ "data" :
+	{}
+}
+```
+This endpoint execute internal callback.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+transaction_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of transaction object. |
+transaction_type |Integer|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The type of transaction (1 for payments, 2 for refund). |
+transaction_status |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Can be used to track the state or condition of the transaction record for example, "pending". |
+payment_gateway_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment gateway. |
+payment_method_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment method. |
+
+### Returns
+
+Returns 200 success message if it executed successfully.
+
+####################################################################################
