@@ -1018,6 +1018,49 @@ Returns a payment methods list of the merchant.
 
 ####################################################################################
 
+## Verify Merchant
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/Merchant/verifyMerchant'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "status" : True,
+ "message" : "Merchant verified successfully",
+ "isError" : False,
+ "errorCode" : null,
+ "errorDetails" : null,
+ "data" : {}
+}
+```
+
+This endpoint allow you to verify merchant.
+
+### Parameters
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+Merchant_mobile |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Merchant's mobile number. |
+otp |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| One-time password (OTP) systems provide a mechanism for logging on to a network or service using a unique password that can only be used once. |
+
+### Returns
+
+Verify merchant mobile to compelete registration.
+
+<aside class="notice">
+The error code used when you fail to verify merchant is <a href="#2111">2111</a>
+</aside>
+
+####################################################################################
+
 # Customers
 
 ## Create a Customer
