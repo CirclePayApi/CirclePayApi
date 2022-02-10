@@ -388,6 +388,9 @@
                   <li>
                     <a href="#list-payment-methods" class="toc-h2 toc-link" data-title="List payment methods">List payment methods</a>
                   </li>
+                  <li>
+                    <a href="#verify-merchant" class="toc-h2 toc-link" data-title="Verify Merchant">Verify Merchant</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1802,6 +1805,57 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>No parameters.</p>
 <h3 id='returns-20'>Returns</h3>
 <p>Returns a payment methods list of the merchant.</p>
+<h2 id='verify-merchant'>Verify Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/Merchant/verifyMerchant'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Merchant verified successfully"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint allow you to verify merchant.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Merchant_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Merchant&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>otp</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>One-time password (OTP) systems provide a mechanism for logging on to a network or service using a unique password that can only be used once.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-21'>Returns</h3>
+<p>Verify merchant mobile to compelete registration.</p>
+
+<aside class="notice">
+The error code used when you fail to verify merchant is <a href="#2111">2111</a>
+</aside>
 <h1 id='customers'>Customers</h1><h2 id='create-a-customer'>Create a Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1905,7 +1959,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-21'>Returns</h3>
+<h3 id='returns-22'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -2014,7 +2068,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-22'>Returns</h3>
+<h3 id='returns-23'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s update succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -2069,7 +2123,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 <td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-23'>Returns</h3>
+<h3 id='returns-24'>Returns</h3>
 <p>Returns the Customer object for a valid mobile number.</p>
 
 <aside class="notice">
@@ -2119,13 +2173,13 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <p>No parameters.</p>
 
 <aside class="notice">
 List all customers using filters.
 </aside>
-<h3 id='returns-24'>Returns</h3>
+<h3 id='returns-25'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='payment-link'>Payment Link</h1><h2 id='create-a-payment-link'>Create a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2264,7 +2318,7 @@ List all customers using filters.
 <td>Unique identifier for the merchant object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-25'>Returns</h3>
+<h3 id='returns-26'>Returns</h3>
 <p>Returns the payment link url.</p>
 
 <aside class="notice">
@@ -2331,7 +2385,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>Payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-26'>Returns</h3>
+<h3 id='returns-27'>Returns</h3>
 <p>Returns the payment link object.</p>
 <h2 id='update-a-payment-link'>Update a payment link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2509,7 +2563,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>Choose if you want to get customer address or not.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns the payment link object.</p>
 
 <aside class="notice">
@@ -2554,7 +2608,7 @@ The error codes used when you fail to update payment link are <a href="#4111">41
 <td>payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Deactivate an active payment link. If invalid payment link is provided an error page &quot;Payment Link isn&#39;t available&quot; will show.</p>
 
 <aside class="notice">
@@ -2630,7 +2684,7 @@ The error code used when you fail to deactive payment link is <a href="#4111">41
 <td>Payment links list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>Returns payment link list which is array contains payment link objects. If no payment links are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -2711,7 +2765,7 @@ The error codes used when you fail to list all payment links are <a href="#3110"
 <td>The coupon code.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>If a payment method is defined, the return the payment intent for the payment method ,if the payment method isn&#39;t defined, then return to the checkout page.</p>
 
 <aside class="notice">
@@ -2779,7 +2833,7 @@ The error codes used when you fail to pay or execute payment link are <a href="#
 <td>Unique identifier for the payment object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-32'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2890,7 +2944,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>Payments list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-32'>Returns</h3>
+<h3 id='returns-33'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 
 <aside class="notice">
@@ -2955,7 +3009,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <td>The currency type used.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-33'>Returns</h3>
+<h3 id='returns-34'>Returns</h3>
 <p>Returns the refund id. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -3058,7 +3112,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>Refunds list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-35'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -3114,7 +3168,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-35'>Returns</h3>
+<h3 id='returns-36'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
@@ -3213,7 +3267,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>number or percentage.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-36'>Returns</h3>
+<h3 id='returns-37'>Returns</h3>
 <p>Returns the coupon code. </p>
 
 <aside class="notice">
@@ -3274,7 +3328,7 @@ The error codes used when you fail to create new coupon are <a href="#4115">4115
 <td>Coupon&#39;s code.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-37'>Returns</h3>
+<h3 id='returns-38'>Returns</h3>
 <p>Returns a coupon if a valid coupon Id was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -3375,7 +3429,7 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 <td>Times that customer can use the same coupon.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-38'>Returns</h3>
+<h3 id='returns-39'>Returns</h3>
 <p>The newly updated coupon object if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
 <aside class="notice">
@@ -3422,7 +3476,7 @@ The error codes used when you fail to update a coupon are <a href="#4312">4312</
 <td>Unique identifier of coupon object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-39'>Returns</h3>
+<h3 id='returns-40'>Returns</h3>
 <p>The activated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
 <aside class="notice">
@@ -3469,7 +3523,7 @@ The error code used when you fail to active the coupon is <a href="#4311">4311</
 <td>Unique identifier of coupon object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-40'>Returns</h3>
+<h3 id='returns-41'>Returns</h3>
 <p>The deactivated coupon id if the call succeeded. Otherwise, this call returns an error, such as if the coupon has been deleted.</p>
 
 <aside class="notice">
@@ -3541,7 +3595,7 @@ The error code used when you fail to deactive the coupon is <a href="#4311">4311
 <td>payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-41'>Returns</h3>
+<h3 id='returns-42'>Returns</h3>
 <p>Returns list of coupons objects. Each entry in the list is a separate coupon object. If no more coupons are available, the resulting array will be empty. This request should never return an error.</p>
 
 <aside class="notice">
@@ -3688,7 +3742,7 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-42'>Returns</h3>
+<h3 id='returns-43'>Returns</h3>
 <p>Returns form object which has the questions array.</p>
 
 <aside class="notice">
@@ -3820,7 +3874,7 @@ The error codes used when you fail to create a form are <a href="#4111">4111</a>
 <td>Payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-43'>Returns</h3>
+<h3 id='returns-44'>Returns</h3>
 <p>Returns a form object if founded, else an error will be thrown.</p>
 
 <aside class="notice">
@@ -3971,7 +4025,7 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 <td>The status of the form for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-44'>Returns</h3>
+<h3 id='returns-45'>Returns</h3>
 <p>Returns The newly updated form object if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -4022,7 +4076,7 @@ The error codes used when you fail to update a form are <a href="#4111">4111</a>
 <td>Payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-45'>Returns</h3>
+<h3 id='returns-46'>Returns</h3>
 <p>Returns The payment link url of activated form if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -4066,7 +4120,7 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
 <td>payment link url.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-46'>Returns</h3>
+<h3 id='returns-47'>Returns</h3>
 <p>Returns the payment link of deactivated form if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -4131,7 +4185,7 @@ The error code used when you fail to activate form is <a href="#4111">4111</a>
 <td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-47'>Returns</h3>
+<h3 id='returns-48'>Returns</h3>
 <p>Returns response object list if the call succeeded. Otherwise, this call returns an error.</p>
 
 <aside class="notice">
@@ -4189,7 +4243,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>Unique identifier for the settlement object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-48'>Returns</h3>
+<h3 id='returns-49'>Returns</h3>
 <p>Returns a settlement object. </p>
 <h2 id='list-all-settlements'>List all settlements</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -4263,7 +4317,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>The status of the settlement for example, &quot;pending&quot;.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-49'>Returns</h3>
+<h3 id='returns-50'>Returns</h3>
 <p>Returns a settlement object list. The list has a separate settlement objects. If no more settlements are available, the resulting array will be empty. </p>
 <h1 id='invoice'>Invoice</h1>
 <p>An invoice is an itemized list that records the products or services you provided to your customers, the total amount due, and a method for them to pay you for those items or services. Invoices can be paid in one payment or in installments.</p>
@@ -4333,7 +4387,7 @@ The error codes used when you fail to update a coupon are <a href="#4111">4111</
 <td>The details of the invoice object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-50'>Returns</h3>
+<h3 id='returns-51'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -4395,7 +4449,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-51'>Returns</h3>
+<h3 id='returns-52'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -4484,7 +4538,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-52'>Returns</h3>
+<h3 id='returns-53'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 
 <aside class="notice">
@@ -4531,7 +4585,7 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-53'>Returns</h3>
+<h3 id='returns-54'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -4606,7 +4660,7 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-54'>Returns</h3>
+<h3 id='returns-55'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h2 id='settle-an-invoice'>Settle an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -4651,7 +4705,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-55'>Returns</h3>
+<h3 id='returns-56'>Returns</h3>
 <p>Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
