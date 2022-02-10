@@ -3240,11 +3240,9 @@ Returns the settled invoice number and status if a valid invoice number was prov
 
 ####################################################################################
 
-# callback_service
+# Callback Service
 
-This is internal callback from backend to open api layer to be forward to merchant callback.
-
-## callback_service
+## Internal Callback
 
 ```shell
 curl -X POST --header 'Accept: application/json'
@@ -3280,6 +3278,6 @@ payment_method_name |String|<span style="color: red;">required</span> |&nbsp;&nb
 
 ### Returns
 
-Returns 200 success message if it executed successfully.
+Internal callback from backend to open api layer to be forward to merchant callback.
 
 ####################################################################################
