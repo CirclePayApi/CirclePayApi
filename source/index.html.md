@@ -51,7 +51,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment gateways list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -100,7 +99,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment gateway object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -165,7 +163,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment methods list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -217,7 +214,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment method object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -273,7 +269,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully created a new merchant",
  "isError" : False,
  "errorCode" : null,
@@ -325,7 +320,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully retrieved the merchant",
  "isError" : False,
  "errorCode" : null,
@@ -378,7 +372,6 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully update the merchant",
  "isError" : False,
  "errorCode" : null,
@@ -435,7 +428,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully update the merchant's document",
  "isError" : False,
  "errorCode" : null,
@@ -481,7 +473,6 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully update the merchant's status",
  "isError" : False,
  "errorCode" : null,
@@ -518,7 +509,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Merchants list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -578,7 +568,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Documents list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -630,7 +619,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Document file returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -673,7 +661,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully updated the billing info",
  "isError" : False,
  "errorCode" : null,
@@ -720,7 +707,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully configured payment gateway",
  "isError" : False,
  "errorCode" : null,
@@ -766,7 +752,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully enabled gateway",
  "isError" : False,
  "errorCode" : null,
@@ -809,7 +794,6 @@ curl -X DELETE --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully disabled gateway",
  "isError" : False,
  "errorCode" : null,
@@ -848,7 +832,6 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully set payment method fee",
  "isError" : False,
  "errorCode" : null,
@@ -895,7 +878,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully enabled the payment method",
  "isError" : False,
  "errorCode" : null,
@@ -938,7 +920,6 @@ curl -X DELETE --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully disabled the payment method",
  "isError" : False,
  "errorCode" : null,
@@ -981,7 +962,6 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Merchant's payment methods list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1033,7 +1013,6 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Merchant verified successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1084,7 +1063,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully created a new customer",
  "isError" : False,
  "errorCode" : null,
@@ -1141,7 +1119,6 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully updated the cutomer",
  "isError" : False,
  "errorCode" : null,
@@ -1192,7 +1169,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Customer object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1243,7 +1219,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Customers list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1313,7 +1288,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully created the payment link",
  "isError" : False,
  "errorCode" : null,
@@ -1370,7 +1344,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment link object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1430,7 +1403,6 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully updated the payment link",
  "isError" : False,
  "errorCode" : null,
@@ -1493,7 +1465,6 @@ curl -X DELETE --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully deactived payment link",
  "isError" : False,
  "errorCode" : null,
@@ -1535,7 +1506,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment links list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1604,7 +1574,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment links list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1658,7 +1627,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payment object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1717,7 +1685,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Payments list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1805,7 +1772,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully requested a refund",
  "isError" : False,
  "errorCode" : null,
@@ -1855,7 +1821,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Refunds list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -1924,7 +1889,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Refund object returned successfully ",
  "isError" : False,
  "errorCode" : null,
@@ -1980,7 +1944,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully created a coupon",
  "isError" : False,
  "errorCode" : null,
@@ -2033,7 +1996,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully retrieved the coupon",
  "isError" : False,
  "errorCode" : null,
@@ -2087,7 +2049,6 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully updated the coupon",
  "isError" : False,
  "errorCode" : null,
@@ -2145,7 +2106,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully activated the coupon",
  "isError" : False,
  "errorCode" : null,
@@ -2187,7 +2147,6 @@ curl -X DELETE --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully deactivated the coupon",
  "isError" : False,
  "errorCode" : null,
@@ -2229,7 +2188,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Coupons list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -2301,7 +2259,6 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
   "message": "Survey fetched successfully",
-  "status":"true",
   "data":
   {
     "survey": {
@@ -2431,7 +2388,6 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
   "message": "Survey fetched successfully",
-  "status":"true",
   "data":
   {
     "survey": {
@@ -2556,7 +2512,6 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
   "message": "Survey fetched successfully",
-  "status":"true",
   "data":
   {
     "survey": {
@@ -2686,7 +2641,6 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
   "message": "Survey fetched successfully",
-  "status":"true",
   "data":
 	{
 	  "payment_link_url": "https://bit.ly/3KXl3iA"
@@ -2724,7 +2678,6 @@ curl -X DELETE --header 'Accept: application/json'
 ```json
 {
   "message": "Survey fetched successfully",
-  "status":"true",
   "data":
     {
       "payment_link_url": "https://bit.ly/3KXl3iA"
@@ -2763,7 +2716,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "form responses list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -2824,7 +2776,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Settlement object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -2869,7 +2820,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Settlements list returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -2931,7 +2881,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully created an invoice",
  "isError" : False,
  "errorCode" : null,
@@ -2989,7 +2938,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "Invoice object returned successfully",
  "isError" : False,
  "errorCode" : null,
@@ -3046,7 +2994,6 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully returned invoice list",
  "isError" : False,
  "errorCode" : null,
@@ -3124,7 +3071,6 @@ curl -X DELETE --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully deleted an invoice",
  "isError" : False,
  "errorCode" : null,
@@ -3167,7 +3113,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully pay the invoice",
  "isError" : False,
  "errorCode" : null,
@@ -3216,7 +3161,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "You successfully settled the invoice",
  "isError" : False,
  "errorCode" : null,
@@ -3257,7 +3201,6 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "status" : True,
  "message" : "The internal callback executed successfully",
  "isError" : False,
  "errorCode" : null,
