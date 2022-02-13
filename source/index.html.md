@@ -104,10 +104,12 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" : 
-   {
+   [
+    {
 	 "payment_gateway_ID": "610b2c486df621209c852123",
 	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
-   }
+    }
+   ]
 }
 ```
 
@@ -219,11 +221,13 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "id": "610b2c496df621209c852161",
 	 "name": "Visa",
 	 "gateway_id": "610b2c486df621209c85215b",
 	}
+   ]
 }
 ```
 
@@ -274,9 +278,11 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
 	}
+   ]
 }
 ```
 
@@ -377,6 +383,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "first_name": "ahmed",
 	 "last_name": "khaled",
@@ -388,6 +395,7 @@ curl -X PUT --header 'Accept: application/json'
 	 "shipping_policy": null,
 	 "status": null,
 	}
+   ]
 }
 ```
 
@@ -433,7 +441,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {}
+     [{}]
 }
 ```
 
@@ -478,7 +486,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {}
+     [{}]
 }
 ```
 
@@ -624,11 +632,13 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+    [
 	 {
       "document_Id":"3264",
       "file_stream":"e:\\b.txt",
       "file_ext": ".txt"
 	 }
+	]
 }
 ```
 
@@ -666,7 +676,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-     {}
+     [{}]
 }
 ```
 
@@ -712,9 +722,11 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+    [
      {
 	  "payment_gateway_id": "610b2c486df621209c85215b",
      }
+	]
 }
 ```
 
@@ -757,9 +769,11 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
       "payment_gateway_ID": "610b2c486df621209c85215b"
 	}
+   ]
 }
 ```
 
@@ -799,9 +813,11 @@ curl -X DELETE --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	  "payment_gateway_ID":"610b2c486df621209c85215b"
 	}
+   ]
 ```
 
 This endpoint disable specific gateway and it's related payment methods.
@@ -837,9 +853,11 @@ curl -X POST --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	  "payment_method_ID": "610b2c496df621209c852168"
 	}
+   ]
 }
 ```
 
@@ -883,9 +901,11 @@ curl -X GET --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	  "payment_method_ID": "610b2c496df621209c852168"
 	}
+   ]
 }
 ```
 
@@ -925,9 +945,11 @@ curl -X DELETE --header 'Content-Type: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	  "payment_method_ID": "610b2c496df621209c852168"
 	}
+   ]
 }
 ```
 
@@ -1017,7 +1039,7 @@ curl -X POST --header 'Content-Type: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" : {}
+ "data" : [{}]
 }
 ```
 
@@ -1068,9 +1090,11 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{  
 	 "customer_mobile_number": "+201001616166"
 	}
+   ]
 }
 ```
 
@@ -1124,9 +1148,11 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{  
 	 "customer_mobile_number": "+201001717177"
 	}
+   ]
 }
 ```
 
@@ -1174,6 +1200,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{  
 	   "first_name": "Ibrahim",
 	   "last_name": "Salah",
@@ -1185,6 +1212,7 @@ curl -X GET --header 'Accept: application/json'
 	   "address": "72 gamal st",
 	   "apt_num": "5"
 	}
+   ]
 }
 ```
 
@@ -1293,10 +1321,12 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
+   ]
 }
 ```
 
@@ -1349,6 +1379,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "value": 99.0,
@@ -1372,6 +1403,7 @@ curl -X GET --header 'Accept: application/json'
 	 "name": "grocery",
 	 "getCustAddress": 0
 	}
+   ]
 }
 ```
 
@@ -1408,10 +1440,12 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "link": "https://staging.circlepay.ai/payment/make-payment/0bfc4aec23e804db629f1643805306854",
 	 "payment_link_url": "https://bit.ly/3KXl3iA"
 	}
+   ]
 }
 ```
 This endpoint helps you to udpate payment link.
@@ -1470,7 +1504,7 @@ curl -X DELETE --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{}
+	[{}]
 }
 ```
 
@@ -1579,7 +1613,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{}
+	[{}]
 }
 ```
 
@@ -1632,6 +1666,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "id": 1,
 	 "transaction_id": 6,
@@ -1650,6 +1685,7 @@ curl -X GET --header 'Accept: application/json'
 	 "payment_method_name": "Visa",
 	 "payment_gateway_name": "MyFatoorh"
 	}
+   ]
 }
 ```
 
@@ -1777,9 +1813,11 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "refund_id": "1"
 	}
+   ]
 }
 ```
 This endpoint helps you to request refund.
@@ -1894,6 +1932,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "refund_id": "2",
 	 "external_ref_id": 3,
@@ -1906,6 +1945,7 @@ curl -X GET --header 'Accept: application/json'
 	 "customer_mobile": "+201001323454",
 	 "status": "paid"
 	}
+   ]
 }
 ```
 Retrieves the refund object.
@@ -1949,9 +1989,11 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "coupon_code": "HEMACOUPON"
 	}
+   ]
 }
 ```
 This endpoint helps you to create coupon.
@@ -2001,6 +2043,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "code": "HEMACOUPON",
 	 "value": 99.0,
@@ -2014,6 +2057,7 @@ curl -X GET --header 'Accept: application/json'
 	 "discount_type": "percent" ,
 	 "discount_value": "50.0"
 	}
+   ]
 }
 ```
 Retrieves a specific coupon.
@@ -2054,6 +2098,7 @@ curl -X PUT --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "code": "HEMACOUPON",
 	 "value": 99.0,
@@ -2067,6 +2112,7 @@ curl -X PUT --header 'Accept: application/json'
 	 "discount_type": "percent" ,
 	 "discount_value": "50.0"
 	}
+   ]
 }
 ```
 Updates the metadata of a coupon.
@@ -2111,9 +2157,11 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "coupon_id": "1"
 	}
+   ]
 }
 ```
 Updates status of the coupon to active.
@@ -2152,9 +2200,11 @@ curl -X DELETE --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "coupon_id": "1"
 	}
+   ]
 }
 ```
 Updates status of the coupon to deactive.
@@ -2260,8 +2310,9 @@ curl -X POST --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "data":
-  {
-    "survey": {
+   [
+    {
+     "survey": {
       "title": "new_survey",
       "status": false,
       "questions": [
@@ -2343,6 +2394,7 @@ curl -X POST --header 'Accept: application/json'
       "MemberId": "543"
     }
   }
+ ]
 }
 ```
 This endpoint helps you to create form.
@@ -2389,8 +2441,9 @@ curl -X GET --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "data":
-  {
-    "survey": {
+   [
+	{
+     "survey": {
       "title": "new_survey",
       "status": false,
       "questions": [
@@ -2472,6 +2525,7 @@ curl -X GET --header 'Accept: application/json'
       "MemberId": "543"
     }
   }
+ ]
 }
 ```
 Retrieves a form object.
@@ -2513,8 +2567,9 @@ curl -X PUT --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "data":
-  {
-    "survey": {
+   [
+    {
+     "survey": {
       "title": "new_survey",
       "status": false,
       "questions": [
@@ -2596,6 +2651,7 @@ curl -X PUT --header 'Accept: application/json'
       "MemberId": "543"
     }
   }
+ ]
 }
 ```
 Updates details in a form object.
@@ -2642,9 +2698,11 @@ curl -X GET --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "data":
-	{
+    [
+	 {
 	  "payment_link_url": "https://bit.ly/3KXl3iA"
-	}
+	 }
+	]
 ```
 Activate a form to collect responses in the checkout.
 
@@ -2679,9 +2737,11 @@ curl -X DELETE --header 'Accept: application/json'
 {
   "message": "Survey fetched successfully",
   "data":
-    {
+    [
+	 {
       "payment_link_url": "https://bit.ly/3KXl3iA"
-	}   
+	 }
+	]   
   }
 ```
 Deactivate the form.
@@ -2781,14 +2841,16 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{
-	 "transfer_date": 22-02-2022,
-	 "transfer_value": 99.0,
-	 "currency": "EGP",
-	 "external_settlement_id": "5",
-	 "status": 0,
-	 "update_date": 23-02-2022
-	}
+	[
+     {
+	  "transfer_date": 22-02-2022,
+	  "transfer_value": 99.0,
+	  "currency": "EGP",
+	  "external_settlement_id": "5",
+	  "status": 0,
+	  "update_date": 23-02-2022
+	 }
+	]
 }
 ```
 Retrieves the details of settlement.
@@ -2825,7 +2887,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-  [
+   [
 	{
 	 "transfer_date": 23-02-2022,
 	 "transfer_value": 99.0,
@@ -2842,7 +2904,7 @@ curl -X POST --header 'Accept: application/json'
 	 "status": 1,
 	 "update_date": 23-02-2022
 	}
-  ]
+   ]
 }
 ```
 Retrieve all settlements.
@@ -2886,6 +2948,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "invoice_number": "CIR_INV_1643670030261",
 	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
@@ -2904,6 +2967,7 @@ curl -X POST --header 'Accept: application/json'
      "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
      "extra_notes":
 	}
+   ]
 }
 ```
 This endpoint creates an invoice for a given customer. The invoice created will be in "pending" status.
@@ -2943,6 +3007,7 @@ curl -X GET --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "invoice_number": "CIR_INV_1643670030261",
 	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
@@ -2961,6 +3026,7 @@ curl -X GET --header 'Accept: application/json'
      "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
      "extra_notes":
 	}
+   ]
 }
 ```
 Retrieves the invoice with the given invoice number.
@@ -3076,9 +3142,11 @@ curl -X DELETE --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "invoice_number": "CIR_INV_16436702430261"
 	}
+   ]
 }
 ```
 Delete an invoice ONLY IF the invoice has no transactions.
@@ -3118,7 +3186,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{}
+	[{}]
 }
 ```
 
@@ -3166,10 +3234,12 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
+   [
 	{
 	 "status": "Paid",
 	 "invoice_number": "CIR_INV_16436702430261"
 	}
+   ]
 }
 ```
 Settle the invoice with the given id.
@@ -3206,7 +3276,7 @@ curl -X POST --header 'Accept: application/json'
  "errorCode" : null,
  "errorDetails" : null,
  "data" :
-	{}
+	[{}]
 }
 ```
 This endpoint execute internal callback.
