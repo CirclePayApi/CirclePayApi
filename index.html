@@ -2248,7 +2248,7 @@ List all customers using filters.
 <td>Boolean</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The status of the payment link, to know if the payment link is still valid.</td>
+<td>The status of the payment link (0=inactive , 1=active) to know if the payment link is still valid.</td>
 </tr>
 <tr>
 <td>refundPolicyFlag</td>
@@ -2477,7 +2477,7 @@ The error codes used when you fail to create payment link are <a href="#4101">41
 <td>Boolean</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The status of payment link (Active or Not active).</td>
+<td>The status of payment link (0=inactive , 1=active) .</td>
 </tr>
 <tr>
 <td>totalRefund</td>
@@ -3388,7 +3388,7 @@ The error code used when you fail to get a coupon is <a href="#4311">4311</a>
 <td>Boolean</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The status of the coupon for example, expired.</td>
+<td>The status of the coupon (0=inactive , 1=active).</td>
 </tr>
 <tr>
 <td>times_per_customer</td>
@@ -3704,7 +3704,7 @@ The error code used when you fail to list coupons is <a href="#4111">4111</a>
 <td>Boolean</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The status of the form for example, &quot;pending&quot;.</td>
+<td>The status of the form (0=inactive , 1=active).</td>
 </tr>
 </tbody></table>
 <h3 id='returns-43'>Returns</h3>
@@ -3985,7 +3985,7 @@ The error code used when you fail to get a form is <a href="#4111">4111</a>
 <td>Boolean</td>
 <td><span style="color: lightblue;">optional</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The status of the form for example, &quot;pending&quot;.</td>
+<td>The status of the form (0=inactive , 1=active).</td>
 </tr>
 </tbody></table>
 <h3 id='returns-45'>Returns</h3>
