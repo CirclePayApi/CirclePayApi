@@ -259,7 +259,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d first_name="Ahmed"
      -d last_name="Khaled"
      -d email="ahmedkahled@gmail.com"
@@ -364,7 +364,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d first_name="ahmed"
 	 -d last_name="khaled"
 	 -d email="ahmed@gmail.com"
@@ -426,7 +426,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002' 
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002' 
 	 -d document_id="124234345678"
      'https://circlepay.ai/apis/Merchant/updateDocument'
 ```
@@ -472,7 +472,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d status="SUSPENDED"
      'https://circlepay.ai/apis/Merchant/updateStatus'
 ```
@@ -510,7 +510,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/list'
 ```
 
@@ -570,7 +570,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/listDocuments
 ```
 
@@ -622,7 +622,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/getFile/{document_id}'
 ```
 
@@ -663,7 +663,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d Bank_Name="cairo bank"
 	 -d Bank_Account_Num="242424242424"
      'https://circlepay.ai/apis/Merchant/setBillingInfo'
@@ -711,7 +711,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d payment_gateway_id="610b2c486df621209c85215b"
      'https://circlepay.ai/apis/Merchant/configurePaymentGateway'
 ```
@@ -758,7 +758,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'
 ```
 
@@ -801,7 +801,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'
 ```
 
@@ -839,7 +839,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_method_id="610b2c496df621209c852168"
      'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'
 ```
@@ -887,7 +887,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'
 ```
 
@@ -930,7 +930,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'
 ```
 
@@ -973,7 +973,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/listPaymentMethods'
 ```
 
@@ -1025,7 +1025,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Merchant/verifyMerchant'
 ```
 
@@ -1070,7 +1070,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d First_Name="Ahmed"
      -d Last_Name="Khaled"
      -d email="ahmedkahled@gmail.com"
@@ -1127,7 +1127,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d First_Name="Ahmed"
      -d Last_Name="Khaled"
      -d email="ahmedkahled@gmail.com"
@@ -1184,7 +1184,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Customers/get/{customer_mobile_number}'
 ```
 
@@ -1235,7 +1235,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Customers/list'
 ```
 
@@ -1301,7 +1301,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d value=0
      -d currency="EGP"
      -d description="for grocery delivery"
@@ -1362,7 +1362,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Payment_Link/get/{payment_link_url}'
 ```
 
@@ -1421,7 +1421,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Payment_Link/update'
 ```
@@ -1485,7 +1485,7 @@ curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Payment_Link/list/{payment_link_url}'
 ```
 
@@ -1527,7 +1527,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Payment_Link/list'
 ```
 
@@ -1595,7 +1595,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/PayPaymentLink/list'
 ```
@@ -1650,7 +1650,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Payment/get/{transactionId}'
 ```
 
@@ -1708,7 +1708,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d coupon_code="HEMACOUPON"
      'https://circlepay.ai/apis/Payment/list'
 ```
@@ -1795,7 +1795,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d currency="EGP"
 	 -d value=33.0
      'https://circlepay.ai/apis/Refund/requestRefund'
@@ -1846,7 +1846,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Refund/list'
 ```
@@ -1916,7 +1916,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/refund/getRefund/{refundId}'
 ```
 
@@ -1969,7 +1969,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d value=11.0
      -d name="AHMEDCOUPON"
 	 -d expire_date=22-02-2022
@@ -2025,7 +2025,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Coupon/get/{couponCode}'
 ```
 
@@ -2077,7 +2077,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d coupon_code="HEMACOUPON"
      -d name="50% offer"
      'https://circlepay.ai/apis/Coupon/update'
@@ -2137,7 +2137,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Coupon/activate/{coupon_id}'
 ```
 
@@ -2179,7 +2179,7 @@ curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Coupon/deactive/{coupon_id}'
 ```
 
@@ -2221,7 +2221,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/Coupon/list/{payment_link_url}'
 ```
 
@@ -2290,7 +2290,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      -d title="About order"
      'https://circlepay.ai/apis/form/create'
@@ -2422,7 +2422,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/form/get/{payment_link_url}'
 ```
 
@@ -2545,7 +2545,7 @@ curl -X PUT --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      -d title="About you"
      'https://circlepay.ai/apis/form/update'
@@ -2677,7 +2677,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/form/activate/{payment_link_url}'
 ```
 
@@ -2715,7 +2715,7 @@ curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/form/deactivate/{payment_link_url}'
 ```
 
@@ -2754,7 +2754,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/form/listResponses'
 ```
@@ -2816,7 +2816,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/settlements/get/{settlement_id}'
 ```
 
@@ -2859,7 +2859,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d "filter[status]"="pending"
 	 -d "filter[date_time_range]"=5
      'https://circlepay.ai/apis/settlements/list'
@@ -2920,7 +2920,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+     --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d "customer[email]"="ahmed@gmail.com"
      -d "customer[city]"="mansoura"
      -d "invoice[invoice_number]"=55
@@ -2981,7 +2981,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/invoice/get/{invoice_number}'
 ```
 
@@ -3038,7 +3038,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/invoice/list'
 ```
 
@@ -3116,7 +3116,7 @@ curl -X DELETE --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/invoice/delete/{invoice_number}'
 ```
 
@@ -3158,7 +3158,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d invoice_number="CIR_INV_16436702430261"
      'https://circlepay.ai/apis/invoice/payInvoice'
 ```
@@ -3207,7 +3207,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d invoice_number="CIR_INV_16436702430261"
      'https://circlepay.ai/apis/invoice/setInvoiceToPaid'
 ```
@@ -3249,7 +3249,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     --header 'merchant_token: 402880824ff933a4014ff9345d7c0002'
+     --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/callback_service/internalCallback'
 ```
 
