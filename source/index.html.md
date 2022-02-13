@@ -1310,7 +1310,7 @@ enable_Survey |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &
 expire_date |Datetime|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Expire date of the payment link. |
 description |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Description of transaction. |
 shippingPolicyFlag |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy flag. |
-status |Boolean| <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the payment link, to know if the payment link is still valid. |
+status |Boolean| <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the payment link (0=inactive , 1=active) to know if the payment link is still valid. |
 refundPolicyFlag |Boolean| <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The refund policy flag. |
 shippingPolicyDetails |String| <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy Details for example, original sales receipt must accompany returns. |
 refundPolicyDetails |String| <span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The refund policy details for example, refunds and exchanges, Right to cancel your order. |
@@ -1428,7 +1428,7 @@ description |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp
 currency |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The currency used in payment. |
 expire_date |Datetime|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| expire date of the payment link. |
 create_date |Datetime|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| creation date of the payment link. |
-status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of payment link (Active or Not active). |
+status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of payment link (0=inactive , 1=active) . |
 totalRefund |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| total refund if exists. |
 totalTransactions |Numeric|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Total transaction happened. |
 shippingPolicyFlag |Boolean|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The shipping policy flag. |
@@ -2078,7 +2078,7 @@ value |Float|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| T
 name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of the coupon.|
 expire_date |Datetime|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Coupon's expire date.|
 number_of_uses |Numeric|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Number of uses for this coupon. |
-status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The status of the coupon for example, expired.|
+status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The status of the coupon (0=inactive , 1=active).|
 times_per_customer |Numeric|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Times that customer can use the same coupon. |
 
 ### Returns
@@ -2352,7 +2352,7 @@ Parameter|Type|Required|Default|Description|
 payment_link_url |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Payment link url. |
 title |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The title of the form.|
 question_list |Array|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The list that has questions objects. |
-status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the form for example, "pending".|
+status |Boolean|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The status of the form (0=inactive , 1=active).|
 
 ### Returns
 
@@ -2605,7 +2605,7 @@ Parameter|Type|Required|Default|Description|
 payment_link_url |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Payment link url. |
 title |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The title of the form.|
 question_list |Array|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The list that has questions objects. |
-status |Boolean|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The status of the form for example, "pending".|
+status |Boolean|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The status of the form (0=inactive , 1=active).|
 
 ### Returns
 
