@@ -71,6 +71,7 @@ Error&nbsp;Code | Error Text | Error Message
 <span id="8110">8110</span>   | Cannot create a merchant | The merchant phone number is being used by another account.
 <span id="8111">8111</span>   | Cannot find the merchant | The merchant key might be incorrect or doesn't exist.
 <span id="8112">8112</span>   | Config file has incorrect structure | The config JSON file structure is incorrect.
+<span id="8113">8113</span>   | Cannot send OTP | The service failed to send an OTP to the merchant.
 <span id="8116">8116</span>   | Cannot update the merchant phone number | Cannot update the merchant phone number as it's being used by another account.
 
 
