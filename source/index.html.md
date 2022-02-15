@@ -440,8 +440,7 @@ curl -X POST --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-     [{}]
+ "data" : null
 }
 ```
 
@@ -485,8 +484,7 @@ curl -X PUT --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-     [{}]
+ "data" : null
 }
 ```
 
@@ -675,8 +673,7 @@ curl -X POST --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-     [{}]
+ "data" : null
 }
 ```
 
@@ -1039,7 +1036,7 @@ curl -X POST --header 'Content-Type: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" : [{}]
+ "data" : null
 }
 ```
 
@@ -1503,8 +1500,7 @@ curl -X DELETE --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-	[{}]
+ "data" : null
 }
 ```
 
@@ -1612,8 +1608,7 @@ curl -X POST --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-	[{}]
+ "data" : null
 }
 ```
 
@@ -3185,8 +3180,7 @@ curl -X POST --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-	[{}]
+ "data" : null
 }
 ```
 
@@ -3275,8 +3269,7 @@ curl -X POST --header 'Accept: application/json'
  "isError" : False,
  "errorCode" : null,
  "errorDetails" : null,
- "data" :
-	[{}]
+ "data" : null
 }
 ```
 This endpoint execute internal callback.
