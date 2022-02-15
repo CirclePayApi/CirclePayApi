@@ -338,9 +338,9 @@ curl -X GET --header 'Content-Type: application/json'
 	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
-	 "refund_policy": null,
-	 "shipping_policy": null,
-	 "status": null,
+	 "refund_policy": "Refunds and exchanges, right to cancel your order",
+	 "shipping_policy": "Original sales receipt must accompany returns",
+	 "status": 1
 	}
 }
 ```
@@ -391,9 +391,9 @@ curl -X PUT --header 'Accept: application/json'
 	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
-	 "refund_policy": null,
-	 "shipping_policy": null,
-	 "status": null,
+	 "refund_policy": "Refunds and exchanges, right to cancel your order",
+	 "shipping_policy": "Original sales receipt must accompany returns",
+	 "status": 0
 	}
    ]
 }
@@ -528,9 +528,9 @@ curl -X GET --header 'Accept: application/json'
 	 "mobile_number": "+201001212155",
 	 "business_name": "ecommerce",
 	 "business_address": "el-maadi",
-	 "refund_policy": null,
-	 "shipping_policy": null,
-	 "status": null,
+	 "refund_policy": "Refunds and exchanges, right to cancel your order",
+	 "shipping_policy": "Original sales receipt must accompany returns",
+	 "status": 2
 	},
 	{
 	 "first_name": "ibrahim",
@@ -539,9 +539,9 @@ curl -X GET --header 'Accept: application/json'
 	 "mobile_number": "+201001812155",
 	 "business_name": "nike",
 	 "business_address": "el-maadi",
-	 "refund_policy": null,
-	 "shipping_policy": null,
-	 "status": null,
+	 "refund_policy": "Refunds and exchanges, right to cancel your order",
+	 "shipping_policy": "Original sales receipt must accompany returns",
+	 "status": 0
 	}
    ]
 }
