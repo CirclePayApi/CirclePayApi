@@ -350,22 +350,10 @@
                     <a href="#update-a-merchant" class="toc-h2 toc-link" data-title="Update a Merchant">Update a Merchant</a>
                   </li>
                   <li>
-                    <a href="#update-document" class="toc-h2 toc-link" data-title="Update Document">Update Document</a>
-                  </li>
-                  <li>
                     <a href="#update-merchant-status" class="toc-h2 toc-link" data-title="Update merchant status">Update merchant status</a>
                   </li>
                   <li>
                     <a href="#list-all-merchants" class="toc-h2 toc-link" data-title="List all merchants">List all merchants</a>
-                  </li>
-                  <li>
-                    <a href="#list-all-documents" class="toc-h2 toc-link" data-title="List all documents">List all documents</a>
-                  </li>
-                  <li>
-                    <a href="#get-file" class="toc-h2 toc-link" data-title="Get file">Get file</a>
-                  </li>
-                  <li>
-                    <a href="#set-billing-info" class="toc-h2 toc-link" data-title="Set Billing info">Set Billing info</a>
                   </li>
                   <li>
                     <a href="#configure-payment-gateway" class="toc-h2 toc-link" data-title="Configure payment gateway">Configure payment gateway</a>
@@ -452,9 +440,6 @@
                   </li>
                   <li>
                     <a href="#pay-an-invoice" class="toc-h2 toc-link" data-title="Pay an invoice">Pay an invoice</a>
-                  </li>
-                  <li>
-                    <a href="#settle-an-invoice" class="toc-h2 toc-link" data-title="Settle an invoice">Settle an invoice</a>
                   </li>
               </ul>
           </li>
@@ -1046,64 +1031,6 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 <aside class="notice">
 The error codes used when you fail to update a merchant are <a href="#8116">8116</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
 </aside>
-<h2 id='update-document'>Update Document</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span> 
-     <span class="nt">-d</span> <span class="nv">document_id</span><span class="o">=</span><span class="s2">"124234345678"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/updateDocument'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully update the merchant's document"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Updates the specified merchant&#39;s doucment by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>File</td>
-<td>Object</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The merchant&#39;s document file.</td>
-</tr>
-<tr>
-<td>document_id</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Unique identifer of document.</td>
-</tr>
-<tr>
-<td>document_type</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Document&#39;s type (from predefined list).</td>
-</tr>
-</tbody></table>
-<h3 id='returns-8'>Returns</h3>
-<p>Returns the merchant&#39;s document object if the update succeeded. Returns an error if update parameters are invalid.</p>
-
-<aside class="notice">
-The error codes used when you fail to update the merchant's document are <a href="#1110">1110</a> , <a href="#1112">1112</a>
-</aside>
 <h2 id='update-merchant-status'>Update merchant status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1142,7 +1069,7 @@ The error codes used when you fail to update the merchant's document are <a href
 <td>The merchant&#39;s status (ACTIVATED - DEACTIVATED - SUSPENDED)).</td>
 </tr>
 </tbody></table>
-<h3 id='returns-9'>Returns</h3>
+<h3 id='returns-8'>Returns</h3>
 <p>Returns the status property(in merchant&#39;s object) if the update succeeded. Returns an error if update parameters are invalid.</p>
 <h2 id='list-all-merchants'>List all merchants</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1205,166 +1132,8 @@ The error codes used when you fail to update the merchant's document are <a href
 <td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-10'>Returns</h3>
+<h3 id='returns-9'>Returns</h3>
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
-<h2 id='list-all-documents'>List all documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/listDocuments
-</span></code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Documents list returned successfully"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">7969</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"upload_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">22-3-2022</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"last_modified"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-3-2022</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"national id"</span><span class="w">
-     </span><span class="p">},</span><span class="w">
-     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13534234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">7990</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"upload_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">22-2-2022</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"last_modified"</span><span class="p">:</span><span class="w"> </span><span class="mi">23-3-2022</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passport"</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Retrieves all merchants&#39; documents.</p>
-<h3 id='parameters'>Parameters</h3>
-<p>No parameters.</p>
-<h3 id='returns-11'>Returns</h3>
-<p>Returns a document list.</p>
-<h2 id='get-file'>Get file</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/getFile/{document_id}'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Document file returned successfully"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
-    </span><span class="p">[</span><span class="w">
-     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"document_Id"</span><span class="p">:</span><span class="s2">"3264"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"file_stream"</span><span class="p">:</span><span class="s2">"e:</span><span class="se">\\</span><span class="s2">b.txt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"file_ext"</span><span class="p">:</span><span class="w"> </span><span class="s2">".txt"</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Retrieves file document.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>document_id</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Unique identifier for the document object.</td>
-</tr>
-</tbody></table>
-<h3 id='returns-12'>Returns</h3>
-<p>Returns the file document object.</p>
-<h2 id='set-billing-info'>Set Billing info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="nt">-d</span> <span class="nv">Bank_Name</span><span class="o">=</span><span class="s2">"cairo bank"</span>
-     <span class="nt">-d</span> <span class="nv">Bank_Account_Num</span><span class="o">=</span><span class="s2">"242424242424"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/setBillingInfo'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully updated the billing info"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Updates the billing info by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Bank_Name</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Bank&#39;s name.</td>
-</tr>
-<tr>
-<td>Bank_Account_Num</td>
-<td>Numeric</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The bank account number.</td>
-</tr>
-<tr>
-<td>Bank_Branch_Name</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The bank branch name.</td>
-</tr>
-<tr>
-<td>SWIFT</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Society for Worldwide Interbank Financial Telecommunications, the SWIFT code can be found on a bank&#39;s website, on your bank statement, or through an online search.</td>
-</tr>
-<tr>
-<td>IBAN</td>
-<td>Numeric</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>international bank account number, is a standard international numbering system developed to identify an overseas bank account. The number starts with a two-digit country code, then two numbers, followed by several more alphanumeric characters.</td>
-</tr>
-</tbody></table>
-<h3 id='returns-13'>Returns</h3>
-<p>Returns the billing info object if the update succeeded. Returns an error if update parameters are invalid.</p>
-
-<aside class="notice">
-The error code used when you fail to set the billing info is <a href="#1110">1110</a>
-</aside>
 <h2 id='configure-payment-gateway'>Configure payment gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1415,7 +1184,7 @@ The error code used when you fail to set the billing info is <a href="#1110">111
 <td>The gateway config object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-14'>Returns</h3>
+<h3 id='returns-10'>Returns</h3>
 <p>Returns the payment gateway id.</p>
 
 <aside class="notice">
@@ -1463,7 +1232,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-15'>Returns</h3>
+<h3 id='returns-11'>Returns</h3>
 <p>Returns id of enabled payment gateway.</p>
 
 <aside class="notice">
@@ -1510,7 +1279,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-16'>Returns</h3>
+<h3 id='returns-12'>Returns</h3>
 <p>Returns the id of disabled payment gateway.</p>
 <h2 id='set-payment-method-fee'>Set payment method fee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1583,7 +1352,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>The Refund fee percentage.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-17'>Returns</h3>
+<h3 id='returns-13'>Returns</h3>
 <p>Returns the payment method id.</p>
 
 <aside class="notice">
@@ -1631,7 +1400,7 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-18'>Returns</h3>
+<h3 id='returns-14'>Returns</h3>
 <p>Returns id of enabled payment method.</p>
 
 <aside class="notice">
@@ -1679,7 +1448,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-19'>Returns</h3>
+<h3 id='returns-15'>Returns</h3>
 <p>Returns id of the disabled payment method.</p>
 
 <aside class="notice">
@@ -1720,9 +1489,9 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list allowed payment methods to the merchant.</p>
-<h3 id='parameters-2'>Parameters</h3>
+<h3 id='parameters'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-20'>Returns</h3>
+<h3 id='returns-16'>Returns</h3>
 <p>Returns a payment methods list of the merchant.</p>
 <h2 id='verify-merchant'>Verify Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1743,7 +1512,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint allow you to verify merchant.</p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1768,7 +1537,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <td>One-time password (OTP) systems provide a mechanism for logging on to a network or service using a unique password that can only be used once.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-21'>Returns</h3>
+<h3 id='returns-17'>Returns</h3>
 <p>Verify merchant mobile to compelete registration.</p>
 
 <aside class="notice">
@@ -1878,7 +1647,7 @@ The error code used when you fail to verify merchant is <a href="#2111">2111</a>
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-22'>Returns</h3>
+<h3 id='returns-18'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -1988,7 +1757,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-23'>Returns</h3>
+<h3 id='returns-19'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s update succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -2044,7 +1813,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 <td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-24'>Returns</h3>
+<h3 id='returns-20'>Returns</h3>
 <p>Returns the Customer object for a valid mobile number.</p>
 
 <aside class="notice">
@@ -2093,13 +1862,13 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
-<h3 id='parameters-4'>Parameters</h3>
+<h3 id='parameters-3'>Parameters</h3>
 <p>No parameters.</p>
 
 <aside class="notice">
 List all customers using filters.
 </aside>
-<h3 id='returns-25'>Returns</h3>
+<h3 id='returns-21'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2157,7 +1926,7 @@ List all customers using filters.
 <td>Unique identifier for the payment object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-26'>Returns</h3>
+<h3 id='returns-22'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2218,9 +1987,9 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payments.</p>
-<h3 id='parameters-5'>Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-23'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 
 <aside class="notice">
@@ -2270,7 +2039,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
 <td>Unique identifier for the transaction object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-24'>Returns</h3>
 <p>Returns the refund id. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -2319,9 +2088,9 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>List refund objects.</p>
-<h3 id='parameters-6'>Parameters</h3>
+<h3 id='parameters-5'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-25'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -2375,7 +2144,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-26'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
@@ -2450,7 +2219,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>The details of the invoice object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-27'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -2513,7 +2282,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-32'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2601,7 +2370,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-33'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 
 <aside class="notice">
@@ -2649,7 +2418,7 @@ The error code used when you fail to list invoices are <a href="#3110">3110</a>
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -2722,54 +2491,8 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-35'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
-<h2 id='settle-an-invoice'>Settle an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="nt">-d</span> <span class="nv">invoice_number</span><span class="o">=</span><span class="s2">"CIR_INV_16436702430261"</span>
-     <span class="s1">'https://circlepay.ai/apis/invoice/setInvoiceToPaid'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"You successfully settled the invoice"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"errorDetails"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
- </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
-   </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paid"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_16436702430261"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Settle the invoice with the given id.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>invoice_number</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Invoice&#39;s number.</td>
-</tr>
-</tbody></table>
-<h3 id='returns-36'>Returns</h3>
-<p>Returns the settled invoice number and status if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
 <h2 id='general'>General</h2>
