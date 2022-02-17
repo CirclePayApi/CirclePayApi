@@ -73,6 +73,7 @@ Error&nbsp;Code | Error Text | Error Message
 <span id="8112">8112</span>   | Config file has incorrect structure | The config JSON file structure is incorrect.
 <span id="8113">8113</span>   | Cannot send OTP | The service failed to send an OTP to the merchant.
 <span id="8114">8114</span>   | Invalid Callback URL | Callback URL structure is invalid.
+<span id="8115">8115</span>   | Merchant account is inactive | Cannot do this operation as the account is inactive.
 <span id="8116">8116</span>   | Cannot update the merchant phone number | Cannot update the merchant phone number as it's being used by another account.
 
 
