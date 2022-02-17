@@ -1786,8 +1786,6 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d currency="EGP"
-	 -d value=33.0
      'https://circlepay.ai/apis/Refund/requestRefund'
 ```
 
@@ -1812,8 +1810,6 @@ This endpoint helps you to request refund.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 transaction_id |Integer|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the transaction object.|
-value |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Value of the refund.|
-currency |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The currency type used. |
 
 
 ### Returns
@@ -1838,7 +1834,6 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d payment_link_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/Refund/list'
 ```
 
@@ -1859,9 +1854,6 @@ curl -X POST --header 'Accept: application/json'
 		"update_date": 23-02-2022,
 		"value": 40.0,
 		"transaction_id": 3,
-		"refundFees": 2.0,
-		"Payment_Method": ["Visa","MasterCard"],
-		"customer_mobile": "+201001313454",
 		"status": "pending"
 	 },
 	 {
@@ -1871,9 +1863,6 @@ curl -X POST --header 'Accept: application/json'
 		"update_date": 23-02-2022,
 		"value": 90.0,
 		"transaction_id": 3,
-		"refundFees": 4.0,
-		"Payment_Method": ["Visa","MasterCard"],
-		"customer_mobile": "+201001323454",
 		"status": "paid"
 	 }
     ]
@@ -1881,13 +1870,9 @@ curl -X POST --header 'Accept: application/json'
 ```
 List refund objects.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-transaction_id |Integer|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of transaction object. |
-customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
-payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
-invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
-Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Refunds list returned based on this filter object.
+### Parameters
+
+No parameters
 
 ### Returns
 
@@ -1927,9 +1912,6 @@ curl -X GET --header 'Accept: application/json'
 	 "update_date": 23-02-2022,
 	 "value": 90.0,
 	 "transaction_id": 3,
-	 "refundFees": 4.0,
-	 "Payment_Method": ["Visa","MasterCard"],
-	 "customer_mobile": "+201001323454",
 	 "status": "paid"
 	}
    ]
