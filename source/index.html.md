@@ -646,6 +646,94 @@ Returns the id of disabled payment gateway.
 
 ####################################################################################
 
+## List payment gateways
+
+```shell
+curl -X GET --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/Merchant/listPaymentGateway'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "You successfully list payment gateways",
+ "isError" : False,
+ "errorCode" : null,
+ "errorDetails" : null,
+ "data" :
+[
+    {
+      "id": "610b2c486df621209c85215a",
+      "name": "MyFatoorah",
+      "status": false,
+      "config": {
+        "id": 1,
+        "apiKey": "RY6GXFd6KJKBZ98PHPLJOpmXthqkppqM3FF79cbUhv_MACpIAQ4LD3R5MemgqnA3BgVtEa-NeIItV4fFawY4XalaXuRKqcYM2MXIaYbvJnudshMQSOrQwWcvetktUzdNxQxUsoPAu6vEKlynpVkf0VYqr-9SLYSfvxKiMe6rnqGmtwMC5fcUdkfgrVznxCTr4B7dqQX09vU1_YC_gFzLxQPTP5z3Juum1JAxxv8kJ7RShclqMcWM_g2tNWzy3omqGqUflWobBBe3ebdiLtIF9pzYTqOvHsVi6k9HM6AnKR79hTQbfVICTacdhvNGKhy6HbjsaShDfI6gg4DgZ5dBjOboth9lPtqSb2OBB_3vbvUjyeOa71I5DbyEWx4Nx96luiybyvjf0ig8_yAs5HeuPz2BPPeglaila0fhW79KsKfMs9CBjKLDsJJ4EPMR6TALwefsBebOPLX6fqUvYzAuu4T8lUTAl1LlV_QeI1sc6IAc5KmkHzodRw-lQdq201a9SG6qfOH61QP_hQwS98tObIdBqQAhu2_oMNDOhYQ9kTVrSgQTrCkYTmhDI3xTp8TA09OtH7I80g-gUVf_y_zYEbJXomFVrRcPHHrt9tl1DJ9wAiaL6P9o1QrEVf7zAmLn8FedgGLdeBjOcIFjcCCQd0eLQZxTC7krBHYAXZeZbW0-RfaD",
+        "signature": "",
+        "merchantCode": "",
+        "merchantRefNum": ""
+      }
+    },
+    {
+      "id": "610b2c486df621209c85215b",
+      "name": "PayMob",
+      "status": false,
+      "config": {
+        "CARD": {
+          "iframeID": "64969",
+          "integrationID": "33483"
+        },
+        "CASH": {
+          "iframeID": "",
+          "integrationID": ""
+        },
+        "Kiosk": {
+          "iframeID": "",
+          "integrationID": "107439"
+        },
+        "Wallet": {
+          "iframeID": "",
+          "integrationID": "104351"
+        },
+        "apiKey": "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam94TkRnM01Td2libUZ0WlNJNkltbHVhWFJwWVd3aUxDSmpiR0Z6Y3lJNklrMWxjbU5vWVc1MEluMC4ybzdQVld2UHJTR0MzR0xCaDF4VzZjQWhiNUVFMS1uN3lIeGVTTFNENVF5OFlHeDBQQzY3OGM5dXJnZ2R4MHZSSDR5NHdHcG01VXM4NmJ1bWNMeU4xdw==",
+        "SUHOOLA": {
+          "iframeID": "326757",
+          "integrationID": "33483"
+        }
+      }
+    },
+    {
+      "id": "613927082de6eb5dc061d516",
+      "name": "Fawry",
+      "status": false,
+      "config": {
+        "id": 4,
+        "apiKey": "f19f9720-6462-466d-b9bc-4128f772bafb",
+        "signature": "as",
+        "merchantCode": "siYxylRjSPx5Hw/oRBKFwQ==",
+        "merchantRefNum": "as"
+      }
+    }
+  ]
+```
+
+This endpoint list merchant's payment gateways.
+
+### Parameters
+
+No Parameters.
+
+### Returns
+
+Returns the payment gateways list for merchant.
+
+####################################################################################
+
 ## Set payment method fee
 
 ```shell
@@ -833,6 +921,53 @@ No parameters.
 Returns a payment methods list of the merchant.
 
 ####################################################################################
+
+## Send OTP
+
+```shell
+curl -X POST --header 'Content-Type: application/json'
+     --header 'Accept: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     -d merchant_mobile="+201012794709"
+	 -d country_code="+20"
+     'https://circlepay.ai/apis/Merchant/send/otp'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "You successfully send otp and validate the merchant",
+ "isError" : False,
+ "errorCode" : null,
+ "errorDetails" : null,
+ "data" :
+   [
+    {
+      "status": true
+    }
+   ]
+}
+```
+
+This endpoint sends the OTP to validate the merchant.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+merchant_mobile |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The merchant's mobile number. |
+country_code |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The country code for example, the country code for egypt is +20
+
+### Returns
+
+Returns the status (true or false).
+
+<aside class="notice">
+The error codes used when you fail to send otp to merchant are <a href="#8118">8111</a> , <a href="#8113">8113</a>
+</aside>
+
+########################################################################################
 
 ## Verify Merchant
 
