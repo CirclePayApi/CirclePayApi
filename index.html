@@ -2810,7 +2810,6 @@ The error codes used when you fail to pay or execute payment link are <a href="#
      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"coupon_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HEMACOUPON"</span><span class="p">,</span><span class="w">
      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
      </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
@@ -2851,7 +2850,6 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="nt">-d</span> <span class="nv">coupon_code</span><span class="o">=</span><span class="s2">"HEMACOUPON"</span>
      <span class="s1">'https://circlepay.ai/apis/Payment/list'</span>
 </code></pre></div>
 <blockquote>
@@ -2874,7 +2872,6 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3KXl3iA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030261"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"coupon_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HEMACOUPON"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
@@ -2892,7 +2889,6 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3RXl3iA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"invoice_num"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_1643670030264"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"coupon_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AHMEDCOUPON"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"net_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
@@ -2904,52 +2900,8 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payments.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>coupon_code</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The coupon code.</td>
-</tr>
-<tr>
-<td>customer_mobile</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Customer&#39;s mobile number.</td>
-</tr>
-<tr>
-<td>payment_link_url</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The payment link url.</td>
-</tr>
-<tr>
-<td>invoice_num</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The invoice number.</td>
-</tr>
-<tr>
-<td>Filter</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Payments list returned based on this filter object.</td>
-</tr>
-</tbody></table>
+<h3 id='parameters-5'>Parameters</h3>
+<p>No parameters</p>
 <h3 id='returns-33'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 
