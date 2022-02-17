@@ -1672,7 +1672,6 @@ curl -X GET --header 'Accept: application/json'
 	 "status": "pending",
 	 "payment_link_url": "https://bit.ly/3KXl3iA",
 	 "invoice_num": "CIR_INV_1643670030261",
-	 "coupon_code": "HEMACOUPON",
 	 "value": 99.0,
 	 "net_fees": 1.0,
 	 "currency": "EGP",
@@ -1708,7 +1707,6 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d coupon_code="HEMACOUPON"
      'https://circlepay.ai/apis/Payment/list'
 ```
 
@@ -1732,7 +1730,6 @@ curl -X POST --header 'Accept: application/json'
 		"status": "pending",
 		"payment_link_url": "https://bit.ly/3KXl3iA",
 		"invoice_num": "CIR_INV_1643670030261",
-		"coupon_code": "HEMACOUPON",
 		"value": 99.0,
 		"net_fees": 1.0,
 		"currency": "EGP",
@@ -1750,7 +1747,6 @@ curl -X POST --header 'Accept: application/json'
 		"status": "pending",
 		"payment_link_url": "https://bit.ly/3RXl3iA",
 		"invoice_num": "CIR_INV_1643670030264",
-		"coupon_code": "AHMEDCOUPON",
 		"value": 99.0,
 		"net_fees": 1.0,
 		"currency": "EGP",
@@ -1764,13 +1760,9 @@ curl -X POST --header 'Accept: application/json'
 
 Retrieves all payments.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-coupon_code |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The coupon code. |
-customer_mobile |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| Customer's mobile number. |
-payment_link_url |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The payment link url. |
-invoice_num |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The invoice number. |
-Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Payments list returned based on this filter object.
+### Parameters
+
+No parameters
 
 ### Returns
 
