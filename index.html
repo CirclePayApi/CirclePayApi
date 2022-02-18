@@ -504,7 +504,7 @@ Each transaction requires a definition for a payment gateway and a payment metho
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="s1">'https://circlepay.ai/apis/PaymentGateway/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/gateway/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -556,7 +556,7 @@ The error code used when you fail to list payment gateways is <a href="#1110">11
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="s1">'https://circlepay.ai/apis/PaymentGateway/get/{payment_gateway_ID}'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/gateway/get/{payment_gateway_ID}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -676,7 +676,8 @@ The error codes used when you fail to get specific payment gateway are <a href="
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="s1">'https://circlepay.ai/apis/PaymentMethod/list/{payment_gateway_id}'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/methods/list/{paymentGatewayId}
+'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -802,7 +803,7 @@ The error codes used when you fail to get a specific payment method are <a href=
      <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001414133"</span>
      <span class="nt">-d</span> <span class="nv">Business_Name</span><span class="o">=</span><span class="s2">"E-commerce"</span>
      <span class="nt">-d</span> <span class="nv">Business_Address</span><span class="o">=</span><span class="s2">"El-maadi"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/create'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/create'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -895,7 +896,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/get'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/get'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -951,7 +952,7 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
      <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001215155"</span>
      <span class="nt">-d</span> <span class="nv">business_name</span><span class="o">=</span><span class="s2">"ecommerce"</span>
      <span class="nt">-d</span> <span class="nv">business_address</span><span class="o">=</span><span class="s2">"el-maadi"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/update'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/update'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1043,7 +1044,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span><span class="s2">"SUSPENDED"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/updateStatus'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/update/status'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1082,7 +1083,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1146,7 +1147,7 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"610b2c486df621209c85215b"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/configurePaymentGateway'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/configure'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1201,7 +1202,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/enable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1249,7 +1250,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/disable/{payment_gateway_id}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1292,7 +1293,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/listPaymentGateway'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1369,7 +1370,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">payment_method_id</span><span class="o">=</span><span class="s2">"610b2c496df621209c852168"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/fee/set'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1445,7 +1446,7 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1493,7 +1494,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1541,7 +1542,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/listPaymentMethods'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/payment/method/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1582,7 +1583,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">merchant_mobile</span><span class="o">=</span><span class="s2">"+201012794709"</span>
      <span class="nt">-d</span> <span class="nv">country_code</span><span class="o">=</span><span class="s2">"+20"</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/send/otp'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/send/otp'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1637,7 +1638,7 @@ The error codes used when you fail to send otp to merchant are <a href="#8118">8
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Merchant/verifyMerchant'</span>
+     <span class="s1">'https://circlepay.ai/apis/merchants/verify'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1693,7 +1694,7 @@ The error code used when you fail to verify merchant is <a href="#2111">2111</a>
      <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001616166"</span>
      <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
      <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
-     <span class="s1">'https://circlepay.ai/apis/Customer/create'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/create'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1803,7 +1804,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
      <span class="nt">-d</span> <span class="nv">mobile_number</span><span class="o">=</span><span class="s2">"+201001717177"</span>
      <span class="nt">-d</span> <span class="nv">country</span><span class="o">=</span><span class="s2">"Egypt"</span>
      <span class="nt">-d</span> <span class="nv">city</span><span class="o">=</span><span class="s2">"cairo"</span>
-     <span class="s1">'https://circlepay.ai/apis/Customer/update'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/update'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1907,7 +1908,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Customers/get/{customer_mobile_number}'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/get/{customer_mobile_number}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1963,7 +1964,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Customers/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/customer/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2014,7 +2015,7 @@ List all customers using filters.
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Payment/get/{transactionId}'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/get/{transactionId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2076,7 +2077,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Payment/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/payment/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2141,7 +2142,7 @@ The error codes used when you fail to list payment objects are <a href="#3110">3
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Refund/requestRefund'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/request'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2193,7 +2194,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/Refund/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/list'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2240,7 +2241,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/refund/getRefund/{refundId}'</span>
+     <span class="s1">'https://circlepay.ai/apis/refund/get/{refundId}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2432,7 +2433,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="s1">'https://circlepay.ai/apis/invoice/list'</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/list/{customer_mobile}'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -2569,7 +2570,7 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
      <span class="nt">-d</span> <span class="nv">invoice_number</span><span class="o">=</span><span class="s2">"CIR_INV_16436702430261"</span>
-     <span class="s1">'https://circlepay.ai/apis/invoice/payInvoice'</span>
+     <span class="s1">'https://circlepay.ai/apis/invoice/pay'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
