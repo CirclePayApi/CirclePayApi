@@ -44,7 +44,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/PaymentGateway/list'
+     'https://circlepay.ai/apis/payment/gateway/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -92,7 +92,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/PaymentGateway/get/{payment_gateway_ID}'
+     'https://circlepay.ai/apis/payment/gateway/get/{payment_gateway_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -158,7 +158,8 @@ curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/PaymentMethod/list/{payment_gateway_id}'
+     'https://circlepay.ai/apis/payment/methods/list/{paymentGatewayId}
+'
 ```
 
 > The above command returns JSON structured like this:
@@ -266,7 +267,7 @@ curl -X POST --header 'Accept: application/json'
      -d mobile_number="+201001414133"
 	 -d Business_Name="E-commerce"
      -d Business_Address="El-maadi"
-     'https://circlepay.ai/apis/Merchant/create'
+     'https://circlepay.ai/apis/merchants/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -319,7 +320,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-     'https://circlepay.ai/apis/Merchant/get'
+     'https://circlepay.ai/apis/merchants/get'
 ```
 
 > The above command returns JSON structured like this:
@@ -371,7 +372,7 @@ curl -X PUT --header 'Accept: application/json'
 	 -d mobile_number="+201001215155"
 	 -d business_name="ecommerce"
 	 -d business_address="el-maadi"
-     'https://circlepay.ai/apis/Merchant/update'
+     'https://circlepay.ai/apis/merchants/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -429,7 +430,7 @@ curl -X PUT --header 'Accept: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d status="SUSPENDED"
-     'https://circlepay.ai/apis/Merchant/updateStatus'
+     'https://circlepay.ai/apis/merchants/update/status'
 ```
 
 > The above command returns JSON structured like this:
@@ -464,7 +465,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/list'
+     'https://circlepay.ai/apis/merchants/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -524,7 +525,7 @@ curl -X POST --header 'Accept: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d payment_gateway_id="610b2c486df621209c85215b"
-     'https://circlepay.ai/apis/Merchant/configurePaymentGateway'
+     'https://circlepay.ai/apis/merchants/payment/gateway/configure'
 ```
 
 > The above command returns JSON structured like this:
@@ -571,7 +572,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/enable/{payment_gateway_id}'
+     'https://circlepay.ai/apis/merchants/payment/gateway/enable/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -615,7 +616,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/disable/{payment_gateway_id}'
+     'https://circlepay.ai/apis/merchants/payment/gateway/disable/{payment_gateway_id}'
 ```
 
 > The above command returns JSON structured like this:
@@ -654,7 +655,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/listPaymentGateway'
+     'https://circlepay.ai/apis/merchants/payment/gateway/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -743,7 +744,7 @@ curl -X POST --header 'Content-Type: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d payment_method_id="610b2c496df621209c852168"
-     'https://circlepay.ai/apis/Merchant/setPaymentMethodFee'
+     'https://circlepay.ai/apis/merchants/payment/method/fee/set'
 ```
 
 > The above command returns JSON structured like this:
@@ -791,7 +792,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/enablePaymentMethod/{payment_method_ID}'
+     'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -835,7 +836,7 @@ curl -X DELETE --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/disablePaymentMethod/{payment_method_ID}'
+     'https://circlepay.ai/apis/merchants/payment/method/enable/{payment_method_ID}'
 ```
 
 > The above command returns JSON structured like this:
@@ -879,7 +880,7 @@ curl -X GET --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/listPaymentMethods'
+     'https://circlepay.ai/apis/merchants/payment/method/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -932,7 +933,7 @@ curl -X POST --header 'Content-Type: application/json'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d merchant_mobile="+201012794709"
 	 -d country_code="+20"
-     'https://circlepay.ai/apis/Merchant/send/otp'
+     'https://circlepay.ai/apis/merchants/send/otp'
 ```
 
 > The above command returns JSON structured like this:
@@ -977,7 +978,7 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Merchant/verifyMerchant'
+     'https://circlepay.ai/apis/merchants/verify'
 ```
 
 > The above command returns JSON structured like this:
@@ -1027,7 +1028,7 @@ curl -X POST --header 'Accept: application/json'
      -d mobile_number="+201001616166"
 	 -d country="Egypt"
      -d city="cairo"
-     'https://circlepay.ai/apis/Customer/create'
+     'https://circlepay.ai/apis/customer/create'
 ```
 
 > The above command returns JSON structured like this:
@@ -1085,7 +1086,7 @@ curl -X PUT --header 'Accept: application/json'
      -d mobile_number="+201001717177"
 	 -d country="Egypt"
      -d city="cairo"
-     'https://circlepay.ai/apis/Customer/update'
+     'https://circlepay.ai/apis/customer/update'
 ```
 
 > The above command returns JSON structured like this:
@@ -1137,7 +1138,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Customers/get/{customer_mobile_number}'
+     'https://circlepay.ai/apis/customer/get/{customer_mobile_number}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1189,7 +1190,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Customers/list'
+     'https://circlepay.ai/apis/customer/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1254,7 +1255,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Payment/get/{transactionId}'
+     'https://circlepay.ai/apis/payment/get/{transactionId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1312,7 +1313,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Payment/list'
+     'https://circlepay.ai/apis/payment/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1391,7 +1392,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Refund/requestRefund'
+     'https://circlepay.ai/apis/refund/request'
 ```
 
 > The above command returns JSON structured like this:
@@ -1439,7 +1440,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/Refund/list'
+     'https://circlepay.ai/apis/refund/list'
 ```
 
 > The above command returns JSON structured like this:
@@ -1497,7 +1498,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/refund/getRefund/{refundId}'
+     'https://circlepay.ai/apis/refund/get/{refundId}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1670,7 +1671,7 @@ curl -X GET --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     'https://circlepay.ai/apis/invoice/list'
+     'https://circlepay.ai/apis/invoice/list/{customer_mobile}'
 ```
 
 > The above command returns JSON structured like this:
@@ -1791,7 +1792,7 @@ curl -X POST --header 'Accept: application/json'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
 	 -d invoice_number="CIR_INV_16436702430261"
-     'https://circlepay.ai/apis/invoice/payInvoice'
+     'https://circlepay.ai/apis/invoice/pay'
 ```
 
 > The above command returns JSON structured like this:
