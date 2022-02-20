@@ -450,6 +450,14 @@
               </ul>
           </li>
           <li>
+            <a href="#callback-service" class="toc-h1 toc-link" data-title="Callback Service">Callback Service</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#internal-callback" class="toc-h2 toc-link" data-title="Internal Callback">Internal Callback</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2633,6 +2641,35 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 </aside>
 <h3 id='returns-33'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
+<h1 id='callback-service'>Callback Service</h1><h2 id='internal-callback'>Internal Callback</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/callback_service/internalCallback'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:
+<code>json
+{
+ &quot;message&quot; : &quot;The internal callback executed successfully&quot;,
+ &quot;isError&quot; : False,
+ &quot;errorCode&quot; : null,
+ &quot;errorDetails&quot; : null,
+ &quot;data&quot; : null
+}
+</code>
+This endpoint execute internal callback.
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+transaction_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of transaction object. |
+transaction_type |Integer|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The type of transaction (1 for payments, 2 for refund). |
+transaction_status |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Can be used to track the state or condition of the transaction record for example, &quot;pending&quot;. |
+payment_gateway_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment gateway. |
+payment_method_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment method. |</p>
+<h3 id='returns-34'>Returns</h3>
+<p>Internal callback from backend to open api layer to be forward to merchant callback.</p>
+</blockquote>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
 <h2 id='general'>General</h2>
