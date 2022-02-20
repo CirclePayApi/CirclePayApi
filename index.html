@@ -486,6 +486,9 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#validation-rules" class="toc-h1 toc-link" data-title="Validation Rules">Validation Rules</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://circlepay.ai/#howtouse'>Sign Up for CirclePay</a></li>
@@ -2942,6 +2945,24 @@ payment_method_name |String|<span style="color: red;">required</span> |&nbsp;&nb
 <td><span id="9112">9112</span></td>
 <td>Refund request rejected</td>
 <td>The payment gateway rejected the refund request for the following reason {ATTRIBUTE}.</td>
+</tr>
+</tbody></table>
+<h1 id='validation-rules'>Validation Rules</h1>
+<p>Validation rules verify that the data a user enters in a record meets the CirclePay standards.</p>
+
+<table><thead>
+<tr>
+<th>Parmeter</th>
+<th>Type</th>
+<th>Validation Rule</th>
+<th>Error&nbsp;Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Email</td>
+<td>Text</td>
+<td>Max length(chr) - 50 characters<br> Min length(chr) - NA<br> Must be a valid email format</td>
+<td>&quot;The email must be less than 50 characters&quot;<br>&quot;The provided email isn&#39;t valid&quot;<br>&quot;The email is required&quot;</td>
 </tr>
 </tbody></table>
 
