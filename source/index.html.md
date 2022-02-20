@@ -9,6 +9,7 @@ toc_footers:
 
 includes:
   - errors
+  - validations
 
 search: true
 
