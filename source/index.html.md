@@ -1574,7 +1574,7 @@ curl -X POST --header 'Accept: application/json'
 	 "customer_mobile": "+201001212333",
 	 "status": 1,
 	 "create_date": 10-12-2022,
-	 "due_date": 14-12-2022,
+	 "due_date": 2022-11-14,
      "pref_payment_method": "CARD/PayMob",
 	 "shipping_fees": 4.0,
 	 "discount_value": 11.0,
@@ -1832,7 +1832,9 @@ Pay the invoice if a valid invoice number was provided. Returns an error otherwi
 ####################################################################################
 
 # Callback Service
+
 ## Internal Callback
+
 ```shell
 curl -X POST --header 'Accept: application/json'
      --header 'Content-Type: application/json'
@@ -1842,6 +1844,7 @@ curl -X POST --header 'Accept: application/json'
      'https://circlepay.ai/apis/callback_service/internalCallback'
 ```
 > The above command returns JSON structured like this:
+
 ```json
 {
  "message" : "The internal callback executed successfully",
@@ -1852,6 +1855,7 @@ curl -X POST --header 'Accept: application/json'
 }
 ```
 This endpoint execute internal callback.
+
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 transaction_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Unique identifier of transaction object. |
@@ -1859,6 +1863,8 @@ transaction_type |Integer|<span style="color: red;">required</span> |&nbsp;&nbsp
 transaction_status |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Can be used to track the state or condition of the transaction record for example, "pending". |
 payment_gateway_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment gateway. |
 payment_method_name |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The name of payment method. |
+
+
 ### Returns
 Internal callback from backend to open api layer to be forward to merchant callback.
 

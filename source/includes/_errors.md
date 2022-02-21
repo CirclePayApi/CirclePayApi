@@ -10,7 +10,9 @@ Error&nbsp;Code | Error Text | Error Message
 <span id="1111">1111</span>   | Invalid request structure | The object structure sent is invalid. If you follow the documentation and still facing the same issue, please contact the support team.
 <span id="1112">1112</span>   | Invalid request data | The {ATTRIBUTE} has invalid value.
 <span id="1114">1114</span>   | Field length error | The field {ATTRIBUTE} length must be less than {ATTRIBUTE} and more than {ATTRIBUTE}.
+<span id="1115">1115</span>   | Invalid date format | The date format is invalid. Please refer to the documentation for the right date format.
 <span id="1116">1116</span>   | Invalid email | The email format is invalid.
+<span id="1117">1117</span>   | Invalid phone number format | The phone number format is invalid (International format is required).
 
 ## Authentication
 
