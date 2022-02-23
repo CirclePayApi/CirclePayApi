@@ -634,6 +634,7 @@ curl -X DELETE --header 'Content-Type: application/json'
 	  "payment_gateway_ID":"610b2c486df621209c85215b"
 	}
    ]
+}
 ```
 
 This endpoint disable specific gateway and it's related payment methods.
