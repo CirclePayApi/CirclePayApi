@@ -723,6 +723,7 @@ curl -X GET --header 'Content-Type: application/json'
       }
     }
   ]
+}
 ```
 
 This endpoint list merchant's payment gateways.
