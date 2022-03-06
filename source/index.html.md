@@ -107,8 +107,8 @@ curl -X GET --header 'Content-Type: application/json'
  "data" : 
    [
     {
-	 "payment_gateway_ID": "610b2c486df621209c852123",
-	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+      "id": "610b2c486df621209c85215a",
+      "name": "MyFatoorah"
     }
    ]
 }
