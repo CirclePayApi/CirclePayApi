@@ -949,7 +949,6 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      -d merchant_mobile="+201012794709"
 	 -d country_code="+20"
      'https://circlepay.ai/apis/merchants/send/otp'
@@ -996,7 +995,6 @@ curl -X POST --header 'Content-Type: application/json'
      --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
      'https://circlepay.ai/apis/merchants/verify'
 ```
 
