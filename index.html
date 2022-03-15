@@ -535,7 +535,7 @@
 </ul>
 
 <p><strong>9</strong>. List Transactions:<br/>
-&nbsp;9.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">POST /payment/list</a><br></p>
+&nbsp;9.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">GET /payment/list</a><br></p>
 <h1 id='payment-gateway'>Payment Gateway</h1>
 <p>To process online transactions, you will need both a payment gateway and a payment method. </p>
 
@@ -2161,7 +2161,7 @@ List all customers using filters.
 <aside class="notice">
 The error code used when you fail to get payment object is <a href="#9111">9111</a>
 </aside>
-<h2 id='list-all-payments'>List all payments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+<h2 id='list-all-payments'>List all payments</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
@@ -2220,10 +2220,6 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <p>No parameters</p>
 <h3 id='returns-26'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
-
-<aside class="notice">
-The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
-</aside>
 <h1 id='refund'>Refund</h1>
 <p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
 <h2 id='request-a-refund'>Request a refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
