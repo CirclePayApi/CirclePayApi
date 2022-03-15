@@ -92,21 +92,20 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "Payment gateways list returned successfully",
- "data" :
-	[
-	 { 
-		"id": "610b2c486df621209c85215b",
-		"name": "MyFatoorh"
-	 },
-	 {
-		"id": "610b2c486df621209c85215a",
-		"name": "Fawry"
-	 }  
-	]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "id": "610b2c486df621209c85215a",
+      "name": "MyFatoorah"
+    },
+    {
+      "id": "613927082de6eb5dc061d516",
+      "name": "Fawry"
+    },
+  ],
+  "isError": false
 }
 ```
 
@@ -140,17 +139,16 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "Payment gateway object returned successfully",
- "data" : 
-   [
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
     {
       "id": "610b2c486df621209c85215a",
       "name": "MyFatoorah"
     }
-   ]
+  ],
+  "isError": false
 }
 ```
 
@@ -207,23 +205,22 @@ curl -X GET --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "Payment methods list returned successfully",
- "data" :
-	[
-	 {
-		"id": "610b2c496df621209c852163",
-		"name": "Visa",
-		"gateway_id": "610b2c486df621209c85215b"
-	 },
-	 {
-		"id": "610b2c496df621209c852168",
-		"name": "MasterCard",
-		"gateway_id": "610b2c486df621209c85215a"
-	 }
-	]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "id": "61bf27e54b8bcfac495f997c",
+      "name": "Wallet",
+      "gateway_id": "610b2c486df621209c85215a"
+    },
+    {
+      "id": "61c0401b253faaefc6af1993",
+      "name": "Meeza",
+      "gateway_id": "610b2c486df621209c85215a"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -258,18 +255,17 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "Payment method object returned successfully",
- "data" :
-   [
-	{
-	 "id": "610b2c496df621209c852161",
-	 "name": "Visa",
-	 "gateway_id": "610b2c486df621209c85215b",
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "id": "610b2c486df621209c85215c",
+      "name": "AMEX",
+      "gateway_id": "610b2c486df621209c85215a"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -315,16 +311,15 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully created a new merchant",
- "data" :
-   [
-	{
-	 "merchant_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "merchant_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJpZCI6Nzk3LCJpc1ZlcmlmaWVkIjpmYWxz"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -384,22 +379,24 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully retrieved the merchant",
- "data" :
-	{
-	 "first_name": "ahmed",
-	 "last_name": "khaled",
-	 "email": "ahmed@gmail.com",
-	 "mobile_number": "+201001212155",
-	 "business_name": "ecommerce",
-	 "business_address": "el-maadi",
-	 "refund_policy": "Refunds and exchanges, right to cancel your order",
-	 "shipping_policy": "Original sales receipt must accompany returns",
-	 "status": 1
-	}
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "first_name": "ahmed",
+      "last_name": "khaled",
+      "email": "medy@circlepay.ai",
+      "mobile_number": "+201005081863",
+      "business_name": "E-commerceEgypt",
+      "business_address": "El-maadi",
+      "refund_policy": null,
+      "shipping_policy": null,
+      "status": "1",
+      "merchant_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjk4LCJpc1Zlcmlm"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -437,9 +434,8 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully update the merchant",
+ "details" : "",
  "data" :
    [
 	{
@@ -451,9 +447,11 @@ curl -X PUT --header 'Accept: application/json'
 	 "business_address": "el-maadi",
 	 "refund_policy": "Refunds and exchanges, right to cancel your order",
 	 "shipping_policy": "Original sales receipt must accompany returns",
-	 "status": 0
+	 "status": "1",
+	 "merchant_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImZpcnN0Tm"
 	}
-   ]
+   ],
+   "isError" : False
 }
 ```
 
@@ -494,11 +492,11 @@ curl -X PUT --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully update the merchant's status",
- "data" : null
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data":[],
+  "isError": false
 }
 ```
 
@@ -530,9 +528,8 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Merchants list returned successfully",
+ "details" : "",
  "data" :
    [
 	{
@@ -557,7 +554,8 @@ curl -X GET --header 'Accept: application/json'
 	 "shipping_policy": "Original sales receipt must accompany returns",
 	 "status": 0
 	}
-   ]
+   ],
+    "isError" : False
 }
 ```
 
@@ -589,16 +587,15 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully configured payment gateway",
- "data" :
-    [
-     {
-	  "payment_gateway_id": "610b2c486df621209c85215b",
-     }
-	]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_gateway_id": "610b2c486df621209c85215b"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -636,16 +633,15 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully enabled gateway",
- "data" :
-   [
-	{
-      "payment_gateway_ID": "610b2c486df621209c85215b"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_gateway_id": "610b2c486df621209c85215b"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -680,16 +676,15 @@ curl -X DELETE --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully disabled gateway",
- "data" :
-   [
-	{
-	  "payment_gateway_ID":"610b2c486df621209c85215b"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_gateway_id": "610b2c486df621209c85215b"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -721,9 +716,8 @@ curl -X GET --header 'Content-Type: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully list payment gateways",
+ "details" : "",
  "data" :
 [
     {
@@ -778,7 +772,8 @@ curl -X GET --header 'Content-Type: application/json'
         "merchantRefNum": "as"
       }
     }
-  ]
+  ],
+  "isError" : False
 }
 ```
 
@@ -810,16 +805,15 @@ curl -X POST --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully set payment method fee",
- "data" :
-   [
-	{
-	  "payment_method_ID": "610b2c496df621209c852168"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_method_id": "610b2c486df621209c85215c"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -858,16 +852,15 @@ curl -X GET --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully enabled the payment method",
- "data" :
-   [
-	{
-	  "payment_method_ID": "610b2c496df621209c852168"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_method_id": "610b2c486df621209c85215c"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -902,16 +895,15 @@ curl -X DELETE --header 'Content-Type: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully disabled the payment method",
- "data" :
-   [
-	{
-	  "payment_method_ID": "610b2c496df621209c852168"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "payment_method_id": "610b2c486df621209c85215c"
+    }
+  ],
+  "isError": false
 }
 ```
 
@@ -947,26 +939,24 @@ curl -X GET --header 'Content-Type: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Merchant's payment methods list returned successfully",
+ "details" : "",
  "data" :
-	  [ 
-		{
-		  "id": "610b2c496df621209c852168",
-		  "name": "Visa",
-		  "gateway_id": "1",
-		  "status": true,
-		  "rate": "3" 
-		},
-		{
-		  "id": "610b2c496df621209c8521we",
-		  "name": "MasterCard",
-		  "gateway_id": "1",
-		  "status": true,
-		  "rate": "4" 
-		}
-	  ]
+      [ 
+        {
+          "id": "610b2c496df621209c852168",
+          "name": "Visa",
+          "gateway_id": "1",
+          "status": true
+        },
+        {
+          "id": "610b2c496df621209c8521we",
+          "name": "MasterCard",
+          "gateway_id": "1",
+          "status": 0
+        }
+      ],
+	   "isError" : False
 }
 ```
 
@@ -999,15 +989,15 @@ curl -X POST --header 'Content-Type: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully send otp and validate the merchant",
+ "details" : "",
  "data" :
    [
     {
       "status": true
     }
-   ]
+   ],
+   "isError" : False
 }
 ```
 
@@ -1043,10 +1033,10 @@ curl -X POST --header 'Content-Type: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Merchant verified successfully",
- "data" : null
+ "details" : "",
+ "data" : null,
+ "isError" : False,
 }
 ```
 
@@ -1093,15 +1083,15 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully created a new customer",
+ "details" : "",
  "data" :
    [
-	{  
-	 "customer_mobile_number": "+201001616166"
-	}
-   ]
+    {  
+       "customer_mobile_number": "+201001212144"
+    }
+   ],
+    "isError" : False
 }
 ```
 
@@ -1151,15 +1141,15 @@ curl -X PUT --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully updated the cutomer",
+ "details" : "",
  "data" :
    [
-	{  
-	 "customer_mobile_number": "+201001717177"
-	}
-   ]
+    {  
+       "customer_mobile_number": "+201001212144"
+    }
+   ],
+    "isError" : False
 }
 ```
 
@@ -1203,23 +1193,23 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Customer object returned successfully",
+ "details" : "",
  "data" :
    [
-	{  
-	   "first_name": "Ibrahim",
-	   "last_name": "Salah",
-	   "email": "ibrahim@gmail.com",
-	   "mobile_number": "+201001212144",
-	   "country": "Egypt",
-	   "governorate": "cairo",
-	   "city": "nasr",
-	   "address": "72 gamal st",
-	   "apt_num": "5"
-	}
-   ]
+    {  
+       "first_name": "Ibrahim",
+       "last_name": "Salah",
+       "email": "ibrahim@gmail.com",
+       "mobile_number": "+201001212144",
+       "country": "Egypt",
+       "governorate": "cairo",
+       "city": "nasr",
+       "address": "72 gamal st",
+       "apt_num": "5"
+    }
+   ],
+    "isError" : False
 }
 ```
 
@@ -1253,36 +1243,37 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
+
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Customers list returned successfully",
+ "details" : "",
  "data" :
    [
-	{  
-	   "first_name": "Ibrahim",
-	   "last_name": "Salah",
-	   "email": "ibrahim@gmail.com",
-	   "mobile_number": "+201001212144",
-	   "country": "Egypt",
-	   "governorate": "cairo",
-	   "city": "nasr",
-	   "address": "72 gamal st",
-	   "apt_num": "5"
-	},
-	{  
-	   "first_name": "Ahmed",
-	   "last_name": "Osman",
-	   "email": "ahmedosman@gmail.com",
-	   "mobile_number": "+201005212144",
-	   "country": "Egypt",
-	   "governorate": "cairo",
-	   "city": "nasr",
-	   "address": "72 gamal st",
-	   "apt_num": "5"
-	}
-   ]
+    {  
+       "first_name": "Ibrahim",
+       "last_name": "Salah",
+       "email": "ibrahim@gmail.com",
+       "mobile_number": "+201001212144",
+       "country": "Egypt",
+       "governorate": "cairo",
+       "city": "nasr",
+       "address": "72 gamal st",
+       "apt_num": "5"
+    },
+    {  
+       "first_name": "Tamer",
+       "last_name": "Aly",
+       "email": "taly@hotmail.com",
+       "mobile_number": "+20133444144",
+       "country": "Egypt",
+       "governorate": "alex",
+       "city": "nasr",
+       "address": "12 roshdy st",
+       "apt_num": "35"
+    }
+   ],
+    "isError" : False
 }
 ```
 
@@ -1320,29 +1311,29 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Payment object returned successfully",
+ "details" : "",
  "data" :
-   [
-	{
-	 "id": 1,
-	 "transaction_id": 6,
-	 "external_ref_id": 3,
-	 "init_date": 22-02-2022,
-	 "update_date": 23-02-2022,
-	 "customer_mobile": "+201001212888",
-	 "status": "pending",
-	 "payment_link_url": "https://bit.ly/3KXl3iA",
-	 "invoice_num": "CIR_INV_1643670030261",
-	 "value": 99.0,
-	 "net_fees": 1.0,
-	 "currency": "EGP",
-	 "payment_method_id": "1",
-	 "payment_method_name": "Visa",
-	 "payment_gateway_name": "MyFatoorh"
-	}
-   ]
+    [
+     {
+        "id": 2,
+        "transaction_id": 5,
+        "external_ref_id": 2,
+        "init_date": 22-02-2022,
+        "update_date": 23-02-2022,
+        "customer_mobile": "+201101212888",
+        "status": "initialized",
+        "payment_link_url": "",
+        "invoice_num": "CIR_INV_1643670030264",
+        "value": 99.0,
+        "net_fees": 1.0,
+        "currency": "EGP",
+        "payment_method_id": "610b2c496df621209c852162",
+        "payment_method_name": "MasterCard",
+        "payment_gateway_name": "MyFatoorh"
+      }
+    ],
+	 "isError" : False
 }
 ```
 
@@ -1378,46 +1369,46 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "errorDetails" : "Payments list returned successfully",
+ "details" : "",
  "data" :
-	[
-	  {
-		"id": 1,
-		"transaction_id": 6,
-		"external_ref_id": 3,
-		"init_date": 22-02-2022,
-		"update_date": 23-02-2022,
-		"customer_mobile": "+201001212888",
-		"status": "pending",
-		"payment_link_url": "https://bit.ly/3KXl3iA",
-		"invoice_num": "CIR_INV_1643670030261",
-		"value": 99.0,
-		"net_fees": 1.0,
-		"currency": "EGP",
-		"payment_method_id": "610b2c496df621209c852168",
-		"payment_method_name": "Visa",
-		"payment_gateway_name": "MyFatoorh"
-	  },
-	  {
-		"id": 2,
-		"transaction_id": 5,
-		"external_ref_id": 2,
-		"init_date": 22-02-2022,
-		"update_date": 23-02-2022,
-		"customer_mobile": "+201101212888",
-		"status": "pending",
-		"payment_link_url": "https://bit.ly/3RXl3iA",
-		"invoice_num": "CIR_INV_1643670030264",
-		"value": 99.0,
-		"net_fees": 1.0,
-		"currency": "EGP",
-		"payment_method_id": "610b2c496df621209c852162",
-		"payment_method_name": "MasterCard",
-		"payment_gateway_name": "MyFatoorh"
-	  }
-	]
+    [
+      {
+        "id": 1,
+        "transaction_id": 6,
+        "external_ref_id": 3,
+        "init_date": 22-02-2022,
+        "update_date": 23-02-2022,
+        "customer_mobile": "+201001212888",
+        "status": "pending",
+        "payment_link_url": "https://bit.ly/3KXl3iA",
+        "invoice_num": "",
+        "value": 99.0,
+        "net_fees": 1.0,
+        "currency": "EGP",
+        "payment_method_id": "610b2c496df621209c852168",
+        "payment_method_name": "Visa",
+        "payment_gateway_name": "MyFatoorh"
+      },
+      {
+        "id": 2,
+        "transaction_id": 5,
+        "external_ref_id": 2,
+        "init_date": 22-02-2022,
+        "update_date": 23-02-2022,
+        "customer_mobile": "+201101212888",
+        "status": "initialized",
+        "payment_link_url": "",
+        "invoice_num": "CIR_INV_1643670030264",
+        "value": 99.0,
+        "net_fees": 1.0,
+        "currency": "EGP",
+        "payment_method_id": "610b2c496df621209c852162",
+        "payment_method_name": "MasterCard",
+        "payment_gateway_name": "MyFatoorh"
+      }
+    ],
+	 "isError" : False
 }
 ```
 
@@ -1457,15 +1448,15 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully requested a refund",
+ "details" : "",
  "data" :
    [
-	{
-	 "refund_id": "1"
-	}
-   ]
+    {
+     "refund_id": "2"
+    }
+   ],
+    "isError" : False
 }
 ```
 This endpoint helps you to request refund.
@@ -1505,30 +1496,30 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Refunds list returned successfully",
+ "details" : "",
  "data" :
-	[
-	 {
-	    "refund_id": "1",
-		"external_ref_id": 2,
-		"init_date": 22-02-2022,
-		"update_date": 23-02-2022,
-		"value": 40.0,
-		"transaction_id": 3,
-		"status": "pending"
-	 },
-	 {
-	    "refund_id": "2",
-		"external_ref_id": 3,
-		"init_date": 22-02-2022,
-		"update_date": 23-02-2022,
-		"value": 90.0,
-		"transaction_id": 3,
-		"status": "paid"
-	 }
-    ]
+    [
+     {
+        "refund_id": "1",
+        "external_ref_id": 2,
+        "init_date": 22-02-2022,
+        "update_date": 23-02-2022,
+        "value": 40.0,
+        "transaction_id": 3,
+        "status": "pending"
+     },
+     {
+        "refund_id": "2",
+        "external_ref_id": 3,
+        "init_date": 22-02-2022,
+        "update_date": 23-02-2022,
+        "value": 90.0,
+        "transaction_id": 3,
+        "status": "paid"
+     }
+    ],
+	"isError" : False
 }
 ```
 List refund objects.
@@ -1563,21 +1554,21 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Refund object returned successfully",
+ "details" : "",
  "data" :
    [
-	{
-	 "refund_id": "2",
-	 "external_ref_id": 3,
-	 "init_date": 22-02-2022,
-	 "update_date": 23-02-2022,
-	 "value": 90.0,
-	 "transaction_id": 3,
-	 "status": "paid"
-	}
-   ]
+    {
+     "refund_id": "2",
+     "external_ref_id": 3,
+     "init_date": 22-02-2022,
+     "update_date": 23-02-2022,
+     "value": 90.0,
+     "transaction_id": 3,
+     "status": "paid"
+    }
+   ],
+    "isError" : False
 }
 ```
 Retrieves the refund object.
@@ -1619,30 +1610,16 @@ curl -X POST --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully created an invoice",
+ "details" : "",
  "data" :
    [
-	{
-	 "invoice_number": "CIR_INV_1643670030261",
-	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": "+201001212333",
-	 "status": 1,
-	 "create_date": 10-12-2022,
-	 "due_date": 2022-11-14,
-     "pref_payment_method": "CARD/PayMob",
-	 "shipping_fees": 4.0,
-	 "discount_value": 11.0,
-	 "discount_type": "percent",
-     "discount_value_calculated": 9.9,
-     "tax": 10.0,
-     "tax_value": 9.0,
-     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
-     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
-     "extra_notes":
-	}
-   ]
+    {
+     "invoice_number": "CIR_INV_16436703344261",
+     "invoice_url" : "complete checkout url"
+    }
+   ],
+    "isError" : False
 }
 ```
 This endpoint creates an invoice for a given customer. The invoice created will be in "pending" status.
@@ -1678,30 +1655,30 @@ curl -X GET --header 'Accept: application/json'
 ```json
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "Invoice object returned successfully",
+ "details" : "",
  "data" :
    [
-	{
-	 "invoice_number": "CIR_INV_1643670030261",
-	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": "+201001212333",
-	 "status": 1,
-	 "create_date": 10-12-2022,
-	 "due_date": 14-12-2022,
+    {
+     "invoice_number": "CIR_INV_1643670030261",
+     "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
+     "customer_mobile": "+201001212333",
+     "status": 1,
+     "create_date": 10-12-2022,
+     "due_date": 14-12-2022,
      "pref_payment_method": "CARD/PayMob",
-	 "shipping_fees": 4.0,
-	 "discount_value": 11.0,
-	 "discount_type": "percent",
+     "shipping_fees": 4.0,
+     "discount_value": 11.0,
+     "discount_type": "percent",
      "discount_value_calculated": 9.9,
      "tax": 10.0,
      "tax_value": 9.0,
      "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
      "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
      "extra_notes":
-	}
-   ]
+    }
+ ],
+ "isError" : False
 }
 ```
 Retrieves the invoice with the given invoice number.
@@ -1734,50 +1711,34 @@ curl -X GET --header 'Accept: application/json'
 > The above command returns JSON structured like this:
 
 ```json
+List the invoices
+
 {
  "message" : "Successful",
- "isError" : False,
  "errorCode" : 0,
- "Details" : "You successfully returned invoice list",
+ "details" : "",
  "data" :
    [
-	{
-	 "invoice_number": "CIR_INV_1643670030261",
-	 "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": "+201001212333",
-	 "status": 1,
-	 "create_date": 10-12-2022,
-	 "due_date": 14-12-2022,
+    {
+     "invoice_number": "CIR_INV_1643670030261",
+     "items": [{"name":"shoe","description":"","quantity": 4,"price":90.0}],
+     "customer_mobile": "+201001212333",
+     "status": 1,
+     "create_date": 10-12-2022,
+     "due_date": 14-12-2022,
      "pref_payment_method": "CARD/PayMob",
-	 "shipping_fees": 4.0,
-	 "discount_value": 11.0,
-	 "discount_type": "percent",
+     "shipping_fees": 4.0,
+     "discount_value": 11.0,
+     "discount_type": "percent",
      "discount_value_calculated": 9.9,
      "tax": 10.0,
      "tax_value": 9.0,
      "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
      "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
      "extra_notes":
-	},
-		{
-	 "invoice_number": "CIR_INV_16436702430261",
-	 "items": [{"name":"grocery","description":"","quantity": 4,"price":90.0}],
-	 "customer_mobile": "+201001242333",
-	 "status": 1,
-	 "create_date": 10-12-2022,
-	 "due_date": 14-12-2022,
-     "pref_payment_method": "CARD/PayMob",
-	 "shipping_fees": 4.0,
-	 "discount_value": 11.0,
-	 "discount_type": "percent",
-     "discount_value_calculated": 9.9,
-     "tax": 10.0,
-     "tax_value": 9.0,
-     "shipping_policy": "shipping options you offer (overnight, standard, air mail, international)",
-     "return_policy": "Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.",
-     "extra_notes":
-	}
-   ]
+    }
+  ],
+   "isError" : False
 }
 ```
 This endpoint list invoices for a given customer.
@@ -1812,16 +1773,15 @@ curl -X DELETE --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully deleted an invoice",
- "data" :
-   [
-	{
-	 "invoice_number": "CIR_INV_16436702430261"
-	}
-   ]
+  "message": "Successful",
+  "errorCode": 0,
+  "details": "",
+  "data": [
+    {
+      "invoice_number": "CIR_INV_1645465416865"
+    }
+  ],
+  "isError": false
 }
 ```
 Delete an invoice ONLY IF the invoice has no transactions.
@@ -1856,11 +1816,16 @@ curl -X POST --header 'Accept: application/json'
 
 ```json
 {
- "message" : "Successful",
- "isError" : False,
- "errorCode" : 0,
- "Details" : "You successfully pay the invoice",
- "data" : null
+  "message": "Successful",
+  "errorCode": 0,
+  "details": null,
+  "data": [
+    {
+      "transaction_id": "1645895596175",
+      "invoice_url": "https://staging.circlepay.ai/payment/make-payment/ddb411b2b2ecca4508ec1645465416853/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJxdWVyeVBhcmFtcyI6Ij9zdGVwPTMmT1BFeHRlcm5hbD0xNjQ1ODk1NTk2MTc1JnNlbGVjdGVkUGF5bWVudE1ldGhvZD1DQVJEJnNlbGVjdGVkUGF5bWVudEdhdGV3YXk9UGF5TW9iJnNvdXJjZT1leHRlcm5hbCIsImlhdCI6MTY0NTg5NTU5Nn0.c4526On6Nk7KgaIRaarolHnC5GXwvPC8ISnXbTLu6nI"
+    }
+  ],
+  "isError": false
 }
 ```
 
