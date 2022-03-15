@@ -60,7 +60,7 @@ To consume CirclePay Apis you should:
 * **Now you can list transactions:**
 
 **9**. List Transactions:<br/>
-&nbsp;9.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">POST /payment/list</a><br>
+&nbsp;9.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">GET /payment/list</a><br>
 
 ##############################################################################
 
@@ -1356,7 +1356,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 ## List all payments
 
 ```shell
-curl -X POST --header 'Accept: application/json'
+curl -X GET --header 'Accept: application/json'
      --header 'Content-Type: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
@@ -1422,9 +1422,6 @@ No parameters
 
 Returns a payment list which has the details of the payment like: status, amount paid and payment method.
 
-<aside class="notice">
-The error codes used when you fail to list payment objects are <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#4311">4311</a> , <a href="#1110">1110</a>
-</aside>
 
 ######################################################################################
 
