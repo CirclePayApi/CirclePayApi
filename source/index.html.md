@@ -1749,10 +1749,6 @@ Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbs
 
 Returns list of invoice objects.
 
-<aside class="notice">
-The error code used when you fail to list invoices are <a href="#3110">3110</a>
-</aside>
-
 ########################################################################################
 
 ## Delete an invoice
