@@ -359,9 +359,6 @@
                     <a href="#list-all-merchants" class="toc-h2 toc-link" data-title="List all merchants">List all merchants</a>
                   </li>
                   <li>
-                    <a href="#configure-payment-gateway" class="toc-h2 toc-link" data-title="Configure payment gateway">Configure payment gateway</a>
-                  </li>
-                  <li>
                     <a href="#enable-gateway" class="toc-h2 toc-link" data-title="Enable gateway">Enable gateway</a>
                   </li>
                   <li>
@@ -1237,61 +1234,6 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 </tbody></table>
 <h3 id='returns-10'>Returns</h3>
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
-<h2 id='configure-payment-gateway'>Configure payment gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
-     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
-     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
-     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="nt">-d</span> <span class="nv">payment_gateway_id</span><span class="o">=</span><span class="s2">"610b2c486df621209c85215b"</span>
-     <span class="s1">'https://circlepay.ai/apis/merchants/payment/gateway/configure'</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"payment_gateway_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"610b2c486df621209c85215b"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>Set the payment gateway keys for a specific merchant to allow CirclePay connect to the merchant account on the Payment Gateway</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>payment_gateway_id</td>
-<td>String</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Unique identifier of payment gateway.</td>
-</tr>
-<tr>
-<td>Gateway_Config_Object</td>
-<td>Object</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The gateway config object.</td>
-</tr>
-</tbody></table>
-<h3 id='returns-11'>Returns</h3>
-<p>Returns the payment gateway id.</p>
-
-<aside class="notice">
-The error codes used when you fail to configure payment gateway are <a href="#7111">7111</a>, <a href="#8112">8112</a>
-</aside>
 <h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1333,7 +1275,7 @@ The error codes used when you fail to configure payment gateway are <a href="#71
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-12'>Returns</h3>
+<h3 id='returns-11'>Returns</h3>
 <p>Returns id of enabled payment gateway.</p>
 
 <aside class="notice">
@@ -1380,7 +1322,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-13'>Returns</h3>
+<h3 id='returns-12'>Returns</h3>
 <p>Returns the id of disabled payment gateway.</p>
 <h2 id='list-payment-gateways-2'>List payment gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1457,7 +1399,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <p>This endpoint list merchant&#39;s payment gateways.</p>
 <h3 id='parameters'>Parameters</h3>
 <p>No Parameters.</p>
-<h3 id='returns-14'>Returns</h3>
+<h3 id='returns-13'>Returns</h3>
 <p>Returns the payment gateways list for merchant.</p>
 <h2 id='set-payment-method-fee'>Set payment method fee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1529,7 +1471,7 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 <td>The Refund fee percentage.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-15'>Returns</h3>
+<h3 id='returns-14'>Returns</h3>
 <p>Returns the payment method id.</p>
 
 <aside class="notice">
@@ -1576,7 +1518,7 @@ The error codes used when you fail to set payment method fee are <a href="#7111"
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-16'>Returns</h3>
+<h3 id='returns-15'>Returns</h3>
 <p>Returns id of enabled payment method.</p>
 
 <aside class="notice">
@@ -1623,7 +1565,7 @@ The error codes used when you fail to enable payment method are <a href="#7112">
 <td>Unique identifier for the payment method object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-17'>Returns</h3>
+<h3 id='returns-16'>Returns</h3>
 <p>Returns id of the disabled payment method.</p>
 
 <aside class="notice">
@@ -1664,7 +1606,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <p>This endpoint list allowed payment methods to the merchant.</p>
 <h3 id='parameters-2'>Parameters</h3>
 <p>No parameters.</p>
-<h3 id='returns-18'>Returns</h3>
+<h3 id='returns-17'>Returns</h3>
 <p>Returns a payment methods list of the merchant.</p>
 <h2 id='send-otp'>Send OTP</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1716,7 +1658,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 <td>The country code for example, the country code for egypt is +20</td>
 </tr>
 </tbody></table>
-<h3 id='returns-19'>Returns</h3>
+<h3 id='returns-18'>Returns</h3>
 <p>Returns the status (true or false).</p>
 
 <aside class="notice">
@@ -1765,7 +1707,7 @@ The error codes used when you fail to send otp to merchant are <a href="#8118">8
 <td>One-time password (OTP) systems provide a mechanism for logging on to a network or service using a unique password that can only be used once.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-20'>Returns</h3>
+<h3 id='returns-19'>Returns</h3>
 <p>Verify merchant mobile to compelete registration.</p>
 
 <aside class="notice">
@@ -1875,7 +1817,7 @@ The error code used when you fail to verify merchant is <a href="#2111">2111</a>
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-21'>Returns</h3>
+<h3 id='returns-20'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s creation succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -1985,7 +1927,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 <td>The customer&#39;s apartment number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-22'>Returns</h3>
+<h3 id='returns-21'>Returns</h3>
 <p>Returns the customer mobile number if the customer&#39;s update succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
@@ -2041,7 +1983,7 @@ The error codes used when you fail to update a customer are <a href="#3110">3110
 <td>Customer&#39;s mobile number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-23'>Returns</h3>
+<h3 id='returns-22'>Returns</h3>
 <p>Returns the Customer object for a valid mobile number.</p>
 
 <aside class="notice">
@@ -2097,7 +2039,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 <aside class="notice">
 List all customers using filters.
 </aside>
-<h3 id='returns-24'>Returns</h3>
+<h3 id='returns-23'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2155,7 +2097,7 @@ List all customers using filters.
 <td>Unique identifier for the payment object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-25'>Returns</h3>
+<h3 id='returns-24'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2218,7 +2160,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <p>Retrieves all payments.</p>
 <h3 id='parameters-5'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-26'>Returns</h3>
+<h3 id='returns-25'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 <h1 id='refund'>Refund</h1>
 <p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
@@ -2264,7 +2206,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>Unique identifier for the transaction object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-26'>Returns</h3>
 <p>Returns the refund id. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -2315,7 +2257,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>List refund objects.</p>
 <h3 id='parameters-6'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-27'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
 
 <aside class="notice">
@@ -2369,7 +2311,7 @@ The error codes used when you fail to list refund list are <a href="#9111">9111<
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
@@ -2430,7 +2372,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>The details of the invoice object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -2493,7 +2435,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2565,7 +2507,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-32'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 <h2 id='delete-an-invoice'>Delete an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2608,7 +2550,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-33'>Returns</h3>
+<h3 id='returns-32'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -2686,7 +2628,7 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-33'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
