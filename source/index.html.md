@@ -569,53 +569,6 @@ merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nb
 
 Returns an array. Each entry in the array is a separate user object.This request should never return an error.
 
-########################################################################################
-
-## Configure payment gateway
-
-```shell
-curl -X POST --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-	 -d payment_gateway_id="610b2c486df621209c85215b"
-     'https://circlepay.ai/apis/merchants/payment/gateway/configure'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "message": "Successful",
-  "errorCode": 0,
-  "details": "",
-  "data": [
-    {
-      "payment_gateway_id": "610b2c486df621209c85215b"
-    }
-  ],
-  "isError": false
-}
-```
-
-Set the payment gateway keys for a specific merchant to allow CirclePay connect to the merchant account on the Payment Gateway
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_gateway_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| Unique identifier of payment gateway. |
-Gateway_Config_Object |Object|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The gateway config object. |
-
-
-### Returns
-
-Returns the payment gateway id.
-
-<aside class="notice">
-The error codes used when you fail to configure payment gateway are <a href="#7111">7111</a>, <a href="#8112">8112</a>
-</aside>
-
-
 #################################################################################
 
 ## Enable gateway
