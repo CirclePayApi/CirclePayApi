@@ -774,7 +774,7 @@ The error codes used when you fail to get specific payment gateway are <a href="
 <p>Returns a payment methods list.</p>
 
 <aside class="notice">
-The error codes used when you fail to list payment methods are <a href="#8111">8111</a> , <a href="#7111">7111</a>
+The error codes used when you fail to list payment methods are <a href="#1110">1110</a> , <a href="#7111">7111</a>
 </aside>
 <h2 id='retrieve-a-payment-method'>Retrieve a Payment Method</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -829,7 +829,7 @@ The error codes used when you fail to list payment methods are <a href="#8111">8
 <p>Returns a payment method object.</p>
 
 <aside class="notice">
-The error codes used when you fail to get a specific payment method are <a href="#8111">8111</a> , <a href="#7113">7113</a>
+The error codes used when you fail to get a specific payment method are <a href="#1110">1110</a> , <a href="#7113">7113</a>
 </aside>
 <h1 id='merchants'>Merchants</h1>
 <p><span style="color: red">Merchant</span> is the person or company engaged in the business of selling products or services. For example, wholesaler or retail store owner.</p>
@@ -1324,6 +1324,10 @@ The error codes used when you fail to enable gateway are <a href="#7110">7110</a
 </tbody></table>
 <h3 id='returns-12'>Returns</h3>
 <p>Returns the id of disabled payment gateway.</p>
+
+<aside class="notice">
+The error codes used when you fail to disable gateway are <a href="#7111">7111</a> , <a href="#8117">8117</a>
+</aside>
 <h2 id='list-payment-gateways-2'>List payment gateways</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1931,7 +1935,7 @@ The error codes used when you fail to create a customer are <a href="#3111">3111
 <p>Returns the customer mobile number if the customer&#39;s update succeeded. Returns an error if parameters are invalid.</p>
 
 <aside class="notice">
-The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>
+The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>, <a href="#1117">1117</a>
 </aside>
 <h2 id='retrieve-a-customer'>Retrieve a customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2259,10 +2263,6 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>No parameters</p>
 <h3 id='returns-27'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
-
-<aside class="notice">
-The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
-</aside>
 <h2 id='get-refund'>Get refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
