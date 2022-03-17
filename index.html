@@ -2358,18 +2358,136 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 </tr>
 </thead><tbody>
 <tr>
-<td>customer</td>
-<td>Object</td>
-<td><span style="color: red;">required</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The details of the customer object.</td>
-</tr>
-<tr>
 <td>invoice</td>
 <td>Object</td>
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>The details of the invoice object.</td>
+</tr>
+</tbody></table>
+
+<p>The table below contains invoice object attributes.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The invoice number.</td>
+</tr>
+<tr>
+<td>items</td>
+<td>Array</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Array of item object which has the details of items in invoice for example: name,description,quantity and price.</td>
+</tr>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer mobile number.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The status of invoice for example: 0 means Due, 1 means Over_Due, 2 means Paid, 3 means  Deactivated.</td>
+</tr>
+<tr>
+<td>create_date</td>
+<td>Date</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The creation date of invoice.</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>Date</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The due date of invoice which is the latest payment can be made on an invoice or debt before it&#39;s considered overdue.</td>
+</tr>
+<tr>
+<td>pref_payment_method</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The preferred payment method and it&#39;s related payment gateway for example: CARD/PayMob means method_name/gateway_name.</td>
+</tr>
+<tr>
+<td>shipping_fees</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping fees on invoice&#39;s items.</td>
+</tr>
+<tr>
+<td>discount_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value on total cost of items.</td>
+</tr>
+<tr>
+<td>discount_type</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount type, it can be value or percent.</td>
+</tr>
+<tr>
+<td>discount_value_calculated</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value calculated if the discount type is percent.</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The tax in percent.</td>
+</tr>
+<tr>
+<td>tax_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The calculated tax amount.</td>
+</tr>
+<tr>
+<td>shipping_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping policy contains potential delays due to a high volume of orders or postal service problems that are outside of your control, Domestic Shipping Rates and Estimates, local delivery policy and international shipping policy.</td>
+</tr>
+<tr>
+<td>return_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The rules a retailer or merchant creates to manage how customers return and exchange unwanted merchandise they purchased for example, Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.</td>
+</tr>
+<tr>
+<td>extra_notes</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The notes or comments to make invoice more clear.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-29'>Returns</h3>
@@ -2599,25 +2717,18 @@ The error code used when you fail to delete an invoice is <a href="#5111">5111</
 <td>Invoice&#39;s number.</td>
 </tr>
 <tr>
-<td>Customer</td>
-<td>Object</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>Customer object (needed to update the current customer).</td>
-</tr>
-<tr>
-<td>payment_method_name</td>
+<td>customer_mobile</td>
 <td>String</td>
 <td><span style="color: lightblue;">optional</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The payment method name.</td>
+<td>The customer mobile number.</td>
 </tr>
 <tr>
-<td>payment_gateway_name</td>
+<td>payment_method_id</td>
 <td>String</td>
 <td><span style="color: lightblue;">optional</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
-<td>The payment gateway name.</td>
+<td>The unique identifier of payment method.</td>
 </tr>
 </tbody></table>
 
