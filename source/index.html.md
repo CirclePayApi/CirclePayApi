@@ -474,42 +474,6 @@ Returns the merchant object if the update succeeded. Returns an error if update 
 The error codes used when you fail to update a merchant are <a href="#8116">8116</a> , <a href="#1110">1110</a> , <a href="#1112">1112</a>
 </aside>
 
-####################################################################################
-
-## Update merchant status
-
-```shell
-curl -X PUT --header 'Accept: application/json'
-     --header 'Content-Type: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-	 -d status="SUSPENDED"
-     'https://circlepay.ai/apis/merchants/update/status'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "message": "Successful",
-  "errorCode": 0,
-  "details": "",
-  "data":[],
-  "isError": false
-}
-```
-
-Updates the specified merchant's status.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-status |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's status (ACTIVATED - DEACTIVATED - SUSPENDED)). |
-
-### Returns
-
-Returns the status property(in merchant's object) if the update succeeded. Returns an error if update parameters are invalid.
-
 #################################################################################
 
 ## List all merchants
@@ -745,54 +709,6 @@ No Parameters.
 Returns the payment gateways list for merchant.
 
 ####################################################################################
-
-## Set payment method fee
-
-```shell
-curl -X POST --header 'Content-Type: application/json'
-     --header 'Accept: application/json'
-     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
-	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
-	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d payment_method_id="610b2c496df621209c852168"
-     'https://circlepay.ai/apis/merchants/payment/method/fee/set'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "message": "Successful",
-  "errorCode": 0,
-  "details": "",
-  "data": [
-    {
-      "payment_method_id": "610b2c486df621209c85215c"
-    }
-  ],
-  "isError": false
-}
-```
-
-This endpoint Set the fees for each payment method.
-
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-payment_method_id |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Unique identifier for the payment method object. |
-Fee_Fixed |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The fixed fee. |
-Fee_Percent |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The percentage fee. |
-Refund_Fee_Fixed |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The Refund fixed fee. |
-Refund_Fee_Percent |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| The Refund fee percentage. |
-
-### Returns
-
-Returns the payment method id.
-
-<aside class="notice">
-The error codes used when you fail to set payment method fee are <a href="#7111">7111</a> , <a href="#7113">7113</a> , <a href="#1110">1110</a> , <a href="#7116">7116</a>
-</aside>
-
-#######################################################################################
 
 ## Enable payment method
 
