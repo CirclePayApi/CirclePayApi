@@ -1576,8 +1576,29 @@ This endpoint creates an invoice for a given customer. The invoice created will 
 
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
-customer |Object|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the customer object. |
 invoice |Object|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the invoice object. |
+
+The table below contains invoice object attributes.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+invoice_number |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The invoice number. |
+items |Array|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Array of item object which has the details of items in invoice for example: name,description,quantity and price. |
+customer_mobile |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The customer mobile number. |
+status |Integer|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The status of invoice for example: 0 means Due, 1 means Over_Due, 2 means Paid, 3 means  Deactivated. |
+create_date |Date|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The creation date of invoice. |
+due_date |Date|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The due date of invoice which is the latest payment can be made on an invoice or debt before it's considered overdue. |
+pref_payment_method |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The preferred payment method and it's related payment gateway for example: CARD/PayMob means method_name/gateway_name. |
+shipping_fees |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The shipping fees on invoice's items. |
+discount_value |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount value on total cost of items. |
+discount_type |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount type, it can be value or percent. |
+discount_value_calculated |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount value calculated if the discount type is percent. |
+tax |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The tax in percent. |
+tax_value |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The calculated tax amount. |
+shipping_policy |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The shipping policy contains potential delays due to a high volume of orders or postal service problems that are outside of your control, Domestic Shipping Rates and Estimates, local delivery policy and international shipping policy. |
+return_policy |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The rules a retailer or merchant creates to manage how customers return and exchange unwanted merchandise they purchased for example, Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment. |
+extra_notes |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The notes or comments to make invoice more clear. |
+
 
 ### Returns
 
@@ -1780,9 +1801,8 @@ Pay an invoice.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 invoice_number |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -| Invoice's number.|
-Customer |Object|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| Customer object (needed to update the current customer).|
-payment_method_name |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment method name.|
-payment_gateway_name |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The payment gateway name.|
+customer_mobile |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The customer mobile number.|
+payment_method_id |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -| The unique identifier of payment method.|
 
 <aside class="notice">
 Payment method and payment gateway must be together, can't send only one.
