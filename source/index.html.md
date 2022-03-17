@@ -236,7 +236,7 @@ merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nb
 Returns a payment methods list.
 
 <aside class="notice">
-The error codes used when you fail to list payment methods are <a href="#8111">8111</a> , <a href="#7111">7111</a>
+The error codes used when you fail to list payment methods are <a href="#1110">1110</a> , <a href="#7111">7111</a>
 </aside>
 
 #################################################################################
@@ -281,7 +281,7 @@ merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nb
 Returns a payment method object.
 
 <aside class="notice">
-The error codes used when you fail to get a specific payment method are <a href="#8111">8111</a> , <a href="#7113">7113</a>
+The error codes used when you fail to get a specific payment method are <a href="#1110">1110</a> , <a href="#7113">7113</a>
 </aside>
 
 ##########################################################################################
@@ -650,6 +650,10 @@ payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp
 ### Returns
 
 Returns the id of disabled payment gateway.
+
+<aside class="notice">
+The error codes used when you fail to disable gateway are <a href="#7111">7111</a> , <a href="#8117">8117</a>
+</aside>
 
 ####################################################################################
 
@@ -1125,7 +1129,7 @@ apt_num |Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -
 Returns the customer mobile number if the customer's update succeeded. Returns an error if parameters are invalid.
 
 <aside class="notice">
-The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>
+The error codes used when you fail to update a customer are <a href="#3110">3110</a> , <a href="#1110">1110</a>, <a href="#1117">1117</a>
 </aside>
 
 ########################################################################################
@@ -1481,10 +1485,6 @@ No parameters
 ### Returns
 
 Returns refund object list. If no more refunds are available, the resulting array will be empty.
-
-<aside class="notice">
-The error codes used when you fail to list refund list are <a href="#9111">9111</a> , <a href="#3110">3110</a> , <a href="#4111">4111</a> , <a href="#5111">5111</a> , <a href="#1110">1110</a>
-</aside>
 
 #######################################################################################
 
