@@ -462,9 +462,9 @@ Parameter|Type|Required|Default|Description|
 first_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's first name. |
 last_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's last name. |
 email |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's email. |
-mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The merchant's phone number. |
 Business_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business name. |
 Business_Address |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The business address. |
+callback_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| A callback URL will be invoked by the API method you're calling after it's done. |
 
 ### Returns
 
