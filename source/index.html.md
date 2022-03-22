@@ -119,10 +119,6 @@ merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nb
 
 Returns payment gateway list.
 
-<aside class="notice">
-The error code used when you fail to list payment gateways is <a href="#1110">1110</a>
-</aside>
-
 ########################################################################
 
 ## Retrieve a Payment Gateway
