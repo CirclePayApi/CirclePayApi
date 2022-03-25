@@ -566,24 +566,8 @@ Each transaction requires a definition for a payment gateway and a payment metho
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payment gateways to the merchant.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
-</tr>
-</tbody></table>
+<h3 id='parameters'>Parameters</h3>
+<p>No Parameters.</p>
 <h3 id='returns'>Returns</h3>
 <p>Returns payment gateway list.</p>
 <h2 id='retrieve-a-payment-gateway'>Retrieve a Payment Gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -625,13 +609,6 @@ Each transaction requires a definition for a payment gateway and a payment metho
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
-</tr>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-2'>Returns</h3>
@@ -752,13 +729,6 @@ The error codes used when you fail to get specific payment gateway are <a href="
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment gateway object.</td>
 </tr>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
-</tr>
 </tbody></table>
 <h3 id='returns-3'>Returns</h3>
 <p>Returns a payment methods list.</p>
@@ -806,13 +776,6 @@ The error codes used when you fail to list payment methods are <a href="#1110">1
 <td><span style="color: red;">required</span></td>
 <td>&nbsp;&nbsp; &nbsp; -</td>
 <td>Unique identifier for the payment method object.</td>
-</tr>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
 </tr>
 </tbody></table>
 <h3 id='returns-4'>Returns</h3>
@@ -1003,24 +966,8 @@ The error codes used when you fail to create a merchant are <a href="#8110">8110
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a specific merchant.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
-</tr>
-</tbody></table>
+<h3 id='parameters-2'>Parameters</h3>
+<p>No Parameters.</p>
 <h3 id='returns-7'>Returns</h3>
 <p>Returns the merchant object for a valid identifier.</p>
 <h2 id='update-a-merchant'>Update a Merchant</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
@@ -1164,24 +1111,8 @@ The error codes used when you fail to update a merchant are <a href="#8116">8116
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all merchants.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>merchant_token</td>
-<td>String</td>
-<td><span style="color: lightblue;">optional</span></td>
-<td>&nbsp;&nbsp; &nbsp; -</td>
-<td>contains the security credentials for a login session and identifies the user.</td>
-</tr>
-</tbody></table>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No Parameters.</p>
 <h3 id='returns-9'>Returns</h3>
 <p>Returns an array. Each entry in the array is a separate user object.This request should never return an error.</p>
 <h2 id='enable-gateway'>Enable gateway</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1351,7 +1282,7 @@ The error codes used when you fail to disable gateway are <a href="#7111">7111</
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list merchant&#39;s payment gateways.</p>
-<h3 id='parameters'>Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <p>No Parameters.</p>
 <h3 id='returns-12'>Returns</h3>
 <p>Returns the payment gateways list for merchant.</p>
@@ -1482,7 +1413,7 @@ The error code used when you fail to disable payment method is <a href="#7113">7
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint list allowed payment methods to the merchant.</p>
-<h3 id='parameters-2'>Parameters</h3>
+<h3 id='parameters-5'>Parameters</h3>
 <p>No parameters.</p>
 <h3 id='returns-15'>Returns</h3>
 <p>Returns a payment methods list of the merchant.</p>
@@ -1560,7 +1491,7 @@ The error codes used when you fail to send otp to merchant are <a href="#8118">8
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint allow you to verify merchant.</p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='parameters-6'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1911,7 +1842,7 @@ The error code used when you fail to retrieve a specific customer is <a href="#3
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves a list of your customers.</p>
-<h3 id='parameters-4'>Parameters</h3>
+<h3 id='parameters-7'>Parameters</h3>
 <p>No parameters.</p>
 
 <aside class="notice">
@@ -2036,7 +1967,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payments.</p>
-<h3 id='parameters-5'>Parameters</h3>
+<h3 id='parameters-8'>Parameters</h3>
 <p>No parameters</p>
 <h3 id='returns-23'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
@@ -2133,7 +2064,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>List refund objects.</p>
-<h3 id='parameters-6'>Parameters</h3>
+<h3 id='parameters-9'>Parameters</h3>
 <p>No parameters</p>
 <h3 id='returns-25'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
