@@ -495,38 +495,38 @@
 <p><strong>1</strong>. Add account key and token to your platform </p>
 
 <p><strong>2</strong>. Create a merchant:<br/>
-&nbsp;2.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Merchants/createMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/create</a><br/>
-&nbsp;2.2. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Merchants/sendOTPUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/send/otp</a><br/>
-&nbsp;2.3. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Merchants/verifyMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/verify</a><br></p>
+&nbsp;2.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Merchants/createMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/create</a><br/>
+&nbsp;2.2. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Merchants/sendOTPUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/send/otp</a><br/>
+&nbsp;2.3. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Merchants/verifyMerchantUsingPOST" target="_blank" style="text-decoration: none;">POST /merchants/verify</a><br></p>
 
 <p><strong>3</strong>. List Payment Gateways in the system:<br/>
-&nbsp;3.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment_Gateway/getAllPaymentGatewaysUsingGET" target="_blank" style="text-decoration: none;">GET /payment/gateway/list</a><br></p>
+&nbsp;3.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Payment_Gateway/getAllPaymentGatewaysUsingGET" target="_blank" style="text-decoration: none;">GET /payment/gateway/list</a><br></p>
 
 <p><strong>4</strong>. Enable Payment Gateway for a merchant:<br/>
-&nbsp;4.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Merchants/enablePaymentGatewayUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/gateway/enable/{payment_gateway_id}</a><br></p>
+&nbsp;4.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Merchants/enablePaymentGatewayUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/gateway/enable/{payment_gateway_id}</a><br></p>
 
 <p><strong>5</strong>. List Payment Method in the System:<br/>
-&nbsp;5.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment_Method/getAllPaymentMethodsUsingGET" target="_blank" style="text-decoration: none;">GET /payment/methods/list/{paymentGatewayId}</a><br></p>
+&nbsp;5.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Payment_Method/getAllPaymentMethodsUsingGET" target="_blank" style="text-decoration: none;">GET /payment/methods/list/{paymentGatewayId}</a><br></p>
 
 <p><strong>6</strong>. Enable Payment Method:<br/>
-&nbsp;6.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Merchants/enablePaymentMethodUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/method/enable/{payment_method_id}</a><br></p>
+&nbsp;6.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Merchants/enablePaymentMethodUsingGET" target="_blank" style="text-decoration: none;">GET /merchants/payment/method/enable/{payment_method_id}</a><br></p>
 
 <ul>
 <li><strong>After setup you can create and pay invoices:</strong></li>
 </ul>
 
 <p><strong>7</strong>. Create invoice:<br/>
-&nbsp;7.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Invoice/createInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/create</a><br></p>
+&nbsp;7.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Invoice/createInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/create</a><br></p>
 
 <p><strong>8</strong>. Pay Invoice:<br/>
-&nbsp;8.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Invoice/payInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/pay</a><br></p>
+&nbsp;8.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Invoice/payInvoiceUsingPOST" target="_blank" style="text-decoration: none;">POST /invoice/pay</a><br></p>
 
 <ul>
 <li><strong>Now you can list transactions:</strong></li>
 </ul>
 
 <p><strong>9</strong>. List Transactions:<br/>
-&nbsp;9.1. <a href="http://apicirclepay-env.eba-svf2npyq.us-east-2.elasticbeanstalk.com/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">GET /payment/list</a><br></p>
+&nbsp;9.1. <a href="http://test.api.public.circlepay.ai/swagger-ui.html#!/Payment/getAllPaymentsUsingPOST" target="_blank" style="text-decoration: none;">GET /payment/list</a><br></p>
 <h1 id='payment-gateway'>Payment Gateway</h1>
 <p>To process online transactions, you will need both a payment gateway and a payment method. </p>
 
