@@ -111,9 +111,8 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves all payment gateways to the merchant.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+### Parameters
+No Parameters.
 
 ### Returns
 
@@ -153,7 +152,7 @@ Retrieves a specific payment gateway.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+
 
 ### Returns
 Return a payment gateway object.
@@ -225,7 +224,7 @@ Retrieves all payment methods of the specific gateway.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 payment_gateway_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment gateway object.
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+
 
 ### Returns
 
@@ -270,7 +269,7 @@ Retrieves a specific payment method.
 Parameter|Type|Required|Default|Description|
 ---------|--------|---------|--------|-----|
 payment_method_ID |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|Unique identifier for the payment method object.
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+
 
 ### Returns
 
@@ -398,9 +397,8 @@ curl -X GET --header 'Content-Type: application/json'
 
 Retrieves a specific merchant.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+### Parameters
+No Parameters.
 
 ### Returns
 
@@ -521,9 +519,8 @@ curl -X GET --header 'Accept: application/json'
 
 Retrieves all merchants.
 
-Parameter|Type|Required|Default|Description|
----------|--------|---------|--------|-----|
-merchant_token |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|contains the security credentials for a login session and identifies the user.
+### Parameters
+No Parameters.
 
 ### Returns
 
