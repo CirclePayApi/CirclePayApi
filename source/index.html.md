@@ -299,6 +299,7 @@ curl -X POST --header 'Accept: application/json'
      -d mobile_number="+201001414133"
 	 -d Business_Name="E-commerce"
      -d Business_Address="El-maadi"
+	 -d callback_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/merchants/create'
 ```
 
@@ -420,6 +421,7 @@ curl -X PUT --header 'Accept: application/json'
 	 -d mobile_number="+201001215155"
 	 -d business_name="ecommerce"
 	 -d business_address="el-maadi"
+	 -d callback_url="https://bit.ly/3KXl3iA"
      'https://circlepay.ai/apis/merchants/update'
 ```
 
