@@ -399,6 +399,26 @@
               </ul>
           </li>
           <li>
+            <a href="#payment-link" class="toc-h1 toc-link" data-title="Payment Link">Payment Link</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-payment-link" class="toc-h2 toc-link" data-title="Create a Payment Link">Create a Payment Link</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-payment-link" class="toc-h2 toc-link" data-title="Get a Payment Link">Get a Payment Link</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-payment-link" class="toc-h2 toc-link" data-title="Update a Payment Link">Update a Payment Link</a>
+                  </li>
+                  <li>
+                    <a href="#list-payment-links" class="toc-h2 toc-link" data-title="List Payment Links">List Payment Links</a>
+                  </li>
+                  <li>
+                    <a href="#execute-payment-for-link-or-invoice" class="toc-h2 toc-link" data-title="Execute payment for link or invoice">Execute payment for link or invoice</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#payment" class="toc-h1 toc-link" data-title="Payment">Payment</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1852,6 +1872,496 @@ List all customers using filters.
 </aside>
 <h3 id='returns-21'>Returns</h3>
 <p>Returns customer list, If no more customers are available, the resulting array will be empty. This request should never return an error.</p>
+<h1 id='payment-link'>Payment Link</h1><h2 id='create-a-payment-link'>Create a Payment Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+        <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span> 18000
+        <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
+        <span class="nt">-d</span> <span class="nv">enable_Survey</span><span class="o">=</span> 0
+        <span class="nt">-d</span> <span class="nv">expiry_Date</span><span class="o">=</span> 2022-08-22
+        <span class="nt">-d</span> <span class="nv">description</span><span class="o">=</span><span class="s2">"new iphone 12"</span>
+        <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span> 1
+        <span class="nt">-d</span> <span class="nv">shippingPolicyFlag</span><span class="o">=</span> 0
+        <span class="nt">-d</span> <span class="nv">refundPolicyFlag</span><span class="o">=</span> 1
+        <span class="nt">-d</span> <span class="nv">shippingPolicyDetails</span><span class="o">=</span> <span class="s2">"For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."</span>
+        <span class="nt">-d</span> <span class="nv">refundPolicyDetails</span><span class="o">=</span><span class="s2">"You can refund your money within 30 days"</span>
+        <span class="nt">-d</span> <span class="nv">comments</span><span class="o">=</span><span class="s2">""</span>
+        <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"iphone 12"</span>
+        <span class="nt">-d</span> <span class="nv">getCustAddress</span><span class="o">=</span> 0
+        <span class="s1">'https://circlepay.ai/apis/paymentlink/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3SH60xn"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Create a new payment link, so customer can purchase the product from merchant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>Float</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The price of the product.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>LOV</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The currency used in transaction (predefined currency list).</td>
+</tr>
+<tr>
+<td>enable_Survey</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add survey to checkout.</td>
+</tr>
+<tr>
+<td>expiry_Date</td>
+<td>Date</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The payment link expiry date.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The description of products that will be included in the transaction.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The name of the product.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The status of payment link (1/0 - active/inactive).</td>
+</tr>
+<tr>
+<td>shippingPolicyFlag</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add shipping policy section in checkout ( 1/0 - enable/disable).</td>
+</tr>
+<tr>
+<td>refundPolicyFlag</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add refund policy section in checkout ( 1/0 - enable/disable).</td>
+</tr>
+<tr>
+<td>shippingPolicyDetails</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This is the shipping policy details (will exist if shippingPolicyFlag is 1).</td>
+</tr>
+<tr>
+<td>refundPolicyDetails</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This is the refund policy details (will exist if refundPolicyFlag is 1).</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The comments of the merchant.</td>
+</tr>
+<tr>
+<td>getCustAddress</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>To get customer address in the checkout (1/0 - enable/disable).</td>
+</tr>
+</tbody></table>
+<h3 id='returns-22'>Returns</h3>
+<p>Returns a payment link url, and returns an error otherwise.</p>
+
+<aside class="notice">
+The error codes used when you fail to create a payment link are <a href="#4101">4101</a>, <a href="#1110">1110</a>, <a href="#4112">4112</a>
+</aside>
+<h2 id='get-a-payment-link'>Get a Payment Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+       <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+       <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/paymentlink/get/{payment_link_url}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">18000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_Survey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiry_Date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-08-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new iphone 12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can refund your money within 30 days"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iphone 12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"getCustAddress"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To Retrieve the payment link object, either payment_link_ID or payment_link_url is included.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<p>No parameters</p>
+<h3 id='returns-23'>Returns</h3>
+<p>Returns a payment link object and payment link url.</p>
+<h2 id='update-a-payment-link'>Update a Payment Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+        <span class="nt">-d</span> <span class="nv">payment_link_url</span><span class="o">=</span> <span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/ 2c65fdc3090e9011e9881660315065125"</span>,
+        <span class="nt">-d</span> <span class="nv">value</span><span class="o">=</span> 18000
+        <span class="nt">-d</span> <span class="nv">currency</span><span class="o">=</span><span class="s2">"EGP"</span>
+        <span class="nt">-d</span> <span class="nv">enable_Survey</span><span class="o">=</span> 0
+        <span class="nt">-d</span> <span class="nv">expiry_Date</span><span class="o">=</span> 2022-08-22
+        <span class="nt">-d</span> <span class="nv">description</span><span class="o">=</span><span class="s2">"new iphone 12"</span>
+        <span class="nt">-d</span> <span class="nv">status</span><span class="o">=</span> 1
+        <span class="nt">-d</span> <span class="nv">shippingPolicyFlag</span><span class="o">=</span> 0
+        <span class="nt">-d</span> <span class="nv">refundPolicyFlag</span><span class="o">=</span> 1
+        <span class="nt">-d</span> <span class="nv">shippingPolicyDetails</span><span class="o">=</span> <span class="s2">"For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."</span>
+        <span class="nt">-d</span> <span class="nv">refundPolicyDetails</span><span class="o">=</span><span class="s2">"You can refund your money within 30 days"</span>
+        <span class="nt">-d</span> <span class="nv">comments</span><span class="o">=</span><span class="s2">""</span>
+        <span class="nt">-d</span> <span class="nv">name</span><span class="o">=</span><span class="s2">"iphone 12"</span>
+        <span class="nt">-d</span> <span class="nv">getCustAddress</span><span class="o">=</span> 0
+        <span class="s1">'https://circlepay.ai/apis/paymentlink/update'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bit.ly/3SH60xn"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Update the details of existing payment link.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The payment link url.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Float</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The price of the product.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>LOV</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The currency used in transaction (predefined currency list).</td>
+</tr>
+<tr>
+<td>enable_Survey</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add survey to checkout.</td>
+</tr>
+<tr>
+<td>expiry_Date</td>
+<td>Date</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The payment link expiry date.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The description of products that will be included in the transaction.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The name of the product.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The status of payment link (1/0 - active/inactive).</td>
+</tr>
+<tr>
+<td>shippingPolicyFlag</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add shipping policy section in checkout ( 1/0 - enable/disable).</td>
+</tr>
+<tr>
+<td>refundPolicyFlag</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This option helps merchant to add refund policy section in checkout ( 1/0 - enable/disable).</td>
+</tr>
+<tr>
+<td>shippingPolicyDetails</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This is the shipping policy details (will exist if shippingPolicyFlag is 1).</td>
+</tr>
+<tr>
+<td>refundPolicyDetails</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>This is the refund policy details (will exist if refundPolicyFlag is 1).</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The comments of the merchant.</td>
+</tr>
+<tr>
+<td>getCustAddress</td>
+<td>Boolean</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>To get customer address in the checkout (1/0 - enable/disable).</td>
+</tr>
+</tbody></table>
+<h3 id='returns-24'>Returns</h3>
+<p>Returns a payment link url, and returns an error otherwise.</p>
+
+<aside class="notice">
+The error codes used when you fail to update a payment link are <a href="#4111">4111</a>, <a href="#1110">1110</a>, <a href="#4112">4112</a>
+</aside>
+<h2 id='list-payment-links'>List Payment Links</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+       <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+       <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/paymentlink/list/{customer_mobile}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">18000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_Survey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiry_Date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-08-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new iphone 12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can refund your money within 30 days"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iphone 12"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"getCustAddress"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payment_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660349265"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EGP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enable_Survey"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiry_Date"</span><span class="p">:</span><span class="w"> </span><span class="mi">2022-08-22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new samsung phone"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyFlag"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shippingPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refundPolicyDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can refund your money within 30 days"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"samsung phone"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"getCustAddress"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To Retrieve the payment link object list.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_mobile</td>
+<td>Numeric</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Object</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>payment link list returned based on this filter object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-25'>Returns</h3>
+<p>Returns a payment link object list. Otherwise error will show.</p>
+
+<aside class="notice">
+The error codes used when you fail to list the payment link list are <a href="#3110">3110</a>, <a href="#1110">1110</a>
+</aside>
+<h2 id='execute-payment-for-link-or-invoice'>Execute payment for link or invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+       <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+       <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> payment_link.link<span class="o">=</span> <span class="s2">"https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"</span>
+     <span class="nt">-d</span> customer <span class="nv">Object</span><span class="o">={}</span>
+     <span class="nt">-d</span> <span class="nv">payment_method_id</span><span class="o">=</span><span class="s2">"610b2c496df621209c852168"</span>
+     <span class="nt">-d</span> <span class="nv">coupon_code</span><span class="o">=</span><span class="s2">""</span>
+     <span class="s1">'https://circlepay.ai/apis/payPaymentLink/create'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To execute the payment link or invoice.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link.link</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Customer&#39;s mobile number.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>payment link list returned based on this filter object.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-26'>Returns</h3>
+<ul>
+<li>If a payment method is defined, the return payment intent for the payment method.<br></li>
+<li>If the payment method isn&#39;t defined, then return page 3 of the checkout page.<br></li>
+<li>response is iframe based on the step to render.<br></li>
+<li>payment_link_url step based on the passed parameters.<br></li>
+<li>If a customer is registered, then the api should accept his/her customer_mobile only.</li>
+</ul>
+
+<aside class="notice">
+The error codes used when you fail to execute the payment link are <a href="#4111">4111</a>, <a href="#4210">4210</a>,<a href="#7112">7112</a>,<a href="#7111">7111</a>,<a href="#4311">4311</a>,<a href="#1110">1110</a>,
+</aside>
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -1908,7 +2418,7 @@ List all customers using filters.
 <td>Unique identifier for the payment object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-22'>Returns</h3>
+<h3 id='returns-27'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -1969,9 +2479,9 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieves all payments.</p>
-<h3 id='parameters-8'>Parameters</h3>
+<h3 id='parameters-9'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-23'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 <h1 id='refund'>Refund</h1>
 <p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
@@ -2017,7 +2527,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>Unique identifier for the transaction object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-24'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Returns the refund id. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -2066,9 +2576,9 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>List refund objects.</p>
-<h3 id='parameters-9'>Parameters</h3>
+<h3 id='parameters-10'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-25'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
 <h2 id='get-refund'>Get refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2118,7 +2628,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-26'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
@@ -2297,7 +2807,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>The notes or comments to make invoice more clear.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-32'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -2360,7 +2870,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-33'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2432,7 +2942,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-34'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 <h2 id='delete-an-invoice'>Delete an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2475,7 +2985,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-35'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -2546,7 +3056,7 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-36'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
