@@ -1161,6 +1161,327 @@ Returns customer list, If no more customers are available, the resulting array w
 
 ################################################################################
 
+# Payment Link
+
+## Create a Payment Link
+
+```shell
+curl -X POST --header 'Accept: application/json'
+      --header 'Content-Type: application/json'
+      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	  --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	  --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+        -d value= 18000
+        -d currency="EGP"
+        -d enable_Survey= 0
+        -d expiry_Date= 2022-08-22
+        -d description="new iphone 12"
+        -d status= 1
+        -d shippingPolicyFlag= 0
+        -d refundPolicyFlag= 1
+        -d shippingPolicyDetails= "For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."
+        -d refundPolicyDetails="You can refund your money within 30 days"
+        -d comments=""
+        -d name="iphone 12"
+        -d getCustAddress= 0
+        'https://circlepay.ai/apis/paymentlink/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+     {
+        "Link": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "https://bit.ly/3SH60xn",
+      }
+    ],
+	 "isError" : False
+}
+```
+
+Create a new payment link, so customer can purchase the product from merchant.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+value |Float|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The price of the product.
+Currency |LOV|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The currency used in transaction (predefined currency list).
+enable_Survey |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add survey to checkout.
+expiry_Date |Date|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment link expiry date.
+description |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The description of products that will be included in the transaction.
+name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The name of the product.
+status |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The status of payment link (1/0 - active/inactive).
+shippingPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add shipping policy section in checkout ( 1/0 - enable/disable).
+refundPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add refund policy section in checkout ( 1/0 - enable/disable).
+shippingPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the shipping policy details (will exist if shippingPolicyFlag is 1).
+refundPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the refund policy details (will exist if refundPolicyFlag is 1).
+comments |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The comments of the merchant.
+getCustAddress |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|To get customer address in the checkout (1/0 - enable/disable).
+
+### Returns
+
+Returns a payment link url, and returns an error otherwise.
+
+<aside class="notice">
+The error codes used when you fail to create a payment link are <a href="#4101">4101</a>, <a href="#1110">1110</a>, <a href="#4112">4112</a>
+</aside>
+
+######################################################################################
+
+## Get a Payment Link
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	   --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	   --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/paymentlink/get/{payment_link_url}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+      {
+        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "value": 18000,
+        "currency": "EGP",
+        "enable_Survey": 0,
+        "expiry_Date": 2022-08-22,
+        "description": "new iphone 12",
+        "status": 1,
+        "shippingPolicyFlag": 0,
+        "refundPolicyFlag": 1,
+        "shippingPolicyDetails": "For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout.",
+        "refundPolicyDetails": "You can refund your money within 30 days",
+        "comments": "",
+        "name": "iphone 12",
+        "getCustAddress": 0
+      }
+    ],
+	 "isError" : False
+}
+```
+
+To Retrieve the payment link object, either payment_link_ID or payment_link_url is included.
+
+### Parameters
+
+No parameters
+
+### Returns
+
+Returns a payment link object and payment link url.
+
+#######################################################################################
+
+## Update a Payment Link
+
+```shell
+curl -X PUT --header 'Accept: application/json'
+      --header 'Content-Type: application/json'
+      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	  --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	  --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+        -d payment_link_url= "https://dashboard.circlepay.ai/payment/make-payment/ 2c65fdc3090e9011e9881660315065125",
+        -d value= 18000
+        -d currency="EGP"
+        -d enable_Survey= 0
+        -d expiry_Date= 2022-08-22
+        -d description="new iphone 12"
+        -d status= 1
+        -d shippingPolicyFlag= 0
+        -d refundPolicyFlag= 1
+        -d shippingPolicyDetails= "For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout."
+        -d refundPolicyDetails="You can refund your money within 30 days"
+        -d comments=""
+        -d name="iphone 12"
+        -d getCustAddress= 0
+        'https://circlepay.ai/apis/paymentlink/update'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+     {
+        "Link": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "https://bit.ly/3SH60xn",
+      }
+    ],
+	 "isError" : False
+}
+```
+
+Update the details of existing payment link.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment link url.
+value |Float|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The price of the product.
+Currency |LOV|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The currency used in transaction (predefined currency list).
+enable_Survey |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add survey to checkout.
+expiry_Date |Date|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment link expiry date.
+description |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The description of products that will be included in the transaction.
+name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The name of the product.
+status |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The status of payment link (1/0 - active/inactive).
+shippingPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add shipping policy section in checkout ( 1/0 - enable/disable).
+refundPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add refund policy section in checkout ( 1/0 - enable/disable).
+shippingPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the shipping policy details (will exist if shippingPolicyFlag is 1).
+refundPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the refund policy details (will exist if refundPolicyFlag is 1).
+comments |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The comments of the merchant.
+getCustAddress |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|To get customer address in the checkout (1/0 - enable/disable).
+
+### Returns
+
+Returns a payment link url, and returns an error otherwise.
+
+<aside class="notice">
+The error codes used when you fail to update a payment link are <a href="#4111">4111</a>, <a href="#1110">1110</a>, <a href="#4112">4112</a>
+</aside>
+######################################################################################
+
+## List Payment Links
+
+```shell
+curl -X GET --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	   --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	   --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/paymentlink/list/{customer_mobile}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+      {
+        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "value": 18000,
+        "currency": "EGP",
+        "enable_Survey": 0,
+        "expiry_Date": 2022-08-22,
+        "description": "new iphone 12",
+        "status": 1,
+        "shippingPolicyFlag": 0,
+        "refundPolicyFlag": 1,
+        "shippingPolicyDetails": "For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout.",
+        "refundPolicyDetails": "You can refund your money within 30 days",
+        "comments": "",
+        "name": "iphone 12",
+        "getCustAddress": 0
+      },
+      {
+        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660349265",
+        "value": 12000,
+        "currency": "EGP",
+        "enable_Survey": 0,
+        "expiry_Date": 2022-08-22,
+        "description": "new samsung phone",
+        "status": 1,
+        "shippingPolicyFlag": 0,
+        "refundPolicyFlag": 1,
+        "shippingPolicyDetails": "For calculated shipping rates: Shipping charges for your order will be calculated and displayed at checkout.",
+        "refundPolicyDetails": "You can refund your money within 30 days",
+        "comments": "",
+        "name": "samsung phone",
+        "getCustAddress": 0
+      }
+    ],
+	 "isError" : False
+}
+```
+
+To Retrieve the payment link object list.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer_mobile |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Customer's mobile number.
+Filter |Object|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|payment link list returned based on this filter object.
+
+### Returns
+
+Returns a payment link object list. Otherwise error will show.
+
+<aside class="notice">
+The error codes used when you fail to list the payment link list are <a href="#3110">3110</a>, <a href="#1110">1110</a>
+</aside>
+
+######################################################################################
+## Execute payment for link or invoice
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	   --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	   --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     -d payment_link.link= "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"
+     -d customer Object={}
+     -d payment_method_id="610b2c496df621209c852168"
+     -d coupon_code=""
+     'https://circlepay.ai/apis/payPaymentLink/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+      {
+
+      }
+    ],
+	 "isError" : False
+}
+```
+
+To execute the payment link or invoice.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link.link |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|Customer's mobile number.
+Filter |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|payment link list returned based on this filter object.
+
+### Returns
+
+* If a payment method is defined, the return payment intent for the payment method.<br>
+* If the payment method isn't defined, then return page 3 of the checkout page.<br>
+* response is iframe based on the step to render.<br>
+* payment_link_url step based on the passed parameters.<br>
+* If a customer is registered, then the api should accept his/her customer_mobile only.
+
+<aside class="notice">
+The error codes used when you fail to execute the payment link are <a href="#4111">4111</a>, <a href="#4210">4210</a>,<a href="#7112">7112</a>,<a href="#7111">7111</a>,<a href="#4311">4311</a>,<a href="#1110">1110</a>,
+</aside>
+
+######################################################################################
 # Payment
 
 ## Get a payment 
