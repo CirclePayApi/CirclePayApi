@@ -416,6 +416,9 @@
                   <li>
                     <a href="#execute-payment-for-link-or-invoice" class="toc-h2 toc-link" data-title="Execute payment for link or invoice">Execute payment for link or invoice</a>
                   </li>
+                  <li>
+                    <a href="#deactive-payment-link" class="toc-h2 toc-link" data-title="Deactive Payment Link">Deactive Payment Link</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2362,6 +2365,52 @@ The error codes used when you fail to list the payment link list are <a href="#3
 <aside class="notice">
 The error codes used when you fail to execute the payment link are <a href="#4111">4111</a>, <a href="#4210">4210</a>,<a href="#7112">7112</a>,<a href="#7111">7111</a>,<a href="#4311">4311</a>,<a href="#1110">1110</a>,
 </aside>
+<h2 id='deactive-payment-link'>Deactive Payment Link</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="s1">'https://circlepay.ai/apis/paymentlink/deactive/{payment_link_url}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+     </span><span class="p">{}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To deactive the payment link.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_link_url</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The payment link url.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-27'>Returns</h3>
+<p>Deactivate an active payment link. This will show an error page &quot;Payment Link isn&#39;t available&quot;. Otherwise error will show.</p>
+
+<aside class="notice">
+The error code used when you fail to deactive the payment link is <a href="#4111">4111</a>
+</aside>
 <h1 id='payment'>Payment</h1><h2 id='get-a-payment'>Get a payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
@@ -2418,7 +2467,7 @@ The error codes used when you fail to execute the payment link are <a href="#411
 <td>Unique identifier for the payment object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-27'>Returns</h3>
+<h3 id='returns-28'>Returns</h3>
 <p>Returns a payment object if a valid identifier was provided, and returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2481,7 +2530,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <p>Retrieves all payments.</p>
 <h3 id='parameters-9'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-28'>Returns</h3>
+<h3 id='returns-29'>Returns</h3>
 <p>Returns a payment list which has the details of the payment like: status, amount paid and payment method.</p>
 <h1 id='refund'>Refund</h1>
 <p>Allows you to refund a charge that has previously been created but not yet refunded.</p>
@@ -2527,7 +2576,7 @@ The error code used when you fail to get payment object is <a href="#9111">9111<
 <td>Unique identifier for the transaction object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-29'>Returns</h3>
+<h3 id='returns-30'>Returns</h3>
 <p>Returns the refund id. Status in refund object will be in pending state.</p>
 
 <aside class="notice">
@@ -2578,7 +2627,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <p>List refund objects.</p>
 <h3 id='parameters-10'>Parameters</h3>
 <p>No parameters</p>
-<h3 id='returns-30'>Returns</h3>
+<h3 id='returns-31'>Returns</h3>
 <p>Returns refund object list. If no more refunds are available, the resulting array will be empty.</p>
 <h2 id='get-refund'>Get refund</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2628,7 +2677,7 @@ The error code used when you fail to request refund is <a href="#9112">9112</a>
 <td>Unique identifier for the refund object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-31'>Returns</h3>
+<h3 id='returns-32'>Returns</h3>
 <p>Returns refund object if a valid refund id is provided.</p>
 
 <aside class="notice">
@@ -2807,7 +2856,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 <td>The notes or comments to make invoice more clear.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-32'>Returns</h3>
+<h3 id='returns-33'>Returns</h3>
 <p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
 
 <aside class="notice">
@@ -2870,7 +2919,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-33'>Returns</h3>
+<h3 id='returns-34'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2942,7 +2991,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-35'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 <h2 id='delete-an-invoice'>Delete an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2985,7 +3034,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-35'>Returns</h3>
+<h3 id='returns-36'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -3056,7 +3105,7 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-36'>Returns</h3>
+<h3 id='returns-37'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='errors'>Errors</h1>
 <p>Error code is a numeric or alphanumeric code that helps you to determine the nature of an error and why it occurred. The CirclePay API uses the following error codes:</p>
