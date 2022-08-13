@@ -1197,8 +1197,8 @@ curl -X POST --header 'Accept: application/json'
  "data" :
     [
      {
-        "Link": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
-        "payment_link_url": "https://bit.ly/3SH60xn",
+        "Link": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
       }
     ],
 	 "isError" : False
@@ -1254,7 +1254,7 @@ curl -X GET --header 'Accept: application/json'
  "data" :
     [
       {
-        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
         "value": 18000,
         "currency": "EGP",
         "enable_Survey": 0,
@@ -1294,7 +1294,7 @@ curl -X PUT --header 'Accept: application/json'
       --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	  --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	  --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-        -d payment_link_url= "https://dashboard.circlepay.ai/payment/make-payment/ 2c65fdc3090e9011e9881660315065125",
+        -d payment_link_url= "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
         -d value= 18000
         -d currency="EGP"
         -d enable_Survey= 0
@@ -1321,8 +1321,8 @@ curl -X PUT --header 'Accept: application/json'
  "data" :
     [
      {
-        "Link": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
-        "payment_link_url": "https://bit.ly/3SH60xn",
+        "Link": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
       }
     ],
 	 "isError" : False
@@ -1378,7 +1378,7 @@ curl -X GET --header 'Accept: application/json'
  "data" :
     [
       {
-        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125",
+        "payment_link_url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
         "value": 18000,
         "currency": "EGP",
         "enable_Survey": 0,
@@ -1394,7 +1394,7 @@ curl -X GET --header 'Accept: application/json'
         "getCustAddress": 0
       },
       {
-        "payment_link_url": "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660349265",
+        "payment_link_url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
         "value": 12000,
         "currency": "EGP",
         "enable_Survey": 0,
@@ -1438,7 +1438,7 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	   --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
 	   --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d payment_link.link= "https://dashboard.circlepay.ai/payment/make-payment/2c65fdc3090e9011e9881660315065125"
+     -d payment_link.link= "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125"
      -d customer Object={}
      -d payment_method_id="610b2c496df621209c852168"
      -d coupon_code=""
