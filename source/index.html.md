@@ -1482,6 +1482,49 @@ The error codes used when you fail to execute the payment link are <a href="#411
 </aside>
 
 ######################################################################################
+
+## Deactive Payment Link
+
+```shell
+curl -X DELETE --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	 --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     'https://circlepay.ai/apis/paymentlink/deactive/{payment_link_url}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+     {}
+    ],
+	 "isError" : False
+}
+```
+
+To deactive the payment link.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+payment_link_url |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment link url.
+
+
+### Returns
+
+Deactivate an active payment link. This will show an error page "Payment Link isn't available". Otherwise error will show.
+
+<aside class="notice">
+The error code used when you fail to deactive the payment link is <a href="#4111">4111</a>
+</aside>
+
+######################################################################################
 # Payment
 
 ## Get a payment 
