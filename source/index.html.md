@@ -2092,3 +2092,70 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 Pay the invoice if a valid invoice number was provided. Returns an error otherwise.
 
 ####################################################################################
+# Direct Payment
+
+## Create a Direct Payment
+
+```shell
+curl -X POST --header 'Accept: application/json'
+      --header 'Content-Type: application/json'
+      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	  --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+	  --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+        -d customer= {"first_name": "ibrahim", "last_name": "salah", "mobile_number": 01011111111, "email": ""}
+        -d directPayment={"comments": "", "description": "", "expiryDate": 22-09-2022,
+        "getCustAddress": 0, "name": "iphone", "refundPolicyDetails":"", "refundPolicyFlag": 0, "shippingPolicyDetails": "", "shippingPolicyFlag":0, "value": 18000}
+        -d payment_gateway_id= "610b2c486df621209c85215b"
+        -d payment_method_id= "610b2c496df621209c852162"
+        'https://circlepay.ai/apis/directPayment/create'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+    [
+     {
+        "url": "checkout.circlepay.ai/2c65fdc3090e9011e9881660315065125",
+        "transaction_id": "1645895596175",
+      }
+    ],
+	 "isError" : False
+}
+```
+
+Create a direct payment link.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer |Object|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The customer object which contains (first name, last name, mobile number, email).
+first_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The first name of the customer (included in customer object).
+last_name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The last name of the customer (included in customer object).
+mobile_number |Numeric|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The mobile number of the customer (included in customer object).
+email |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The email of the customer (included in customer object).
+directPayment |Object|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The direct payment object.
+comments |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The comments of the merchant in the checkout (included in directPayment object).
+description |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The description of the products which will customer buy (included in directPayment object).
+expiryDate |Date|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The expiry date of payment link (included in directPayment object).
+name |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|The name of the product which customer will buy (included in directPayment object).
+shippingPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add shipping policy section in checkout ( 1/0 - enable/disable) (included in directPayment object).
+refundPolicyFlag |Boolean|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This option helps merchant to add refund policy section in checkout ( 1/0 - enable/disable) (included in directPayment object).
+shippingPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the shipping policy details (will exist if shippingPolicyFlag is 1) (included in directPayment object).
+refundPolicyDetails |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -|This is the refund policy details (will exist if refundPolicyFlag is 1) (included in directPayment object).
+value |Float|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The price of the product(s) that customer will buy (included in directPayment object).
+payment_gateway_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment gateway unique identifier.
+payment_method_id |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -|The payment method unique identifier.
+
+
+### Returns
+
+Returns a payment link url and transacion id, otherwise it returns an error.
+
+<aside class="notice">
+The error codes used when you fail to create a direct payment are <a href="#4101">4101</a>, <a href="#1110">1110</a>, <a href="#7111">7111</a>,<a href="#7113">7113</a>, <a href="#8111">8111</a>
+</aside>
+#########################################################################################
