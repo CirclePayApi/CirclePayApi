@@ -1430,7 +1430,7 @@ The error codes used when you fail to list the payment link list are <a href="#3
 </aside>
 
 ######################################################################################
-## Pay Payment Link
+## Execute payment for link or invoice
 
 ```shell
 curl -X POST --header 'Accept: application/json'
@@ -1442,7 +1442,7 @@ curl -X POST --header 'Accept: application/json'
      -d customer Object={}
      -d payment_method_id="610b2c496df621209c852168"
      -d coupon_code=""
-     'https://circlepay.ai/apis/payPaymentLink/create'
+     'https://circlepay.ai/apis/payPaymentLink/'
 ```
 
 > The above command returns JSON structured like this:
