@@ -1430,7 +1430,7 @@ The error codes used when you fail to list the payment link list are <a href="#3
 </aside>
 
 ######################################################################################
-## Execute payment for link or invoice
+## Pay Payment Link
 
 ```shell
 curl -X POST --header 'Accept: application/json'
