@@ -1824,9 +1824,9 @@ curl -X POST --header 'Accept: application/json'
      --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
 	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
      --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
-     -d "customer[email]"="ahmed@gmail.com"
-     -d "customer[city]"="mansoura"
-     -d "invoice[invoice_number]"=55
+     -d "invoice[customer_mobile]"="+201012794709"
+     -d "invoice[due_date]"="03-03-2023"
+     -d "invoice[items:[{name: "phone", description: "", quantity: 8, price:12000}]]"
      'https://circlepay.ai/apis/invoice/create'
 ```
 
@@ -1841,7 +1841,7 @@ curl -X POST --header 'Accept: application/json'
    [
     {
      "invoice_number": "CIR_INV_16436703344261",
-     "invoice_url" : "complete checkout url"
+     "invoice_url" : "(base_checkout_url)+payment_link_url"
     }
    ],
     "isError" : False
@@ -1877,12 +1877,103 @@ extra_notes |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp
 
 ### Returns
 
-Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.
+Returns invoice number and invoice url.
 
 <aside class="notice">
-The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>, <a href="#3110">3110</a>
 </aside>
 
+####################################################################################
+## Create an invoice V2
+
+```shell
+curl -X POST --header 'Accept: application/json'
+     --header 'Content-Type: application/json'
+     --header 'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'
+	 --header 'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'
+     --header 'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'
+     -d "customer[First_Name]"="Ibrahim"
+     -d "customer[Last_Name]"="Salah"
+     -d "customer[mobile_number]"=+201012794709
+     -d "invoice[due_date]"=03-03-2023
+     -d "invoice[items]= [{name: iphone, description: "", quantity: 8, price:12000}]]
+     'https://circlepay.ai/apis/invoice/createV2'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+ "message" : "Successful",
+ "errorCode" : 0,
+ "details" : "",
+ "data" :
+   [
+    {
+     "invoice_number": "CIR_INV_16436703344261",
+     "invoice_url" : "(base_checkout_url)+payment_link_url",
+     "transaction_id": 43536356353
+    }
+   ],
+    "isError" : False
+}
+```
+Create a new invoice: V2 API, this gets all the required information from the client platform and conducts the three steps of:
+
+1- create customer<br>
+2- create invoice<br> 
+3- pay invoice
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+invoice |Object|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the invoice object. |
+
+The table below contains invoice object attributes.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+invoice_number |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The invoice number. |
+items |Array|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|Array of item object which has the details of items in invoice for example: name,description,quantity and price. |
+customer_mobile |String|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The customer mobile number. |
+status |Integer|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The status of invoice for example: 0 means Due, 1 means Over_Due, 2 means Paid, 3 means  Deactivated. |
+create_date |Date|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The creation date of invoice. |
+due_date |Date|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The due date of invoice which is the latest payment can be made on an invoice or debt before it's considered overdue. |
+pref_payment_method |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The preferred payment method and it's related payment gateway for example: CARD/PayMob means method_name/gateway_name. |
+shipping_fees |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The shipping fees on invoice's items. |
+discount_value |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount value on total cost of items. |
+discount_type |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount type, it can be value or percent. |
+discount_value_calculated |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The discount value calculated if the discount type is percent. |
+tax |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The tax in percent. |
+tax_value |Float|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The calculated tax amount. |
+shipping_policy |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The shipping policy contains potential delays due to a high volume of orders or postal service problems that are outside of your control, Domestic Shipping Rates and Estimates, local delivery policy and international shipping policy. |
+return_policy |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The rules a retailer or merchant creates to manage how customers return and exchange unwanted merchandise they purchased for example, Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment. |
+extra_notes |String|<span style="color: lightblue;">optional</span> |&nbsp;&nbsp; &nbsp; -|The notes or comments to make invoice more clear. |
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+customer |Object|<span style="color: red;">required</span> |&nbsp;&nbsp; &nbsp; -|The details of the customer object. |
+
+The table below contains customer object attributes.
+
+Parameter|Type|Required|Default|Description|
+---------|--------|---------|--------|-----|
+First_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's first name. |
+Last_Name |String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's last name. |
+email |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's email. |
+mobile_number|String|<span style="color: red;">required</span>|&nbsp;&nbsp; &nbsp; -| The customer's phone number. |
+country |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's country. |
+governorate |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's governorate. |
+city |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's city. |
+address |String|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's address. |
+apt_num |Numeric|<span style="color: lightblue;">optional</span>|&nbsp;&nbsp; &nbsp; -| The customer's apartment number. |
+
+### Returns
+
+Returns invoice number, invoice Url and transaction id.
+
+<aside class="notice">
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>, <a href="#3110">3110</a>, <a href="#5111">5111</a>, <a href="#5114">5114</a>,<a href="#7113">7113</a>,<a href="#7111">7111</a>
+</aside>
 ####################################################################################
 
 ## Retrieve an invoice
