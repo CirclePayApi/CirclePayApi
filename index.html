@@ -453,6 +453,9 @@
                     <a href="#create-an-invoice" class="toc-h2 toc-link" data-title="Create an invoice">Create an invoice</a>
                   </li>
                   <li>
+                    <a href="#create-an-invoice-v2" class="toc-h2 toc-link" data-title="Create an invoice V2">Create an invoice V2</a>
+                  </li>
+                  <li>
                     <a href="#retrieve-an-invoice" class="toc-h2 toc-link" data-title="Retrieve an invoice">Retrieve an invoice</a>
                   </li>
                   <li>
@@ -2698,9 +2701,9 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
      <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
      <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
      <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
-     <span class="nt">-d</span> <span class="s2">"customer[email]"</span><span class="o">=</span><span class="s2">"ahmed@gmail.com"</span>
-     <span class="nt">-d</span> <span class="s2">"customer[city]"</span><span class="o">=</span><span class="s2">"mansoura"</span>
-     <span class="nt">-d</span> <span class="s2">"invoice[invoice_number]"</span><span class="o">=</span>55
+     <span class="nt">-d</span> <span class="s2">"invoice[customer_mobile]"</span><span class="o">=</span><span class="s2">"+201012794709"</span>
+     <span class="nt">-d</span> <span class="s2">"invoice[due_date]"</span><span class="o">=</span><span class="s2">"03-03-2023"</span>
+     <span class="nt">-d</span> <span class="s2">"invoice[items:[{name: "</span>phone<span class="s2">", description: "", quantity: 8, price:12000}]]"</span>
      <span class="s1">'https://circlepay.ai/apis/invoice/create'</span>
 </code></pre></div>
 <blockquote>
@@ -2714,7 +2717,7 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
    </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
      </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_16436703344261"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"invoice_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"complete checkout url"</span><span class="w">
+     </span><span class="nl">"invoice_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"(base_checkout_url)+payment_link_url"</span><span class="w">
     </span><span class="p">}</span><span class="w">
    </span><span class="p">],</span><span class="w">
     </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
@@ -2865,10 +2868,288 @@ The error code used when you fail to get refund status is <a href="#9111">9111</
 </tr>
 </tbody></table>
 <h3 id='returns-33'>Returns</h3>
-<p>Returns an invoice object that has been created. Returns error if the customer ID provided is invalid.</p>
+<p>Returns invoice number and invoice url.</p>
 
 <aside class="notice">
-The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>, <a href="#3110">3110</a>
+</aside>
+<h2 id='create-an-invoice-v2'>Create an invoice V2</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+     <span class="nt">--header</span> <span class="s1">'account_key: de40f1f2-98a8-32bd-bc2c-96280c7b4b6b'</span>
+     <span class="nt">--header</span> <span class="s1">'account_token: Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0J'</span>
+     <span class="nt">--header</span> <span class="s1">'merchant_token: Bearer 402880824ff933a4014ff9345d7c0002'</span>
+     <span class="nt">-d</span> <span class="s2">"customer[First_Name]"</span><span class="o">=</span><span class="s2">"Ibrahim"</span>
+     <span class="nt">-d</span> <span class="s2">"customer[Last_Name]"</span><span class="o">=</span><span class="s2">"Salah"</span>
+     <span class="nt">-d</span> <span class="s2">"customer[mobile_number]"</span><span class="o">=</span>+201012794709
+     <span class="nt">-d</span> <span class="s2">"invoice[due_date]"</span><span class="o">=</span>03-03-2023
+     <span class="nt">-d</span> <span class="s2">"invoice[items]= [{name: iphone, description: "", quantity: 8, price:12000}]]
+     'https://circlepay.ai/apis/invoice/createV2'
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Successful"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w">
+   </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CIR_INV_16436703344261"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"invoice_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"(base_checkout_url)+payment_link_url"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43536356353</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isError"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Create a new invoice: V2 API, this gets all the required information from the client platform and conducts the three steps of:</p>
+
+<p>1- create customer<br>
+2- create invoice<br> 
+3- pay invoice</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice</td>
+<td>Object</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The details of the invoice object.</td>
+</tr>
+</tbody></table>
+
+<p>The table below contains invoice object attributes.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_number</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The invoice number.</td>
+</tr>
+<tr>
+<td>items</td>
+<td>Array</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>Array of item object which has the details of items in invoice for example: name,description,quantity and price.</td>
+</tr>
+<tr>
+<td>customer_mobile</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer mobile number.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Integer</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The status of invoice for example: 0 means Due, 1 means Over_Due, 2 means Paid, 3 means  Deactivated.</td>
+</tr>
+<tr>
+<td>create_date</td>
+<td>Date</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The creation date of invoice.</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>Date</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The due date of invoice which is the latest payment can be made on an invoice or debt before it&#39;s considered overdue.</td>
+</tr>
+<tr>
+<td>pref_payment_method</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The preferred payment method and it&#39;s related payment gateway for example: CARD/PayMob means method_name/gateway_name.</td>
+</tr>
+<tr>
+<td>shipping_fees</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping fees on invoice&#39;s items.</td>
+</tr>
+<tr>
+<td>discount_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value on total cost of items.</td>
+</tr>
+<tr>
+<td>discount_type</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount type, it can be value or percent.</td>
+</tr>
+<tr>
+<td>discount_value_calculated</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The discount value calculated if the discount type is percent.</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The tax in percent.</td>
+</tr>
+<tr>
+<td>tax_value</td>
+<td>Float</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The calculated tax amount.</td>
+</tr>
+<tr>
+<td>shipping_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The shipping policy contains potential delays due to a high volume of orders or postal service problems that are outside of your control, Domestic Shipping Rates and Estimates, local delivery policy and international shipping policy.</td>
+</tr>
+<tr>
+<td>return_policy</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The rules a retailer or merchant creates to manage how customers return and exchange unwanted merchandise they purchased for example, Amazon.com and most sellers on Amazon.com offer returns for items within 30 days of receipt of shipment.</td>
+</tr>
+<tr>
+<td>extra_notes</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The notes or comments to make invoice more clear.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer</td>
+<td>Object</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The details of the customer object.</td>
+</tr>
+</tbody></table>
+
+<p>The table below contains customer object attributes.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>First_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s first name.</td>
+</tr>
+<tr>
+<td>Last_Name</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s last name.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s email.</td>
+</tr>
+<tr>
+<td>mobile_number</td>
+<td>String</td>
+<td><span style="color: red;">required</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s phone number.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s country.</td>
+</tr>
+<tr>
+<td>governorate</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s governorate.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s city.</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s address.</td>
+</tr>
+<tr>
+<td>apt_num</td>
+<td>Numeric</td>
+<td><span style="color: lightblue;">optional</span></td>
+<td>&nbsp;&nbsp; &nbsp; -</td>
+<td>The customer&#39;s apartment number.</td>
+</tr>
+</tbody></table>
+<h3 id='returns-34'>Returns</h3>
+<p>Returns invoice number, invoice Url and transaction id.</p>
+
+<aside class="notice">
+The error codes used when you fail to create an invoice are <a href="#5101">5101</a> , <a href="#1110">1110</a>, <a href="#3110">3110</a>, <a href="#5111">5111</a>, <a href="#5114">5114</a>,<a href="#7113">7113</a>,<a href="#7111">7111</a>
 </aside>
 <h2 id='retrieve-an-invoice'>Retrieve an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2927,7 +3208,7 @@ The error codes used when you fail to create an invoice are <a href="#5101">5101
 <td>The invoice number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-34'>Returns</h3>
+<h3 id='returns-35'>Returns</h3>
 <p>Returns an invoice object if a valid invoice number was provided. Returns an error otherwise.</p>
 
 <aside class="notice">
@@ -2999,7 +3280,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>invoices list returned based on this filter object.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-35'>Returns</h3>
+<h3 id='returns-36'>Returns</h3>
 <p>Returns list of invoice objects.</p>
 <h2 id='delete-an-invoice'>Delete an invoice</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
      <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -3042,7 +3323,7 @@ The error code used when you fail to retrieve an invoice is <a href="#5111">5111
 <td>Invoice&#39;s number.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-36'>Returns</h3>
+<h3 id='returns-37'>Returns</h3>
 <p>Returns the deleted invoice number.</p>
 
 <aside class="notice">
@@ -3113,7 +3394,7 @@ Payment method and payment gateway must be together, can't send only one.
 <aside class="notice">
 The error codes used when you fail to pay an invoice are <a href="#5111">5111</a> , <a href="#5114">5114</a> , <a href="#7113">7113</a> , <a href="#7111">7111</a> 
 </aside>
-<h3 id='returns-37'>Returns</h3>
+<h3 id='returns-38'>Returns</h3>
 <p>Pay the invoice if a valid invoice number was provided. Returns an error otherwise.</p>
 <h1 id='direct-payment'>Direct Payment</h1><h2 id='create-a-direct-payment'>Create a Direct Payment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span>
       <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -3275,7 +3556,7 @@ The error codes used when you fail to pay an invoice are <a href="#5111">5111</a
 <td>The payment method unique identifier.</td>
 </tr>
 </tbody></table>
-<h3 id='returns-38'>Returns</h3>
+<h3 id='returns-39'>Returns</h3>
 <p>Returns a payment link url and transacion id, otherwise it returns an error.</p>
 
 <aside class="notice">
